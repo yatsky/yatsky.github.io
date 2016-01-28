@@ -13,8 +13,16 @@ description: > # this means to ignore newlines until "baseurl:"
     and most importantly, life.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://iannwang.com" # the base hostname & protocol for your site
-twitter_username: yatsky
-github_username:  wyatsky
+twitter_username: wyatsky
+github_username:  yatsky
 
+# Post defaults
+defaults:
+    -
+        scope: 
+            path: ""      
+        values: 
+            layout: "post"
+    
 # Build settings
 markdown: kramdown
