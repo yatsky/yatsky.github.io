@@ -10,7 +10,7 @@ title: If u sail for Ithaca
 email: wyatsky@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
     This is my first blog and from now on I will try to learn more about web, programming
-    and most importantly, life.
+    and most important, life.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://iannwang.com" # the base hostname & protocol for your site
 twitter_username: wyatsky
