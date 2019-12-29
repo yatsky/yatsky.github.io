@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-10-05 Sat 15:19 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Things I write[Yaoni]</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../website/index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Things I write[Yaoni]</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd5de819">1. Intro</a></li>
+<li><a href="#org274a2d3">2. Emacs and Org mode</a>
+<ul>
+<li><a href="#orgf111457">2.1. Tips&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tips">tips</span>&#xa0;<span class="emacs">emacs</span></span></a></li>
+</ul>
+</li>
+<li><a href="#org8d4dd59">3. Songs</a>
+<ul>
+<li><a href="#orgdddc6d7">3.1. 《阿妹》(Almost Lover)</a></li>
+</ul>
+</li>
+<li><a href="#org30e200a">4. Docker</a>
+<ul>
+<li><a href="#org23ccc36">4.1. Dockerise a Symfony project (with Encore)</a>
+<ul>
+<li><a href="#orge18def6">4.1.1. TL;DR</a></li>
+<li><a href="#org19c9162">4.1.2. Setup</a></li>
+<li><a href="#orgbbe9a05">4.1.3. Instructions</a></li>
+<li><a href="#org09e6565">4.1.4. My config</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+-<b>- coding: chinese-gbk -</b>-
+</p>
+<div id="outline-container-orgd5de819" class="outline-2">
+<h2 id="orgd5de819"><span class="section-number-2">1</span> Intro</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Here I write random stuff.
+</p>
+
+<p>
+<a href="index.html">Back to home</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org274a2d3" class="outline-2">
+<h2 id="org274a2d3"><span class="section-number-2">2</span> Emacs and Org mode</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Finally I can do some basic Org-anization of my personal life and work. I think
+the thing that's most appealing to me about Org mode is that I can just come in and
+say "I have this, this and that to be done on different days" and viola it all comes to the 
+great agenda view! This is something I've been looking for for a long time and 
+I just find that Micro$oft's Outlook is just not there yet! (or I'm just too stupic to use it!)
+</p>
+
+<p>
+Coming from the Vim world, the need for me was like everyone else - I need to feel safe in Emacs.
+And who can provide that feeling of safety? Well you guessed it, Evil! It's just a great tool that <i>tries to</i> set up
+the conform zone for you. But hey, Emacs is never Vim and there are just gaps that can't be filled.
+</p>
+
+<p>
+I visited <a href="https://www.reddit.com/r/orgmode/comments/2qb6ab/best_practices_for_using_orgmode_as_a/">this reddit post</a> a few times before I totally settled down with Emacs own key bindings. Just so you know
+that I wasn't <b>very</b> good at Vim anyway so I thought to myself last night (<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-09-01 Sun&gt;</span></span>) that I WILL start using Emacs' 
+key bindings! All of a sudden things turned out to be great! I mean, as long as I have the reference cards for Emacs and Org,
+I'll survive.
+</p>
+
+<p>
+I'll still use Vim. That's for sure. Text editing in Vim is just much faster and at the very least, IDEs that I use almost all support Vim mode.
+So I'm not going to give that up for good. I'm just enjoying the beauty of Org&#x2026;
+</p>
+</div>
+<div id="outline-container-orgf111457" class="outline-3">
+<h3 id="orgf111457"><span class="section-number-3">2.1</span> Tips&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tips">tips</span>&#xa0;<span class="emacs">emacs</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>M-x load-file to reload a file (especially useful when reloading init.el)</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8d4dd59" class="outline-2">
+<h2 id="org8d4dd59"><span class="section-number-2">3</span> Songs</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgdddc6d7" class="outline-3">
+<h3 id="orgdddc6d7"><span class="section-number-3">3.1</span> 《阿妹》(Almost Lover)</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+词曲：金承志
+指挥：金承志
+演唱：上海彩虹室内合唱团
+钢琴伴奏：吴经纬
+录音/混音：莫家伟
+</p>
+
+
+<p>
+雀儿成一双，箸也放一双
+红糖水，还在沸
+炮竹快要放，圆眼洒春床
+我的阿妹，在何处
+</p>
+
+<p>
+老早捉迷藏，能界也捉迷藏
+明朝阿妹要嫁人
+还小时候你不肯，上次问我不肯
+该日问，没人回答，肯或是勿肯
+</p>
+
+<p>
+三里路，上下天涯
+窗台下，又插新花
+红尘几多人，分离又有谁人肯
+阿妹哟，阿妹哟，慢些走
+</p>
+
+<p>
+碎银小项链，珍珠大丁香
+阿妹的手，生好兮
+红裙配祠堂，婚纱配教堂
+阿妹会选，哪一种
+</p>
+
+<p>
+还记牢赤里膊脚在沙滩
+太阳落山帮你系鞋带
+你说带我回家，可以不可以
+我说做事干最重要
+现在我好像一直鹞，飘来飘去
+你能不能等等添
+</p>
+
+<p>
+三里路，上下天涯
+窗台下，又插新花
+红尘几多人，分离又有谁人肯
+阿妹哟，阿妹哟，慢些走
+</p>
+
+<p>
+三里路，半生天涯
+窗台下，秋冬春夏
+红尘几多人，分离又有谁人肯
+阿妹哟，阿妹哟，慢些走
+</p>
+
+<p>
+阿妹哟，阿妹哟，慢些走
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org30e200a" class="outline-2">
+<h2 id="org30e200a"><span class="section-number-2">4</span> Docker</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org23ccc36" class="outline-3">
+<h3 id="org23ccc36"><span class="section-number-3">4.1</span> Dockerise a Symfony project (with Encore)</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-orge18def6" class="outline-4">
+<h4 id="orge18def6"><span class="section-number-4">4.1.1</span> TL;DR</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+This is a <b>failed</b> attempt. Just want to record it for future reference and so that I can close all the relevant browser tabs.
+</p>
+</div>
+</div>
+<div id="outline-container-org19c9162" class="outline-4">
+<h4 id="org19c9162"><span class="section-number-4">4.1.2</span> Setup</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+I have the following versions of software (from Docker CHANGELOG) on my Windows 10 pro.
+</p>
+<ul class="org-ul">
+<li>[Docker 19.03.1](<a href="https://github.com/docker/docker-ce/releases/tag/v19.03.1">https://github.com/docker/docker-ce/releases/tag/v19.03.1</a>)</li>
+<li>[Docker Compose 1.24.1](<a href="https://github.com/docker/compose/releases/tag/1.24.1">https://github.com/docker/compose/releases/tag/1.24.1</a>)</li>
+<li>[Kubernetes 1.14.3](<a href="https://github.com/kubernetes/kubernetes/releases/tag/v1.14.3">https://github.com/kubernetes/kubernetes/releases/tag/v1.14.3</a>)</li>
+<li>[Compose on Kubernetes 0.4.23](<a href="https://github.com/docker/compose-on-kubernetes/releases/tag/v0.4.23">https://github.com/docker/compose-on-kubernetes/releases/tag/v0.4.23</a>)</li>
+<li>[Docker Machine 0.16.1](<a href="https://github.com/docker/machine/releases/tag/v0.16.1">https://github.com/docker/machine/releases/tag/v0.16.1</a>)</li>
+<li>[linuxkit v0.7](<a href="https://github.com/linuxkit/linuxkit/releases/tag/v0.7">https://github.com/linuxkit/linuxkit/releases/tag/v0.7</a>)</li>
+<li>Linux Kernel 4.9.184</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbbe9a05" class="outline-4">
+<h4 id="orgbbe9a05"><span class="section-number-4">4.1.3</span> Instructions</h4>
+<div class="outline-text-4" id="text-4-1-3">
+<p>
+I basically followed what's described <a href="https://knplabs.com/en/blog/how-to-dockerise-a-symfony-4-project">here</a>. The Dockerfile generated from the tutorial was as follows:
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span class="org-comment-delimiter"># </span><span class="org-comment">./docker/php/Dockerfile</span>
+FROM php:7.2-fpm
+
+RUN docker-php-ext-install pdo_mysql
+
+RUN pecl install apcu
+
+RUN apt-get update &amp;&amp; \
+apt-get install -y \
+zlib1g-dev
+
+RUN docker-php-ext-install zip
+RUN docker-php-ext-enable apcu
+
+RUN php -r <span class="org-string">"copy('https://getcomposer.org/installer', 'composer-setup.php');"</span> \
+    &amp;&amp; php -r <span class="org-string">"if (hash_file('SHA384', 'composer-setup.php') === '%SHA_384%') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"</span> \
+    &amp;&amp; php composer-setup.php --filename=composer \
+    &amp;&amp; php -r <span class="org-string">"unlink('composer-setup.php');"</span> \
+    &amp;&amp; mv composer /usr/local/bin/composer
+
+WORKDIR /usr/src/app
+
+COPY apps/my-symfony-app /usr/src/app
+
+RUN PATH=$PATH:/usr/src/apps/vendor/bin:bin
+</pre>
+</div>
+<p>
+docker-compose.yml
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span class="org-variable-name">version</span>: <span class="org-string">'3.7'</span>
+<span class="org-variable-name">services</span>:
+<span class="org-variable-name">mysql</span>:
+  <span class="org-variable-name">image</span>: mysql:8.0
+  <span class="org-variable-name">restart</span>: on-failure
+  <span class="org-variable-name">environment</span>:
+    <span class="org-variable-name">MYSQL_ROOT_PASSWORD</span>: ${MYSQL_ROOT_PASSWORD}
+    <span class="org-variable-name">MYSQL_DATABASE</span>: ${MYSQL_DATABASE}
+
+<span class="org-variable-name">php</span>:
+   <span class="org-variable-name">build</span>:
+     <span class="org-variable-name">context</span>: .
+     <span class="org-variable-name">dockerfile</span>: docker/php/Dockerfile
+   <span class="org-variable-name">restart</span>: on-failure
+   <span class="org-variable-name">volumes</span>:
+     - <span class="org-string">'./apps/my-symfony-app/:/usr/src/app'</span>
+   <span class="org-variable-name">user</span>: ${LOCAL_USER}  
+
+<span class="org-variable-name">nginx</span>:
+   <span class="org-variable-name">image</span>: nginx:1.15.3-alpine
+   <span class="org-variable-name">restart</span>: on-failure
+   <span class="org-variable-name">volumes</span>:
+     - <span class="org-string">'./apps/my-symfony-app/public/:/usr/src/app'</span>
+     - <span class="org-string">'./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro'</span>
+   <span class="org-variable-name">ports</span>:
+     - <span class="org-string">'${NGINX_PORT}:80'</span>    
+   <span class="org-variable-name">depends_on</span>:
+     - php
+<span class="org-variable-name">adminer</span>:
+   <span class="org-variable-name">image</span>: adminer
+   <span class="org-variable-name">restart</span>: on-failure
+   <span class="org-variable-name">ports</span>:
+     - <span class="org-string">'${ADMINER_PORT}:8080'</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org09e6565" class="outline-4">
+<h4 id="org09e6565"><span class="section-number-4">4.1.4</span> My config</h4>
+<div class="outline-text-4" id="text-4-1-4">
+<p>
+Dockerfile
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span class="org-comment-delimiter"># </span><span class="org-comment">./docker/php/Dockerfile</span>
+FROM php:7.2-fpm
+
+RUN docker-php-ext-install pdo_mysql
+
+RUN pecl install apcu
+
+RUN apt-get update &amp;&amp; \
+apt-get install -y \
+zlib1g-dev
+
+RUN docker-php-ext-install zip
+RUN docker-php-ext-enable apcu
+
+RUN php -r <span class="org-string">"copy('https://getcomposer.org/installer', 'composer-setup.php');"</span> \
+    &amp;&amp; php -r <span class="org-string">"if (hash_file('SHA384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"</span> \
+    &amp;&amp; php composer-setup.php --filename=composer \
+    &amp;&amp; php -r <span class="org-string">"unlink('composer-setup.php');"</span> \
+    &amp;&amp; mv composer /usr/local/bin/composer
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">WORKDIR /usr/src/app</span>
+
+FROM node:10-alpine
+WORKDIR /usr/src/app
+COPY ./broker-portal /usr/src/app
+RUN PATH=$PATH:/usr/src/broker-portal/vendor/bin:bin
+<span class="org-comment-delimiter"># </span><span class="org-comment">RUN npm install</span>
+RUN yarn install
+</pre>
+</div>
+<p>
+docker-compose.yaml
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span class="org-variable-name">version</span>: <span class="org-string">'3.7'</span>
+<span class="org-variable-name">services</span>:
+  <span class="org-variable-name">mysql</span>:
+    <span class="org-variable-name">image</span>: mysql:8.0
+    <span class="org-variable-name">restart</span>: on-failure
+    <span class="org-variable-name">environment</span>:
+      <span class="org-variable-name">MYSQL_ROOT_PASSWORD</span>: root
+      <span class="org-variable-name">MYSQL_DATABASE</span>: broker_portal
+
+  <span class="org-variable-name">nginx</span>:
+    <span class="org-variable-name">image</span>: nginx:1.15.3-alpine
+    <span class="org-variable-name">restart</span>: on-failure
+    <span class="org-variable-name">volumes</span>:
+      - <span class="org-string">'./broker-portal/public/:/usr/src/app'</span>
+      - <span class="org-string">'./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro'</span>
+    <span class="org-variable-name">ports</span>:
+      - <span class="org-string">'80:80'</span>
+    <span class="org-variable-name">depends_on</span>:
+      - php
+  <span class="org-variable-name">php</span>:
+    <span class="org-variable-name">build</span>:
+      <span class="org-variable-name">context</span>: .
+      <span class="org-variable-name">dockerfile</span>: docker/php/Dockerfile
+    <span class="org-variable-name">restart</span>: on-failure
+    <span class="org-variable-name">volumes</span>:
+      - <span class="org-string">'./broker-portal/:/usr/src/app'</span>
+    <span class="org-variable-name">env_file</span>:
+      - .env
+    <span class="org-variable-name">user</span>: 0:0
+    <span class="org-variable-name">command</span>: [<span class="org-string">"yarn"</span>, <span class="org-string">"encore"</span>, <span class="org-string">"dev"</span>, <span class="org-string">"--watch"</span>]
+
+<span class="org-comment-delimiter">#  </span><span class="org-comment">encore:</span>
+<span class="org-comment-delimiter">#    </span><span class="org-comment">image: node:10-alpine</span>
+<span class="org-comment-delimiter">#    </span><span class="org-comment">volumes:</span>
+<span class="org-comment-delimiter">#      </span><span class="org-comment">- './broker-portal/:/usr/src/app'</span>
+<span class="org-comment-delimiter">#    </span><span class="org-comment">working_dir: /usr/src/app</span>
+</pre>
+</div>
+<p>
+.dockerignore (this has to be placed under the <b>root</b> directory of the Docker project, not the any subdirectory!)
+</p>
+<pre class="example">
+*/*/node_modules
+*/*/npm-debug.log
+</pre>
+
+<p>
+It seems to be working fine until when I run <code>docker-compose up</code> and it will tell me:
+</p>
+<blockquote>
+<p>
+ERROR  Failed to compile with 6 errors1:28:04 AM                                                         
+</p>
+
+<p>
+error  in ./assets/sass/login.sass                                                                       
+</p>
+
+<p>
+Module build failed (from ./node<sub>modules</sub>/mini-css-extract-plugin/dist/loader.js):                         
+ModuleBuildError: Module build failed (from ./node<sub>modules</sub>/sass-loader/lib/loader.js):                    
+Error: Missing binding /usr/src/app/node<sub>modules</sub>/node-sass/vendor/linux<sub>musl</sub>-x64-64/binding.node          
+Node Sass could not find a binding for your current environment: Linux/musl 64-bit with Node.js 10.x      
+</p>
+
+<p>
+Found bindings for the following environments:                                                            
+</p>
+<ul class="org-ul">
+<li>Windows 64-bit with Node.js 8.x</li>
+</ul>
+
+<p>
+This usually happens because your environment has changed since running `npm install`.                    
+Run `npm rebuild node-sass` to download the binding for your current environment.                         
+    at module.exports (/usr/src/app/node<sub>modules</sub>/node-sass/lib/binding.js:15:13)                          
+    at Object.&lt;anonymous&gt; (/usr/src/app/node<sub>modules</sub>/node-sass/lib/index.js:14:35)                        
+    at Module.<sub>compile</sub> (/usr/src/app/node<sub>modules</sub>/v8-compile-cache/v8-compile-cache.js:178:30)            
+    at Object.Module.<sub>extensions..js</sub> (internal/modules/cjs/loader.js:789:10)                              
+    at Module.load (internal/modules/cjs/loader.js:653:32)                                                
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)                                              
+    at Function.Module.<sub>load</sub> (internal/modules/cjs/loader.js:585:3)                                       
+    at Module.require (internal/modules/cjs/loader.js:692:17)                                             
+    at require (/usr/src/app/node<sub>modules</sub>/v8-compile-cache/v8-compile-cache.js:159:20)                    
+    at Object.sassLoader (/usr/src/app/node<sub>modules</sub>/sass-loader/lib/loader.js:46:72)                      
+    at runLoaders (/usr/src/app/node<sub>modules</sub>/webpack/lib/NormalModule.js:301:20)                          
+    at /usr/src/app/node<sub>modules</sub>/loader-runner/lib/LoaderRunner.js:367:11                                 
+    at /usr/src/app/node<sub>modules</sub>/loader-runner/lib/LoaderRunner.js:233:18                                 
+    at runSyncOrAsync (/usr/src/app/node<sub>modules</sub>/loader-runner/lib/LoaderRunner.js:143:3)                 
+    at iterateNormalLoaders (/usr/src/app/node<sub>modules</sub>/loader-runner/lib/LoaderRunner.js:232:2)           
+    at Array.&lt;anonymous&gt; (/usr/src/app/node<sub>modules</sub>/loader-runner/lib/LoaderRunner.js:205:4)              
+    at Storage.finished (/usr/src/app/node<sub>modules</sub>/enhanced-resolve/lib/CachedInputFileSystem.js:43:16)   
+    at provider (/usr/src/app/node<sub>modules</sub>/enhanced-resolve/lib/CachedInputFileSystem.js:79:9)            
+    at /usr/src/app/node<sub>modules</sub>/graceful-fs/graceful-fs.js:90:16                                         
+    at FSReqWrap.readFileAfterClose [as oncomplete] (internal/fs/read<sub>file</sub><sub>context.js</sub>:53:3)               
+</p>
+
+<p>
+@ ./assets/js/app.js 38:0-29                                                                             
+</p>
+</blockquote>
+<p>
+I'm not sure why this happens because I did try to run <code>yarn install</code>. So when I tried to run <code>docker-compose exec php composer install</code>, 
+it failed again, and is telling me that I do not have <i>composer</i> installed, which is totally nonsense.
+But anyway, I'm giving up at this stage. I might come back and try out the Docker image <a href="https://github.com/maxpou/docker-symfony">here</a>, but until then, peace.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2019-10-05 Sat 15:19</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

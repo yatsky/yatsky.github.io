@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-10-07 Mon 17:02 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nodejs course by Linkedin Learning</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="遥泥[yaoni]" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="./index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Nodejs course by Linkedin Learning</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org59b1873">1. Nodejs essentials</a></li>
+</ul>
+</div>
+</div>
+<p>
+-<b>-coding: chinese-gbk -</b>-
+</p>
+
+<div id="outline-container-org59b1873" class="outline-2">
+<h2 id="org59b1873"><span class="section-number-2">1</span> Nodejs essentials</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Argument variables with process.argv</label><pre class="src src-js" id="org30d6ac6"><span class="org-keyword">const</span> <span class="org-variable-name">grab</span> = flag =&gt; {
+    <span class="org-keyword">let</span> = indexAfterFlag = process.argv.indexOf(flag) + 1;
+    <span class="org-keyword">return</span> process.argv[indexAfterFlag];
+}
+
+<span class="org-keyword">const</span> <span class="org-variable-name">greeting</span> = grab(<span class="org-string">"--greeting"</span>);
+<span class="org-keyword">const</span> <span class="org-variable-name">user</span> = grab(<span class="org-string">"--user"</span>);
+
+console.log(<span class="org-string">`${greeting} ${user}`</span>);
+</pre>
+</div>
+
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>standard output</label><pre class="src src-js" id="orgc109bcf">process.stdout.write(<span class="org-string">"Hello "</span>);
+process.stdout.write(<span class="org-string">"Hello \n\n\n"</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">questions</span> = [
+    <span class="org-string">"What is your name?"</span>,
+    <span class="org-string">"What would you rather be doing"</span>,
+    <span class="org-string">"What is your preferred programming language?"</span>
+]
+
+<span class="org-keyword">const</span> <span class="org-variable-name">ask</span> = (i=0) =&gt;{
+    process.stdout.write(<span class="org-string">`\n\n\n${questions[i]}`</span>);
+    process.stdout.write(<span class="org-string">` &gt; `</span>);
+}
+
+ask()
+<span class="org-keyword">return</span> <span class="org-string">""</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>standard input</label><pre class="src src-js" id="org6dd1d46">
+<span class="org-keyword">const</span> <span class="org-variable-name">grab</span> = flag =&gt; {
+    <span class="org-keyword">let</span> = indexAfterFlag = process.argv.indexOf(flag) + 1;
+    <span class="org-keyword">return</span> process.argv[indexAfterFlag];
+}
+
+<span class="org-keyword">const</span> <span class="org-variable-name">greeting</span> = grab(<span class="org-string">"--greeting"</span>);
+<span class="org-keyword">const</span> <span class="org-variable-name">user</span> = grab(<span class="org-string">"--user"</span>);
+
+console.log(<span class="org-string">`${greeting} ${user}`</span>);
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>standard output</label><pre class="src src-js" id="org5da15a0">process.stdout.write(<span class="org-string">"Hello "</span>);
+process.stdout.write(<span class="org-string">"Hello \n\n\n"</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">questions</span> = [
+    <span class="org-string">"What is your name?"</span>,
+    <span class="org-string">"What would you rather be doing"</span>,
+    <span class="org-string">"What is your preferred programming language?"</span>
+]
+
+<span class="org-keyword">const</span> <span class="org-variable-name">ask</span> = (i=0) =&gt;{
+    process.stdout.write(<span class="org-string">`\n\n\n${questions[i]}`</span>);
+    process.stdout.write(<span class="org-string">` &gt; `</span>);
+}
+
+ask();
+
+<span class="org-keyword">const</span> <span class="org-variable-name">answers</span> = [];
+process.stdin.on(<span class="org-string">"data"</span>, data =&gt; {
+    answers.push(data.toString().trim());
+    <span class="org-keyword">if</span> (answers.length &lt; questions.length){
+        ask(answers.length);
+    } <span class="org-keyword">else</span> {
+        process.exit();
+    }
+});
+
+process.on(<span class="org-string">'exit'</span>, () =&gt; {
+    <span class="org-keyword">const</span> [<span class="org-variable-name">name</span>, <span class="org-variable-name">activity</span>, <span class="org-variable-name">lang</span>] = answers;
+
+    console.log(<span class="org-string">`</span>
+<span class="org-string">Thank you for your answers.</span>
+<span class="org-string">Go ${activity} ${name} you can write ${lang} code later.</span>
+<span class="org-string">`</span>)
+});
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 5: </span>Creating a delay with setTimeout</label><pre class="src src-js" id="org89a70e1"><span class="org-keyword">const</span> <span class="org-variable-name">waitTime</span> = 3000;
+console.log(<span class="org-string">`setting a ${waitTime/1000} second delay`</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">timerFinished</span> = () =&gt; console.log(<span class="org-string">"done"</span>);
+
+setTimeout(timerFinished, waitTime);
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 6: </span>Incorporate setInterval</label><pre class="src src-js" id="org957051e">
+<span class="org-keyword">const</span> <span class="org-variable-name">waitTime</span> = 3000;
+<span class="org-keyword">const</span> <span class="org-variable-name">waitInterval</span> = 500;
+<span class="org-keyword">let</span> <span class="org-variable-name">currentTime</span> = 0;
+
+<span class="org-keyword">const</span> <span class="org-variable-name">incTime</span> = () =&gt; {
+    currentTime += waitInterval;
+    console.log(<span class="org-string">`waiting ${currentTime / 1000} seconds`</span>);
+}
+console.log(<span class="org-string">`setting a ${waitTime/1000} second delay`</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">timerFinished</span> = () =&gt; {
+    clearInterval(interval);
+    console.log(<span class="org-string">"done"</span>);   
+}
+
+<span class="org-keyword">const</span> <span class="org-variable-name">interval</span> = setInterval(incTime, waitInterval);
+setTimeout(timerFinished, waitTime);
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 7: </span>Report progress with setInterval</label><pre class="src src-js" id="org8c0d361">
+<span class="org-keyword">const</span> <span class="org-variable-name">waitTime</span> = 5000;
+<span class="org-keyword">const</span> <span class="org-variable-name">waitInterval</span> = 500;
+<span class="org-keyword">let</span> <span class="org-variable-name">currentTime</span> = 0;
+<span class="org-keyword">const</span> <span class="org-variable-name">readline</span> = require(<span class="org-string">'readline'</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">incTime</span> = () =&gt; {
+    currentTime += waitInterval;
+    <span class="org-keyword">const</span> <span class="org-variable-name">p</span> = Math.floor((currentTime / waitTime) * 100);
+    readline.cursorTo(0);
+    readline.cursorTo(0);
+    process.stdout.write(<span class="org-string">`waiting...${p}%\n`</span>);
+    console.log(<span class="org-string">`waiting ${currentTime / 1000} seconds`</span>);
+}
+<span class="org-keyword">const</span> <span class="org-variable-name">log</span> = () =&gt; console.log(<span class="org-string">`setting a ${waitTime/1000} second delay`</span>);
+
+
+<span class="org-keyword">const</span> <span class="org-variable-name">timerFinished</span> = () =&gt; {
+    clearInterval(interval);
+    console.log(<span class="org-string">"done"</span>);   
+}
+
+<span class="org-keyword">const</span> <span class="org-variable-name">interval</span> = setInterval(incTime, waitInterval);
+log();
+setTimeout(timerFinished, waitTime);
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 8: </span>core modules</label><pre class="src src-js" id="orge5af35c"><span class="org-keyword">const</span> <span class="org-variable-name">path</span> = require(<span class="org-string">"path"</span>);
+<span class="org-keyword">const</span> <span class="org-variable-name">util</span> = require(<span class="org-string">"util"</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">dirUploads</span> = path.join(__dirname, <span class="org-string">"www"</span>, <span class="org-string">"files"</span>, <span class="org-string">"fun"</span>);
+console.log(dirUploads);
+util.log(path.basename(__filename));
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 9: </span>Collect information with readline</label><pre class="src src-js" id="org1224cc5"><span class="org-keyword">const</span> <span class="org-variable-name">readline</span> = require(<span class="org-string">"readline"</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">rl</span> = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question(<span class="org-string">"How do you like Node?"</span>, answer =&gt; {
+    console.log(<span class="org-string">`Your answer is ${answer}`</span>);
+});
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 10: </span>Write a file</label><pre class="src src-js" id="orgbd3f0e3"><span class="org-keyword">const</span> <span class="org-variable-name">readline</span> = require(<span class="org-string">"readline"</span>);
+<span class="org-keyword">const</span> <span class="org-variable-name">rl</span> = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+<span class="org-keyword">const</span> <span class="org-variable-name">questions</span> = [
+    <span class="org-string">"what is your name?"</span>,
+    <span class="org-string">"where do you live?"</span>,
+    <span class="org-string">"what are you going to do with node js?"</span>
+];
+
+<span class="org-keyword">const</span> <span class="org-variable-name">collectAnswers</span> = (questions, done) =&gt; {
+    <span class="org-keyword">const</span> <span class="org-variable-name">answers</span> = [];
+    <span class="org-keyword">const</span> [<span class="org-variable-name">firstQuestion</span>] = questions;
+
+    <span class="org-keyword">const</span> <span class="org-variable-name">questionAnswerd</span> = answer =&gt; {
+        answers.push(answers);
+        <span class="org-keyword">if</span> (answers.length &lt; questions.length){
+            rl.questions(questions[answers.length]);
+        }<span class="org-keyword">else</span>{
+            done(answers);
+        }
+    };
+
+    rl.question(firstQuestion, questionAnswered);
+    <span class="org-comment-delimiter">// </span><span class="org-comment">done(answers);</span>
+}
+collectAnswers(questions, answers =&gt; {
+    console.log(<span class="org-string">"Thanks for the answers"</span>);
+
+    process.exit();
+
+});
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 11: </span>Export custom modules</label><pre class="src src-js" id="org0d16a94"><span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * Export_custome_modules.js</span>
+<span class="org-comment"> */</span>
+<span class="org-keyword">let</span> <span class="org-variable-name">count</span> = 0;
+
+<span class="org-keyword">const</span> <span class="org-variable-name">inc</span> = () =&gt; ++count;
+<span class="org-keyword">const</span> <span class="org-variable-name">dec</span> = () =&gt; --count;
+
+<span class="org-keyword">const</span> <span class="org-variable-name">getCount</span> = () =&gt; count;
+
+module.exports ={
+    inc,
+    dec,
+    getCount
+}
+<span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * In another file</span>
+<span class="org-comment"> */</span>
+
+<span class="org-keyword">const</span> {inc, dec, getCount} = require(<span class="org-string">"./Export_custome_modules"</span>);
+inc();
+inc();
+inc();
+dec();
+
+getCount();
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 12: </span>Create a module</label><pre class="src src-js" id="org92e1dd0"><span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * lib.js</span>
+<span class="org-comment"> */</span>
+<span class="org-keyword">const</span> <span class="org-variable-name">readline</span> = require(<span class="org-string">"readline"</span>);
+<span class="org-keyword">const</span> <span class="org-variable-name">rl</span> = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+<span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * f =&gt; f provides a default function in case the required one is not provided.</span>
+<span class="org-comment"> */</span>
+module.exports = collectAnswers = (questions, done = f =&gt; f) =&gt; {
+    <span class="org-keyword">const</span> <span class="org-variable-name">answers</span> = [];
+    <span class="org-keyword">const</span> [<span class="org-variable-name">firstQuestion</span>] = questions;
+
+    <span class="org-keyword">const</span> <span class="org-variable-name">questionAnswerd</span> = answer =&gt; {
+        answers.push(answers);
+        <span class="org-keyword">if</span> (answers.length &lt; questions.length){
+            rl.questions(questions[answers.length]);
+        }<span class="org-keyword">else</span>{
+            done(answers);
+        }
+    };
+
+    rl.question(firstQuestion, questionAnswered);
+    <span class="org-comment-delimiter">// </span><span class="org-comment">done(answers);</span>
+}
+
+<span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * questions.js</span>
+<span class="org-comment"> */</span>
+<span class="org-keyword">const</span> <span class="org-variable-name">collectAnswers</span> = require(<span class="org-string">"./lib/collectAnswers"</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">questions</span> = [
+    <span class="org-string">"what is your name?"</span>,
+    <span class="org-string">"where do you live?"</span>,
+    <span class="org-string">"what are you going to do with node js?"</span>
+];
+
+collectAnswers(questions, answers =&gt; {
+    console.log(<span class="org-string">"Thanks for the answers."</span>);
+    console.log(answers);
+    process.exit();
+})
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 13: </span>Custom events with the EventEmitter</label><pre class="src src-js" id="org1b96614"><span class="org-keyword">const</span> <span class="org-variable-name">events</span> = require(<span class="org-string">"events"</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">emitter</span> = <span class="org-keyword">new</span> <span class="org-type">events.EventEmitter</span>();
+
+
+emitter.on(<span class="org-string">"eventName"</span>, (message, user=<span class="org-string">"Anonymous"</span>) =&gt;{
+    console.log(<span class="org-string">`${user}: ${message}`</span>);
+
+});
+emitter.emit(<span class="org-string">"eventName"</span>, <span class="org-string">"Hello world"</span>, <span class="org-string">"Computer"</span> );
+emitter.emit(<span class="org-string">"eventName"</span>, <span class="org-string">"That's cocol"</span>);
+
+process.stdin.on(<span class="org-string">"data"</span>, data =&gt; {
+    <span class="org-keyword">const</span> <span class="org-variable-name">input</span> = data.toString().trim();
+    <span class="org-keyword">if</span> (input === <span class="org-string">"exit"</span>){
+        emitter.emit(<span class="org-string">"customEvent"</span>, <span class="org-string">"Goodbye!"</span>, <span class="org-string">"process"</span>);
+        process.exit();
+    }
+
+    emitter.emit(<span class="org-string">"eventName"</span>, input, <span class="org-string">"terminal"</span>);
+})
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 14: </span>Improve a module with EventEmitter</label><pre class="src src-js" id="orge8879d2">
+<span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * lib.js</span>
+<span class="org-comment"> */</span>
+<span class="org-keyword">const</span> <span class="org-variable-name">readline</span> = require(<span class="org-string">"readline"</span>);
+<span class="org-keyword">const</span> {EventEmitter} = require(<span class="org-string">"events"</span>);
+<span class="org-keyword">const</span> <span class="org-variable-name">rl</span> = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+<span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * f =&gt; f provides a default function in case the required one is not provided.</span>
+<span class="org-comment"> */</span>
+module.exports = collectAnswers = (questions, done = f =&gt; f) =&gt; {
+    <span class="org-keyword">const</span> <span class="org-variable-name">answers</span> = [];
+    <span class="org-keyword">const</span> [<span class="org-variable-name">firstQuestion</span>] = questions;
+    <span class="org-keyword">const</span> <span class="org-variable-name">emitter</span> = <span class="org-keyword">new</span> <span class="org-type">EventEmitter</span>();
+
+    <span class="org-keyword">const</span> <span class="org-variable-name">questionAnswerd</span> = answer =&gt; {
+        emitter.emit(<span class="org-string">"answer"</span>, answer);
+        answers.push(answers);
+        <span class="org-keyword">if</span> (answers.length &lt; questions.length){
+            rl.questions(questions[answers.length]);
+        }<span class="org-keyword">else</span>{
+            emitter.emit(<span class="org-string">"complete"</span>, answers);
+            done(answers);
+        }
+    };
+
+    rl.question(firstQuestion, questionAnswered);
+    <span class="org-comment-delimiter">// </span><span class="org-comment">done(answers);</span>
+    <span class="org-keyword">return</span> emitter;
+}
+
+<span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * questions.js</span>
+<span class="org-comment"> */</span>
+<span class="org-keyword">const</span> <span class="org-variable-name">collectAnswers</span> = require(<span class="org-string">"./lib/collectAnswers"</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">questions</span> = [
+    <span class="org-string">"what is your name?"</span>,
+    <span class="org-string">"where do you live?"</span>,
+    <span class="org-string">"what are you going to do with node js?"</span>
+];
+
+<span class="org-keyword">const</span> <span class="org-variable-name">answerEvents</span> = collectAnswers(questions, answers =&gt; {
+    console.log(<span class="org-string">"Thanks for the answers."</span>);
+    console.log(answers);
+    process.exit();
+})
+
+answerEvents.on(<span class="org-string">"answer"</span>, answer =&gt;
+                console.log(<span class="org-string">`question answered: ${answer}`</span>)
+               );
+answerEvents.on(<span class="org-string">"complete"</span>, answers =&gt; {
+    console.log(answers);
+});
+
+<span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * bind second callback to the event</span>
+<span class="org-comment"> */</span>
+answerEvents.on(<span class="org-string">"complete"</span>, answers =&gt; {
+    process.exit();
+});
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 15: </span>List directory files</label><pre class="src src-js" id="orgc20f40d"><span class="org-keyword">const</span> <span class="org-variable-name">fs</span> = require(<span class="org-string">"fs"</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">files</span> = fs.readdirSync(__dirname);
+fs.readdir(__dirname, (err, files)=&gt; {
+
+    <span class="org-keyword">if</span> (err) {
+        <span class="org-keyword">throw</span> err;
+    }
+    <span class="org-comment-delimiter">/*</span>
+<span class="org-comment">     * Code to execute something</span>
+<span class="org-comment">     */</span>
+});
+
+console.log(files);
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 16: </span>Readable file streams</label><pre class="src src-js" id="orgd33fad7"><span class="org-keyword">const</span> <span class="org-variable-name">fs</span> = require(<span class="org-string">"fs"</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">readStream</span> = fs.createReadStream(<span class="org-string">"./path/to/file"</span>, <span class="org-string">"UTF-8"</span>);
+
+<span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * read the file chunk by chunk so that we do not need to load it in memory</span>
+<span class="org-comment"> */</span>
+readStream.on(<span class="org-string">"data"</span>, data=&gt;{
+    console.log(<span class="org-string">`I read ${data.length - 1} characters of text`</span>);
+});
+
+
+readStream.once(<span class="org-string">"data"</span>, data=&gt;{
+    <span class="org-comment-delimiter">/*</span>
+<span class="org-comment">     * some code to do when receiving data</span>
+<span class="org-comment">     */</span>
+});
+readStream.on(<span class="org-string">"end"</span>, data=&gt;{
+    <span class="org-comment-delimiter">/*</span>
+<span class="org-comment">     * some code to do when finishes the file stream</span>
+<span class="org-comment">     */</span>
+});
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 17: </span>Writable file streams</label><pre class="src src-js" id="org976a4ed">
+<span class="org-keyword">const</span> <span class="org-variable-name">fs</span> = require(<span class="org-string">"fs"</span>);
+<span class="org-keyword">const</span> <span class="org-variable-name">writeStream</span> = fs.createWriteStream(<span class="org-string">"./path/to/file"</span>, <span class="org-string">"UTF-8"</span>);
+
+process.stdin.on(<span class="org-string">"data"</span>, data =&gt; {
+    writeStream.write(data);
+});
+
+<span class="org-keyword">const</span> <span class="org-variable-name">readStream</span> = fs.createReadStream(<span class="org-string">"./path/to/file"</span>, <span class="org-string">"UTF-8"</span>);
+readStream.on(<span class="org-string">"data"</span>, data =&gt; {
+    writeStream.write(data);
+});
+
+
+process.stdin.pip(writeStream);
+readStream.pip(writeStream);
+</pre>
+</div>
+
+<p>
+Synchronous
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 18: </span>Create child process with exec</label><pre class="src src-js" id="org901b4fd"><span class="org-keyword">const</span> <span class="org-variable-name">cp</span> = require(<span class="org-string">"child_process"</span>);
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">cp.exec("open http://www.linkedin.com/learning");</span>
+cp.exec(<span class="org-string">"ls"</span>, (err, data) =&gt; {
+
+    <span class="org-keyword">if</span> (err){
+        <span class="org-keyword">throw</span> err;
+    }
+    console.log(data);
+});
+
+</pre>
+</div>
+
+<p>
+Asynchronous
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 19: </span>Create child process with spwn</label><pre class="src src-js" id="org86a6c09"><span class="org-keyword">const</span> <span class="org-variable-name">cp</span> = require(<span class="org-string">"child_process"</span>);
+
+<span class="org-keyword">const</span> <span class="org-variable-name">questionApp</span> = cp.spawn(<span class="org-string">"node"</span>, [<span class="org-string">"filename.js"</span>]);
+questionApp.stdin.write(<span class="org-string">"Thomas \n"</span>);
+questionApp.stdin.write(<span class="org-string">"Wehre \n"</span>);
+questionApp.stdin.write(<span class="org-string">"Change the world \n"</span>);
+
+
+questionApp.stdout.on(<span class="org-string">"data"</span>, data =&gt; {
+    console.log(<span class="org-string">`from the question app: ${data}`</span>);
+});
+
+questionApp.on(<span class="org-string">"close"</span>, () =&gt; {
+    console.log(<span class="org-string">"Question app process exited"</span>);
+});
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: 遥泥[yaoni]</p>
+<p class="date">Created: 2019-10-07 Mon 17:02</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
