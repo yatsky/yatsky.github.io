@@ -1,0 +1,7203 @@
+# -*- mode: org; coding: utf-8 -*-
+#+TITLE: CCL words and phrases
+* Medical
+** Heart and Circulatory System 心脏和循环系统
+
+*** Word :drill:
+:PROPERTIES:
+:ID:       57ba18c0-804c-4148-9783-00f4fc3965c2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Heart and Circulatory System 
+**** Chinese
+心脏和循环系统
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cbf2f521-87a6-43eb-be20-2d7f982eef66
+:DRILL_CARD_TYPE:  twosided
+:END:
+**** English
+blood vessel 
+**** Chinese
+血管
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d2f289bf-80fe-4530-b556-8ecfe80ae0c2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+artery
+**** Chinese
+动脉
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       be11ce3e-2a53-468e-a848-14dd5acdb503
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+vein
+**** Chinese
+静脉
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       be57ad97-5b5d-4bf3-9943-250a9e0d9034
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+capillary
+**** Chinese
+毛细血管
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       17837df0-e798-457c-ab91-807087df74b8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+ventricle
+**** Chinese
+心室
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1619f27e-e58b-4897-b4c4-cba60386fbe4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+atrium
+**** Chinese
+心房
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4855af47-2547-41e0-ac45-2f89499cde1f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+red blood cell (RBCs) (erythrocytes) 
+**** Chinese
+红血球
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9ce1378d-7a5d-41c2-88b6-494417baa5b6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+white blood cell (WBCs) (leukocytes) 
+**** Chinese
+白血球
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e5dfb916-c298-497e-8f88-6ed79a6652bf
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+platelet (thrombocyte) 
+**** Chinese
+血小板
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       317d7cbe-c5fa-4243-88f3-d41998303450
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+circulatory system
+**** Chinese
+循环系统
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d8436fd9-6f85-45a3-9e66-ef996c138d78
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+plasma
+**** Chinese
+血浆
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       114bbe77-0674-48c2-87d2-f813cf5497eb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+hemoglobin
+**** Chinese
+血红蛋白, 血色素
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2447f860-2236-4082-b2a8-5bac77168569
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+antibody
+**** Chinese
+抗体
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6388ad6a-12ec-40a4-a0b0-a390055a7877
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+anaemia
+**** Chinese
+贫血症
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9a96d858-352c-49c8-b356-ea5bdab83ac8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+leukemia
+**** Chinese
+白血病
+**** Example sentence
+** Bones, Muscles, and Joint 骨头、肌肉和关节
+*** Word :drill:
+:PROPERTIES:
+:ID:       53243cdb-0bcb-403a-b655-a043899f5bc8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Bones, Muscles, and Joint 
+**** Chinese
+骨头、肌肉和关节
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       02228a30-693c-43fe-8898-935411bc6fc7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Skeleton
+**** Chinese
+骨骼
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8613b50a-f13b-466f-89c5-1ef48c4fdad9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Skull
+**** Chinese
+头骨
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d626362f-fa12-466d-ad75-ad278d92a157
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Spine
+**** Chinese
+脊柱
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cf15f27a-ef9d-4ad4-9183-388a869de629
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Spinal cor 
+**** Chinese
+脊髓
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2c0391a9-1a53-4416-9aec-c69c95f8a16a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Rib 
+**** Chinese
+肋骨
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       50c376db-275c-4d00-b8df-2dadbab466a2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Cartilage
+**** Chinese
+软骨组织
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cbe84614-a930-4a04-a12a-6cc1a5451221
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Collagen
+**** Chinese
+骨胶原
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3af9b93a-4143-47ab-8dd2-a53d586d70c2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Ligament 
+**** Chinese
+韧带
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       55c2d744-5c30-404a-8a14-1d1e493178db
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Tendon 
+**** Chinese
+腱
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4e620909-5271-4ecb-9ea4-726694adc01d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Bone marrow
+**** Chinese
+骨髓
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       14f8157b-df8f-41ae-86e9-6e80cdfc9d69
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Joint 
+**** Chinese
+关节
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       636cc442-11c9-449e-9234-a8e973db9809
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Arthritis
+**** Chinese
+关节炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d184c08f-c16e-49d3-8020-601dd85f8514
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Fracture
+**** Chinese
+骨折
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       176f755c-0afc-4d31-84ae-ae3e51e084c0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Osteoporosis
+**** Chinese
+骨质疏松症
+**** Example sentence
+** Brain and Nervous System 大脑和神经系统
+*** Word :drill:
+:PROPERTIES:
+:ID:       6ccbfe15-d4b4-4eee-9413-f20cad51efcb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Brain and Nervous System 
+**** Chinese
+大脑和神经系统
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d4e94727-f1cb-4bb9-9ef8-f0529a4904ba
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+vertebra 
+**** Chinese
+椎骨
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7123002d-f545-4640-b3fd-1da7cd365178
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+neuron
+**** Chinese
+神经元
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       db1f15f9-6d87-4f22-a5fb-19f14fa5128c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+central nervous syste 
+**** Chinese
+中枢神经系统
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       256aa34c-ff17-48a2-829c-5e3c4db2222f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Cerebral palsy
+**** Chinese
+大脑性麻痹
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e5914264-8b5d-4bf7-877c-922b5bcb1a6c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+epilepsy
+**** Chinese
+癫痫
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a1e76e87-79b4-4a3f-9c58-111e16fd64b9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+meningitis
+**** Chinese
+脑膜炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       062ceca3-2317-4358-a0c6-cffc08838785
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+encephalitis
+**** Chinese
+脑炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ced8b553-1c45-4673-8ee0-ade29645fc76
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+mental illness
+**** Chinese
+精神病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       84e81096-205b-4aae-887d-0a35ec48f09b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+concussion
+**** Chinese
+脑震荡
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       dace258b-035b-404c-9c7d-39117b08f6b6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+migraine
+**** Chinese
+偏头痛
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       78b5b8e2-dfc1-4b1e-bbea-db4b8e210abc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Eye 
+**** Chinese
+眼睛
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b221f083-c22f-44d2-85ad-8a59ee2f1b30
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+eye bal 
+**** Chinese
+眼球
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       908ebe8c-2206-4553-8693-7182266ba6be
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+cornea
+**** Chinese
+角膜
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       03940cba-d173-409c-aa6d-52e730749280
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+pupil
+**** Chinese
+瞳孔
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       31ecd4ca-a49f-4b69-a2be-6c1338e2b49e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+iris
+**** Chinese
+虹膜
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       992e599b-b8a4-4c15-a574-decf264632b1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sclera
+**** Chinese
+巩膜
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       24fec96c-cc13-48eb-984c-66186c1ffcfa
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+retina
+**** Chinese
+视网膜
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7f7da5cb-8ab7-4ae0-af38-2ccba5cdc4c0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+vitreous humour
+**** Chinese
+玻璃质
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       dafe7923-8b1f-410f-8c86-22be9a7f766f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+lens
+**** Chinese
+晶状体,水晶体
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ed72e3cb-b875-42f9-a267-4ba3534dc122
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+optic nerv 
+**** Chinese
+视神经
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       eac8dd73-a78e-4347-813e-8159e24316a2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+near-sightedness
+**** Chinese
+近视
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a3f22af1-80c2-4dfc-b385-cd1d52ef872d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+far-sightedness
+**** Chinese
+远视
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a18dda24-bd3b-464e-9e08-6e118c1238c4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+cataract
+**** Chinese
+白内障
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       17f2a41b-980e-44e3-9f7d-38907dfc620b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+conjunctivitis
+**** Chinese
+结膜炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5af5f454-f87f-4505-979f-ca5313833038
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+glaucoma
+**** Chinese
+青光眼
+**** Example sentence
+** Digestive System 消化系统
+*** Word :drill:
+:PROPERTIES:
+:ID:       ebc96b87-4b50-420b-81f4-f8162385ef83
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Digestive System 
+**** Chinese
+消化系统
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       660004ac-ab12-44bd-bd6c-51972bb9df14
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Esophagus
+**** Chinese
+食道
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e5df4bd9-c443-4623-8662-02c6a2cf75c9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+moving your bowel 
+**** Chinese
+(to poop) 动词大便
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       93b6b674-7c8c-4798-842c-14ea178644a1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+a bowel movemen 
+**** Chinese
+名词大便
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f9726483-a1cf-4d18-aa19-b76e21684665
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bowel 
+**** Chinese
+(large intestine) 大肠
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7d8ee877-d854-4a88-bef9-87f1daa89fd3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+constipation
+**** Chinese
+便秘
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1a85dca5-36a7-44e7-81a9-1cf24a010665
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+laxative 
+**** Chinese
+轻泻剂
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       07990447-5dab-424c-bf33-d0c17f39ad85
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+diarrhea
+**** Chinese
+腹泻
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1ab52d0e-ab67-47dd-9a35-201b60fb9037
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+nausea
+**** Chinese
+恶心, 作呕
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       731126b3-4657-4a53-8d07-bcbaf979e1e3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+vomit
+**** Chinese
+(throw up) 呕吐
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       006ce4d9-5879-4394-86e1-c59262cc3a33
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+abdominal pain
+**** Chinese
+腹痛
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       bbaea21d-7c53-4a4c-9400-a499eea0569a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+tummy pai 
+**** Chinese
+肚子痛
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       19df9e77-014d-41b7-a925-bd7383b80267
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bloating
+**** Chinese
+胀气
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a57cfbfd-d669-42a4-ad50-1317b5ba0183
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+cramp 
+**** Chinese
+腹部绞痛
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f57c98ba-ab2f-48ef-8f44-73e13c4f46e0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+anus
+**** Chinese
+肛门
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b1f2feeb-163d-442e-9f92-ac3df6ccaa6a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+gall bladder
+**** Chinese
+胆囊
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       007062b8-fa4a-48ff-9a0a-96f95ef2b9d8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bile
+**** Chinese
+胆汁
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       dc7f968e-a170-4529-91f2-84a1966f5b56
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+duodenum
+**** Chinese
+十二指肠
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       bb53233e-aaf2-4cf0-bb8a-09c07d8cacc8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+pancreas
+**** Chinese
+胰腺
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6e41e98e-325d-4d39-ac9b-58996be84d65
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+liver
+**** Chinese
+肝脏
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c11b627b-da69-4d69-a608-29c3a31934b0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+appendix
+**** Chinese
+阑尾
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0869b134-9ae4-4a5a-8181-a79e9cc1460b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+ulcer 
+**** Chinese
+溃疡
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       52882052-2b2d-49b3-8d04-5215173376f6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+heartburn
+**** Chinese
+胃灼热
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c5ee8050-ad1a-4ab7-ad0e-5327922f265d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bowel regularity
+**** Chinese
+排便有规律
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6a09f9ee-25a4-4915-9b40-b09148ded2ae
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Irritable Bowel Syndrome 
+**** Chinese
+肠易激综合症
+**** Example sentence
+** Endocrine System 内分泌系统
+*** Word :drill:
+:PROPERTIES:
+:ID:       6c7e90f4-891e-43b4-bea6-4fe57053d1ec
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Endocrine System 
+**** Chinese
+内分泌系统
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3d6bf338-5f88-4bc9-be29-cb041b4fb494
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+hormone
+**** Chinese
+激素,荷尔蒙
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7ca645c0-072b-4f4a-a063-c69d5fecd85e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+gland
+**** Chinese
+腺
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       173945b8-786a-41a7-a1d9-683ec7d0d8c3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+pituitary
+**** Chinese
+垂体
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d45943b6-65c1-4444-ac69-7942b0654605
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+thyroid
+**** Chinese
+甲状腺
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       928e4925-10dc-4f17-b682-b7141382614b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+adrenal
+**** Chinese
+肾上腺
+**** Example sentence
+** Urinary System 泌尿系统 
+*** Word :drill:
+:PROPERTIES:
+:ID:       cebd77e9-719e-4d6d-9ee0-87fc0a4a2f87
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Urinary System 
+**** Chinese
+泌尿系统 
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c050746d-aed9-488d-aeab-41d2fa4d7cdb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Kidney 
+**** Chinese
+肾脏
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       26ef9577-7455-4cb2-b391-b14fe9ff00c2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+urine
+**** Chinese
+名词小便
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       77bb67be-4153-4e67-98ec-cad5a54a42b4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+urinate
+**** Chinese
+动词小便
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       75faaea3-19e3-4120-95d6-d128414fc007
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+ureter 
+**** Chinese
+输尿管
+**** Example sentence
+(urinary) bladde 膀胱
+*** Word :drill:
+:PROPERTIES:
+:ID:       321b7beb-9666-4b68-8128-d4ce07fcec62
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Urethra
+**** Chinese
+尿道
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9ac61405-ce87-45a8-8e4d-79cfcc4229d3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+kidney (renal) failure
+**** Chinese
+肾衰竭
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       39ea642f-4f04-4f71-b524-3097fe3a9a68
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+kidney stone 
+**** Chinese
+(or nephrolithiasis) 肾结石
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       aa5d28f6-a7b1-4135-812b-39d3a0929732
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+nephritis
+**** Chinese
+肾炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5c31c17f-8aa0-44f3-8f6b-88da6e7e6477
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+urinary tract infection 
+**** Chinese
+尿路感染
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       20948cdd-8651-4a9f-8a19-fe3b679fa1f2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+dialysis
+**** Chinese
+透析
+**** Example sentence
+** Female Reproductive System 女性生殖系统
+*** Word :drill:
+:PROPERTIES:
+:ID:       3d8f48a2-959b-4be7-8bf4-0f5d0e950ac5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Female Reproductive System 
+**** Chinese
+女性生殖系统
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       785d9c74-0af9-4f65-95ca-00e12fbe3b6d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Vagina
+**** Chinese
+阴道
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b041a64d-fd8a-4d05-97e5-caea05202b63
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+uterus
+**** Chinese
+(womb) 子宫
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       312a3911-7cbd-4578-87bc-3a14571e6321
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+cervix
+**** Chinese
+子宫颈
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       900653ec-c420-4500-b5d3-923b8f344982
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+fallopian tube 
+**** Chinese
+输卵管
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       65ce02e0-94fa-4bf8-be52-c5a543d06df6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+ovary
+**** Chinese
+卵巢
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4bcf2850-7850-42c4-9e4a-642024acd382
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+menstruation
+**** Chinese
+(period) 月经
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e8386224-3035-40a6-9f4c-da7594b3c4b4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+fetus
+**** Chinese
+胚胎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f928e490-2880-4773-9a7b-c928669209f2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+embryo
+**** Chinese
+胚胎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3c19f2d8-b456-4576-8da1-a56ade284580
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+pregnant
+**** Chinese
+怀孕
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b7b3fd3c-4a62-4ce3-9658-06d334f43d33
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+ectopic pregnancy
+**** Chinese
+子宫外孕
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a2e9169e-cfca-4ecb-85b8-345804568dac
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+IVF
+**** Chinese
+试管受精
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b51c6f8a-428a-4fb0-8fae-0725ad9eefd3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+caesarean sectio 
+**** Chinese
+剖腹产
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       942cecc1-c53b-45db-baaa-83dd07358fbb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+natural birth
+**** Chinese
+自然产
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b7d85e87-5ac6-43ce-9721-919a98b9f8b6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+gynecologist
+**** Chinese
+妇科医生
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       46b6f500-9a42-496d-b671-ec51c8d58491
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+obstetrician
+**** Chinese
+产科医生
+**** Example sentence
+** Male Reproductive System 男性生殖系统
+*** Word :drill:
+:PROPERTIES:
+:ID:       5640f32b-4dca-4fbf-ade6-6884bf73a8c2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Male Reproductive System 
+**** Chinese
+男性生殖系统
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1413fd8e-b387-4857-8c18-aa3750d69bca
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+prostate gland
+**** Chinese
+前列腺
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e4a8f418-824c-4ead-81e6-dbc2ba4094d9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+testicle 
+**** Chinese
+睾丸
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c0405bb7-a58d-4b55-befd-1387d8264707
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+penis
+**** Chinese
+阴茎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2ae26212-97d3-4122-86f2-f9fe7be2eb81
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+testosteron 
+**** Chinese
+睾丸激素
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4dad6031-1c2e-4302-a345-0a3473f8621c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+semen
+**** Chinese
+精液
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       bba6a568-dbd0-4733-900d-44a176976884
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+contraceptive
+**** Chinese
+避孕用具：防止怀孕的器具、药物或化学制剂
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e1b3921f-8137-468a-9c58-9b9f101b4167
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+condom
+**** Chinese
+避孕套;安全套
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       54e2ff40-a13b-4365-bee3-8312cb3a7499
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sperm
+**** Chinese
+精子
+**** Example sentence
+** Ailment 
+*** Word                                                            :drill:
+:PROPERTIES:
+:ID:       3a08a41e-b049-4839-85a3-7c3a985b7b0a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+acne
+**** Chinese
+粉刺
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       70e0b15b-e421-439b-82f5-c32f902cd95c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+acute
+**** Chinese
+急性的
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1ae4040b-9e5e-4255-9f2c-ea43f4b02608
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+allergy
+**** Chinese
+敏感症
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c647e598-5e48-4534-badf-03d9df770c08
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Alzheimer’s disease
+**** Chinese
+阿尔茨海默病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ef0ed7c5-9c65-493d-a5f9-2fd9cc56ea6d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+anemia
+**** Chinese
+(anaemia) 贫血
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8523629c-1df8-4a3e-9475-fef5e17fcae1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+angina pectoris
+**** Chinese
+心绞痛
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       89115d35-3aaa-4189-b960-81631c5fecd9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+appendicitis
+**** Chinese
+阑尾炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3e1ad326-511a-44f8-831d-5a40050bd782
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+asthma
+**** Chinese
+哮喘
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       da9b767e-1100-4153-82d0-6856ee36588a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+brain tumour
+**** Chinese
+脑瘤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3f055797-4df8-4a2b-965c-b693cef81b1c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+breast cance 
+**** Chinese
+乳房癌
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       59bb3471-786a-4633-b411-5883cc8288cd
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bronchitis
+**** Chinese
+支气管炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       218683ae-5337-4fb1-a4fe-7eabce571877
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+chicken pox
+**** Chinese
+水痘
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       65a63d9a-1c5d-4495-9a57-50e58d840148
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+cholera
+**** Chinese
+霍乱
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4cf6018e-9102-46ee-b465-ccfb89408724
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bruise
+**** Chinese
+淤伤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       852a4e1d-27ea-4d31-a2e1-29c47b73e00c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+carpal tunnel syndrome 
+**** Chinese
+腕管综合症
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9a54ad37-3554-41e9-80ad-6bd8d93c845c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+chronic fatigue syndrome
+**** Chinese
+慢性疲劳综合症
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9808c499-fe71-4e68-93b8-464a70c21d49
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+chronic
+**** Chinese
+慢性的
+**** Example sentence
+colon cancer(colorectal cancer) 结肠癌
+*** Word :drill:
+:PROPERTIES:
+:ID:       f4d30235-ca4f-4f95-bf13-428e4c26f8a0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+colour blindnes 
+**** Chinese
+色盲
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       64922d5c-3064-4962-b64d-30f3c3583d51
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+congenital
+**** Chinese
+先天性
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5d60cddc-ddbe-4fea-a043-fb1cbf7b616f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+coronary heart diseas 
+**** Chinese
+冠心病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5b4df4a0-d0d1-45bd-8d83-4573e39f3f4f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+depression
+**** Chinese
+忧郁症
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       fac58cf4-b110-4d4b-a09b-7674584d92ac
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+dermatitis
+**** Chinese
+皮炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       42d45af3-0a46-4327-8d38-dc6fb86e9b7a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Diabetes type 1
+**** Chinese
+ 一型糖尿病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ab624cfd-0326-4289-90aa-23be24c3d76c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Diabetes typ 
+**** Chinese
+2 二型糖尿病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e76bfae6-2698-4e50-8167-20e95bc360fd
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+diphtheria
+**** Chinese
+白喉
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3cdd2445-8170-4bf5-b13a-138a982f5b09
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+eczema
+**** Chinese
+湿疹
+**** Example sentence
+*** Word                                                            :drill:
+:PROPERTIES:
+:ID:       080ce8e3-8fed-41f4-854e-a7c6a0677c80
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+indigestion
+**** Chinese
+消化不良
+**** Example sentence
+
+*** Word :drill:
+:PROPERTIES:
+:ID:       55a9ef4c-9e6d-4122-b3c6-ae64ca0d7f1c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+malaria
+**** Chinese
+疟疾
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7a194ee7-7d6f-4c1c-870e-97b6e382de25
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+measles
+**** Chinese
+麻疹
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ac254583-5873-4054-bf2f-f7ee1409fb6b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+myocardial infarction
+**** Chinese
+心肌梗塞
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2ab921c6-359e-44f4-862b-f7f9531a3610
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+paralysis
+**** Chinese
+麻痹
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c7da4444-f5d8-489e-9363-0c263f9f899c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+pneumonia
+**** Chinese
+肺炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d6d72bdf-20e8-4d1d-872c-a74aa600ec13
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+poliomyelitis
+**** Chinese
+(polio) 小儿麻痹症
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b1223f28-7868-40dd-bb80-455d8d3f02bb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+rheumatism
+**** Chinese
+风湿病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c74e5855-3b24-495b-bbc9-daf7c5cf3f9b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sclerosis
+**** Chinese
+硬化
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e42be7b7-573d-44d9-ae09-45e012057630
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sinusitis
+**** Chinese
+窦炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5485f3f6-ec64-4024-a47c-adaa4978228e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+tetanus
+**** Chinese
+破伤风
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b5d3c1eb-d95e-44e6-a729-038cd91cbd13
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+thrombosis
+**** Chinese
+血栓形成
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       863d2b57-1b02-4928-afef-76c905087c8e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+tuberculosis
+**** Chinese
+结核病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8d2a057e-ab84-4be2-a00a-055dce0edd47
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+tumour
+**** Chinese
+肿瘤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       743517c7-a5ef-4ce4-ac0c-9e6cd299cfe3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+dislocation
+**** Chinese
+脱臼
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ab7ed087-2d0e-47f7-ad77-28f99ffa61b1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+eczema
+**** Chinese
+湿疹
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       971e1518-a884-4d45-a983-92d26b2369e1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+emphysema
+**** Chinese
+肺气肿
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       86727bf9-28da-4612-8b0f-35583de10250
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+erectile dysfunctio 
+**** Chinese
+勃起功能障碍
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6f97db79-29ac-4554-a775-6b5b1d9e582f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+fatigue
+**** Chinese
+疲劳
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       69a95765-59ef-4523-a7c8-dcea3c27ce1b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+fracture
+**** Chinese
+骨折
+**** Example sentence
+frozen shoulder粘连性肩关节囊炎
+*** Word :drill:
+:PROPERTIES:
+:ID:       5a78101d-8b29-41a0-9344-cef52d2f7bec
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+gallstone 
+**** Chinese
+胆结石
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cc6a3818-fb0a-4eec-a7c2-2e99477b1054
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+gastritis
+**** Chinese
+胃炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       defc795c-2d7a-4af0-97a7-035098b8fe75
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+gastroenteritis
+**** Chinese
+胃肠炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3810c08e-3ebe-4d3a-b804-c8a0cedd5b99
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+gingivitis
+**** Chinese
+牙龈炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e0087ae5-7615-4b06-85cf-a52a1a5aa590
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+genital herpes
+**** Chinese
+生殖器疱疹
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b22ffbf4-ab47-4bf6-a490-202185e44ef3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+gout
+**** Chinese
+痛风
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9c45c0a2-fd5e-4865-b95b-ff3bfbdb66e7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+gum disease
+**** Chinese
+(periodontal disease) 牙周病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a71a1749-518e-4a52-ba6e-854e8e641185
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+hair los 
+**** Chinese
+脱发
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       10a6a22e-ceeb-438d-be13-009eee13994c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+hearing loss
+**** Chinese
+听力减损
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       40d25ce3-0a6c-47be-adc2-606df028a636
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+heart attack
+**** Chinese
+心脏病发作
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9dac3fa3-5942-4560-a143-460f45e2ea33
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+myocardial infarction
+**** Chinese
+心肌梗塞
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c5286c6b-b98c-4f73-bd29-d2f7858291b2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+heat stroke
+**** Chinese
+中暑
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9dfc4848-995e-49f5-8efa-c5c4d5066b91
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+hepatitis
+**** Chinese
+肝炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0fcfaea7-3ab4-4094-b49c-a703ceaf43bc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+hepatic cirrhosis
+**** Chinese
+肝硬化
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       27a0538a-1049-4133-b092-1ad51829fb8a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+High blood pressure
+**** Chinese
+(hypertension) 高血压
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b62a03ea-2446-44aa-9de5-4fef60f478e1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+High cholesterol
+**** Chinese
+高胆固醇
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       eaf9701d-3a0c-4187-9ffe-917ab8980484
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+incubation
+**** Chinese
+潜伏期
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       88d79886-ca06-445c-80c8-f66e95698a33
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+indigestion
+**** Chinese
+消化不良
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2e2c9852-5bdd-4d46-8309-0f971fce6dca
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+infertility
+**** Chinese
+不育
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d6708b7e-d0b9-4263-872f-b45bc2c2a9fd
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+inflammation
+**** Chinese
+发炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       853937f2-13e5-4b96-8b02-6f966e5d7918
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+inflammatory bowel diseas 
+**** Chinese
+炎症性肠病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7ccf96fd-94d3-454b-a786-42cd1d0094d8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+influenza
+**** Chinese
+流感
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       61ff9da4-9bd6-4999-9e61-b49c2075cb91
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+insomnia
+**** Chinese
+失眠症
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       49b9efce-6b4b-4184-ad05-4e30ecab50bf
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+itching
+**** Chinese
+发痒
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a2cab8d0-8207-4eaf-943b-01a0bc507595
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+kidney stone 
+**** Chinese
+肾结石
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       abad2494-a1c9-4d8e-a408-13348710b010
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+lung cance 
+**** Chinese
+肺癌
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d2d19f4f-a379-4f9a-a5b2-711afb34ffda
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+lupus
+**** Chinese
+狼疮
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2dd2d385-a06a-4480-96d5-5c9f20f3f074
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+lymphoma
+**** Chinese
+淋巴瘤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ff3286d0-8edd-4388-80a2-824b5a607966
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+malnutrition
+**** Chinese
+营养不良
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ddc1366c-7515-45d2-bb97-f56cb9651261
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+memory los 
+**** Chinese
+失去记忆
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f98b15e3-a33b-443c-a6b1-429997805b67
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+menopause
+**** Chinese
+绝经期,更年期
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f39e887b-9538-4f77-9f4d-a63db119c391
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+multiple sclerosis
+**** Chinese
+多发性硬化
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cb02db3d-dff1-4f62-958c-23e12594dee0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+obesity
+**** Chinese
+肥胖症
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5c1657c1-1305-4272-8599-a3770d339b2f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Parkinson’s disease
+**** Chinese
+帕金森氏病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ab68210b-d5e4-4bbb-8222-01ff551e343f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+peripheral vascular disease
+**** Chinese
+周围血管病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       984b6f43-3cec-4db7-9dbb-d67c3bf4f449
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+premenstrual syndrome 
+**** Chinese
+经前期综合征
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6038dab3-fcd7-493e-bc37-00b80bf28127
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+prostate enlargement
+**** Chinese
+前列腺肿大
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c21a851b-cf27-4f65-b737-1cf5e7b5dc88
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+prostatitis
+**** Chinese
+前列腺炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6927fdf7-f866-4f3b-990d-14bb0bae3efc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+psoriasis
+**** Chinese
+牛皮癣
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5c75f6cf-bcde-49e3-a77d-747d5418951c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+rheumatoid arthritis
+**** Chinese
+风湿性关节炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       770c88a2-f1eb-4722-9363-0d79318ae823
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+shingle 
+**** Chinese
+带状疮疹
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5ef73cb2-35da-405f-8fcb-e5442cfa811e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+stroke
+**** Chinese
+中风
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0675bf66-4ae5-4817-868a-2a7175f86ca0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sinusitis
+**** Chinese
+(鼻)窦炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       550c93d1-0235-4184-a036-7c4f51aec52f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+skin cancer
+**** Chinese
+皮肤癌
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       077d2ffd-6d43-4ecf-bdaf-17058ce49acc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sleep apnoea
+**** Chinese
+睡眠呼吸暂停综合征
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ffb762ac-6bd4-4cc1-9647-4a25d12356c2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+thyroid disorder 
+**** Chinese
+甲状腺紊乱
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ce00f91a-bc10-4021-b7c1-5815b53adabd
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+tinnitus
+**** Chinese
+耳鸣
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8e0bb7ff-3653-4e58-97ec-365a0cb22556
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+trachoma
+**** Chinese
+沙眼
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e5eb8c42-84ed-407b-b4b9-8abb1d519fc0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+trauma
+**** Chinese
+外伤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       66daca82-d0d5-4dc7-852d-7641c1e3e7a0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+urinary incontinence
+**** Chinese
+小便失禁
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       40a3ee26-2216-4167-97dc-38bfd7d6ef24
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+uterine fibroids
+**** Chinese
+子宫肌瘤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       04cd0cba-77de-46ad-9da0-1caa7be56e50
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Everyday complaint 
+**** Chinese
+日常疾病
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       56327a4e-fd35-4856-938f-229ce5817ca0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Athlete’s foo 
+**** Chinese
+足癣,香港脚
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f9d22eb5-3b97-41f4-bdf5-550073b40db5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Blister 
+**** Chinese
+水泡
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       929a9572-b19c-4000-ae2e-edc98e391a71
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Burn 
+**** Chinese
+烧伤,烫伤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c6f5cf35-7abe-4f29-bacf-b562426af85f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Cough
+**** Chinese
+咳嗽
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       52b4c736-92b7-4ff0-b4e4-141e356361c9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Fever
+**** Chinese
+发热,发烧
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ca4169ec-5007-4575-8441-6f860713371b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Haemorrhoids
+**** Chinese
+痔疾
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f7e9f58f-6180-4d66-9217-1d01ac0f9c24
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Insect bites and stings
+**** Chinese
+昆虫叮咬
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       985e0ab4-fa6c-4b7f-973c-7c2ad39bd389
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Motion sickness
+**** Chinese
+晕车,晕船等
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       47512837-cc81-4ec8-8161-7def70b6ff77
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Mouth ulcer
+**** Chinese
+口疮,口腔溃疡
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5a5e9107-978b-436a-a015-d06cbebc407f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Sore throat
+**** Chinese
+喉咙痛
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       aa431ef0-ab13-401e-bf8b-05be71b0b3dc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Strains and sprain 
+**** Chinese
+扭伤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       04f809fa-feb7-4252-9ae9-6e81fdb81538
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Toenail fungu 
+**** Chinese
+灰指甲
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7f0dcadb-cbf7-41ce-af47-5aa2e1e2c071
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Yeast infectio 
+**** Chinese
+真菌感染 
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c6720fa8-690f-4d30-a307-eb2fccee80be
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Medical test 
+**** Chinese
+医疗检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9845fba8-83ec-440d-b15b-b2ba53f26dc8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Blood Tes 
+**** Chinese
+验血
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       48935bb8-6843-4f52-a11a-31beca08234d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+CAT Scan
+**** Chinese
+扫描,电脑断层扫描
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9eed3fb3-bda9-49f2-b2f6-7b718636728b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+EK (ECG) electrocardiogram
+**** Chinese
+心电图
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5a44a8df-0865-4c21-aae1-6818f7903c6e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Ultrasound
+**** Chinese
+超声波检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       fc31497f-cb10-4142-b8ee-6dafdc5aa611
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+MRI (magnetic resonance imaging)
+**** Chinese
+磁共振成像
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       658e3881-817b-4e29-bfc5-4e2f6b2a2df7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Spirometer
+**** Chinese
+(spirometre) 肺活量测定 (肺活量计) 
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8acac691-56e7-4abd-8ecf-f27058730ec2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Upper GI
+**** Chinese
+上消化道钡剂造影检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       94ddb401-fdca-4c25-9c0a-0a08fa79e3de
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Urine Tes 
+**** Chinese
+尿检 
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1aa7f20e-af08-4989-9295-e4b83e5e5cb2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+X-Ray
+**** Chinese
+照X光
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       23398e6a-cad9-4d75-a9c2-455de2a046ff
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+biopsy
+**** Chinese
+活组织检查, 活组织切片检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       dd16e0e1-a384-4f44-ba1f-04ae33adcd2d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Body Mass Index
+**** Chinese
+身体质量指数,简称体质指数
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       55ac8e3b-4f98-4130-a483-b847ab5c6a7e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Bone density test
+**** Chinese
+骨密度测试
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       32f0b1d9-0262-4d30-a157-89b6331700de
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Breast cancer testing
+**** Chinese
+乳房癌测试
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4a3f73d1-765e-44bb-8bfe-9dc14b490910
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Breast self-examination
+**** Chinese
+乳房自我检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cfdd6a40-0d4e-48ba-a88c-83891cdddd79
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Clinical breast examinatio 
+**** Chinese
+临床乳房检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       79d3e2a8-a3d6-4f13-9672-ecf21a15eb52
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Digital rectal examinatio 
+**** Chinese
+直肠指检
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e0ac33f0-db93-4e82-8a9e-bde3da215fa5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Fecal occult blood tes 
+**** Chinese
+便潜血检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1114727a-3a09-4d2a-9f19-057fd698a0b1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Genetic testing
+**** Chinese
+基因检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d27b53e8-8451-4711-909d-c7c219bf3b34
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Glucose measurement
+**** Chinese
+血糖测定
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       490db34d-3da3-484f-a863-860de9b77d5a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Hearing test 
+**** Chinese
+听力测试
+**** Example sentence
+*** Word                                                            :drill:
+:PROPERTIES:
+:DRILL_CARD_TYPE: twosided
+:ID:       a102611d-c7d3-4a62-880c-9e07c16f3b84
+:END:
+**** English
+mammography
+**** Chinese
+乳房X线照相术
+*** Word :drill:
+:PROPERTIES:
+:ID:       a9254564-e47c-4d09-9020-942846305db3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Colon testin 
+**** Chinese
+结肠检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e86016fe-5d8f-4304-b96d-ffddfe4b027c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Pap smear
+**** Chinese
+宫颈涂片
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c6c7de55-b041-482c-bc42-76a7aae9944d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Pelvic examination
+**** Chinese
+盆腔檢查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2c600d5f-ea27-4965-9593-d58a72316915
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+PS (prostate specific antigen) tes 
+**** Chinese
+前列腺特异性抗原检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       700b67f0-d29b-4e42-a477-836b0887e687
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Sexually transmitted disease testin 
+**** Chinese
+性病检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       91baf651-d2f1-47bc-871b-7e04e5eab52c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Sigmoidoscopy
+**** Chinese
+乙状结肠镜检查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ee005a84-0aed-43a9-afaa-3c50b5c98adb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Exercise Stress test
+**** Chinese
+运动负荷试验,运动应激试验
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       49107176-752e-4640-899f-c38e89c5490e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Treatment
+**** Chinese
+治疗相关
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       fdf8a41d-00dc-48ed-8972-760324b03a2d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+IV: An intravenous drip
+**** Chinese
+静脉输液
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f0113776-69e8-421d-a31b-c692391281fc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Syringe
+**** Chinese
+注射器
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0d42fefe-3e8e-49ae-870b-79b083962e12
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Catheter
+**** Chinese
+导尿管, 尿液管, 导管
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       eb523958-f92a-42b3-a075-d9cf66274cd0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Bandage 
+**** Chinese
+绷带
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       454eb092-132c-47eb-9f29-5f9278200d58
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Dressing
+**** Chinese
+敷料：敷在伤口的治疗药物或保护材料
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0cd4bad5-6fa2-4c7c-805c-e7a03aa625e7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Band-Aid
+**** Chinese
+创可贴
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3d3a3856-2794-4468-af6f-f18a76b52cff
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+thermometer
+**** Chinese
+温度计, 体温计
+**** Example sentence
+
+** Respiratory System 呼吸系统
+*** Word :drill:
+:PROPERTIES:
+:ID:       015ce2e7-5671-440a-92a9-2bacc1a5c272
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Respiratory System 
+**** Chinese
+呼吸系统
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       222338f5-b7a8-4c37-ae3b-da0c46795635
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Lung 
+**** Chinese
+肺
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c9545ea2-1387-4ce2-b02c-f65b06618894
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Larynx
+**** Chinese
+喉
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e088112a-e5be-4714-b9fa-fecb662b9da4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+trachea
+**** Chinese
+气管
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0077d588-3103-48e3-84a4-2aa6329fef88
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bronchial tube 
+**** Chinese
+支气管
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a46d1795-587d-4950-abd8-72a4f255c0d2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+diaphragm
+**** Chinese
+横隔膜
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4953e56e-bf15-4ef4-9ba0-8c8feefeb1d5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+phlegm
+**** Chinese
+痰
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b8883b21-d49c-4e69-9ea7-3f774ce70515
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+mucus
+**** Chinese
+粘液
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       57cf170e-9d60-4da6-8d9d-11811e8778e7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bronchitis
+**** Chinese
+支气管炎
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3f4a9321-01f8-4305-9958-e1045a65c90f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+pneumonia
+**** Chinese
+肺炎
+**** Example sentence
+
+* Legal
+*** Word :drill:
+:PROPERTIES:
+:ID:       26c5ea9b-bc3f-4f7e-8029-d4af86fe9aac
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Legal System and Courts 
+**** Chinese
+法律制度与法庭
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3eb2753a-89c3-4d2d-a2b1-a0638e7f6c13
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+High Court of Australia 
+**** Chinese
+澳大利亚高等法院
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ecb37b8d-0b6f-4c8e-90e0-1368ef935a6e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Supreme Court 
+**** Chinese
+州最高法院
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       caf5393e-1731-45ac-9f9a-71210fea17f0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+County (District) Court
+**** Chinese
+中级法院
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4bd929f8-2b15-4d97-a9c3-82e0d01244e4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Magistrates Court 
+**** Chinese
+初级法院; 地方法院
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       442d1f04-0e05-405b-b5b9-e9e1a6477d14
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Tribunal 
+**** Chinese
+仲裁庭
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3558c373-6bcc-40d2-a66b-83f142d40840
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Civil and Administrative Tribunal
+**** Chinese
+民事与行政仲裁庭
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       72efce75-27ce-4781-8b2d-c70a616cb11d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Coroner 
+**** Chinese
+死因裁判官
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5e51246a-19df-41fb-a3a5-9841f9644d6a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Magistrate
+**** Chinese
+初级法院法官
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       55814bd5-29e8-4fe4-81ab-8c9cce64aa6e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Adversary
+**** Chinese
+（adversarial）System对抗制
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c77d9f2e-dbb1-4250-97ff-b827d23812f0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Attorney General 
+**** Chinese
+律政部长
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c09b0d7c-5282-40ad-955a-07d0f48638e8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Balance of Probabilities 
+**** Chinese
+可能性权衡；或然性权衡（盖然性权衡）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1a18dbf4-ccc3-44f8-8bae-52a4b4a210b2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Beyond reasonable doubt
+**** Chinese
+排除合理怀疑; 无可置疑（原则）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       689b65b6-4163-487a-a438-be1a6d2917d0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Prosecutor
+**** Chinese
+检察官；公诉人
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       630151ec-85c8-4e79-829c-9e4f6a030e67
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Dock 
+**** Chinese
+被告席，犯人栏
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       640c404d-16f9-45b9-86ee-471e8b6ce9d8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Jurisdiction 
+**** Chinese
+（法院）管辖权；司法权，审判权；管辖区，管辖范围
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cfeeccca-7b48-4ce8-a26f-9bcae62f6b9c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Jury 
+**** Chinese
+陪审团
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f578efe2-ad21-4bef-bfe8-5885af2f0b9b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Public Gallery 
+**** Chinese
+旁听席
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       38e437c9-4326-44f9-8b6c-14d5d79f55ab
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Court Staff 
+**** Chinese
+法庭人员
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4235f78d-9bb2-44d7-80e4-356b9fae6367
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Bailiff 
+**** Chinese
+法庭执达官
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f2e4cbfc-6265-4374-b900-e626d2e65ff5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Judge's Associate
+**** Chinese
+法官助理
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       51cd45b6-82ac-4841-b0aa-b3d80697f050
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Sheriff's Officer
+**** Chinese
+治安官员
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       dccfa378-6522-4b84-bc88-1745ee76a1d2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Lawyer
+**** Chinese
+律师
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e2bdaf85-67de-414a-98cb-979cf37ee4af
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Barrister 
+**** Chinese
+大律师；辩护律师
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b65c7563-ceb0-41bd-a48b-b9ed847775a5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Defence Counsel 
+**** Chinese
+辩护律师
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       666786fd-fe3d-4ef2-9a5f-5d9f0965d689
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Solicitor 
+**** Chinese
+事务律师
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       05d2bbb9-6af7-4775-88df-795fe414ab9f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Duty Solicitor ( 
+**** Chinese
+法院) 值班律师
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e629c83a-8d0e-4f28-927a-88e03650062f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+QC (Queen's Counsel)
+**** Chinese
+御用律师
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c74eb147-bb68-4ab0-8578-1e07569deca8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Parties of litigation
+**** Chinese
+当事人
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8a309b78-cfb8-46b8-ac3b-259a7e964226
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Defendant 
+**** Chinese
+被告；答辩人
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7020da6b-599b-440e-a81b-1ab054f0ce29
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Plaintiff
+**** Chinese
+原告（民事案）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b4a2affe-07ad-4146-a235-47859f316444
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Accused 
+**** Chinese
+被告（刑事案）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e3d91d29-515e-476e-935e-8712597a6dfe
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Informant 
+**** Chinese
+控告者，罪行告发人，检举人
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2cd7701b-4ea0-48e9-b416-6a3034e30c31
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Applicant
+**** Chinese
+申请人，原告（如家庭法庭）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d1ee0097-867e-4060-9377-d3e6b6c3fc84
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Respondent ( 
+**** Chinese
+家庭法、仲裁庭和上诉法律程序) 被告人，被上诉人
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       96e58922-3258-466f-88f3-14ac1e7d280a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Complainant 
+**** Chinese
+控告人
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       81cfd996-5d57-43a1-8d14-c22ce8f48ca8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Offender 
+**** Chinese
+违法者；犯罪者
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       64f4b79b-b6a6-452d-99bc-93cd7e1a8962
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+The Hearing  
+**** Chinese
+聆讯（审理）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       37d66f95-23bc-459b-b79b-23a3b8a2ec64
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Mention 
+**** Chinese
+提审，过堂（处理程序性问题）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       355f4c61-838c-4889-bc5a-4a6a572f3376
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Arraignment 
+**** Chinese
+传讯 （宣读正式指控， 被告提出抗辩的程序）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e64066eb-e7eb-4745-8beb-3e8b2af15727
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Committal hearing
+**** Chinese
+预审（在初级法院交付上一级法院审判前之初审）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c406fa5f-3a71-4af8-9cb7-3689192581dd
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Trial 
+**** Chinese
+审判
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a97ae83d-4c7c-4609-82ba-91acb1890e65
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Adjourn 
+**** Chinese
+休庭；延期审讯
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       06b9efba-b412-48c5-b9d3-cf73d8b582a6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Burden of Proof 
+**** Chinese
+举证责任
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ef1df214-a115-4162-99f8-ca49e88d1034
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Evidence-in-Chief/Examination-in-Chief 
+**** Chinese
+首要问证/首要诘问
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       27674e87-f5f2-40be-9b7f-3f344d36b1cc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Cross-examination 
+**** Chinese
+盘问；交叉诘问
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       03722e35-3063-4cbe-8520-6631383df188
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Evidence 
+**** Chinese
+证据；证词
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a645ecf9-d670-4649-bdd6-f1d9d0763cc4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Forensic Evidence 
+**** Chinese
+法医证据（如指纹、验血结果、DNA等现场证据）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       95914699-b59a-42aa-856e-cffe685d4158
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Exhibits 
+**** Chinese
+展示的证据
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1dd3cfcf-3f3b-48f8-81ef-c9c4d6092749
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Verdict 
+**** Chinese
+（审判团的）裁定
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6d8c28e2-a0c1-417b-a950-7dcf3d03f4b9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Waive 
+**** Chinese
+放弃（权利、要求、特权等）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       821bbeff-fa8c-4c12-8609-f8c683464e60
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Ex Parte 
+**** Chinese
+单方面的，片面的
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9b3f63ac-c606-4e33-b484-8f9b4c2b1326
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Ground for divorce 
+**** Chinese
+离婚理由（依据）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       53d80bc3-b7d8-46c7-80a6-50287a1fad6e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Guilty 
+**** Chinese
+有罪的
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a9da636e-3a7a-482d-9de8-4aa790f36e63
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Plea ( 
+**** Chinese
+无罪或有罪) 抗辩
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8a1c322a-ed06-4f96-b70c-0db7f4a8bf71
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Hearsay evidence 
+**** Chinese
+传闻证据（指证人听旁人传说的证言）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b136f629-a6cb-4c79-bda4-5df7cbec4a9a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+I.D. parades 
+**** Chinese
+嫌疑犯列队辨认
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       29f5d903-1a68-4457-aa9a-13ca010fe80a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Indictable Offence 
+**** Chinese
+可公诉罪行
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5d549a89-965d-4ecd-ab5d-ac2ea44fe139
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Onus of Proof 
+**** Chinese
+举证责任
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cce7f99e-9c57-42d6-a85f-fb3b881ac4bf
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Perjury 
+**** Chinese
+伪证
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a6ef3580-1a27-4cb7-8211-c5f8502c8089
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Precedent 
+**** Chinese
+判例
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f4246bb4-038e-4abb-873f-87e11c4334dc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Recognisance 
+**** Chinese
+具结，担保，保证
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b6171156-4c48-40cc-afcd-2f256aba5884
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Sentence 
+**** Chinese
+判决，宣判，定刑
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8a1d42ad-79b0-4bdf-ae95-f7d87889f1b4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Settlement of disputes 
+**** Chinese
+解决争议
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5671a0b2-66ec-4c67-bee1-c1f1b36d79fa
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Testimony 
+**** Chinese
+（口头的）证词（尤指发誓后做出的）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a628d5a4-8745-4ec0-91f6-79da75a10293
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Right to Silence 
+**** Chinese
+沉默权
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cc2c282c-953c-4666-8d0c-dd5752a41eb5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Undertaking 
+**** Chinese
+承诺
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6bd2e09b-8e46-469c-b5cf-f5860f3ace78
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Indictment 
+**** Chinese
+起诉书
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8cf18456-5253-4989-af5d-dae340399401
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Deliberations 
+**** Chinese
+（陪审团）审议
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       79200b03-3305-41e1-8109-fbbfc98517d8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Deposition 
+**** Chinese
+证词副本
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       dd5dd453-dcf0-4ffe-8cb6-35d69adf4876
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Hung Jury 
+**** Chinese
+悬而不决的陪审团
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       88ecc330-bb0d-44f3-8e68-78574272ac5b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Document
+**** Chinese
+文件
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d7dc9ab9-3d7f-4e46-84a3-fda941272a59
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Affidavit 
+**** Chinese
+宣誓书
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       79d97b3b-e3bc-4b2d-a75a-0f9195c8a812
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Subpoena 
+**** Chinese
+（证人）传票
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d343bdd5-f6b0-4365-a5f9-b217eea9304d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Summons 
+**** Chinese
+（传召当事人在规定的日期出庭的）传票
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f0c20cfa-a945-4bfd-a002-8eaea427ecb1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Decree 
+**** Chinese
+判决 (如divorce decree)
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       58463895-d4e2-45f4-a262-72a95acf4917
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Deed 
+**** Chinese
+契据；契约
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d4796bcf-bb63-419f-8934-2bdfba002de0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Injunction 
+**** Chinese
+（法院）禁制令
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3ede83ea-c65f-4c83-8caa-a13e86af9da8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Intervention order
+**** Chinese
+干预令（如针对家庭暴力）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       aaaa845f-187e-48ce-a6df-31273e4bbbe6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Warrant 
+**** Chinese
+令状；逮捕状，拘票；搜查令
+**** Example sentence
+ Offences rep 罪名
+*** Word :drill:
+:PROPERTIES:
+:ID:       db77e206-94a3-44ca-b3c5-94a692e56879
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Assault 
+**** Chinese
+侵犯人身；殴打；行凶；伤害；施暴
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       80aeb3ac-7585-40ad-ab60-7e70f6fab8b1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Summary Offence 
+**** Chinese
+即决罪（即可由初级法院经简易程序审判的轻微罪行）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       99f4991d-951f-496f-b4d6-f7ca10c3fe3f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Defamation 
+**** Chinese
+破坏名誉；中伤；诽谤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5b488bd1-7b95-46cb-bc64-5ef4d5291c8b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Libel 
+**** Chinese
+诽谤罪，诋毁罪（以永久性形式（往往是书面形式），刊登 [散布、散发]带有诽谤的材料。）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6618daef-03ba-41a6-8870-5593031b59c0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Slander 
+**** Chinese
+（口头的）诽谤，中伤，诋毁
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       72e9dbe5-cecd-4aec-92f3-c3fd8fc144ce
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Manslaughter 
+**** Chinese
+非预谋杀人罪
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d3ceab5b-e001-4f20-a1f8-b926e42ac2c3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Homicide 
+**** Chinese
+杀人罪
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a5b8c950-dfe1-41ad-b4d8-822f09021dc1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Murder 
+**** Chinese
+谋杀
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d5f4bc7b-f41b-4af1-9e14-f0c4f39c133a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Misdemeanour 
+**** Chinese
+轻罪
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c7f520b0-b241-456a-aaa2-e6fa4360afde
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Punishment
+**** Chinese
+刑罚
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5f0bfff4-b421-4f05-9c89-25e27aa4cd26
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Custody 
+**** Chinese
+拘留
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f0d8cea5-01c2-46ff-a6e0-975adc0b179f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Damages 
+**** Chinese
+损害赔偿（金）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4c58d4d4-ba0e-459c-82e2-63f351afb2b4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Maintenance 
+**** Chinese
+赡养费
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       faab0b7f-874d-4fee-990c-0f17c57f4250
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Workers' compensation 
+**** Chinese
+工伤（事故）赔偿金；劳工伤残赔偿
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2cf380c5-7a56-4b85-9e0e-60d2f6e0af28
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Good behaviour bond 
+**** Chinese
+良好行为保证
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       946c3902-8422-4f6e-91a2-315be4ad6bf2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Remand in custody 
+**** Chinese
+羁押候审
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       21d3aeef-0fcb-42d3-be80-5ca37673967f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Conviction 
+**** Chinese
+定罪；判罪，有罪判决
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       53b5982c-e17b-4977-b5bd-5592d3db63da
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Bail 
+**** Chinese
+保释（取保候审，条件是必须在规定的时间和地点出席对其指控的聆讯，可能要支付担保金也可能不要。）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6924437c-5bfb-4d38-bcdc-939d09f5238b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Parole 
+**** Chinese
+假释（1. 服完最低刑期后，有条件释放并在狱外服完余刑。2.  监禁后一段时间监督，帮助其重新融入社会）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7f27420f-326c-47f7-add6-912a4604475e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Probation 
+**** Chinese
+缓刑
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       830017b7-a41d-4e8a-a052-e21ed34c242d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Suspended sentence 
+**** Chinese
+缓于执行
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b07b8ee6-7607-4b25-91ac-962969a22e5b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Release
+**** Chinese
+释放
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3e96823f-ec7a-4036-b38c-84716b219224
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Jail/ put in prison/lock up
+**** Chinese
+入狱
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f35947e5-dc82-4990-91df-49b72771fbba
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Other terms 
+**** Chinese
+其他
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       809733ff-c6db-4a31-a42e-682725f23819
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Alibi 
+**** Chinese
+不在场证明；不在犯罪现场的证据
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e2214812-9c95-43e7-a34f-767585c82f4d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Allegation 
+**** Chinese
+事实陈述，声称，指控
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       23ce97cc-6b2b-4909-aef6-b63f67d4d74e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Appeal 
+**** Chinese
+上诉
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d5c66684-ee03-49f6-9d21-66397e5463d5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Surety 
+**** Chinese
+担保；担保物
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       94abd86c-cae9-48bb-b8b5-ff8980deaf15
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Claim 
+**** Chinese
+（根据权利而提出的）要求；索偿（赔）；声称（主张）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d77ca0a4-78ff-47b6-8205-3d34dfed3fa4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Custody of Children 
+**** Chinese
+子女监护权
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       64fb91d4-825e-4424-ac43-e45f83dfa45a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+De Facto 
+**** Chinese
+事实上；事实婚姻配偶，未婚同居夫妻
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f4adc8bf-0228-4fe7-b228-b8da2e2247ab
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Justice of the Peace 
+**** Chinese
+太平绅士
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       700f1e1f-8888-4258-8b09-302b1f198b1a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Post-mortem 
+**** Chinese
+尸检
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1e5eeab1-1218-4bb8-ae37-d70d6e75a6f5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Power of attorney 
+**** Chinese
+委托书
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       02d042dc-2953-4149-8b3f-dcedec29d9e6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Contest 
+**** Chinese
+提出抗辩、质疑 （e.g. contest a will）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a1e810c3-23bb-46c2-9fac-81fc7d09f8b5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Next of kin 
+**** Chinese
+最近的血亲
+**** Example sentence
+
+* Glossary from Carl Gene Fordham
+[[http://carlgene.com/blog/2014/03/vocabulary-for-the-naati-professional-interpreting-examination-english-and-chinese/][Vocab for the NAATI Interpreting Examination]]
+
+** 30 Legal Terms in English and Chinese
+*** Word :drill:
+:PROPERTIES:
+:ID:       800f4b80-6ab2-473f-a02e-f4a7de3cefe6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+contraband
+**** Chinese
+違禁品
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2b9bea6b-33cb-4bb7-8a33-cccd605e9f84
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+racket (illegal business)
+**** Chinese
+非法勾當
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f9348ae3-f134-4bf7-90f4-7cf86ee59245
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+child support (maintenance)
+**** Chinese
+兒童撫養費
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d179f5d3-aae2-4cba-9993-ee6ace78e156
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+plea bargaining
+**** Chinese
+認罪協商
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0d6c7478-285b-48b3-8bbf-c594c774b0ca
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+waiver
+**** Chinese
+棄權證書
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c25d9c7c-84dc-4e10-9aaa-593a6f928cc0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+be violent towards sb (resort to violence)
+**** Chinese
+動粗
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0386ced0-566f-401d-9573-f9cd5ad93efc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+helpline
+**** Chinese
+求助熱線
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d5096f68-78b4-402c-b1ed-095af38e8481
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+re-enter society
+**** Chinese
+重新踏入社會
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0d57d6e9-5354-43c4-8372-cf91c252c7d7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+confess to a crime
+**** Chinese
+供認有罪
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8594ac05-92c5-4f34-8028-07fa746d40d0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+police statement (witness statement)
+**** Chinese
+證人證言；證人陳述書
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ef645d10-3878-4fed-b1e5-eaa6c6ce61d0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+affidavit
+**** Chinese
+宣誓書
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c0b778e6-e90d-44f0-bedc-4f6779a885bb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+be found guilty beyond reasonable doubt
+**** Chinese
+無可置疑證明有罪
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       54474e00-eff9-47aa-971b-4a63dd1a17ba
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+gang of hooligans
+**** Chinese
+流氓團夥
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3bab9f75-75b7-4e60-8315-42feb68d63db
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sharp objects
+**** Chinese
+尖銳物品
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9921a54c-0eac-407d-ab7a-5a798540c249
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+stolen property
+**** Chinese
+贓物
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c35ce971-6086-42f9-b9e4-f3c287446992
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+court order
+**** Chinese
+法令
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c7958c9a-dee9-4d13-aabf-37aea3a11d35
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+apprehended violence order
+**** Chinese
+暴力禁制令
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0ff17f84-f86a-4e70-96e2-0f75ee021991
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+injunction
+**** Chinese
+禁制令
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       14ac8e28-8243-4e79-8dcd-96faab0eaad2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+public trustee
+**** Chinese
+公共受託機構
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c5fc9007-01fe-4d93-8150-88031e7e5303
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+trustee (fiduciary)
+**** Chinese
+受託人
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f8ce4352-f4e5-410c-b79f-d3adc5423b81
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+flight risk
+**** Chinese
+潛逃風險
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       39af694a-1a18-4f2c-ac10-e075a5c22fec
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+smuggled goods
+**** Chinese
+水貨
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ab797725-cf29-4684-8006-fe19d1ae5068
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+anger management
+**** Chinese
+情緒控制
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       301a3762-2b59-49e7-a869-c4a133833df5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+police raid
+**** Chinese
+突擊搜查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c81bf076-ac3b-47dd-9729-b4cc2e8414ea
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+force majeure (act of God)
+**** Chinese
+不可抗力
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       577c5510-528c-48ee-912d-25730db1bfb5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+no win, no fee
+**** Chinese
+不贏不收費
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8cc551b7-9cb5-44a8-87dc-5a8300c40b55
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+juvenile delinquency (youth crime)
+**** Chinese
+青少年犯罪
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4fc698e7-6c7a-4351-a9d8-9b326cb3d80e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sniffer dog
+**** Chinese
+緝毒犬
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3c4a2cd2-2720-426b-b4c8-708c4f0f6474
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Crime Stoppers
+**** Chinese
+罪案舉報熱線
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3d55d696-ebf8-4dc4-ac63-124a5d853b78
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Neighbourhood Watch
+**** Chinese
+鄰居守望組織
+**** Example sentence
+ 
+
+
+** 30 Medical Terms in English and Chinese
+*** Word :drill:
+:PROPERTIES:
+:ID:       dadcd9f2-b383-433c-8634-aa916a0ca533
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+palliative care
+**** Chinese
+臨終關懷
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       bb4f0375-9845-4b33-ac77-1bda0c2dcdf2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+hip replacement
+**** Chinese
+髖關節置換手術
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d4284c6c-79b9-4bb1-9317-c71df1c65664
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+medical certificate
+**** Chinese
+醫療證明書
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2f76563b-e732-4353-84e5-47a132aeece2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+traumatic brain injury
+**** Chinese
+創傷性腦損傷
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       05395694-a62a-48b3-b4dc-c75192efa2d8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+ophthalmologist
+**** Chinese
+眼科醫生
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       23b127c2-6a86-406e-bf81-d34d314ebe17
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+optometrist
+**** Chinese
+驗光師
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       286f797b-0be8-4d26-a59f-2a782a44c4eb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+get glasses
+**** Chinese
+配眼鏡
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4ee1ba43-ac0c-4e5c-bb2d-ce9c09d1370e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+have a hearing aid fitted
+**** Chinese
+配助聽器
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       762a9129-b6d5-4893-b5b7-ab6e1513f910
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+intravenous injection (IV)
+**** Chinese
+靜脈注射
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       27a9e09d-fb07-462b-af4d-67e3338106e7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+enlarged prostate
+**** Chinese
+前列腺肥大
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       70c4d87d-c995-4c75-a98b-04b4de2ca3bc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+food contamination
+**** Chinese
+食品污染
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2e4f7381-f267-4038-8b89-a9840f460137
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+cooked and uncooked food
+**** Chinese
+生的和熟的食物
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6d0fdda7-6dec-4cc7-a9ed-160e0f2f2e69
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+enema
+**** Chinese
+灌腸
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0870e70d-c638-400e-8339-b2f427fef99c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+suppository
+**** Chinese
+栓劑
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       325d2acd-0639-4d7a-a08c-fa2532dad853
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+neck brace; cervical collar
+**** Chinese
+護頸套
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       fc59d80e-9b69-40bc-83ed-b43e4ea563ea
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+first aid kit
+**** Chinese
+急救箱
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c6fbc469-a841-4a67-b39f-9e2c698dd0ad
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+eat small but frequent meals
+**** Chinese
+少吃多餐
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       94801fd9-d396-4816-a636-524b2a4d41c7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+vital capacity and lung volume
+**** Chinese
+肺活量和肺容量
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1c733962-52cb-4042-bac4-1c93a62f0caf
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+biopsy
+**** Chinese
+切片檢查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1a83c77a-7ca2-4a2d-93d9-2bc3942e23cb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+lesion
+**** Chinese
+病灶
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       488d0ac2-963e-48b8-912a-b3f7f35be6a0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+elective surgery
+**** Chinese
+非緊急手術
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f66b55c8-0213-4df4-83dd-3a6feaa8ab97
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+paramedic
+**** Chinese
+救護員
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       859afd98-7d82-4965-9137-5234f671e971
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+saturated, unsaturated and trans fat
+**** Chinese
+飽和脂肪、不飽和脂肪、反式脂肪
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       bf66883f-4942-4fe5-813f-5f19be3360ee
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+latex condom
+**** Chinese
+乳膠安全套
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d020a970-3776-4fe4-ba29-f2bd5e645734
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+antidepressant
+**** Chinese
+抗抑鬱藥
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e8914cdd-147b-46d9-acf5-8bd27cb40340
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+grind one’s teeth
+**** Chinese
+磨牙
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       65addfdf-e6fb-4e52-bb7f-4900b68cb860
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Intensive Care Unit (ICU)
+**** Chinese
+重病監護室
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9e8b036f-26b4-4c29-bb9b-94e557092ef0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+In Vitro Fertilisation (IVF)
+**** Chinese
+體外人工受精
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e0007bb0-5c0c-42eb-8365-54385f11cce3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Royal Flying Doctor Service
+**** Chinese
+皇家飛行醫生服務
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4eb15265-5bfa-4553-8243-30cb3f62110f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+World Health Organization (WHO)
+**** Chinese
+世界衛生組織
+**** Example sentence
+ 
+
+
+** 30 Finance & Banking Terms in English and Chinese
+*** Word :drill:
+:PROPERTIES:
+:ID:       389017a8-843a-4294-860c-9c5261d05b17
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+foreign-exchange reserve
+**** Chinese
+外匯儲備
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a0e5e5b4-0517-474a-b586-3b7057610a53
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+economic recession
+**** Chinese
+經濟衰退
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7af86e2d-1a6e-47ca-ac51-497907b86b33
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+hedge fund
+**** Chinese
+對沖基金
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       276db152-02b5-424f-9eaa-9598e9e44e6d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+mutual fund
+**** Chinese
+共同基金
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5c731e15-6b22-47e2-88dc-65c68966219d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+capital gains tax
+**** Chinese
+資本增值稅
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       46768f60-53e4-4e96-b9b1-08f987f5c6f9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+fringe benefits tax
+**** Chinese
+員工福利稅
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4c667719-dee2-407f-b2c1-b0fcc8ab613b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+council rates
+**** Chinese
+市政稅（物業稅）
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7571b676-f326-4ff6-bb18-0d14411e0fe3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+body corporate
+**** Chinese
+物業公司
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0dfbf7c4-abaa-453c-95a5-a7c8533e9956
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+savings account
+**** Chinese
+儲蓄賬戶
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       634fb8c7-3606-49e2-836e-7ba27a55feff
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+transactions account
+**** Chinese
+交易賬戶
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f1f78336-fb91-4f0a-b0b7-06504a29a7c3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+collateral
+**** Chinese
+抵押物
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       610f396e-b55e-4162-9843-688fecca1cba
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+home loan (mortgage)
+**** Chinese
+房屋貸款
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a16bc95e-271f-4ccc-81c8-329255adbdf5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+foreclosure
+**** Chinese
+法院拍賣房屋
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ba174f74-3966-4bcb-af77-89633dcd8bdc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+deposit (down payment)
+**** Chinese
+定金
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       694f2a90-2a6b-44ec-a398-1bda518dfcec
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+taxable income
+**** Chinese
+應納稅收入
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       dbca04ad-c3df-49e9-9469-84091c76a2d7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+taxpayer
+**** Chinese
+納稅人
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       468cab86-9d9d-494c-97d3-84e594a7fffa
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+house and contents insurance
+**** Chinese
+房屋財產險
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9e2db2cc-b368-4dbd-aef5-aa798026ebbf
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+insurance policy
+**** Chinese
+保險計劃
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       045dc3ba-cae6-4af4-9f58-e51037ef9f9f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+excess fee
+**** Chinese
+墊底費
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       af8ef30d-4203-4230-a21c-1b9eff42cb9c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+insurance premium
+**** Chinese
+保險費
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       92247c94-2d2e-4988-baa8-ef8e5d887ea3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+GDP (Gross Domestic Product)
+**** Chinese
+國內生產總值
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       42d385b3-baea-4545-bcdd-1a68100813fc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+GNP (Gross National Product)
+**** Chinese
+國民生產總值
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       58a95bc1-547e-4e27-a1fb-148e831f96ee
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+market price
+**** Chinese
+市場價
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       bbd33abe-7973-49c8-8899-9c1b3d632a20
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+leverage; gearing
+**** Chinese
+資金槓桿
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       70e05c62-ab6c-4101-a55c-6a95eebbe56d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Citibank
+**** Chinese
+花旗銀行
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       bfb4ebd3-920a-47e9-81f7-63f2816e7913
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bank statement
+**** Chinese
+銀行對賬單
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3447b418-fd6f-4183-905f-77004c490dec
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+cash flow
+**** Chinese
+現金流
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5016708e-fe66-449e-aacf-49beb9817d1d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+loan default (default on a loan)
+**** Chinese
+貸款違約
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f43af2d4-cca0-4a4a-bdd9-169819799ee8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+negative gearing
+**** Chinese
+負扣稅
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1bbc069c-13fa-4da0-bd34-edb4daedcff5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+rate of return
+**** Chinese
+回報率
+**** Example sentence
+ 
+
+
+** 30 Business Terms in English and Chinese
+*** Word :drill:
+:PROPERTIES:
+:ID:       c17ada97-27b9-41ba-8dbc-e873cc5831bc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+overhead expenses
+**** Chinese
+經營費用
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a848fc71-daea-4d61-a650-070bfb5896ce
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+wholesale rate
+**** Chinese
+批發價
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       82dcd553-d9ec-4c10-94a2-977977a692fc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+business acumen
+**** Chinese
+商業本領
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       30684bdf-c4fa-4f51-b21e-0bc8b012cf29
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+branch office
+**** Chinese
+分公司
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       16e6764d-e4d4-4c3b-895d-cc27e72b04a6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+newsletter
+**** Chinese
+實事通訊；期刊
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       30325db8-c388-4bda-99c4-4de7aa92cb93
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+niche market
+**** Chinese
+有利可圖的市場；利基市場
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       baa6c830-23f1-400b-b2ee-6a9ca7c57975
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+telemarketing
+**** Chinese
+電話營銷
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       557742e5-8771-4f65-824e-11423d90ae93
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+retailer
+**** Chinese
+零售商
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8d9883b7-8be5-44c3-bf01-6044c7994e27
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+wholesaler
+**** Chinese
+批發商
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       99bdf656-a08e-458b-8d06-d7fd8136a093
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+distributor
+**** Chinese
+經銷商
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       74bba707-a825-4292-b4b2-34e7b52259aa
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+do inventory (take stock)
+**** Chinese
+盤點；理貨
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8ac92a1e-143c-4955-a847-9b35123ac39d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+boutique
+**** Chinese
+精品店
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       530beb84-1c4d-42b2-a21a-59f1aad18184
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+collectibles
+**** Chinese
+收藏品
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c6ce3448-b4a6-49a4-a9ab-5ec1254212fa
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+consumer watchdog
+**** Chinese
+消費者監管機構
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       dafd4ddb-c72a-40b8-a072-54110fe9017c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Key Performance Indicator (KPI)
+**** Chinese
+關鍵績效指標
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6ee6f93d-e184-4d3b-9c85-b46940d07680
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bricks-and-mortar shop
+**** Chinese
+實體店
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f33448ea-6126-458d-92c2-1e81e9474c5d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+flea market
+**** Chinese
+跳蚤市場
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       45e6e506-06cc-4c8d-ba62-831bab2216a9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+advertising campaign
+**** Chinese
+廣告活動
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       fbd980a2-4d46-47ff-8124-1638347ae9c6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+senior management (executives)
+**** Chinese
+高管
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c2b603db-a69d-4fff-bc4d-c55c646b7fa6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bill of lading
+**** Chinese
+提單
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1f925337-8a85-4873-85cb-08d2f073f8cd
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+FOB (Free on Board)
+**** Chinese
+離岸價
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c496bfc9-6484-433f-85c4-320ccebe6d4a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+CIF (Cost, Insurance, Freight)
+**** Chinese
+到岸價
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ab017cf5-bc6c-4c77-ad83-5757c5474eb4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Cash On Delivery (COD)
+**** Chinese
+貨到付款
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       bbb68ddd-47cb-4d5a-ae8e-6eae5277e830
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+packaging
+**** Chinese
+包裝
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3d3fd3da-5690-47aa-b353-aacc3e553ba3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+put on layby
+**** Chinese
+分期付款
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5f2e3d5a-55d0-47f5-971a-d9b8a433b86d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Chamber of Commerce
+**** Chinese
+商會
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       56e7eccf-f6e0-4b56-a6e0-be9f72f85d6f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sole trader
+**** Chinese
+個體戶
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       19eb9887-a80b-4cc8-9975-1c5f36e68e10
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+self-employed
+**** Chinese
+自我僱傭
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       55c8161a-b8ac-4db5-8c87-de8baf565a74
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+entrepreneurship
+**** Chinese
+創業精神
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       93ae1045-1b9f-4722-a73b-f0ee8c6c62ee
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+intellectual property
+**** Chinese
+知識產權
+**** Example sentence
+ 
+
+
+** 30 Housing Terms in English and Chinese
+*** Word :drill:
+:PROPERTIES:
+:ID:       c056eb39-5e97-4883-af83-3770a8f8a4c5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+zoning
+**** Chinese
+分區
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       82f1fd50-fee6-45fe-816f-19f323269230
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+industrial, commercial and residential areas
+**** Chinese
+工業、商業和居民區
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d1d07d2c-457b-4bdb-8c62-eb78e7b20da5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+detached house
+**** Chinese
+獨棟別墅
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0f7cf212-ac88-48e0-bb01-0c88a4128489
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+utilities
+**** Chinese
+水電煤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2d8ee2e2-db0f-421d-a085-24ff0702ee0f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+utility pole
+**** Chinese
+電線杆
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       90eff19c-ffb8-4f1b-b600-aa9f1cfe6387
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+surveyor
+**** Chinese
+測量員
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1ba18e6a-ed40-4754-b69b-0e6f6bcd2870
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+garbage disposal unit
+**** Chinese
+垃圾處理裝置
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       846d8ca2-0134-44df-9f44-54f700a75ecc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+chopping board
+**** Chinese
+砧板
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e17a70f9-e09e-48a1-834b-adbef3b3f333
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+rangehood
+**** Chinese
+抽油煙機
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a510392f-8a94-4c30-862c-30053fdef132
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+extension cord
+**** Chinese
+電源延長線
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       6674eea8-7def-4aa4-bbe7-d6ab7ddf12ef
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+property condition report
+**** Chinese
+房屋狀況報告
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b3b33407-e3c2-46dd-9975-fd96cbf54a18
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+cement
+**** Chinese
+水泥
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ecac6f34-938c-4551-8281-d41ce4c56b75
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+concrete
+**** Chinese
+混凝土
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       484bcc93-73df-4092-a2aa-086309be94af
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+fence
+**** Chinese
+柵欄
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       05dacac4-d42a-4a64-a457-6462a901c82b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+mousetrap
+**** Chinese
+捕鼠器
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7da9fd8f-95c0-4e12-baf3-2ffbe52bae19
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+exhaust fan
+**** Chinese
+抽風機
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5bd2cd38-81ec-4335-be9a-7b644f69fb78
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+dressing table
+**** Chinese
+梳妝台
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d98d808d-f75b-47b7-b423-9093d74f43f6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bedside table
+**** Chinese
+床頭櫃
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f0407152-f6bc-4a8e-93d9-c2e6a773339b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+real estate developer
+**** Chinese
+開發商
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       394c9682-48ea-4278-a8d3-a34123bd5953
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bunk bed
+**** Chinese
+雙層床
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d7ea8a79-5365-482e-8b7f-38d35510b40f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+walk-in wardrobe
+**** Chinese
+嵌入式衣櫃
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       46170733-91d1-44fe-b6b6-f7a5b74d02b8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+beanbag
+**** Chinese
+懶人沙發
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       27b04a51-1b84-420f-8225-6ae8e32cf7a6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bedspread
+**** Chinese
+床罩
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       249dbcab-dffe-477a-9431-67210292707a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+fitted sheet
+**** Chinese
+床墊套
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ced7c5f4-2b15-4a03-afef-b0b1d47ca956
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+mattress protector
+**** Chinese
+床墊保護罩
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4b6ae81f-bea8-4733-893f-d28ef8cdfba1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+mosquito net
+**** Chinese
+蚊帳
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b73dda0a-1a5a-4820-91be-27079f3c07d3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+fluorescent light
+**** Chinese
+螢光燈
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2bdbfc9f-5fda-4d18-8901-781e0a0a2a3a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+granny flat
+**** Chinese
+單間小屋
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cff70143-a9b6-4f63-8215-9733353d0262
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+garage sale
+**** Chinese
+車庫大甩賣
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4d0de207-f11c-4920-b047-f790f5f90093
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Blu-Tack
+**** Chinese
+藍丁膠
+**** Example sentence
+ 
+
+
+** 30 Education Terms in English and Chinese
+*** Word :drill:
+:PROPERTIES:
+:ID:       3ea174fa-8bbb-4575-8d9a-88fe702f6278
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+co-education
+**** Chinese
+男女同校
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cf9d15e5-79d7-4697-b9f8-aea77d7acd8c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+higher education
+**** Chinese
+高等教育
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8541553c-c4f5-41b2-a7f3-52c72910c32c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+corporal punishment
+**** Chinese
+體罰
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       448e1f52-9f39-4d14-b4ea-1deb99e9764e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+open day
+**** Chinese
+公開日
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ebb8e377-9feb-478d-8569-bbb480978dcc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+peer pressure
+**** Chinese
+來自同齡人的壓力
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f950e683-9e23-40e4-8ea9-e818bfb8fb0c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+supply teacher (substitute/relief teacher)
+**** Chinese
+代課老師
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       223112f3-49c4-423b-a7b0-11a51db6ff60
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+music appreciation
+**** Chinese
+音樂鑑賞
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       66bbf529-65a1-4611-99f3-37383a0f805f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+compulsory course
+**** Chinese
+必修課
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       fe69f3a0-5cf9-469c-92ca-b3ac5d0f47bf
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+elective course
+**** Chinese
+選修課
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       aad0f602-a95b-4ada-a25a-909f80fb05b8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+lesson plan
+**** Chinese
+教案
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       20a30253-300a-44b1-b8d8-12c77f6246fa
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+discipline
+**** Chinese
+管教；紀律；學科
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d9f4cf13-44cf-4f6d-a7d9-4fb517f0d054
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+expel (expulsion)
+**** Chinese
+勒令退學
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7aeb260a-91f5-4171-b049-96db62d0c003
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+suspend (suspension)
+**** Chinese
+勒令停學
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c67934b8-4f5c-4be7-8398-85b01d908a3a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+teacher’s aide (teaching assistant)
+**** Chinese
+助教
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5d6d6220-aa04-4243-9e2c-e3cec8cc0c69
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+misbehave (act out)
+**** Chinese
+不良行為；不守規矩
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       791fa676-853e-4a7d-80f1-ab4a1ab975be
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+truancy (play truant; skip class)
+**** Chinese
+逃學；翹課
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       be2630a0-0222-4557-b85f-f56d486bfe5d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+zone out
+**** Chinese
+走神
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ae54351b-8e6c-4370-b0bf-b09ee36362cf
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+doze off; nod off
+**** Chinese
+打瞌睡
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d492b750-451d-463e-9284-4b84e2784673
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sick bay
+**** Chinese
+醫務室
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       411bb8e9-7eb2-497c-a32a-110adf0c7f45
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bullying
+**** Chinese
+欺凌；欺負
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       40d47b1a-8cc6-4794-9c39-bbef1c859d6b
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+fall in with the wrong crowd (go astray)
+**** Chinese
+誤入歧途
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       eeeecbba-2e15-4bc5-a59a-12ccaebc7cf8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+parenting
+**** Chinese
+親子教育；教養
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b897c84b-3f68-42d3-ac50-a1d3acea6cae
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+child care
+**** Chinese
+托兒服務
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       081dff6b-29e8-4f31-a2c1-63e9ed0dc5d6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+parent-teacher interview
+**** Chinese
+家長會
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0b9ecc02-d066-4db1-9fe6-feb13779e39d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+curriculum
+**** Chinese
+課程
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b6bef536-cbd6-49c8-b9a4-60104039f40f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+syllabus
+**** Chinese
+課程大綱
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2dc4f295-27e4-4e51-b027-4a95c95462d8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Technical and Further Education (TAFE)
+**** Chinese
+技術與繼續教育
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a2e48ac7-4997-44ab-a69b-c2beccb18db0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Registered Training Organisation (RTO)
+**** Chinese
+註冊培訓機構
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d7c227c7-12a7-4c5c-82f3-3a85620ab850
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Vocational Education and Training (VET)
+**** Chinese
+職業教育與培訓
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0b6dd9e3-002a-4425-aca2-a1f7b7464279
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Recognition of Prior Learning (RPL)
+**** Chinese
+先前學習認定
+**** Example sentence
+ 
+
+
+** 30 Employment Terms in English and Chinese
+*** Word :drill:
+:PROPERTIES:
+:ID:       a124c42e-a269-4b08-9d9f-ebe6d50b6ec1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+cash-in-hand job
+**** Chinese
+現金支付的工作
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       14a53b83-1be9-498a-98db-49062db83215
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+minimum adult wage
+**** Chinese
+最低成人工資
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       38788931-006b-4d1a-9b55-e7fcec4d92d7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+industry award
+**** Chinese
+勞資裁定協議
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a043ab2d-5b65-4ce2-8166-7c8db5bd01cc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+underpay employees
+**** Chinese
+苛扣員工工資
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0624137d-e34d-4acf-84fb-f4e7f32261cc
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+peak body
+**** Chinese
+最高機構
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f1613d2f-6f6a-48fd-af0d-3fc9f8f7bfd1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+transferable skills
+**** Chinese
+可轉用技能
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4a27cb6f-81cd-4d4f-8681-f4b5cfb3fa5c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+breadwinner
+**** Chinese
+養家餬口的人
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3d023d58-ab98-4647-a512-439e2bb12181
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+make ends meet
+**** Chinese
+維持生活
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ff96bc32-f623-49d6-ba52-64fbbf517bc0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+office workers
+**** Chinese
+上班族
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7ae2c8fc-0b21-4988-8d50-9ccf67a3f7f7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+flight attendant
+**** Chinese
+空乘
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       08fdf53b-9e7c-46a5-a3a7-0f5b297c2148
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+job fair (career fair)
+**** Chinese
+人才市場
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       107f3704-9d37-41a5-b18a-7489ec411830
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+employability
+**** Chinese
+就業能力
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       2647634f-98e2-4d5b-b73e-26415d5e3311
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+livelihood
+**** Chinese
+生計
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1b6ab804-0731-4905-97d6-48eee31d47b0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+trade (technical job)
+**** Chinese
+技術工作
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c2c755cf-51ab-4da6-ae26-add30cb57f5e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Fair Work Ombudsman
+**** Chinese
+公平工作調查專員
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b010fc73-fdfe-480a-b36b-072ef6492383
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+unfair dismissal
+**** Chinese
+不公平解僱
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ac821107-5bc3-440b-bee9-aa9580d4ac87
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+industrial relations
+**** Chinese
+勞資關係
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       61abbcd7-377c-4dd0-8d47-2f8d03bd0d21
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+remuneration
+**** Chinese
+待遇；報酬
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5b25e5f5-1fde-45b0-a632-201b06d47d70
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+superannuation
+**** Chinese
+退休公積金
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c64ef7a8-c423-40cd-bfa2-f39c7e7cffeb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sick leave
+**** Chinese
+病假
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       39988ae1-bb82-4283-9d00-1a35693854b9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+annual leave
+**** Chinese
+年假
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d1aed690-d3e9-4e8e-b2a7-84dd41f9c49a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+compassionate leave
+**** Chinese
+事假
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0112f7d9-86ee-42a1-b1e4-066b9a94e3c1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+parental leave
+**** Chinese
+產假
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       640bb132-9618-46d8-ae02-a8763ed06461
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+long service leave
+**** Chinese
+長期服務假
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e4fa32e3-ae1b-461d-8146-bb68192e7763
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+lay off (make redundant; downsize)
+**** Chinese
+裁員
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       838a7847-699c-4e9a-9e46-eaad478f6639
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+retrenchment
+**** Chinese
+精簡人員
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f624d62c-8132-4c9e-bf05-70cf5247d881
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+severance pay
+**** Chinese
+遣散費
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e0d02250-e9de-4922-81de-dcee1f7a3d59
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+work cover
+**** Chinese
+工傷保險
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       69f7aa94-9de7-4315-99b1-73d4afc9e92e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+perk
+**** Chinese
+福利
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       57fbd462-3c57-4b35-9842-1c07b684edbf
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Occupational Health & Safety (OHS)
+**** Chinese
+職業健康與安全
+**** Example sentence
+ 
+
+
+** 30 Social Welfare Terms in English and Chinese
+*** Word :drill:
+:PROPERTIES:
+:ID:       76d450f1-892e-41b6-a5b4-ac2277385e97
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Department of Human Services
+**** Chinese
+社會服務部
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e0d18ca2-c95c-44f6-9bac-7f60ea363a2f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+welfare payment
+**** Chinese
+福利金
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0eae1e13-9ec2-474a-91a0-0910f962f446
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+allowance
+**** Chinese
+津貼
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d401faee-4921-431a-aed2-dd79b590cc14
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+subsidy
+**** Chinese
+補助金
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7eb2433e-b2b8-4e7f-883b-2d70f89b9815
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Newstart Allowance
+**** Chinese
+新開始補助金
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1f2291c0-2ee7-4f2f-a014-087d9305722c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Austudy
+**** Chinese
+助學金
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e0539eda-1864-437d-b399-3d744bc0a5f8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Youth Allowance
+**** Chinese
+青年津貼
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4f566afa-785e-4fec-876b-c9b910d52b5a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Medicare
+**** Chinese
+全民醫保
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       59c0a823-b9db-4037-8b97-a1e19e024210
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+foster care
+**** Chinese
+寄養家庭
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       38cb3518-5d8e-4d8e-b949-d599947f8481
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+adopted child
+**** Chinese
+養子
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       aef60dab-b149-4615-b635-546e9c7f445f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+adoptive parents
+**** Chinese
+養父母
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5e45a05d-613f-4eac-b84b-c6bfd43707ba
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+means test
+**** Chinese
+經濟情況調查
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f0ec1745-2726-4bdc-95b3-89d92814231d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+disadvantaged group
+**** Chinese
+弱勢群體
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5ebb65e2-af8a-40ec-aa49-d2a33e2c6fed
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+DisabilityCare
+**** Chinese
+殘疾人關愛計劃
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4fe897fd-6816-4e7e-b1c3-b6b8bdec2f65
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+disabled access
+**** Chinese
+殘疾人通道
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       91a94267-6d0d-4259-93b9-dfe65c27cdfb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+ramp
+**** Chinese
+斜坡
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       7c340425-6f0c-43e0-bd8e-44bb162665a4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+handrail
+**** Chinese
+扶手
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       778f1bfc-9de1-446e-b985-3dbc41bceefa
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+pensioner
+**** Chinese
+領養老金的人
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       dc610bce-3cdc-4c00-9d8a-24db0fdec5c4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+supporting documentation
+**** Chinese
+支持文件
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b9ceeb35-631c-43b9-bf0d-d31a3dff1bb8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+waiting list
+**** Chinese
+候補名單
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4310772f-e146-4a77-b889-52e5a11d00bb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+respite care
+**** Chinese
+照顧者暫休服務
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       027f7e7d-f3a1-44c7-9496-2a86ef540d4f
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+plain English
+**** Chinese
+通俗易懂的英語
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       55efa80e-ce97-4791-b8dd-e76907797570
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+women’s refuge (women’s shelter)
+**** Chinese
+婦女庇護所
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b851a923-cc7f-4305-8828-147e85172b95
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+crisis centre
+**** Chinese
+危機中心
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       879ca803-ffe0-4244-bf6c-a80178eee640
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+social worker
+**** Chinese
+社工
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a550ff6f-23b8-4350-90ad-9747ad423750
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+youth worker
+**** Chinese
+青年工作者
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1fcc58c1-7d16-4461-9897-39029aabe834
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+aged care
+**** Chinese
+老人護理
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       dd1ae4dc-93a6-47cc-8063-ad08be47cb14
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+nursing home (aged care facility)
+**** Chinese
+養老院
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cb371221-497d-4d62-a728-a8897c35301c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Language Other Than English (LOTE)
+**** Chinese
+除英語以外的語言
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       da8fffc0-40a9-483a-bc56-1b2433f9478a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Non-English Speaking Background (NESB)
+**** Chinese
+非講英語背景
+**** Example sentence
+ 
+
+
+** 30 Immigration Terms in English and Chinese
+*** Word :drill:
+:PROPERTIES:
+:ID:       eb0ae57a-811f-4110-a316-2dff534b0309
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+refugee
+**** Chinese
+難民
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ecdfae98-10f4-4299-8880-4ff75f4b9b14
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+asylum seeker
+**** Chinese
+尋求庇護者
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ac6cc3a2-9857-4bda-b53f-4bdab56c2aa9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+persecution
+**** Chinese
+迫害
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f5c782e4-d900-4553-92db-35b30719961a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+boat people
+**** Chinese
+船民
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a95ea6f5-d5b4-484b-a15c-e481b7e1030a
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+detention centre
+**** Chinese
+拘留所
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       19c6eef5-1ba7-467b-abc9-c0e43688362e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+offshore processing
+**** Chinese
+境外審理
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e5ef5ded-699d-446b-8a46-a57b5eae4426
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+illegal immigration
+**** Chinese
+非法移民；偷渡犯；黑民
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       bd43d236-c757-4d46-b7c6-a7cf685a6b81
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+customs
+**** Chinese
+海關
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cbf0c7c0-7471-4075-9040-d82d76778544
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+citizenship
+**** Chinese
+公民身份
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ac1f885a-38ea-49af-97db-0c56c24531f4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+dual citizenship
+**** Chinese
+雙國籍
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       ce7929e7-9fcb-4474-881d-4e6913f592a7
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+green card
+**** Chinese
+綠卡
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       19863c8d-4d45-4734-8e5b-dc4b834252b0
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+ambassador
+**** Chinese
+大使
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e2b2f44b-ea1c-4c97-bc98-3db6e4be4538
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+embassy
+**** Chinese
+大使館
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a9c5ee04-3562-42c9-8802-3f4f6393c7a9
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+consul
+**** Chinese
+領事
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       60874124-afd4-406c-8cd6-49edea449dba
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+consulate
+**** Chinese
+領事館
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b24a8345-8349-43ab-b6c6-dba63ed73fde
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+consul general
+**** Chinese
+總領事
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f7137a42-ec4f-4d84-9544-b107c9eca022
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+consulate general
+**** Chinese
+總領事館
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8fe513d8-bd21-47b2-8453-78a2a2a3964e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+visa overstay (overstay one’s visa)
+**** Chinese
+逾期停留
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       546e5945-35bc-47b7-82c3-487268095a00
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+visa rejection (have one’s visa rejected)
+**** Chinese
+拒簽
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       47268b1a-2f5d-4509-920b-279891f72af6
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+deport (deportation; removal)
+**** Chinese
+驅逐出境
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       03425f7f-d210-4f0a-895e-b8db67de17cf
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+assimilate into society (integrate with society)
+**** Chinese
+融入社會
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       347d5662-43a9-43f0-917f-2acfb59c71f2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Department of Immigration and Border Protection
+**** Chinese
+移民及邊境保護部
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       31e8129a-fadc-4ff5-9c47-b6113ea052eb
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+skilled migration
+**** Chinese
+技術移民
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c937c0ed-e767-484e-b789-f77cb439dc8d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+partner immigration
+**** Chinese
+伴侶移民
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1822e483-ee61-43ef-b0e9-740ea37e2424
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+sponsorship
+**** Chinese
+擔保
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       fcdd4fcc-0f64-4a28-ae85-c55e72eeb6d8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+family reunion
+**** Chinese
+家庭團聚
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       f836327a-ecce-46ce-89be-8d4b647e73d4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+working holiday
+**** Chinese
+假期工作
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cdc54899-b699-4bfd-bbc6-f5a59f1f95e8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+permanent residence
+**** Chinese
+永久居民
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       98cb6d5c-f3bd-45fc-b89e-25bfecfa80ea
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bridging visa
+**** Chinese
+過橋簽證
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       17ec7774-f8e1-4473-a548-147ae5e55ae8
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+Expression of Interest (EOI)
+**** Chinese
+表達興趣
+**** Example sentence
+ 
+
+
+** 30 Ethics Terms in English and Chinese
+*** Word :drill:
+:PROPERTIES:
+:ID:       54716364-15e6-47d6-8722-a5d0951dc0e4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+code of ethics
+**** Chinese
+道德準則
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e02706a0-2bbc-44ce-8868-05f6247700f2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+ethical principles
+**** Chinese
+道德原則
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c38b006b-095b-492b-b970-ee4817c08348
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+professional conduct
+**** Chinese
+職業操守
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       4e221f1d-6240-4420-a64b-65497da48c33
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+integrity
+**** Chinese
+正直
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a96174b7-eebb-4873-9870-bd2cf403ed39
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+punctuality
+**** Chinese
+準時
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       092eaf33-532c-4dc3-994a-eb16a92bd0d5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+tip (gratuity)
+**** Chinese
+小費
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       b07051bc-49f5-4b42-a3fa-d1c0722d8bf5
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+confidentiality
+**** Chinese
+保守機密
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       3f81a588-4568-481e-a033-b7fe7b36dc54
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+disclose information
+**** Chinese
+披露信息
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       be558b35-110f-427d-b63f-664cc06c4b3d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+competence
+**** Chinese
+勝任能力
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       c27b93ba-50bd-47ae-9d79-a84449249a57
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+impartiality
+**** Chinese
+保持中立
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       741c5f72-d27d-483f-84bc-47221507ecf3
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+be partial to (take sides with)
+**** Chinese
+偏袒
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       02aa5610-6c22-48ba-a18e-d3993fbba912
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+bias (prejudice)
+**** Chinese
+偏見
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       022e014e-5abf-48e0-b8c3-1bd1ee8a6634
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+detachment
+**** Chinese
+超然態度
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       612c4182-bbcc-4bd7-b354-d7a7cb5bcd13
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+withdraw from an assignment
+**** Chinese
+退出任務
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       0abd6c30-27ad-461a-a325-323fbe0c83a1
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+express personal views
+**** Chinese
+發表私人意見
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       9fadbacc-6bb7-438a-86cf-51cedfd377bd
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+conflict of interest
+**** Chinese
+利益衝突
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       8ca9a062-6854-4f9f-870d-32ce23c9947c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+accuracy
+**** Chinese
+準確性
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       e3e834dd-1db9-4fde-b0bd-a58bd2cdb6ea
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+distortion (translation error)
+**** Chinese
+改變意思；翻譯錯誤
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       af2ad4b1-e357-4749-af0a-7213e50c332d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+omission
+**** Chinese
+遺漏
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cc75adda-ee75-45ac-bd74-5346252e192c
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+clarity of role boundaries
+**** Chinese
+明確職業界限
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       57c6946c-d30b-4ad3-b184-438616d55f12
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+advocacy
+**** Chinese
+倡導
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       a6cb3a65-2a61-4e4a-8b61-b2f8470afbc4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+maintain professional relationships
+**** Chinese
+維護職業關係
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       5473e9d7-1cd5-4d06-a4de-bf6213f70406
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+freelancer
+**** Chinese
+自由職業者
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       d0969d40-5473-45f5-b10e-ca30c7633fe4
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+contractor
+**** Chinese
+承包商
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       998a28a5-2b4e-4f3d-9ad7-abf6b885775d
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+professional development
+**** Chinese
+職業發展
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       cef9fd4c-0467-4e3e-9a32-0b7f4959bcc2
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+continuous study
+**** Chinese
+繼續學習
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1c4bdbf8-8454-4b54-b312-49a5c7518529
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+professional solidarity
+**** Chinese
+行業團結
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       77a52a3b-980c-4dea-999c-ae11dcb0b363
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+dispute
+**** Chinese
+糾紛
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       1d03d714-a22a-457a-8f31-fc9847fb5cdf
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+mediation
+**** Chinese
+調解
+**** Example sentence
+*** Word :drill:
+:PROPERTIES:
+:ID:       56fc9979-3f54-4d7a-86c5-59b6b652989e
+:DRILL_CARD_TYPE: twosided
+:END:
+**** English
+mediator
+**** Chinese
+調解員
+**** Example sentence
+
+* Body parts/diseases
+:LOGBOOK:
+CLOCK: [2019-12-15 Sun 20:10]--[2019-12-15 Sun 21:09] =>  0:59
+:END:
+#+BEGIN_SRC ditaa :file ccl-body-parts-diseases.png :cmdline -r -s 1
++-------------------------------------------------------------------------------------------------+
+|      brain                         eye                                respiratory system        |
+|        +-----------------+         +-----------------------------+         +----------------+   |
+|        |  encephalitis   |         | cataract            iris    |         | larynx         |   |
+|        |  neuron         |         | conjunctivitis      sclera  |         | trachea        |   |
+|        |  cerebral palsy |         | glaucoma            retina  |         | bronchial tube |   |
+|        |  epilepsy       |         | vitreous humour             |         | bronchitis     |   |
+|        |  meningitis     |         | lens                        |         | diaphragm      |   |
+|        +-----------------+         | cornea                      |         | phlegm         |   |
+|                                    | pupil                       |         | pneumonia      |   |
+|                                    +-----------------------------+         +----------------+   |
+|        head                                                                                     |
++-------------------------------------------------------------------------------------------------+
+                                                       |
+                                                       |
+                                                       v
++-------------------------------------------------------------------------------------------------+
+|                                    blood                                   bone                 |
+|                                    +--------------------------------+      +----------------+   |
+|                                    | artery                         |      | cartilage      |   |
+|                                    | vein                           |      | collagen       |   |
+|                                    | capillary                      |      | ligament       |   |
+|  Torso                             | erythrocytes(red blood cell)   |      | tendon         |   |
+|                                    | leukocytes(white blood cell)   |      | osteoporosis   |   |
+|                                    | platelet/thrombocyte           |      +----------------+   |
+|                                    | hemoglobin                     |                           |
+|                                    | plasma                         |                           |
+|                                    | leukemia                       |                           |
+|                                    +--------------------------------+                           |
+| guts/digestive system             Endocrine system                                              |  
+| +-----------------------+           +---------------+                                           |   
+| | large intestine/bower |           | gland         |               heart                       |   
+| | constipation          |           | pituitary     |              +--------------------------+ |   
+| | laxative              |           | adrenal gland |              | coronary heart disease   | |   
+| | tymmy pain            |           +---------------+              | ventricle                | |   
+| | gall bladder          |                                          | atrium                   | |   
+| | bile                  |                                          +--------------------------+ |   
+| | duodenum              |                                                                       | 
+| | ulcer                 |                                                                       | 
+| +-----------------------+                                                                       | 
+|                                                                                                 |
++-------------------------------------------------------------------------------------------------+
+                                                   |
+                                                   |
+                                                   |
+                                                   v
++-------------------------------------------------------------------------------------------------------------------+
+|urinary system                     female reproductive system                            male reproductive system  |
+|+------------------------------+   +--------------------------------------------------+  +---------------+         |
+|| ureter                       |   | uterus/womb         IVF(in vitro fertilisation)  |  |prostate gland |         |
+|| urethra                      |   | cervix              caesarean section            |  |testicle       |         |
+|| kidney failure               |   | fallopian tube      gynecologist                 |  |testosteron    |         |
+|| nephrolithiasis/kidney stone |   | ovary               obstetrician                 |  +---------------+         |
+|| nephritis                    |   | fetus                                            |                            |
+|| urinary tract infection      |   | embryo                                           |                            |
+|| dialysis                     |   | ectopic pregnancy                                |  near pelvis               |
+|+------------------------------+   +--------------------------------------------------+                            |
++-------------------------------------------------------------------------------------------------------------------+
+#+END_SRC
+
+#+RESULTS:
+[[file:ccl-body-parts-diseases.png]]
+
+gonorrhea
+syphilis
+oesophagus
+stools
+gastrologist
+belching
+hiatus hernia
+cleft lip and cleft palate
+non-staple food
+
+* Useful text processing commands
+** Format text
+~'<,'>s/\(^[a-zA-Z].*\)\(rep\) \(.*\)/*** Word\n**** English\n\1\n**** Chinese\n\3\n**** Example sentence/g~
+gives the following from "Legal System and Courts rep 法律制度与法庭".
+*** Word
+**** English
+Legal System and Courts 
+**** Chinese
+法律制度与法庭
+**** Example sentence
+** Add tag
+~'<,'>s/^\*\*\* .*/\0 :drill:~
+** Add property
+Run the following after running ~M-x org-drill~ and quit, which creates PROPERTIES for each Word.
+~'<,'>s/:END:/:DRILL_CARD_TYPE: twosided\n\0/g~
+
+* Get definition and example from Google dictionay
+:LOGBOOK:
+CLOCK: [2019-12-05 Thu 20:00]--[2019-12-05 Thu 20:47] =>  0:47
+:END:
+#+caption: Get-definition
+#+name: Get-definition
+#+begin_src ein-python :session localhost :results output code
+import urllib.request
+import re
+from typing import List, Dict
+
+defn = urllib.request.urlopen('https://googledictionaryapi.eu-gb.mybluemix.net/?define=remand&lang=en')
+contents = defn.read()
+
+def get_word_def(word: str) -> bytes:
+    if len(word.split()) > 1:
+        return "[]".encode()
+    defn = urllib.request.urlopen('https://googledictionaryapi.eu-gb.mybluemix.net/?define={}&lang=en'.format(word))
+    if defn.getcode() != 200:
+        return "[]".encode()
+    else:
+        return defn.read()
+
+def get_defs(words: List[str]) -> Dict:
+    res = {}
+    for word in words:
+        try:
+            res[word] = get_word_def(word)
+        except Exception as e:
+            with open('./ccl_exceptions.txt', 'a', encoding='utf-8') as f:
+                f.write('{}\n{}\n'.format(word, str(e)))
+            continue
+    return res
+
+def get_words(fin_path: str) -> List:
+    res = []
+    with open(fin_path, 'r', encoding='utf-8') as f:
+        res = re.findall("(?<=English\n).*", ''.join(f.readlines()))
+    with open('./ccl_words.txt', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(res))
+    return []
+
+      
+def write_to_file(fin_path: str, fout_path: str) -> bool:
+    import json
+    with open(fin_path, 'r', encoding='utf-8') as f:
+        words = f.readlines()
+        words = [w.replace('\n', '') for w in words]
+    defns = get_defs(words)
+    print("Got definitions")
+    with open(fout_path, 'ab') as f:
+        for word, defn in defns.items():
+            # f.write(b"%s:\n%s\n" % (word, defn))
+            f.write(word.encode() + ":\n".encode() + defn + "\n".encode())
+        return True # successful
+    return False
+# get_words('./ccl.org')
+write_to_file('./ccl_words.txt','./ccl_words_meaning.txt')
+#+end_src
+
+#+RESULTS: Get-definition
+#+begin_src none
+Got definitions
+
+True
+#+end_src
