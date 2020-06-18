@@ -1,0 +1,1547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-06-18 Thu 11:03 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Thomas-PC" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<p></p></p></p>
+</div>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgab2b0a1">1. Git Tutorial</a>
+<ul>
+<li><a href="#org43cb313">1.1. How git works conceptually</a></li>
+<li><a href="#org379d4a4">1.2. Prerequisites</a></li>
+<li><a href="#org4f80e6d">1.3. <code>git init .</code></a></li>
+<li><a href="#org0bb279e">1.4. <code>git status</code></a></li>
+<li><a href="#org20a80fd">1.5. <code>git add file</code></a></li>
+<li><a href="#orgcc57b22">1.6. <code>git commit -m "Commit message"</code></a></li>
+<li><a href="#org4b91559">1.7. Putting it together</a></li>
+<li><a href="#orgbba7566">1.8. Going back in history</a></li>
+<li><a href="#org4bf8237">1.9. <code>git blame</code></a></li>
+<li><a href="#orgfb9b308">1.10. <code>git push origin master</code></a></li>
+<li><a href="#org2f28dc5">1.11. <code>git pull origin master</code></a></li>
+<li><a href="#org9aa4e20">1.12. FAQs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgab2b0a1" class="outline-2">
+<h2 id="orgab2b0a1"><span class="section-number-2">1</span> Git Tutorial</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>If you want to know whom to <del>blame</del> (thank!) for the great choice of words.</li>
+<li>If you want to know why you did what you did a year ago.</li>
+<li>If you want to save time from manual debugging when latex freaks out again.</li>
+<li>If you want no more "paper-final-final-final-final.tex".</li>
+</ul>
+</div>
+<div id="outline-container-org43cb313" class="outline-3">
+<h3 id="org43cb313"><span class="section-number-3">1.1</span> How git works conceptually</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-ditaa"> /--\
+ |c | This is a commit
+ \--/
+
+    +--------------------------------------+   +--------+   +--------------------------------------+
+    |                                      |   |        |   |          |                           |
+    |                                      |   | New    |   | Staging  |     Stash area            |
+    |                                      |   | Commit |   | area     |                           |
+    |  /--\   /--\   /--\   /--\   /--\    |   | /--\   |   |          |---------------------------|
+    |  |c |--&gt;|c |--&gt;|c |--&gt;|c |--&gt;|c |---------&gt;|c |   |   |          |                           |
+    |  \--/   \--/   \--/   \--/   \--/    |   | \--/   |   |          |     Desktop/Work area/    |
+    |                                      |   |        |   |          |     Mess                  |
+    |                                      |   |        |   |          |                           |
+    |                                      |   |        |   |          |                           |
+    +--------------------------------------+   +--------+   +--------------------------------------+
+
+            git checkout                       git commit    git add           git status
+                                               git status    git status        git stash
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="git-tutorial-flowchart.png" alt="git-tutorial-flowchart.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org379d4a4" class="outline-3">
+<h3 id="org379d4a4"><span class="section-number-3">1.2</span> Prerequisites</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+To make this tutorial self-contained, I used some commands that are not git-related.
+Please be aware that you are not expected to know anything that does not start with <code>git</code> in this tutorial except for the following:
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>make a directory</label><pre class="src src-bash" id="org2fe8a7b">mkdir data
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org30e85f3">
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>list the conents of a directory</label><pre class="src src-bash" id="org9734fe1">ls
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgebe3584">data
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>change directory</label><pre class="src src-bash" id="org64d3e79"><span class="org-builtin">cd</span> data
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orge200c03">
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>perhaps create an empty file as well</label><pre class="src src-bash" id="org94dc4c6">touch some_data.txt
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org4c89f99">
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 5: </span>now list the contents of the directory again</label><pre class="src src-bash" id="org2c82cae">ls
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org6491e6b">some_data.txt
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 6: </span>now go back to the root directory</label><pre class="src src-bash" id="org169f158"><span class="org-comment-delimiter"># </span><span class="org-comment">.. means parent directory</span>
+<span class="org-builtin">cd</span> ..
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgc981e57">
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4f80e6d" class="outline-3">
+<h3 id="org4f80e6d"><span class="section-number-3">1.3</span> <code>git init .</code></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+We have a project directory called <code>working-paper</code> and there is a <code>data</code> folder in it from <a href="#org379d4a4">1.2</a>.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 7: </span>show the initial documents</label><pre class="src src-bash" id="org64c7ddf">ls
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org562b0da">data
+</pre>
+</div>
+
+<p>
+To start using git,
+we init(ialize) the directory <code>working-paper</code>.
+This only needs to be done once per project.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 8: </span>git init(ialize)</label><pre class="src src-bash" id="org0f5aeba">git init .
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org50cce41">Initialized empty Git repository<span class="org-keyword"> in</span> /tmp/working-paper/.git/
+</pre>
+</div>
+
+<p>
+We can choose to set up a few details about us for the project.
+</p>
+
+<p>
+If we don't do this, git will try its best to come up with the values from what it reads from your profile.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 9: </span>tell git something about us</label><pre class="src src-bash" id="org69e536e">git config user.name <span class="org-string">"Yi Wang"</span>
+git config user.email <span class="org-string">"wangy95@qut.edu.au"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org7cb6718">
+</pre>
+</div>
+
+<p>
+We then check if git knows who we are.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 10: </span>ask git who we are</label><pre class="src src-bash" id="orgeb6eb94">git config user.name
+git config user.email
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org1e6a206">Yi Wang
+wangy95@qut.edu.au
+</pre>
+</div>
+
+<p>
+Congratulations! We now have set up the basics!
+</p>
+</div>
+</div>
+<div id="outline-container-org0bb279e" class="outline-3">
+<h3 id="org0bb279e"><span class="section-number-3">1.4</span> <code>git status</code></h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+The second command we want to master is <code>git status</code>.
+As the name suggests, it reports <i>current status</i> of the project.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 11: </span>using git status for the first time</label><pre class="src src-bash" id="orgd5d2062">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org93312f7">On branch master
+
+No commits yet
+
+Untracked files:
+  (use <span class="org-string">"git add &lt;file&gt;..."</span> to include<span class="org-keyword"> in</span> what will be committed)
+
+        data/
+
+nothing added to commit but untracked files present (use <span class="org-string">"git add"</span> to track)
+</pre>
+</div>
+
+<p>
+Here is a line-by-line explanation through the above feedback that <code>git status</code> gives you.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span class="org-comment-delimiter"># </span><span class="org-comment">You can have any number of branches</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">so git status lets you know which branch you are working on</span>
+On branch master
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Because this is a new project,</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">we haven't committed anything.</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">We will cover committing in the next section.</span>
+No commits yet
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Untracked means changes to these files are invisible to git,</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">other than git knows that these files themselves exist</span>
+Untracked files:
+  <span class="org-comment-delimiter"># </span><span class="org-comment">Git is trying to prompt you that</span>
+  <span class="org-comment-delimiter"># </span><span class="org-comment">you can use this command to track the file(s)</span>
+  (use <span class="org-string">"git add &lt;file&gt;..."</span> to include<span class="org-keyword"> in</span> what will be committed)
+
+  <span class="org-comment-delimiter"># </span><span class="org-comment">The slash (/) means this is a directory.</span>
+  <span class="org-comment-delimiter"># </span><span class="org-comment">Git only cares about directories that have files.</span>
+        data/
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">A short summary of what our current status is</span>
+nothing added to commit but untracked files present (use <span class="org-string">"git add"</span> to track)
+</pre>
+</div>
+
+<p>
+I recommend that whenever you want to do <code>git add</code> and/or <code>git commit</code> from the following sections, you first run <code>git status</code> to get an idea of where you are at.
+</p>
+</div>
+</div>
+<div id="outline-container-org20a80fd" class="outline-3">
+<h3 id="org20a80fd"><span class="section-number-3">1.5</span> <code>git add file</code></h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+We now have a data file in the directory <code>data</code>
+and it's time that we ask git to track (monitor) it for us.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 12: </span>git add for the first time</label><pre class="src src-bash" id="orgbd7b646">git add data/some_data.txt
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgbee72ea">
+</pre>
+</div>
+<p>
+<code>git add</code> does not give us any feedback so let's use <code>git status</code> to see what is our <i>status</i> now.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 13: </span>git status after git add</label><pre class="src src-bash" id="org0b70637">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgf0c7f5d">On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use <span class="org-string">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+        new file:   data/some_data.txt
+
+</pre>
+</div>
+
+<p>
+The result seems similar to what we had <a href="#org93312f7">previously</a>, but certain words have changed, so here is another line-by-line explanation of what is going on.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span class="org-comment-delimiter"># </span><span class="org-comment">We are still on branch master.</span>
+On branch master
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">We still haven't made any commits yet.</span>
+No commits yet
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">We have changes that can be committed.</span>
+Changes to be committed:
+  <span class="org-comment-delimiter"># </span><span class="org-comment">Git tells us that we can use this command</span>
+  <span class="org-comment-delimiter"># </span><span class="org-comment">to un-add (unstage) the file.</span>
+  (use <span class="org-string">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+  <span class="org-comment-delimiter"># </span><span class="org-comment">Git now sees the file and recognizes it as a new file. </span>
+        new file:   data/some_data.txt
+
+</pre>
+</div>
+
+<p>
+It is worth noting that, in our case, <code>git add data/some_data.txt</code> is the same as <code>git add data/</code> because git does not track empty directories by default and <code>data</code> only has one file <code>some_data.txt</code>. 
+</p>
+
+<p>
+We then need to create more files for our paper.
+For starters, we want a file called <code>my-great-paper.tex</code> in the project root directory.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 14: </span>create main paper file</label><pre class="src src-bash" id="org8f3f450">touch my-great-paper.tex
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org124a16e">
+</pre>
+</div>
+
+<p>
+We again use <code>git status</code> to check what is going on.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 15: </span>git status after adding paper file</label><pre class="src src-bash" id="org7ea43ea">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgeb76bde">On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use <span class="org-string">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+        new file:   data/some_data.txt
+
+Untracked files:
+  (use <span class="org-string">"git add &lt;file&gt;..."</span> to include<span class="org-keyword"> in</span> what will be committed)
+
+        my-great-paper.tex
+
+</pre>
+</div>
+<p>
+The above result is kind of what we could understand.
+We have added a new file called <i>my-great-paper.tex</i> and it's not tracked by git yet.
+</p>
+
+<p>
+We now add (stage) it to git.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 16: </span>add main paper file to git</label><pre class="src src-bash" id="org001a17f">git add my-great-paper.tex
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org89410a4">
+</pre>
+</div>
+
+<p>
+Again, we use <code>git status</code> to check our status.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 17: </span>git status after staging main paper file</label><pre class="src src-bash" id="org7783bf4">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgec31dfc">On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use <span class="org-string">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+        new file:   data/some_data.txt
+        new file:   my-great-paper.tex
+
+</pre>
+</div>
+<p>
+We now have two files <i>staged</i> using <code>git add</code>.
+</p>
+
+<p>
+There is certainly more to the project than we have at the moment, so I'm going to add two more files. One called <code>references.bib</code> for all our references and another called <code>meeting-minutes.txt</code> that might record some useful information.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 18: </span>add two more files</label><pre class="src src-bash" id="org1149076">touch references.bib
+touch meeting-minutes.txt
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash">
+</pre>
+</div>
+
+<p>
+And we <b>always</b> rely on <code>git status</code>.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 19: </span>git status after adding two more files</label><pre class="src src-bash" id="orgfa0ba66">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgb06cbc6">On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use <span class="org-string">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+        new file:   data/some_data.txt
+        new file:   my-great-paper.tex
+
+Untracked files:
+  (use <span class="org-string">"git add &lt;file&gt;..."</span> to include<span class="org-keyword"> in</span> what will be committed)
+
+        meeting-minutes.txt
+        references.bib
+
+</pre>
+</div>
+<p>
+We add (stage) these two files together by listing them after the
+<code>git add</code> command (of course you can have more than two files to add/stage).
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 20: </span>git add two files together</label><pre class="src src-bash" id="orgd6d42e2">git add meeting-minutes.txt references.bib
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org83f1051">
+</pre>
+</div>
+
+<p>
+<code>git status</code>
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 21: </span>git status after staging the two new files</label><pre class="src src-bash" id="org8241f9a">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org088af72">On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use <span class="org-string">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+        new file:   data/some_data.txt
+        new file:   meeting-minutes.txt
+        new file:   my-great-paper.tex
+        new file:   references.bib
+
+</pre>
+</div>
+
+<p>
+One last thing about <code>git add</code> is that you can do all of the above 
+in one command <b>when you are sure that they should be grouped together as one coherent change</b>.
+</p>
+
+<p>
+To demonstrate this functionality, we again create some files for our project.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 22: </span>add some more files for the project</label><pre class="src src-bash" id="orgfdb03c0">mkdir misc
+<span class="org-builtin">cd</span> misc
+touch contact-numbers.csv
+touch experiment-expenditures.csv
+</pre>
+</div>
+
+<p>
+<code>git status</code> again.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 23: </span>git status after misc files</label><pre class="src src-bash" id="org2bbf07a">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org184d8e8">On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use <span class="org-string">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+        new file:   data/some_data.txt
+        new file:   meeting-minutes.txt
+        new file:   my-great-paper.tex
+        new file:   references.bib
+
+Untracked files:
+  (use <span class="org-string">"git add &lt;file&gt;..."</span> to include<span class="org-keyword"> in</span> what will be committed)
+
+        misc/
+
+</pre>
+</div>
+
+<p>
+We can now use <code>git add .</code> to stage/add these newly created files all together.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 24: </span>git add .</label><pre class="src src-bash" id="org984826d">git add .
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org5b143bf">
+</pre>
+</div>
+
+<p>
+<code>git status</code> again.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 25: </span>git status after staging misc files</label><pre class="src src-bash" id="orgf9e377c">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgb1f769e">On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use <span class="org-string">"git rm --cached &lt;file&gt;..."</span> to unstage)
+
+        new file:   data/some_data.txt
+        new file:   meeting-minutes.txt
+        new file:   misc/contact-numbers.csv
+        new file:   misc/experiment-expenditures.csv
+        new file:   my-great-paper.tex
+        new file:   references.bib
+
+</pre>
+</div>
+
+<p>
+We are finally ready to conduct our first commit!
+</p>
+</div>
+</div>
+<div id="outline-container-orgcc57b22" class="outline-3">
+<h3 id="orgcc57b22"><span class="section-number-3">1.6</span> <code>git commit -m "Commit message"</code></h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+We can now finally <i>commit</i> our changes, which means that these changes will be written in your history book and no one can fake it.
+</p>
+
+<p>
+To do this, we use <code>git commit</code>.
+The following example uses <code>git commit -m "message"</code>.
+In case you haven't figured it out already, <code>-m</code> stands for <i>message</i>.
+This <i>message</i> you provide is the message that helps you from a year later to understand why you did what you did.
+</p>
+
+<p>
+If you feel like you need to do a lot of explaining, we will cover how to provide a long message <a href="#org9aa4e20">later</a>.
+For now, we just provide a short message for the start of our project.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 26: </span>our first commit!</label><pre class="src src-bash" id="org4a621a1">git commit -m <span class="org-string">"The starting point of our new paper!"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org51776f0">[master (root-commit) 0c9b8bd] The starting point of our new paper!
+ 6 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 data/some_data.txt
+ create mode 100644 meeting-minutes.txt
+ create mode 100644 misc/contact-numbers.csv
+ create mode 100644 misc/experiment-expenditures.csv
+ create mode 100644 my-great-paper.tex
+ create mode 100644 references.bib
+</pre>
+</div>
+<p>
+Now we've written a lot of stuff in the history book <b>at once</b> and this history is reflected by this value <code>0c9b8bd</code>.
+</p>
+
+<p>
+There is no need to remember/know this value whatsoever because we can always find it. To do that and to read the history book we just wrote, we need to take a little detour to another command called <code>git log</code>.
+</p>
+
+<p>
+<code>git log</code>, as its name suggests, reports a log of what we did in the past.
+The output is a list of <i>commits</i> that we made.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 27: </span>git log for the first time</label><pre class="src src-bash" id="orgc51fe8f">git log
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org67ccbe9">commit 0c9b8bd37772d407642b8f84b747e8f45072cbb3
+Author: Yi Wang <a href="mailto:wangy95%40qut.edu.au">&lt;wangy95@qut.edu.au&gt;</a>
+Date:   Thu Jun 11 19:52:12 2020 +1000
+
+    The starting point of our new paper!
+</pre>
+</div>
+<p>
+In the above results, we see the familiar value <code>0c9b8bd</code> as the starting characters of the line <code>commit 0c9b8bd37772d407642b8f84b747e8f45072cbb3</code>. This means that this commit is identifiable by this strange.
+The <code>Author</code> line shows the information we gave git in <a href="#org379d4a4">1.2</a>, followed by a date stamp. Finally, it comes with the commit message that we gave it earlier.
+</p>
+
+<p>
+There is a lot to the <code>git log</code> command (as well as other commands), but here I provide some variations of it to help you get started fast.
+</p>
+
+<p>
+Only show one line per commit.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 28: </span>git log oneline</label><pre class="src src-bash" id="orge32cf35">git log --oneline
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgd1ec01a">0c9b8bd The starting point of our new paper!
+</pre>
+</div>
+
+<p>
+Get some colors if your command line doesn't do it already.
+(Unfortunately this result can not be seen here).
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 29: </span>git log color</label><pre class="src src-bash" id="org901c833">git log --color
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgfb642e0">commit 0c9b8bd37772d407642b8f84b747e8f45072cbb3
+Author: Yi Wang <a href="mailto:wangy95%40qut.edu.au">&lt;wangy95@qut.edu.au&gt;</a>
+Date:   Thu Jun 11 19:52:12 2020 +1000
+
+    The starting point of our new paper!
+</pre>
+</div>
+
+<p>
+Of course you can combine them.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 30: </span>git log oneline color</label><pre class="src src-bash" id="org4fde140">git log --oneline --color
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgbcb39da">33m0c9b8bd The starting point of our new paper!
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4b91559" class="outline-3">
+<h3 id="org4b91559"><span class="section-number-3">1.7</span> Putting it together</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+We now demonstrate how <code>git status</code>, <code>git add</code> and <code>git commit</code> work together in a basic workflow.
+</p>
+
+<p>
+Starting off, we run <code>git status</code> to make sure that there is no changes from previous work that we haven't dealt with.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 31: </span>workflow git status pre-check</label><pre class="src src-bash" id="orgeadcd56">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orge98b53f">On branch master
+nothing to commit, working tree clean
+</pre>
+</div>
+
+<p>
+Then we make some changes to our files.
+I'm going to write something to <code>my-great-paper.tex</code> file.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 32: </span>workflow write to file</label><pre class="src src-bash" id="org170b72e"><span class="org-builtin">echo</span> <span class="org-string">"% This is my first paper written with the help of git\n%And I hope it all works out.\n"</span> &gt; my-great-paper.tex
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orga359d96">
+</pre>
+</div>
+
+<p>
+Let's see if the change was successful by <code>git status</code>.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 33: </span>workflow git status check if write is successful</label><pre class="src src-bash" id="orgb8105b3">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org5246114">On branch master
+Changes not staged for commit:
+  (use <span class="org-string">"git add &lt;file&gt;..."</span> to update what will be committed)
+  (use <span class="org-string">"git checkout -- &lt;file&gt;..."</span> to discard changes<span class="org-keyword"> in</span> working directory)
+
+        modified:   my-great-paper.tex
+
+no changes added to commit (use <span class="org-string">"git add"</span> and/or <span class="org-string">"git commit -a"</span>)
+</pre>
+</div>
+
+<p>
+Optionally, we can use <code>git diff</code> to see what has been changed.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 34: </span>workflow git diff</label><pre class="src src-bash" id="org8ac9094">git diff my-great-paper.tex
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgf457b53">diff --git a/my-great-paper.tex b/my-great-paper.tex
+index e69de29..a73bcc6 100644
+--- a/my-great-paper.tex
++++ b/my-great-paper.tex
+@@ -0,0 +1 @@
++% This is my first paper written with the help of git\n%And I hope it all works out.
+</pre>
+</div>
+<p>
+Here's some explanation of what happened.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span class="org-comment-delimiter"># </span><span class="org-comment">Git is comparing what you just did</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">to what the last commit had for the file</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">my-great-paper.tex.</span>
+diff --git a/my-great-paper.tex b/my-great-paper.tex
+index e69de29..a73bcc6 100644
+--- a/my-great-paper.tex
++++ b/my-great-paper.tex
+@@ -0,0 +1 @@
+<span class="org-comment-delimiter"># </span><span class="org-comment">+ means this is added.</span>
++% This is my first paper written with the help of git\n%And I hope it all works out.
+</pre>
+</div>
+
+<p>
+We are sure that this change is what we need so we stage it.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 35: </span>workflow git add to stage 1</label><pre class="src src-bash" id="orgcb7a45b">git add .
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgd6008e9">
+</pre>
+</div>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 36: </span>workflow git status 3</label><pre class="src src-bash" id="orgb6beba5">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org151e4a5">On branch master
+Changes to be committed:
+  (use <span class="org-string">"git reset HEAD &lt;file&gt;..."</span> to unstage)
+
+        modified:   my-great-paper.tex
+
+</pre>
+</div>
+<p>
+In the above results, git knows we changed our <i>existing</i> file <code>my-great-paper.tex</code> so it shows that it's <i>modified</i>. Here, <i>existing</i> means it's tracked by git.
+</p>
+
+<p>
+We are happy to commit this staged change.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 37: </span>workflow git commit 1</label><pre class="src src-bash" id="org2da2bf6">git commit -m <span class="org-string">"Add comments in the paper to celebrate first use of git"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org2007cde">[master 58bbd26] Add comments<span class="org-keyword"> in</span> the paper to celebrate first use of git
+ 1 file changed, 1 insertion(+)
+</pre>
+</div>
+
+<p>
+We repeat this to add template from QUT to the file.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 38: </span>add more contents to the main file</label><pre class="src src-bash" id="orge8728b9">cat /mnt/c/Users/thoma/Dev/orgs/brain/Work/ThesisMainFile.tex &gt;&gt; my-great-paper.tex
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orge91ebf9">
+</pre>
+</div>
+
+<p>
+Routine check.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 39: </span>workflow git status 4</label><pre class="src src-bash" id="orgb28bde6">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org9abbc64">On branch master
+Changes not staged for commit:
+  (use <span class="org-string">"git add &lt;file&gt;..."</span> to update what will be committed)
+  (use <span class="org-string">"git checkout -- &lt;file&gt;..."</span> to discard changes<span class="org-keyword"> in</span> working directory)
+
+        modified:   my-great-paper.tex
+
+no changes added to commit (use <span class="org-string">"git add"</span> and/or <span class="org-string">"git commit -a"</span>)
+</pre>
+</div>
+
+<p>
+Running <code>git diff</code> now would output a lot of text, so I'm truncating it down a bit to 15 lines just to fit this tutorial. Your command line can display the output fine.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 40: </span>git diff truncated</label><pre class="src src-bash" id="org5d9cc7f">git diff | head -n 15
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgbde00b6">diff --git a/my-great-paper.tex b/my-great-paper.tex
+index a73bcc6..503f2f7 100644
+--- a/my-great-paper.tex
++++ b/my-great-paper.tex
+@@ -1 +1,55 @@
+ % This is my first paper written with the help of git\n%And I hope it all works out.
++\documentclass[12pt,twoside,a4paper,openright]{report}
++\usepackage{qutthesis}
++\usepackage{amsmath}
++\usepackage{amssymb}
++%\usepackage{amsart}
++\usepackage{verbatim}
++%\usepackage{nomencl}
++\usepackage{longtable}
++\usepackage{hyperref}
+</pre>
+</div>
+<p>
+You can see that a lot of contents have been added.
+</p>
+
+<p>
+It is worth mentioning that the amount of the contents does not determine when you should stage and commit. Instead, you need to stage and commit when you finish a coherent part.
+</p>
+
+<p>
+For example, all I did in the this change was <i>adding template text</i>, which I think is a coherent part no matter how many lines it has.
+</p>
+
+<p>
+This way of thinking actually helps you to organize your writing/work better because it forces you to divide your work into small chunks that are easier to tackle.
+</p>
+
+<p>
+After saying all that, we can now simply <code>git add</code> and <code>git commit</code>.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 41: </span>git add template</label><pre class="src src-bash" id="org39cd878">git add .
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgce867cd">
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 42: </span>git commit template</label><pre class="src src-bash" id="org7fab862">git commit -m <span class="org-string">"Add template text from QUT"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgc79f4b8">[master af3e0ec] Add template text from QUT
+ 1 file changed, 54 insertions(+)
+</pre>
+</div>
+
+<p>
+And now if we check our log.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 43: </span>git log check more commits</label><pre class="src src-bash" id="orgd155efb">git log
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org313e0ae">commit af3e0ec5d969d3fe3bab819678512fefdbf49bc0
+Author: Yi Wang <a href="mailto:wangy95%40qut.edu.au">&lt;wangy95@qut.edu.au&gt;</a>
+Date:   Thu Jun 11 21:05:28 2020 +1000
+
+    Add template text from QUT
+
+commit 58bbd2665b24a617452cbdc9ec8c7e307d961c71
+Author: Yi Wang <a href="mailto:wangy95%40qut.edu.au">&lt;wangy95@qut.edu.au&gt;</a>
+Date:   Thu Jun 11 20:49:58 2020 +1000
+
+    Add comments<span class="org-keyword"> in</span> the paper to celebrate first use of git
+
+commit 0c9b8bd37772d407642b8f84b747e8f45072cbb3
+Author: Yi Wang <a href="mailto:wangy95%40qut.edu.au">&lt;wangy95@qut.edu.au&gt;</a>
+Date:   Thu Jun 11 19:52:12 2020 +1000
+
+    The starting point of our new paper!
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbba7566" class="outline-3">
+<h3 id="orgbba7566"><span class="section-number-3">1.8</span> Going back in history</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+Our project now has 3 commits, wow!
+</p>
+
+<p>
+Now I'll copy the rest of the template to the current folder to make it easier for us to work with.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 44: </span>copy all template files</label><pre class="src src-bash" id="orgaf9b366">cp -r /mnt/c/Users/thoma/Dev/orgs/brain/Work/QUTThesisTemplate .
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org0ca5b79">
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 45: </span>git status to check for all template files</label><pre class="src src-bash" id="org878aa2d">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgb89a1d1">On branch master
+Untracked files:
+  (use <span class="org-string">"git add &lt;file&gt;..."</span> to include<span class="org-keyword"> in</span> what will be committed)
+
+        QUTThesisTemplate/
+
+nothing added to commit but untracked files present (use <span class="org-string">"git add"</span> to track)
+</pre>
+</div>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 46: </span>git add new template files</label><pre class="src src-bash" id="org226a51a">git add QUTThesisTemplate
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org9a0c4ca">
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 47: </span>git status after staging new template files</label><pre class="src src-bash" id="org31e159a">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgb47aad0">On branch master
+Changes to be committed:
+  (use <span class="org-string">"git reset HEAD &lt;file&gt;..."</span> to unstage)
+
+        new file:   QUTThesisTemplate/Appendix.tex
+        new file:   QUTThesisTemplate/Ch0FrontPart.tex
+        new file:   QUTThesisTemplate/Ch1Introduction.tex
+        new file:   QUTThesisTemplate/Ch2LiteratureReview.tex
+        new file:   QUTThesisTemplate/Ch3.tex
+        new file:   QUTThesisTemplate/Ch4.tex
+        new file:   QUTThesisTemplate/Ch5.tex
+        new file:   QUTThesisTemplate/Ch6Conclusions.tex
+        new file:   QUTThesisTemplate/DelayS.eps
+        new file:   QUTThesisTemplate/DelayS.png
+        new file:   QUTThesisTemplate/QUTLogo.eps
+        new file:   QUTThesisTemplate/QUTLogo.png
+        new file:   QUTThesisTemplate/References.bib
+        new file:   QUTThesisTemplate/ThesisMainFile.pdf
+        new file:   QUTThesisTemplate/ThesisMainFile.tex
+        new file:   QUTThesisTemplate/nomenclature.tex
+        new file:   QUTThesisTemplate/qutthesis.sty
+
+</pre>
+</div>
+<p>
+Commit all template files.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 48: </span>git commit new template files</label><pre class="src src-bash" id="org9b36331">git commit -m <span class="org-string">"Add all template files"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgf47f6e8">[master 5980162] Add all template files
+ 17 files changed, 4671 insertions(+)
+ create mode 100755 QUTThesisTemplate/Appendix.tex
+ create mode 100755 QUTThesisTemplate/Ch0FrontPart.tex
+ create mode 100755 QUTThesisTemplate/Ch1Introduction.tex
+ create mode 100755 QUTThesisTemplate/Ch2LiteratureReview.tex
+ create mode 100755 QUTThesisTemplate/Ch3.tex
+ create mode 100755 QUTThesisTemplate/Ch4.tex
+ create mode 100755 QUTThesisTemplate/Ch5.tex
+ create mode 100755 QUTThesisTemplate/Ch6Conclusions.tex
+ create mode 100755 QUTThesisTemplate/DelayS.eps
+ create mode 100755 QUTThesisTemplate/DelayS.png
+ create mode 100755 QUTThesisTemplate/QUTLogo.eps
+ create mode 100755 QUTThesisTemplate/QUTLogo.png
+ create mode 100755 QUTThesisTemplate/References.bib
+ create mode 100755 QUTThesisTemplate/ThesisMainFile.pdf
+ create mode 100755 QUTThesisTemplate/ThesisMainFile.tex
+ create mode 100755 QUTThesisTemplate/nomenclature.tex
+ create mode 100755 QUTThesisTemplate/qutthesis.sty
+</pre>
+</div>
+
+<p>
+Modify <code>my-great-paper.tex</code> so it can properly reference the separate files in <code>QUTThesisTemplate</code> directory.
+</p>
+
+<p>
+After the modification, run <code>git status</code>.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 49: </span>git status after modification</label><pre class="src src-bash" id="org352d90d">git status
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org7273649">On branch master
+Changes not staged for commit:
+  (use <span class="org-string">"git add &lt;file&gt;..."</span> to update what will be committed)
+  (use <span class="org-string">"git checkout -- &lt;file&gt;..."</span> to discard changes<span class="org-keyword"> in</span> working directory)
+
+        modified:   my-great-paper.tex
+
+no changes added to commit (use <span class="org-string">"git add"</span> and/or <span class="org-string">"git commit -a"</span>)
+</pre>
+</div>
+
+<p>
+Optionally run <code>git diff</code> to see what's changed.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 50: </span>git diff optionl</label><pre class="src src-bash" id="orgc01c1d5">git diff
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org12c7f45">diff --git a/my-great-paper.tex b/my-great-paper.tex
+index 503f2f7..efe322e 100644
+--- a/my-great-paper.tex
++++ b/my-great-paper.tex
+@@ -21,20 +21,20 @@
+ \begin{document}
+ 
+ %%%%%%%%%% Front Part: Cover page, abstract, ack, preface
+-\include{./Ch0FrontPart}           %Ch0FrontPart.tex
++\include{./QUTThesisTemplate/Ch0FrontPart}           %Ch0FrontPart.tex
+                                    %   including title page information, abstract,
+                                    %   acknowledgement, etc
+ %%% Body Text
+-\include{./Ch1Introduction}        %Ch1Introduction.tex
+-\include{./Ch2LiteratureReview}    %Ch2LiteratureReview.tex
+-\include{./Ch3}                    %Ch3.tex
+-\include{./Ch4}                    %Ch4.tex
+-\include{./Ch5}                    %Ch5.tex
+-\include{./Ch6Conclusions}         %Ch6Conclusions.tex
++\include{./QUTThesisTemplate/Ch1Introduction}        %Ch1Introduction.tex
++\include{./QUTThesisTemplate/Ch2LiteratureReview}    %Ch2LiteratureReview.tex
++\include{./QUTThesisTemplate/Ch3}                    %Ch3.tex
++\include{./QUTThesisTemplate/Ch4}                    %Ch4.tex
++\include{./QUTThesisTemplate/Ch5}                    %Ch5.tex
++\include{./QUTThesisTemplate/Ch6Conclusions}         %Ch6Conclusions.tex
+ 
+ %%%%%%%%%%%Appendix
+ % If you don<span class="org-string">'t have any appendix, comment the following line out</span>
+<span class="org-string">-\include{./Appendix}</span>
+<span class="org-string">+\include{./QUTThesisTemplate/Appendix}</span>
+<span class="org-string"> </span>
+<span class="org-string"> %%%%%%%%%%%%References</span>
+<span class="org-string"> % The default heading for references is ``Literature Cited''</span>
+<span class="org-string">@@ -52,4 +52,5 @@</span>
+<span class="org-string"> \newpage</span>
+<span class="org-string"> ~~</span>
+<span class="org-string"> \cleardoublepage</span>
+<span class="org-string">-\end{document}</span>
+<span class="org-string">\ No newline at end of file</span>
+<span class="org-string">+\end{document}</span>
+<span class="org-string">+</span>
+</pre>
+</div>
+
+<p>
+We now use <code>git add</code> and <code>git commit</code> to stage and commit the changes.
+I'm going to use them together in this example.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 51: </span>git add and git commit together</label><pre class="src src-bash" id="org66661ee">git add .
+git commit -m <span class="org-string">"Properly reference other files in the main tex file"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgf1bee7c">[master 1c439a9] Properly reference other files<span class="org-keyword"> in</span> the main tex file
+ 1 file changed, 10 insertions(+), 9 deletions(-)
+</pre>
+</div>
+<p>
+Git considers changes in terms of lines, so changing
+<code>\include{./Appendix}</code>
+to <code>\include{./QUTThesisTemplate/Appendix}</code>, even on the same line, is considered first deleting the original line, and then insert the new line.
+</p>
+
+<p>
+We now have some more history to go back to.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 52: </span>git log more history</label><pre class="src src-bash" id="orgfa029e3">git log --oneline
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org959b5dc">1c439a9 Properly reference other files<span class="org-keyword"> in</span> the main tex file
+5980162 Add all template files
+af3e0ec Add template text from QUT
+58bbd26 Add comments<span class="org-keyword"> in</span> the paper to celebrate first use of git
+0c9b8bd The starting point of our new paper!
+</pre>
+</div>
+<p>
+To go back to a previous version (history), simply use <code>git checkout</code>.
+For example, we want to go back to <code>af3e0ec Add template text from QUT</code>.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 53: </span>git checkout for the first time!</label><pre class="src src-bash" id="org8382c08">git checkout af3e0ec
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org340977e">
+</pre>
+</div>
+<p>
+Then we run <code>git log</code> again.
+We can see that we are at commit <code>af3e0ec</code> (this commit is at the top of the result from <code>git log</code>).
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 54: </span>git log after going back to commit</label><pre class="src src-bash" id="org95ee31f">git log --oneline
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org4d4f2ab">af3e0ec Add template text from QUT
+58bbd26 Add comments<span class="org-keyword"> in</span> the paper to celebrate first use of git
+0c9b8bd The starting point of our new paper!
+</pre>
+</div>
+<p>
+To prove that, we can check our current working directory.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 55: </span>check current working directory</label><pre class="src src-bash" id="org5dba10c">ls
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org379b899">data
+meeting-minutes.txt
+misc
+my-great-paper.tex
+references.bib
+test
+</pre>
+</div>
+<p>
+We can see that the <code>QUTThesisTemplate</code> directory is gone!
+We have successfully made it back in time!
+</p>
+</div>
+</div>
+<div id="outline-container-org4bf8237" class="outline-3">
+<h3 id="org4bf8237"><span class="section-number-3">1.9</span> <code>git blame</code></h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+Suppose someone edited our great paper&#x2026;
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 56: </span>someone edits this great paper</label><pre class="src src-bash" id="org8854612"><span class="org-builtin">echo</span> <span class="org-string">"Catch me if you can"</span> &gt;&gt; my-great-paper.tex
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="org5a6ed19">
+</pre>
+</div>
+
+<p>
+And then the changes are staged (added) and commited.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 57: </span>add and commit</label><pre class="src src-bash" id="org8dad7dc">git add .
+git commit -m <span class="org-string">"Explain why we need git"</span>
+</pre>
+</div>
+
+<p>
+[master 7f3f739] Explain why we need git
+1 file changed, 1 insertion(+)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">git blame my-great-paper.tex
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash" id="orgcbe61c8"><span class="org-function-name">7f3f739b</span> (Yi Wang 2020-06-11 16:51:08 +1000 1) Catch me if you can
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgfb9b308" class="outline-3">
+<h3 id="orgfb9b308"><span class="section-number-3">1.10</span> <code>git push origin master</code></h3>
+<div class="outline-text-3" id="text-1-10">
+</div>
+</div>
+<div id="outline-container-org2f28dc5" class="outline-3">
+<h3 id="org2f28dc5"><span class="section-number-3">1.11</span> <code>git pull origin master</code></h3>
+<div class="outline-text-3" id="text-1-11">
+</div>
+</div>
+<div id="outline-container-org9aa4e20" class="outline-3">
+<h3 id="org9aa4e20"><span class="section-number-3">1.12</span> FAQs</h3>
+<div class="outline-text-3" id="text-1-12">
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Thomas-PC</p>
+<p class="date">Created: 2020-06-18 Thu 11:03</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
