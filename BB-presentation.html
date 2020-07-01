@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Introduction to Git</title>
+<meta name="author" content="(Yi Wang)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<meta name="description" content="Git Introduction.">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Introduction to Git</h1><h2 class="author">Yi Wang</h2><p class="date">Created: 2020-07-01 Wed 15:39</p>
+</section>
+<section>
+<section id="slide-org1b26d70">
+<h2 id="org1b26d70"><span class="section-number-2">1</span> Why do we want to use Git?</h2>
+<ul>
+<li><a href="#/slide-orgeb593b5">Incremental versioning</a></li>
+<li><a href="#/slide-orga75858e">Understand your work</a></li>
+<li><a href="#/slide-orge69f213">Full cooperation history</a></li>
+<li><a href="#/slide-org3f3449e">Time travel to any version</a></li>
+<li><a href="#/slide-org499a505">Work on new ideas - no worries</a></li>
+<li><a href="#/slide-org5a83f04">A <code>branch</code> for a sub-project</a></li>
+<li><a href="#/slide-orgee594ff">Bring sub-projects up to speed with one command</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org98e9317">
+<h2 id="org98e9317"><span class="section-number-2">2</span> Magic example</h2>
+<p>
+\(LaTeX\) breaks down by accident.
+</p>
+
+<p>
+When the editor could not remember whether a part of the document or code has been changed because that change was done quite some time ago, or that was quickly done while other changes were made.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgeb593b5">
+<h2 id="orgeb593b5"><span class="section-number-2">3</span> Incremental versioning</h2>
+<p>
+No more "final-final-reallyfinal-thefinal.tex".
+</p>
+
+
+<figure>
+<img src="version control meme.png" alt="version control meme.png">
+
+</figure>
+
+</section>
+</section>
+<section>
+<section id="slide-org1325352">
+<h3 id="org1325352"><span class="section-number-3">3.1</span> Clean layout - always</h3>
+<ul>
+<li>We've seen this too much.</li>
+
+</ul>
+
+<figure>
+<img src="mesy folder.png" alt="mesy folder.png">
+
+</figure>
+</section>
+<section id="slide-org1325352-split">
+<ul>
+<li>With Git, your project structure is <b>always</b> clean like below.</li>
+<li>You <b>always</b> work on the latest version of the files.</li>
+
+</ul>
+
+
+<figure>
+<img src="clean structure.png" alt="clean structure.png">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgf737cb4">
+<h3 id="orgf737cb4"><span class="section-number-3">3.2</span> Have as many versions as you want</h3>
+<p>
+In fact, Git encourages you to break your changes into small coherent chunks
+as incremental versions.
+</p>
+
+<p>
+Each line below can be considred as a version.
+</p>
+
+
+<figure>
+<img src="incremental versioning.jpg" alt="incremental versioning.jpg">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orga75858e">
+<h2 id="orga75858e"><span class="section-number-2">4</span> Understand your work</h2>
+<p>
+With Git, you understand how your 
+</p>
+<ul>
+<li>paper</li>
+<li>code</li>
+<li>data</li>
+
+</ul>
+<p>
+evolve over time in retrospect.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orge69f213">
+<h2 id="orge69f213"><span class="section-number-2">5</span> Full cooperation history</h2>
+<p>
+Know who changed what at when &amp; why - line by line.
+</p>
+
+
+<figure>
+<img src="cooperation history.png" alt="cooperation history.png">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org3f3449e">
+<h2 id="org3f3449e"><span class="section-number-2">6</span> Time travel to any version</h2>
+<p>
+Time travel to previous versions with <i>zero</i> damage to current work.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org499a505">
+<h2 id="org499a505"><span class="section-number-2">7</span> Work on new ideas - no worries</h2>
+<p>
+Experiment with new ideas in place with <b>zero</b> commitment.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org5831ce8">
+<h3 id="org5831ce8"><span class="section-number-3">7.1</span> <code>stash</code> all your temporary work</h3>
+<ul>
+<li class="fragment appear">New idea hits whenever it pleases.</li>
+<li class="fragment appear">It hits hard especially when you are in the middle of something.</li>
+<li class="fragment appear"><code>git stash</code> saves all your current progress from the last commit.</li>
+<li class="fragment appear">Then you can start working on the new ideas.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org22374f4">
+<h3 id="org22374f4"><span class="section-number-3">7.2</span> Getting back your work</h3>
+<ul>
+<li class="fragment appear">When you finished with your new ideas.</li>
+<li class="fragment appear"><code>git stash pop</code> to get back to where you left.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org5a83f04">
+<h2 id="org5a83f04"><span class="section-number-2">8</span> A <code>branch</code> for a sub-project</h2>
+<p>
+Change code for your conference slides with <b>zero</b> damage to your main paper code.
+</p>
+
+
+<figure>
+<img src="branches.png" alt="branches.png">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgee594ff">
+<h2 id="orgee594ff"><span class="section-number-2">9</span> Bring sub-projects up to speed with one command</h2>
+<p>
+Update your conference slides to use the newest changes in main paper, with <b>zero</b> manual check-copy-paste.
+</p>
+
+</section>
+<section id="slide-orgee594ff-split">
+<div class="org-src-container">
+
+<pre  class="src src-ditaa"><code trim>
+/-\  /-\  /-\  /-\
+|c|-&gt;|c|-&gt;|c|-&gt;|c|     master branch (main paper)
+\-/  \-/  \-/  \-/
+                |
+                |   /---\  /---\
+                +--&gt;|cb |-&gt;|cb |     conference branch
+                    \---/  \---/
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgee594ff-split">
+<div class="org-src-container">
+
+<pre  class="src src-ditaa"><code trim>
+/-\  /-\  /-\  /-\  /-------------\  /-------------\
+|c|-&gt;|c|-&gt;|c|-&gt;|c|-&gt;|updated data |-&gt;|updated code |     master branch (main paper)
+\-/  \-/  \-/  \-/  \-------------/  \-------------/
+                |
+                |   /---\  /---\
+                +--&gt;|cb |-&gt;|cb |    conference branch
+                    \---/  \---/
+</code></pre>
+</div>
+
+
+</section>
+<section id="slide-orgee594ff-split">
+
+<div class="org-src-container">
+
+<pre  class="src src-ditaa"><code trim>
+
+/-\  /-\  /-\  /-\  /-------------\  /-------------\
+|c|-&gt;|c|-&gt;|c|-&gt;|c|-&gt;|updated data |-&gt;|updated code |     master branch (main paper)
+\-/  \-/  \-/  \-/  \-------------/  \-------------/
+                                            |
+                                            |   /---\  /---\
+                                            +--&gt;|cb |-&gt;|cb |     conference branch
+                                                \---/  \---/
+</code></pre>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org3afc334">
+<h2 id="org3afc334"><span class="section-number-2">10</span> Collaborate like never before</h2>
+<p>
+This is an advanced option and requires everyone in the team to use Git.
+</p>
+</section>
+</section>
+</div>
+</div>
+<p> Created by Yi Wang. </p>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+width:1200, height:800, margin: 0.1, minScale:0.2, maxScale:2.5, transition:'slide', slideNumber:true,
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: './image-size.js' },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
