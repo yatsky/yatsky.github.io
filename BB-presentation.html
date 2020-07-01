@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Introduction to Git</title>
+<title>Introduction to Version Control/Git</title>
 <meta name="author" content="(Yi Wang)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -22,70 +22,235 @@
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <meta name="description" content="Git Introduction.">
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Introduction to Git</h1><h2 class="author">Yi Wang</h2><p class="date">Created: 2020-07-01 Wed 15:39</p>
+<section id="sec-title-slide"><h1 class="title">Introduction to Version Control/Git</h1><h2 class="author">Yi Wang</h2><p class="date">Created: 2020-07-01 Wed 23:28</p>
 </section>
 <section>
-<section id="slide-org1b26d70">
-<h2 id="org1b26d70"><span class="section-number-2">1</span> Why do we want to use Git?</h2>
-<ul>
-<li><a href="#/slide-orgeb593b5">Incremental versioning</a></li>
-<li><a href="#/slide-orga75858e">Understand your work</a></li>
-<li><a href="#/slide-orge69f213">Full cooperation history</a></li>
-<li><a href="#/slide-org3f3449e">Time travel to any version</a></li>
-<li><a href="#/slide-org499a505">Work on new ideas - no worries</a></li>
-<li><a href="#/slide-org5a83f04">A <code>branch</code> for a sub-project</a></li>
-<li><a href="#/slide-orgee594ff">Bring sub-projects up to speed with one command</a></li>
-
-</ul>
+<section id="slide-orgd549e6b">
+<h2 id="orgd549e6b"><span class="section-number-2">1</span> Why Version Control?</h2>
 </section>
 </section>
 <section>
-<section id="slide-org98e9317">
-<h2 id="org98e9317"><span class="section-number-2">2</span> Magic example</h2>
-<p>
-\(LaTeX\) breaks down by accident.
-</p>
-
-<p>
-When the editor could not remember whether a part of the document or code has been changed because that change was done quite some time ago, or that was quickly done while other changes were made.
-</p>
-</section>
-</section>
-<section>
-<section id="slide-orgeb593b5">
-<h2 id="orgeb593b5"><span class="section-number-2">3</span> Incremental versioning</h2>
-<p>
-No more "final-final-reallyfinal-thefinal.tex".
-</p>
-
+<section id="slide-orge6fb4c9">
+<h3 id="orge6fb4c9"><span class="section-number-3">1.1</span> The meme</h3>
 
 <figure>
 <img src="version control meme.png" alt="version control meme.png">
 
 </figure>
+</section>
+</section>
+<section>
+<section id="slide-org8e0703d">
+<h3 id="org8e0703d"><span class="section-number-3">1.2</span> Current situation</h3>
+<p>
+Research nowadays
+</p>
+<ul>
+<li class="fragment appear">involves hundreds of iterations before publication,</li>
+<li class="fragment appear">spans months or years, and</li>
+<li class="fragment appear">has many collaboraters.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org85d038c">
+<h3 id="org85d038c"><span class="section-number-3">1.3</span> Problem</h3>
+<p>
+Given the situation, it is extremly hard, it not impossible, to achieve the following:
+</p>
+
+<ul>
+<li class="fragment appear">*Traceability - know how the document/project evolved over time.</li>
+<li class="fragment appear">*Identifiability - track what changed by whom at when and why.</li>
+<li class="fragment appear">*Clarity - multiple versions of documents can be distinguished.</li>
+<li class="fragment appear">*Duplicate reduction - out-of-date and misleading copies can be safely destroyed, leaving definitive versions only.</li>
+<li class="fragment appear">*Error reduction - users are less likely to access confilict document versions.</li>
+<li class="fragment appear">Accident prevention - make it impossible for users to destroy a project/file.</li>
+
+</ul>
+<p>
+(* Taken from: <a href="https://www2.le.ac.uk/services/research-data/old-2019-12-11/organise-data/version-control#:~:text=Benefits,may%20not%20be%20immediately%20apparent">Leicester University</a>.)
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org123add2">
+<h3 id="org123add2"><span class="section-number-3">1.4</span> Solution</h3>
+<p>
+<i>Incidentally</i>, modern Version Control checks all those points.
+</p>
+<ul>
+<li class="on"><code>[X]</code> Traceability</li>
+<li class="on"><code>[X]</code> Identifiability</li>
+<li class="on"><code>[X]</code> Clarity</li>
+<li class="on"><code>[X]</code> Duplicate reduction</li>
+<li class="on"><code>[X]</code> Error reduction</li>
+<li class="on"><code>[X]</code> Accident prevention</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orge9df7fe">
+<h2 id="orge9df7fe"><span class="section-number-2">2</span> Why do we want to use Git?</h2>
+<ul>
+<li class="fragment appear">De-facto software for version control</li>
+<li class="fragment appear">A lot of good tutorials online</li>
+<li class="fragment appear">Easy to learn (maybe)</li>
+<li class="fragment appear">Free, <b>widely</b> used collaboration service - GitHub</li>
+
+</ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org1325352">
-<h3 id="org1325352"><span class="section-number-3">3.1</span> Clean layout - always</h3>
+<section id="slide-org9f5a65d">
+<h3 id="org9f5a65d"><span class="section-number-3">2.1</span> Side note</h3>
+<p>
+Git - command line based tool.
+SourceTree - graphical tool based on Git.
+</p>
+
+<aside class="notes">
+<p>
+There are other more traditional graphical software that are built on top of Git.
+</p>
+
+<p>
+Though I encourage everyone to use Git itself since it is more powerful, 
+the demo today will be using SourceTree.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org238f999">
+<h2 id="org238f999"><span class="section-number-2">3</span> Incremental versioning</h2>
+<p>
+Manual version control by renaming a file is not optimal because
+</p>
+
+<ol>
+<li class="fragment appear">hard to distinguish unrelated changes</li>
+<li class="fragment appear">hard to attach a meaning to a rename</li>
+
+</ol>
+
+<aside class="notes">
+<p>
+Manual version control by renaming a file is not optimal because
+</p>
+
+<p>
+It's hard to distinguish unrelated changes
+It's hard to attach a meaning to a rename
+</p>
+
+<p>
+That's why we want to do something I'd call incremental versioning,
+meaning that we create a version for a change of text or a change of a line or
+a change of a few lines that are related, which is different from versioning the whole file by renaming it.
+</p>
+
+<p>
+For example, in a file called paper.tex.
+We change the title in the first line from Introduction to Git to Introduction to Version Control.
+</p>
+
+<p>
+What Incremental versioning sees is
+What Renaming method sees is
+</p>
+
+</aside>
+</section>
+<section id="slide-org238f999-split">
+<p>
+In <code>paper.tex</code>, we changed the title at line number 1.
+</p>
+
+<p>
+<del>Introduction to Git</del> 
+=&gt;
+<span class="underline">Introduction to Version Control</span>
+</p>
+
 <ul>
-<li>We've seen this too much.</li>
+<li>Incremental versioning: Line number 1 in <code>paper.tex</code> has been changed from <i>Introduction to Git</i> to <i>Introduction to Version Control</i>.</li>
+
+<li>Renaming: <code>paper.tex</code> is renamed to something like <code>paper-change-title.tex</code>.</li>
 
 </ul>
+<aside class="notes">
+<p>
+Manual version control by renaming a file is not optimal because
+</p>
 
-<figure>
-<img src="mesy folder.png" alt="mesy folder.png">
+<p>
+It's hard to distinguish unrelated changes
+It's hard to attach a meaning to a rename
+</p>
 
-</figure>
+<p>
+That's why we want to do something I'd call incremental versioning,
+meaning that we create a version for a change of text or a change of a line or
+a change of a few lines that are related, which is different from versioning the whole file by renaming it.
+</p>
+
+<p>
+For example, in a file called paper.tex.
+We change the title in the first line from Introduction to Git to Introduction to Version Control.
+</p>
+
+<p>
+What Incremental versioning sees is
+What Renaming method sees is
+</p>
+
+</aside>
+
 </section>
-<section id="slide-org1325352-split">
+<section id="slide-org238f999-split">
+<p>
+Git <i>tracks</i> all your incremental changes and automagically applies those changes to your files in a chronological order.
+</p>
+
+<p>
+This is the core idea of Git and it has some amazing effects.
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-ditaa"><code trim>  /---\
+  |c 1|  This is one change.
+  \---/
+
+  /---\  /---\  /---\  /---\     /---\  /---\
+  |c 1|-&gt;|c 2|-&gt;|c 3|-&gt;|c 4|-&gt;...|c98|-&gt;|c99|
+  \---/  \---/  \---/  \---/     \---/  \---/
+
+      Time line
+    ------------------------------&gt;
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org04a5914">
+<h3 id="org04a5914"><span class="section-number-3">3.1</span> Clean layout - always</h3>
+<p>
+Instead of this
+<img src="mesy folder.png" alt="mesy folder.png">
+</p>
+</section>
+<section id="slide-org04a5914-split">
 <ul>
 <li>With Git, your project structure is <b>always</b> clean like below.</li>
 <li>You <b>always</b> work on the latest version of the files.</li>
@@ -100,8 +265,8 @@ No more "final-final-reallyfinal-thefinal.tex".
 </section>
 </section>
 <section>
-<section id="slide-orgf737cb4">
-<h3 id="orgf737cb4"><span class="section-number-3">3.2</span> Have as many versions as you want</h3>
+<section id="slide-orgfdff5bc">
+<h3 id="orgfdff5bc"><span class="section-number-3">3.2</span> Have as many versions as you want</h3>
 <p>
 In fact, Git encourages you to break your changes into small coherent chunks
 as incremental versions.
@@ -119,8 +284,8 @@ Each line below can be considred as a version.
 </section>
 </section>
 <section>
-<section id="slide-orga75858e">
-<h2 id="orga75858e"><span class="section-number-2">4</span> Understand your work</h2>
+<section id="slide-orgcaff457">
+<h2 id="orgcaff457"><span class="section-number-2">4</span> Understand your work</h2>
 <p>
 With Git, you understand how your 
 </p>
@@ -136,8 +301,8 @@ evolve over time in retrospect.
 </section>
 </section>
 <section>
-<section id="slide-orge69f213">
-<h2 id="orge69f213"><span class="section-number-2">5</span> Full cooperation history</h2>
+<section id="slide-org7304f91">
+<h2 id="org7304f91"><span class="section-number-2">5</span> Full cooperation history</h2>
 <p>
 Know who changed what at when &amp; why - line by line.
 </p>
@@ -150,16 +315,16 @@ Know who changed what at when &amp; why - line by line.
 </section>
 </section>
 <section>
-<section id="slide-org3f3449e">
-<h2 id="org3f3449e"><span class="section-number-2">6</span> Time travel to any version</h2>
+<section id="slide-orgf33eaee">
+<h2 id="orgf33eaee"><span class="section-number-2">6</span> Time travel to any version</h2>
 <p>
 Time travel to previous versions with <i>zero</i> damage to current work.
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org499a505">
-<h2 id="org499a505"><span class="section-number-2">7</span> Work on new ideas - no worries</h2>
+<section id="slide-org2e783b4">
+<h2 id="org2e783b4"><span class="section-number-2">7</span> Work on new ideas - no worries</h2>
 <p>
 Experiment with new ideas in place with <b>zero</b> commitment.
 </p>
@@ -167,8 +332,8 @@ Experiment with new ideas in place with <b>zero</b> commitment.
 </section>
 </section>
 <section>
-<section id="slide-org5831ce8">
-<h3 id="org5831ce8"><span class="section-number-3">7.1</span> <code>stash</code> all your temporary work</h3>
+<section id="slide-org57a5cd1">
+<h3 id="org57a5cd1"><span class="section-number-3">7.1</span> <code>stash</code> all your temporary work</h3>
 <ul>
 <li class="fragment appear">New idea hits whenever it pleases.</li>
 <li class="fragment appear">It hits hard especially when you are in the middle of something.</li>
@@ -180,8 +345,8 @@ Experiment with new ideas in place with <b>zero</b> commitment.
 </section>
 </section>
 <section>
-<section id="slide-org22374f4">
-<h3 id="org22374f4"><span class="section-number-3">7.2</span> Getting back your work</h3>
+<section id="slide-org83b6e9a">
+<h3 id="org83b6e9a"><span class="section-number-3">7.2</span> Getting back your work</h3>
 <ul>
 <li class="fragment appear">When you finished with your new ideas.</li>
 <li class="fragment appear"><code>git stash pop</code> to get back to where you left.</li>
@@ -191,8 +356,8 @@ Experiment with new ideas in place with <b>zero</b> commitment.
 </section>
 </section>
 <section>
-<section id="slide-org5a83f04">
-<h2 id="org5a83f04"><span class="section-number-2">8</span> A <code>branch</code> for a sub-project</h2>
+<section id="slide-orgfa396fd">
+<h2 id="orgfa396fd"><span class="section-number-2">8</span> A <code>branch</code> for a sub-project</h2>
 <p>
 Change code for your conference slides with <b>zero</b> damage to your main paper code.
 </p>
@@ -205,14 +370,14 @@ Change code for your conference slides with <b>zero</b> damage to your main pape
 </section>
 </section>
 <section>
-<section id="slide-orgee594ff">
-<h2 id="orgee594ff"><span class="section-number-2">9</span> Bring sub-projects up to speed with one command</h2>
+<section id="slide-orgacea4d1">
+<h2 id="orgacea4d1"><span class="section-number-2">9</span> Bring sub-projects up to speed with one command</h2>
 <p>
 Update your conference slides to use the newest changes in main paper, with <b>zero</b> manual check-copy-paste.
 </p>
 
 </section>
-<section id="slide-orgee594ff-split">
+<section id="slide-orgacea4d1-split">
 <div class="org-src-container">
 
 <pre  class="src src-ditaa"><code trim>
@@ -227,7 +392,7 @@ Update your conference slides to use the newest changes in main paper, with <b>z
 </div>
 
 </section>
-<section id="slide-orgee594ff-split">
+<section id="slide-orgacea4d1-split">
 <div class="org-src-container">
 
 <pre  class="src src-ditaa"><code trim>
@@ -243,7 +408,7 @@ Update your conference slides to use the newest changes in main paper, with <b>z
 
 
 </section>
-<section id="slide-orgee594ff-split">
+<section id="slide-orgacea4d1-split">
 
 <div class="org-src-container">
 
@@ -259,12 +424,11 @@ Update your conference slides to use the newest changes in main paper, with <b>z
 </code></pre>
 </div>
 
-
 </section>
 </section>
 <section>
-<section id="slide-org3afc334">
-<h2 id="org3afc334"><span class="section-number-2">10</span> Collaborate like never before</h2>
+<section id="slide-orgfdbf5f7">
+<h2 id="orgfdbf5f7"><span class="section-number-2">10</span> Collaborate like never before</h2>
 <p>
 This is an advanced option and requires everyone in the team to use Git.
 </p>
@@ -274,12 +438,16 @@ This is an advanced option and requires everyone in the team to use Git.
 </div>
 <p> Created by Yi Wang. </p>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
 
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
+plugins: [RevealMarkdown,RevealZoom,RevealNotes],
 width:1200, height:800, margin: 0.1, minScale:0.2, maxScale:2.5, transition:'slide', slideNumber:true,
 multiplex: {
     secret: '', // null if client
@@ -289,12 +457,7 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
-{ src: './image-size.js' },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+{ src: './image-size.js' }]
 });
 </script>
 </body>
