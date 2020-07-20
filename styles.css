@@ -1,0 +1,17 @@
+p {
+    text-align: left;
+}
+
+img {
+    text-align: center;
+}
+.two-col {
+    display:inline;
+    float:left;
+    width:45%;
+    text-align: left;
+}
+
+.two-col:last-child {
+    float:right;
+}
