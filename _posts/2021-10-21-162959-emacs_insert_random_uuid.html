@@ -1,0 +1,47 @@
+---
+layout: post
+title: "How to generate random uuid in Emacs"
+excerpt: How to generate random uuid in Emacs
+tag: tip
+---
+
+<p>
+	How to generate random uuid in Emacs.
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">insert-random-uuid</span> ()
+  <span class="org-doc">"Insert a UUID.</span>
+<span class="org-doc">This commands calls &#8220;uuidgen&#8221; on MacOS, Linux, and calls PowelShell on Microsoft Windows.</span>
+<span class="org-doc">URL `</span><span class="org-doc"><span class="org-constant">http://ergoemacs.org/emacs/elisp_generate_uuid.html</span></span><span class="org-doc">'</span>
+<span class="org-doc">Version 2020-06-04"</span>
+  (<span class="org-keyword">interactive</span>)
+  (<span class="org-keyword">cond</span>
+   ((string-equal system-type <span class="org-string">"windows-nt"</span>)
+    (shell-command <span class="org-string">"pwsh.exe -Command [guid]::NewGuid().toString()"</span> t))
+   ((string-equal system-type <span class="org-string">"darwin"</span>) <span class="org-comment-delimiter">; </span><span class="org-comment">Mac</span>
+    (shell-command <span class="org-string">"uuidgen"</span> t))
+   ((string-equal system-type <span class="org-string">"gnu/linux"</span>)
+    (shell-command <span class="org-string">"uuidgen"</span> t))
+   (t
+    <span class="org-comment-delimiter">;; </span><span class="org-comment">code here by Christopher Wellons, 2011-11-18.</span>
+    <span class="org-comment-delimiter">;; </span><span class="org-comment">and editted Hideki Saito further to generate all valid variants for "N" in xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx format.</span>
+    (<span class="org-keyword">let</span> ((myStr (md5 (format <span class="org-string">"%s%s%s%s%s%s%s%s%s%s"</span>
+                              (user-uid)
+                              (emacs-pid)
+                              (system-name)
+                              (user-full-name)
+                              (current-time)
+                              (emacs-uptime)
+                              (garbage-collect)
+                              (buffer-string)
+                              (random)
+                              (recent-keys)))))
+      (insert (format <span class="org-string">"%s-%s-4%s-%s%s-%s"</span>
+                      (substring myStr 0 8)
+                      (substring myStr 8 12)
+                      (substring myStr 13 16)
+                      (format <span class="org-string">"%x"</span> (+ 8 (random 4)))
+                      (substring myStr 17 20)
+                      (substring myStr 20 32)))))))
+</pre>
+</div>
