@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Elastic Load Blancing"
+excerpt:
+---
+<p>
+Can be configured with ECS
+</p>
+<div id="outline-container-org85e8ac2" class="outline-2">
+<h2 id="org85e8ac2"><span class="section-number-2">1.</span> Deregistration delay</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Elastic Load Balancing stops sending requests to targets that are deregistering. By default, Elastic Load Balancing waits 300 seconds before completing the deregistration process, which can help in-flight requests to the target to complete. To change the amount of time that Elastic Load Balancing waits, update the deregistration delay value.
+</p>
+
+<p>
+<a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay">https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org9a131e2" class="outline-2">
+<h2 id="org9a131e2"><span class="section-number-2">2.</span> Application Load Balancer</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org8fef3d9" class="outline-3">
+<h3 id="org8fef3d9"><span class="section-number-3">2.1.</span> Dynamic host port mapping</h3>
+</div>
+</div>

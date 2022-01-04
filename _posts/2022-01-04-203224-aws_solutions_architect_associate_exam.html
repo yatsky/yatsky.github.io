@@ -1,0 +1,329 @@
+---
+layout: post
+title: "AWS Solutions Architect Associate Exam 30 小时通关体验"
+excerpt:
+---
+
+<p>
+30小时一次通关AWS SAA (Solutions Architect Associate) 考试经验分享。
+</p>
+
+
+<figure id="orga9e5637">
+<img src="/assets/images/20220104-215022_screenshot.jpeg" alt="20220104-215022_screenshot.jpeg">
+
+</figure>
+
+<div id="outline-container-orgba67988" class="outline-2">
+<h2 id="orgba67988"><span class="section-number-2">1.</span> 我的情况</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+我的工作并不是devops，所以我去考这个证的大部分原因并不是为了自己的工作。
+</p>
+
+<p>
+我的本职工作是data engineer，然后公司里面是全面上云了。之前我们有专门的devops负责管理我们的AWS环境，但是前段时间他离职了（因为我们给的待遇不够🤦‍♂️），所以我们公司把AWS的部分外包出去了，然后外包公司又十分垃圾，
+以至于我们的正常工作都受到了影响，所以大家开始讨论以后该怎么管理我们的AWS环境。
+</p>
+
+<p>
+另外我有其他的兼职会需要使用到AWS，
+然后现在devops的工资奇高无比，我也想着万一有机会小小地转行也是不错的，最后我们考证的钱可以拿去公司报销，所以我就想着趁着圣诞和新年放假去考一个证。
+</p>
+
+<p>
+最开始想考的是developer那个证书，因为跟我的关系更大一些。后来一想，既然都考了，作为一个标准的中国人，那不能不卷一下，所以干脆就去考SAA了。
+不为什么，就是为了这个Architect听着更高大上一点。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc0a1e80" class="outline-2">
+<h2 id="orgc0a1e80"><span class="section-number-2">2.</span> 考前准备</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org0c98790" class="outline-3">
+<h3 id="org0c98790"><span class="section-number-3">2.1.</span> 我用的平台</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+我们公司有一个 A Cloud Guru (ACG) 的账号，我一开始不知道这个，还是一个离职的IT部门的同事告诉我然后给了我access。
+因为这些 Cloud 的培训课程都还挺贵的，所以为了省钱我就用 ACG 上的课来准备。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga5de825" class="outline-3">
+<h3 id="orga5de825"><span class="section-number-3">2.2.</span> 我上的课</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+我基本上就是看了两门课，一门是 <a href="https://learn.acloud.guru/course/intro-to-aws/dashboard">Introduction to AWS</a> ，另一门是 <a href="https://learn.acloud.guru/course/certified-solutions-architect-associate/dashboard">AWS Certified Solutions Architect Associate</a>。
+两门课加起来有50个小时左右的内容（视频+实验），所以要全部一点点看完还是要花挺久的，我是全程按照两倍速来看，遇到不懂的地方可能多看几遍，另外我会做一些笔记。
+</p>
+
+<p>
+Introduction这门课因为讲的东西都是非常非常基础的，再加上我有用过其中一些服务，所以我在12月12号到14号中间花了2个小时把它过了一遍。
+</p>
+
+<p>
+SAA这门课有43.3小时的内容，然后我从12月14号开始断断续续地开始过这门课，它是按照你的目的去归纳AWS服务的，比如说 High Availability and Scaling 里面会讲 RDS 和 DynamoDB，还有 Autoscaling Groups。
+在Decoupling workflows 里面会有 SQS 和 SNS 以及 API Gateway 等等。
+每门课里他都会有 Exam tips，大多数的课都会有课后的模拟题，有一些课会包含让你在 Console 里实操的联系。如果没有实操的练习，你也可以用他们提供的 AWS Playground 去跟着练习，不用担心跟不上。
+</p>
+
+<p>
+他们还有很多 Supporting Courses，用来做一些额外的知识的讲解。比方说在讲到 Networking 的时候（我最不懂的部分），会讲到 CIDR 这个概念，他们专门有一个课外视频来给你讲 CIDR 的前世今生，非常有用。
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgc7278f4" class="outline-3">
+<h3 id="orgc7278f4"><span class="section-number-3">2.3.</span> Practice Exam和练习题</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+他们有无限的 practice exam 可以做，如果你刷的次数多了有些题会重复，不过没事，我们主要是要搞清楚题目在考什么，而不是记住这道题选什么，毕竟它不像 PTE 有鸡精。
+</p>
+
+<p>
+我建议大家上课上到一半或者三分之二就可以开始做这个 practice exam 了，这样能帮助我们尽快找到做题的感觉。正式考试是75%就可以过了，我第一次模拟是83%，学完课后第二次做是85%，后面两次就是90+%了，有一部分原因是有重复的题出现，但主要还是题做多了会有感觉，而且做了题之后你就知道学习的重点了。
+</p>
+
+<p>
+最后是做 AWS 提供的 sample 题目，我把这个留到最后，因为我觉得这个题是最珍贵的。网上一共有两套 AWS 官方的题，第一套是 sample，官方有提供PDF下载，一共是10题，第二套是要你在 Skillbuilder 里注册才能做，一共是20题。这些题我觉得比上面 ACG 的 practice exam 难一些，但是基本没有超出课程的范围。
+</p>
+
+<p>
+另外真题也比这个 practice exam 难一点，但是如果你能达到 practice 90%的话，那真题应该也没什么问题。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0d9cba0" class="outline-2">
+<h2 id="org0d9cba0"><span class="section-number-2">3.</span> 考试流程</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+考试方式分成 online 和 test center 两种，我选的是 test center，因为 online 考试需要整理桌子，而我实在是懒得整理。两种考试价格是一样的，都是$220（含GST）。
+</p>
+
+<p>
+test center 我去的是359 Queen Street，提前了大概30分钟到的，去的时候已经有之前时段的人在考了，监考的人问我想不想提前开始考，我想还有这种操作？那必须提前考。
+</p>
+
+<p>
+考试前监考员会让你把包手机之类的寄存了，然后检查你的两份ID，你只要带一个驾照或者护照或者 proof of age 卡，然后再配上一张银行卡或者其他有你名字+签名的卡就行了（或者是没签名但是有照片的卡，例如学生证）。
+看了你的ID后监考员会让你拍照，签字，然后给你一份草稿板和笔，就可以去考试了。
+</p>
+
+<p>
+考试时间是140分钟，我考了大概90分钟出来了（平时practice exam 我只需要40分钟左右），所以时间肯定是够的。
+</p>
+
+<p>
+考的时候看到不确定的题不用慌张，可以 flag for review，然后回来再看。
+昨晚所有题之后会有机会回到前面 review 那些你不确定的题。
+检查完之后可以提交了，但是要注意一旦提交了就不能再回去看了。
+</p>
+
+<p>
+紧接着需要做一个简单的 survey，做完就会出成绩。
+成绩只会有 Pass 和另外一个结果，当然我的是 Pass，所以我不知道另外一个结果是啥。然后它会说5个business days会有certificate发到你邮箱。
+</p>
+
+<p>
+考完了看完成绩就可以出考场了，找到监考员再签个名，他会给一张类似于 receipt 的东西，证明你来考过了。然后就是回家<del>看剧</del>。
+</p>
+
+<p>
+以上。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org712b571" class="outline-2">
+<h2 id="org712b571"><span class="section-number-2">4.</span> Side note</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+下面是我的学习时间分布，包括正式考试以及车程在内是29小时17分钟拿到了这个SAA certification。
+</p>
+
+<table>
+<caption class="t-above"><span class="table-number">Table 1:</span> Clock summary at <span class="timestamp-wrapper"><span class="timestamp">[2022-01-04 Tue 20:58]</span></span></caption>
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-right">
+
+<col  class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Headline</th>
+<th scope="col" class="org-right">Time</th>
+<th scope="col" class="org-right">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b>Total time</b></td>
+<td class="org-right"><b>31:32</b></td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Introduction to AWS</td>
+<td class="org-right">2:15</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Solutions Architect Associate</td>
+<td class="org-right">29:17</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;S3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1:05</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;EC2</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1:34</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;EBS</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1:08</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;RDS</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:47</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;VPC</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1:14</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Route 53</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:42</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;ELB</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:47</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;CloudWatch</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1:00</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;High Availability and Scaling</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:56</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Decoupling Workflows</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:49</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Big Data</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:37</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Serverless</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:57</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Security</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1:06</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Automation</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:33</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Caching</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:24</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Governance</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1:05</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Migration</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:26</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Exam</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0:17</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Practice Exam</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">4:19</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Areas requiring review</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2:13</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Exam tips review</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1:25</td>
+</tr>
+
+<tr>
+<td class="org-left">&ensp;&ensp;Real Exam</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2:05</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+在我准备考试的时候还发生了一件让我很尴尬的事，就是我在发博客的时候一不小心把我的一个旧 AWS Access ID 和 Key 泄漏出去了，然后赶紧把我学到 IAM, AWS Config, AWS RAM, CloudTrail 等等等等用上来把损失💰降到最低。过两天把这个经历也写一写发上来。 
+</p>
+</div>
+</div>
+<div id="outline-container-org8cade62" class="outline-2">
+<h2 id="org8cade62"><span class="section-number-2">5.</span> log time</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+</div>
