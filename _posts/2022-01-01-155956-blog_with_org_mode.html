@@ -1,13 +1,134 @@
 ---
 layout: post
-title: "Hello world"
-excerpt: My blog restarts from here
+title: "Blog with org mode"
+excerpt: My rather twisted setup
 ---
-<div id="outline-container-org3caa908" class="outline-2">
-<h2 id="org3caa908"><span class="section-number-2">1.</span> Blog with org mode</h2>
+<div id="outline-container-orge822b58" class="outline-2">
+<h2 id="orge822b58"><span class="section-number-2">1.</span> Blog with org mode</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I followed the settings on this site to set up my blog with org mode and Jekyll: <a href="https://thackl.github.io/blogging-with-emacs-org-mode-and-jekyll">https://thackl.github.io/blogging-with-emacs-org-mode-and-jekyll</a>
 </p>
+</div>
+<div id="outline-container-orgce68496" class="outline-3">
+<h3 id="orgce68496"><span class="section-number-3">1.1.</span> add pages</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Good blogs</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge756745" class="outline-3">
+<h3 id="orge756745"><span class="section-number-3">1.2.</span> add tags</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+</div>
+<div id="outline-container-org4e16a9e" class="outline-3">
+<h3 id="org4e16a9e"><span class="section-number-3">1.3.</span> add static assets</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+</div>
+
+<div id="outline-container-org98d1446" class="outline-3">
+<h3 id="org98d1446"><span class="section-number-3">1.4.</span> only publish org files with tag blog</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org58a7872" class="outline-4">
+<h4 id="org58a7872"><span class="section-number-4">1.4.1.</span> <span class="todo NEXT">NEXT</span> parse org file</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+<a href="https://emacs.stackexchange.com/questions/35042/parsing-an-orgmode-file-with-org-element-parse-buffer">https://emacs.stackexchange.com/questions/35042/parsing-an-orgmode-file-with-org-element-parse-buffer</a>
+<a href="https://orgmode.org/worg/dev/org-element-api.html#parsing">https://orgmode.org/worg/dev/org-element-api.html#parsing</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">setq</span> org-ast (<span class="org-keyword">with-temp-buffer</span>
+                (insert-file-contents <span class="org-string">"~/Dev/orgs/2022-01-04-203224-aws_solutions_architect_associate_exam.org"</span>)
+                (org-mode)
+                (org-element-parse-buffer)))
+
+
+
+
+
+(org-element-map org-ast 'keyword
+  (<span class="org-keyword">lambda</span> (keyword)
+    (<span class="org-keyword">let</span> ((key (org-element-property <span class="org-builtin">:key</span> keyword)))
+      (<span class="org-keyword">if</span> (string= key <span class="org-string">"FILETAGS"</span>)
+          (<span class="org-keyword">if</span> (string-match-p (regexp-quote <span class="org-string">"blog"</span>) (org-element-property <span class="org-builtin">:value</span> keyword))
+              (message (org-element-property <span class="org-builtin">:value</span> keyword)))
+        ))))
+
+(org-element-map (<span class="org-keyword">with-temp-buffer</span>
+                   (insert-file-contents <span class="org-string">"~/Dev/orgs/2022-01-04-203224-aws_solutions_architect_associate_exam.org"</span>)
+                   (org-mode)
+                   (org-element-parse-buffer))
+    'keyword
+  (<span class="org-keyword">lambda</span> (keyword)
+    (<span class="org-keyword">let</span> ((key (org-element-property <span class="org-builtin">:key</span> keyword))
+          (val (org-element-property <span class="org-builtin">:value</span> keyword)))
+      (<span class="org-keyword">if</span> (string= key <span class="org-string">"FILETAGS"</span>)
+          (<span class="org-keyword">if</span> (not (string-match-p (regexp-quote <span class="org-string">"blog"</span>) val))
+              (message val))))))
+
+
+
+(not (org-element-map (<span class="org-keyword">with-temp-buffer</span>
+                   (insert-file-contents <span class="org-string">"~/Dev/orgs/20220101155956-blog_with_org_mode.org"</span>)
+                   <span class="org-comment-delimiter">;; </span><span class="org-comment">(insert-file-contents "~/Dev/orgs/2022-01-04-203224-aws_solutions_architect_associate_exam.org")</span>
+                   (org-mode)
+                   (org-element-parse-buffer))
+    'keyword
+  (<span class="org-keyword">lambda</span> (keyword)
+    (<span class="org-keyword">let</span> ((key (org-element-property <span class="org-builtin">:key</span> keyword))
+          (val (org-element-property <span class="org-builtin">:value</span> keyword)))
+      (<span class="org-keyword">if</span> (string= key <span class="org-string">"FILETAGS"</span>)
+          (string-match-p (regexp-quote <span class="org-string">"blog"</span>) val))))
+  nil
+  t))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org30686ff" class="outline-3">
+<h3 id="org30686ff"><span class="section-number-3">1.5.</span> <span class="todo TODO">TODO</span> properly set image links in exported files</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+reference: <a href="https://www.mfoot.com/blog/2015/11/17/using-org-mode-to-write-jekyll-blogs/">https://www.mfoot.com/blog/2015/11/17/using-org-mode-to-write-jekyll-blogs/</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-follow</span> (path)
+  (org-open-file-with-emacs
+   (format <span class="org-string">"../images/%s"</span> path)))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-export</span> (path desc format)
+  (<span class="org-keyword">cond</span>
+   ((eq format 'html)
+    (format <span class="org-string">"&lt;img src=\"/assets/%s\" alt=\"%s\"/&gt;"</span> path desc))))
+
+(org-link-set-parameters <span class="org-string">"img"</span> 'org-custom-link-img-follow 'org-custom-link-img-export)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">this works as it sets the custom export function for file type</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">It's sort of a hack because it treats file as image while it could be something else but I don't care at the moment.</span>
+(<span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-export</span> (path desc format)
+  (<span class="org-keyword">cond</span>
+   ((eq format 'html)
+    (format <span class="org-string">"&lt;img src=\"/assets/%s\" alt=\"%s\"/&gt;"</span> path desc))))
+(org-link-set-parameters <span class="org-string">"file"</span> <span class="org-builtin">:export</span> 'org-custom-link-img-export)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(org-link-get-parameter <span class="org-string">"file"</span> <span class="org-builtin">:complete</span>)
+(org-link-get-parameter <span class="org-string">"file"</span> <span class="org-builtin">:export</span>)
+(org-link-get-parameter <span class="org-string">"file"</span> <span class="org-builtin">:follow</span>)
+</pre>
+</div>
+</div>
 </div>
 </div>
