@@ -1,0 +1,30 @@
+---
+layout: post
+title: "CIDR (Classless Inter-Domain Routing)"
+excerpt:
+---
+<p>
+Useful website: <a href="https://cidr.xyz/">https://cidr.xyz/</a>
+</p>
+
+
+<div id="outline-container-org17cf5b9" class="outline-2">
+<h2 id="org17cf5b9"><span class="section-number-2">1.</span> Subnets &amp; CIDR</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+We use subnet so we don't run out of IPv4 addresses and we keep our resources secure by not public exposing them.
+Then we use subnet mask to say what IP addresses are private by using <a href="2022-01-03-182926-classful_network.html#ID-2298CD41-4124-4421-9B19-9E087493D675">Classful Network</a>.
+</p>
+
+<p>
+Turns out that wan't enough, so we invented CIDR.
+IP addresses contain 4 octets, each consisting of 8 bits giving values between 0 and 255. The decimal value that comes after the slash is the number of bits consisting of the routing prefix. This in turn can be translated into a netmask, and also designates how many available addresses are in the block.
+</p>
+
+
+<figure id="org6329ed0">
+<img src="/assets/images/20220103-183255_screenshot.jpeg" alt="nil"/>
+
+</figure>
+</div>
+</div>
