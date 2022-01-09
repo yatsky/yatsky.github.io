@@ -11,3 +11,4 @@ permalink: /blogs/
 3.  [卢昌海个人主页](https://www.changhai.org/index.php)
 4.  <http://www.tianxiangxiong.com/about.html>
 5.  <https://manateelazycat.github.io/>
+6.  <https://intuitiveexplanations.com/>
