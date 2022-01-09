@@ -1,28 +1,136 @@
 ---
 layout: post
 title: "Elastic Load Blancing"
-excerpt:
+excerpt: Elastic load balancing course notes.
 ---
+
+<p>
+Should really be a heading under <a href="2021-04-07-215119-ec2.html#ID-1aebb280-1fc9-4cd9-b0c1-f97a9bd6d0d4">EC2</a>, as is organised by <a href="brain/Study/Programming/AWS.html#ID-8e8e4211-c194-4ea6-847b-a547d3e8c78b">AWS</a> itself.
+</p>
+
 <p>
 Can be configured with ECS
 </p>
-<div id="outline-container-org85e8ac2" class="outline-2">
-<h2 id="org85e8ac2"><span class="section-number-2">1.</span> Deregistration delay</h2>
+
+<div id="outline-container-org53832b2" class="outline-2">
+<h2 id="org53832b2"><span class="section-number-2">1.</span> Overview</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+<a href="https://aws.amazon.com/elasticloadbalancing/features/#Product_comparisons">https://aws.amazon.com/elasticloadbalancing/features/#Product_comparisons</a>
+</p>
+
+
+<figure id="org75689b1">
+<img src="/assets/images/20220103-173712_screenshot.jpeg" alt="nil"/>
+
+</figure>
+
+
+<figure id="org17720f6">
+<img src="/assets/images/20220103-173604_screenshot.jpeg" alt="nil"/>
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org85e8ac2" class="outline-2">
+<h2 id="org85e8ac2"><span class="section-number-2">2.</span> Deregistration delay</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Elastic Load Balancing stops sending requests to targets that are deregistering. By default, Elastic Load Balancing waits 300 seconds before completing the deregistration process, which can help in-flight requests to the target to complete. To change the amount of time that Elastic Load Balancing waits, update the deregistration delay value.
 </p>
 
 <p>
-<a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay">https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay</a>
+Source: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay">https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay</a>
+</p>
+
+<p>
+Compare with <a href="2021-04-07-215119-ec2.html#ID-67BBE85B-981E-4631-B125-D6A72E3A8D61">Auto Scaling Group</a>:
+</p>
+<ol class="org-ol">
+<li>This works in load balancing</li>
+<li>This controls the request being sent from ELB to an <a href="2021-04-07-215119-ec2.html#ID-67BBE85B-981E-4631-B125-D6A72E3A8D61">Auto Scaling Group</a>.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd6491ac" class="outline-2">
+<h2 id="orgd6491ac"><span class="section-number-2">3.</span> ALB (Application Load Balancer)</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org8fef3d9" class="outline-3">
+<h3 id="org8fef3d9"><span class="section-number-3">3.1.</span> Dynamic host port mapping</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Used with <a href="2022-01-03-170830-ecs.html#ID-6C7FB01D-11FB-4D61-A908-7E5964E737AB">ECS</a>, with dynamic host port mapping, multiple tasks from the same service are allowed for each <a href="2021-04-07-215119-ec2.html#ID-1aebb280-1fc9-4cd9-b0c1-f97a9bd6d0d4">EC2</a> container instance.
+Basically we are using that single instance as an <a href="2021-04-07-215119-ec2.html#ID-67BBE85B-981E-4631-B125-D6A72E3A8D61">Auto Scaling Group</a>.
 </p>
 </div>
 </div>
-<div id="outline-container-org9a131e2" class="outline-2">
-<h2 id="org9a131e2"><span class="section-number-2">2.</span> Application Load Balancer</h2>
-<div class="outline-text-2" id="text-2">
+
+<div id="outline-container-org3186f67" class="outline-3">
+<h3 id="org3186f67"><span class="section-number-3">3.2.</span> Sticky session in ALB</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+ALB can turn on sticky sessions, but the traffic will be sent at the target group level.
+</p>
+
+<p>
+See also: <a href="#orgcf6261e">Sticky session in CLB</a>
+</p>
 </div>
-<div id="outline-container-org8fef3d9" class="outline-3">
-<h3 id="org8fef3d9"><span class="section-number-3">2.1.</span> Dynamic host port mapping</h3>
+</div>
+</div>
+<div id="outline-container-org8824b85" class="outline-2">
+<h2 id="org8824b85"><span class="section-number-2">4.</span> Network Load Balancer</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Operates at Layer 4 of <a href="2021-12-24-180720-open_systems_interconnection_osi_model.html#ID-FD131F71-D9CC-4949-AC8C-473C7BA69D0B">Open Systems Interconnection (OSI) Model</a>.
+</p>
+</div>
+<div id="outline-container-orga11907d" class="outline-3">
+<h3 id="orga11907d"><span class="section-number-3">4.1.</span> Target type</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li><a href="2021-04-07-215119-ec2.html#ID-1aebb280-1fc9-4cd9-b0c1-f97a9bd6d0d4">EC2</a> instance
+<ul class="org-ul">
+<li>The targets are specified by instance ID.</li>
+</ul></li>
+<li>ip
+<ul class="org-ul">
+<li>The targets are speicified by IP address</li>
+</ul></li>
+<li><a href="#orgd6491ac">Application Load Balancer</a>
+<ul class="org-ul">
+<li>The target is an <a href="#orgd6491ac">ALB (Application Load Balancer)</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1188b96" class="outline-2">
+<h2 id="org1188b96"><span class="section-number-2">5.</span> Classic Load Balancer</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+CLB routes each request independently to the registered <a href="2021-04-07-215119-ec2.html#ID-1aebb280-1fc9-4cd9-b0c1-f97a9bd6d0d4">EC2</a> instance with the smallest load.
+</p>
+</div>
+
+<div id="outline-container-orgcf6261e" class="outline-3">
+<h3 id="orgcf6261e"><span class="section-number-3">5.1.</span> Sticky session in CLB</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Sticky sessions allow you to bind a user's session to a specific <a href="2021-04-07-215119-ec2.html#ID-1aebb280-1fc9-4cd9-b0c1-f97a9bd6d0d4">EC2</a> instalce.
+</p>
+
+<p>
+Useful when you are storing information locally to the instance and make sure users stick to the same EC2 instance. However the EC2 instance can be removed from an auto scale-in.
+Not suitable when you want to preserve in-flight request. For this purpose you should set <a href="#org85e8ac2">Deregistration delay</a> to a higher value (default is 300 seconds).
+</p>
+
+<p>
+See also: <a href="#org3186f67">Sticky session in ALB</a> 
+</p>
+</div>
 </div>
 </div>
