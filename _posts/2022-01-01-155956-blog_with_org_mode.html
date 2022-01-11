@@ -112,10 +112,12 @@ reference: <a href="https://www.mfoot.com/blog/2015/11/17/using-org-mode-to-writ
 </pre>
 </div>
 
+<p>
+This works as it sets the custom export function for file type
+It's sort of a hack because it treats file as image while it could be something else but I don't care at the moment.
+</p>
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">this works as it sets the custom export function for file type</span>
-<span class="org-comment-delimiter">;; </span><span class="org-comment">It's sort of a hack because it treats file as image while it could be something else but I don't care at the moment.</span>
-(<span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-export</span> (path desc format)
+<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-export</span> (path desc format)
   (<span class="org-keyword">cond</span>
    ((eq format 'html)
     (format <span class="org-string">"&lt;img src=\"/assets/%s\" alt=\"%s\"/&gt;"</span> path desc))))
