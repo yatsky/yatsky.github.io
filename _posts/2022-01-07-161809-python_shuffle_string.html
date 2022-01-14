@@ -1,0 +1,62 @@
+---
+layout: post
+title: "python shuffle string"
+excerpt: Can't believe I never noted this down.
+---
+
+<p>
+Quick way to shuffle a string.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>shuffle string</label><pre class="src src-ein-python" id="org0c97c2a"><span class="org-keyword">from</span> random <span class="org-keyword">import</span> sample
+
+<span class="org-variable-name">w</span> = <span class="org-string">"abc"</span>
+<span class="org-variable-name">new_w</span> = <span class="org-string">""</span>.join(sample(w, <span class="org-builtin">len</span>(w)))
+<span class="org-keyword">print</span>(new_w)
+</pre>
+</div>
+
+<div>
+<label>
+Result:
+</label>
+<pre>
+bac
+
+</pre>
+<div>
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>can't use random.shuffle</label><pre class="src src-ein-python" id="org63e93f5"><span class="org-keyword">from</span> random <span class="org-keyword">import</span> shuffle
+
+<span class="org-variable-name">w</span> = <span class="org-string">"abc"</span>
+shuffle(w)
+<span class="org-keyword">print</span>(w)
+</pre>
+</div>
+
+<div>
+<label>
+Result:
+</label>
+<pre>
+
+TypeErrorTraceback (most recent call last)
+<ipython-input-7-8d4d3eb12d63> in <module>
+      2 
+      3 w = "abc"
+----> 4 shuffle(w)
+      5 print(w)
+
+/usr/local/opt/python@3.7/Frameworks/Python.framework/Versions/3.7/lib/python3.7/random.py in shuffle(self, x, random)
+    276                 # pick an element in x[:i+1] with which to exchange x[i]
+    277                 j = randbelow(i+1)
+--> 278                 x[i], x[j] = x[j], x[i]
+    279         else:
+    280             _int = int
+
+TypeError: 'str' object does not support item assignment
+</pre>
+<div>
