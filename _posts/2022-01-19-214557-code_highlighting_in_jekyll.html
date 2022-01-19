@@ -1,0 +1,29 @@
+---
+layout: post
+title: "Code highlighting in Jekyll"
+excerpt: Took me a while to understand this.
+---
+<div id="outline-container-orgbeeaeeb" class="outline-2">
+<h2 id="orgbeeaeeb"><span class="section-number-2">1.</span> Set up code highlighting</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Quite hard to get this working&#x2026;
+<a href="https://emacs.stackexchange.com/questions/31439/how-to-get-colored-syntax-highlighting-of-code-blocks-in-asynchronous-org-mode-e">https://emacs.stackexchange.com/questions/31439/how-to-get-colored-syntax-highlighting-of-code-blocks-in-asynchronous-org-mode-e</a>
+<a href="https://highlightjs.readthedocs.io/en/latest/api.html#configure">https://highlightjs.readthedocs.io/en/latest/api.html#configure</a>
+</p>
+
+
+<p>
+Ah I see. Org doesn't work with highlight js because the latter needs pure text inside the <code>&lt;pre&gt;</code> block.
+How org does this is enclose each single word in the src block with a <code>&lt;span&gt;</code> and assign it a proper class. Then it'll use that class to tell the css how to render that single word.
+</p>
+
+<p>
+See <a href="https://github.com/gongzhitaao/orgcss">here</a> for more information.
+</p>
+
+<p>
+If I want to use highlight.js then will have to set <code>(setq org-html-htmlize-output-type nil)</code>.
+</p>
+</div>
+</div>
