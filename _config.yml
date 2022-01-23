@@ -21,11 +21,12 @@
 title: 遥泥（Yaoni）
 email: y.wang7@uq.net.au
 description: >- # this means to ignore newlines until "baseurl:"
-  须知少日拏云志，曾许人间第一流
+  须知少日拏云志
+  曾许人间第一流
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://yaoni.me" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
-github_username:  yatsky
+github_username: yatsky
 
 # Build settings
 theme: minima
