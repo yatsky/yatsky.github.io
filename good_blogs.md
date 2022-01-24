@@ -12,3 +12,4 @@ permalink: /blogs/
 4.  <http://www.tianxiangxiong.com/about.html>
 5.  <https://manateelazycat.github.io/>
 6.  <https://intuitiveexplanations.com/>
+7.  <https://www.dabeaz.com/> (such great books and tutorials from him!)
