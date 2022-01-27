@@ -1,16 +1,12 @@
 ---
 layout: post
-title: "lc 20 Valid Parentheses"
+title: "Leetcode 20 Valid Parentheses"
 excerpt: Figure out if parentheses are valid.
 ---
 
-<div id="outline-container-org985dff2" class="outline-2">
-<h2 id="org985dff2"><span class="section-number-2">1.</span> 20 valid parentheses</h2>
+<div id="outline-container-orgbe975e5" class="outline-2">
+<h2 id="orgbe975e5"><span class="section-number-2">1.</span> Description</h2>
 <div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-orgbe975e5" class="outline-3">
-<h3 id="orgbe975e5"><span class="section-number-3">1.1.</span> Description</h3>
-<div class="outline-text-3" id="text-1-1">
 <p>
 Given a string <code>s</code> containing just the characters <code>'('</code>, <code>')'</code>, <code>'{'</code>, <code>'}'</code>, <code>'['</code>, <code>']'</code>, determine if the input string is valid.
 </p>
@@ -32,9 +28,9 @@ Constraints:
 </ol>
 </div>
 
-<div id="outline-container-orge0b1dd8" class="outline-4">
-<h4 id="orge0b1dd8"><span class="section-number-4">1.1.1.</span> Examples:</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-orge0b1dd8" class="outline-3">
+<h3 id="orge0b1dd8"><span class="section-number-3">1.1.</span> Examples:</h3>
+<div class="outline-text-3" id="text-1-1">
 <pre class="example" id="org1ab5b36">
 Input: s = "()"
 Output: true
@@ -49,13 +45,13 @@ Output: false
 </div>
 </div>
 
-<div id="outline-container-orga3fdd23" class="outline-3">
-<h3 id="orga3fdd23"><span class="section-number-3">1.2.</span> Solution</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orga3fdd23" class="outline-2">
+<h2 id="orga3fdd23"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org4936c7c" class="outline-4">
-<h4 id="org4936c7c"><span class="section-number-4">1.2.1.</span> Understanding the problem</h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-org4936c7c" class="outline-3">
+<h3 id="org4936c7c"><span class="section-number-3">2.1.</span> Understanding the problem</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 Looking at this question I think this is a <a href="../2022-01-27-202045-stack.html#ID-4A31FB1B-DB8A-4452-8A74-0E6E19BE7BAE">Stack</a> question with <a href="../2022-01-27-202125-first_in_last_out_filo.html#ID-7ACCCAD0-A7F6-4744-B415-1930C279FE2E">First In Last Out (FILO)</a>.
 </p>
@@ -66,9 +62,9 @@ A more complicated valid example would be <code>({[]})</code>.
 </div>
 </div>
 
-<div id="outline-container-org4b8e4d2" class="outline-4">
-<h4 id="org4b8e4d2"><span class="section-number-4">1.2.2.</span> Algorithm</h4>
-<div class="outline-text-4" id="text-1-2-2">
+<div id="outline-container-org4b8e4d2" class="outline-3">
+<h3 id="org4b8e4d2"><span class="section-number-3">2.2.</span> Algorithm</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 Because \(s.length \geq 1\), let's start with having 1 element in the string, which is obviously invalid.
 What's more, we know that for any <code>s</code>, if \(s.length \mod 2 = 1\), then it's an invalid string because there will always be one bracket left.
@@ -90,9 +86,9 @@ Given the above, we will only consider \(s.length \mod 2 = 0\), and because \(s.
 </ol>
 </div>
 </div>
-<div id="outline-container-org6d7edf5" class="outline-4">
-<h4 id="org6d7edf5"><span class="section-number-4">1.2.3.</span> Code</h4>
-<div class="outline-text-4" id="text-1-2-3">
+<div id="outline-container-org6d7edf5" class="outline-3">
+<h3 id="org6d7edf5"><span class="section-number-3">2.3.</span> Code</h3>
+<div class="outline-text-3" id="text-2-3">
 <div class="org-src-container">
 <label class="org-src-name"><span class="listing-number">Listing 1: </span>20 valid parentheses my solution</label><pre class="src src-python" id="orgd2f89df"><span class="org-keyword">def</span> <span class="org-function-name">isValid</span><span class="org-rainbow-delimiters-depth-1">(</span>s<span class="org-rainbow-delimiters-depth-1">)</span>:
 <span class="org-highlight-indentation"> </span>   <span class="org-doc">"""</span>
@@ -140,32 +136,32 @@ Given the above, we will only consider \(s.length \mod 2 = 0\), and because \(s.
 </pre>
 </div>
 </div>
-<div id="outline-container-org3129ad6" class="outline-5">
-<h5 id="org3129ad6"><span class="section-number-5">1.2.3.1.</span> Complexity</h5>
-<div class="outline-text-5" id="text-1-2-3-1">
+<div id="outline-container-org3129ad6" class="outline-4">
+<h4 id="org3129ad6"><span class="section-number-4">2.3.1.</span> Complexity</h4>
+<div class="outline-text-4" id="text-2-3-1">
 </div>
-<ol class="org-ol">
-<li><a id="orgb11700a"></a>Time complexity:<br>
-<div class="outline-text-6" id="text-1-2-3-1-1">
+<div id="outline-container-org48fb538" class="outline-5">
+<h5 id="org48fb538"><span class="section-number-5">2.3.1.1.</span> Time complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-1">
 <p>
 \(O(N), \text{where } N=s.length\) as it's just one scan.
 </p>
 </div>
-</li>
-<li><a id="org5d5aa2f"></a>Space complexity:<br>
-<div class="outline-text-6" id="text-1-2-3-1-2">
+</div>
+<div id="outline-container-org555e757" class="outline-5">
+<h5 id="org555e757"><span class="section-number-5">2.3.1.2.</span> Space complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-2">
 <p>
 \(O(N), \text{where } N=s.length\). It's the space needed for the stack.
 </p>
 </div>
-</li>
-</ol>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org89fdbc1" class="outline-4">
-<h4 id="org89fdbc1"><span class="section-number-4">1.2.4.</span> Leetcode solution</h4>
-<div class="outline-text-4" id="text-1-2-4">
+<div id="outline-container-org89fdbc1" class="outline-3">
+<h3 id="org89fdbc1"><span class="section-number-3">2.4.</span> Leetcode solution</h3>
+<div class="outline-text-3" id="text-2-4">
 <p>
 I'll not provide Leetcode solution because I don't want to accidentally leak their IP as I'm on a premium plan at the moment.
 </p>
@@ -184,30 +180,35 @@ However my solution is almost the same as the leetcode solution.
 </pre>
 </div>
 </div>
-<div id="outline-container-org82e57a6" class="outline-5">
-<h5 id="org82e57a6"><span class="section-number-5">1.2.4.1.</span> Time complexity:</h5>
+<div id="outline-container-org04c341b" class="outline-4">
+<h4 id="org04c341b"><span class="section-number-4">2.4.1.</span> Time complexity:</h4>
 </div>
 
-<div id="outline-container-orgfc12130" class="outline-5">
-<h5 id="orgfc12130"><span class="section-number-5">1.2.4.2.</span> Space complexity:</h5>
+<div id="outline-container-orgdaca3c2" class="outline-4">
+<h4 id="orgdaca3c2"><span class="section-number-4">2.4.2.</span> Space complexity:</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org039ca9f" class="outline-3">
-<h3 id="org039ca9f"><span class="section-number-3">1.3.</span> More analysis</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org039ca9f" class="outline-2">
+<h2 id="org039ca9f"><span class="section-number-2">3.</span> More analysis</h2>
+<div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgca13c8f" class="outline-4">
-<h4 id="orgca13c8f"><span class="section-number-4">1.3.1.</span> General thoughts</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-orgca13c8f" class="outline-3">
+<h3 id="orgca13c8f"><span class="section-number-3">3.1.</span> General thoughts</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 <code>nil</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb376890" class="outline-4">
-<h4 id="orgb376890"><span class="section-number-4">1.3.2.</span> Related problems</h4>
+<div id="outline-container-orgb376890" class="outline-3">
+<h3 id="orgb376890"><span class="section-number-3">3.2.</span> Related problems</h3>
 </div>
+</div>
+
+<div id="outline-container-orge3f9201" class="outline-2">
+<h2 id="orge3f9201"><span class="section-number-2">4.</span> Log time</h2>
+<div class="outline-text-2" id="text-4">
 </div>
 </div>
