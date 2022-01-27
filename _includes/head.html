@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			displayAlign: "left",
+			displayIndent: "5em",
+
+			"HTML-CSS": { scale: 100,
+							linebreaks: { automatic: "false" },
+							webFont: "Neo-Euler"
+						},
+			SVG: {scale: 100,
+				linebreaks: { automatic: "false" },
+				font: "Neo-Euler"},
+			NativeMML: {scale: 100},
+			TeX: { equationNumbers: {autoNumber: "AMS"},
+				MultLineWidth: "85%",
+				TagSide: "left",
+				TagIndent: ".8em"
+				}
+	});
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
