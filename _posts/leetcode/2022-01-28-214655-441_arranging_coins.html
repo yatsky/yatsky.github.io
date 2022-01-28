@@ -1,0 +1,207 @@
+---
+layout: post
+title: "441 Arranging Coins"
+excerpt: Math magic.
+---
+
+<div id="outline-container-org0b78b52" class="outline-2">
+<h2 id="org0b78b52"><span class="section-number-2">1.</span> Description</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+You have <code>n</code> coins and you want to build a staircase with these coins.
+The staircase consists of <code>k</code> rows where the <code>ith</code> row has exactly <code>i</code> coins.
+The last row of the staircase <b>may be</b> incomplete.
+</p>
+
+<p>
+Given the integer <code>n</code>, return <i>the number of <b>complete rows</b> of the staircase case you will build</i>.
+</p>
+
+<p>
+Constraints:
+\(1 \leq n \leq 2^{31} - 1\)
+</p>
+</div>
+
+<div id="outline-container-org0b1ffd1" class="outline-3">
+<h3 id="org0b1ffd1"><span class="section-number-3">1.1.</span> Examples:</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example" id="orgc70bf5e">
+1
+11
+11
+
+Input: n = 5
+Output: 2
+Explanation: Because the 3rd row is incomplete, we return 2.
+
+
+1
+11
+111
+11
+
+Input: n = 8
+Output: 3
+Explanation: Because the 4th row is incomplete, we return 3.
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org95c8d47" class="outline-2">
+<h2 id="org95c8d47"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org1d52e9d" class="outline-3">
+<h3 id="org1d52e9d"><span class="section-number-3">2.1.</span> Understanding the problem</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+I think this question is equivalent to the fowllowing question:
+\(\frac{(1+i)i}{2} \leq n \leq \frac{(1+i+1)(i+1)}{2}, \text{ solve i}\)
+</p>
+</div>
+</div>
+<div id="outline-container-orgd994e61" class="outline-3">
+<h3 id="orgd994e61"><span class="section-number-3">2.2.</span> Algorithm</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+We can solve the left part of the inequation and get <code>i</code>.
+\(i = \lfloor{\sqrt{2n+\frac{1}{4}} - \frac{1}{2}}\rfloor\)
+</p>
+</div>
+</div>
+<div id="outline-container-org0e6a770" class="outline-3">
+<h3 id="org0e6a770"><span class="section-number-3">2.3.</span> Code</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>441 Arranging Coins my solution</label><pre class="src src-python" id="orgbe0ed71"><span class="org-keyword">import</span> math
+
+<span class="org-keyword">def</span> <span class="org-function-name">arrangeCoins</span><span class="org-rainbow-delimiters-depth-1">(</span>n: <span class="org-builtin">int</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> <span class="org-builtin">int</span><span class="org-rainbow-delimiters-depth-1">(</span>math.floor<span class="org-rainbow-delimiters-depth-2">(</span>math.sqrt<span class="org-rainbow-delimiters-depth-3">(</span>2 * n + 0.25<span class="org-rainbow-delimiters-depth-3">)</span> - 0.5<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>5<span class="org-rainbow-delimiters-depth-2">)</span> == 2<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>8<span class="org-rainbow-delimiters-depth-2">)</span> == 3<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>1<span class="org-rainbow-delimiters-depth-2">)</span> == 1<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>2<span class="org-rainbow-delimiters-depth-2">)</span> == 1<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>3<span class="org-rainbow-delimiters-depth-2">)</span> == 2<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>4<span class="org-rainbow-delimiters-depth-2">)</span> == 2<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>441 Arranging Coins my solution-results</label><pre class="src src-python" id="org8671614"><span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-org85ef105" class="outline-4">
+<h4 id="org85ef105"><span class="section-number-4">2.3.1.</span> Complexity</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<div id="outline-container-orgf8144ed" class="outline-5">
+<h5 id="orgf8144ed"><span class="section-number-5">2.3.1.1.</span> Time complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+<code>O(1)</code> because there is an upper bound of the time required.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb7fd2b1" class="outline-5">
+<h5 id="orgb7fd2b1"><span class="section-number-5">2.3.1.2.</span> Space complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-2">
+<p>
+<code>O(1)</code> because there is an upper bound of the space required.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org4fc84a3" class="outline-3">
+<h3 id="org4fc84a3"><span class="section-number-3">2.4.</span> Leetcode solution</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Leetcode uses two solutions (<a href="../2022-01-28-223636-binary_search.html#ID-7D287370-82D0-4B7E-BF90-D8013A5B6732">Binary Search</a> and math), and I'm glad that the second one is exactly <i>my</i> solution, good job Leetcode :)!
+</p>
+
+<p>
+As an exercise, I implement the binary search solution here but I don't really like binary search in general because there are too many edge cases to consider, i.e. starting/ending numbers, mid point&#x2026;
+</p>
+
+<p>
+As we have established in <a href="#org1d52e9d">2.1</a>, \(\frac{(1+i)i}{2} \leq n\), this means we want to <i>search</i> for an <code>i</code> in <code>1...n</code> that satisfies the condition.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>441 Arranging Coins leetcode solution</label><pre class="src src-python" id="org9c822a1"><span class="org-keyword">def</span> <span class="org-function-name">arrangeCoins</span><span class="org-rainbow-delimiters-depth-1">(</span>n: <span class="org-builtin">int</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">how do we know that left should start from 0?</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">this is why I don't want to use binary search</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">left</span>, <span class="org-variable-name">right</span> = 0, n
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">while</span> left &lt;= right:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mid</span> = <span class="org-rainbow-delimiters-depth-1">(</span>left + right<span class="org-rainbow-delimiters-depth-1">)</span> // 2
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">temp</span> = mid * <span class="org-rainbow-delimiters-depth-1">(</span>mid + 1<span class="org-rainbow-delimiters-depth-1">)</span> // 2
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> temp == n:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> mid
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> temp &gt; n:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">right</span> = mid - 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> temp &lt; n:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">left</span> = mid + 1
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> right
+
+
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>5<span class="org-rainbow-delimiters-depth-2">)</span> == 2<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>8<span class="org-rainbow-delimiters-depth-2">)</span> == 3<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>1<span class="org-rainbow-delimiters-depth-2">)</span> == 1<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>2<span class="org-rainbow-delimiters-depth-2">)</span> == 1<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>3<span class="org-rainbow-delimiters-depth-2">)</span> == 2<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>arrangeCoins<span class="org-rainbow-delimiters-depth-2">(</span>4<span class="org-rainbow-delimiters-depth-2">)</span> == 2<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>441 Arranging Coins leetcode solution-results</label><pre class="src src-python" id="org3ca13c9"><span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-org3c29bdd" class="outline-4">
+<h4 id="org3c29bdd"><span class="section-number-4">2.4.1.</span> Time complexity:</h4>
+</div>
+
+<div id="outline-container-orgcd3a61c" class="outline-4">
+<h4 id="orgcd3a61c"><span class="section-number-4">2.4.2.</span> Space complexity:</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcddf3f4" class="outline-2">
+<h2 id="orgcddf3f4"><span class="section-number-2">3.</span> More analysis</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org4b4f45e" class="outline-3">
+<h3 id="org4b4f45e"><span class="section-number-3">3.1.</span> General thoughts</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<a href="../2022-01-28-223636-binary_search.html#ID-7D287370-82D0-4B7E-BF90-D8013A5B6732">Binary Search</a> is hard in the sense that it requires a great amount of attention to edge cases.
+I think I'll have to spend more time on it to get the hang of it.
+</p>
+</div>
+</div>
+<div id="outline-container-orga366cae" class="outline-3">
+<h3 id="orga366cae"><span class="section-number-3">3.2.</span> Related problems</h3>
+</div>
+</div>
+
+<div id="outline-container-orgbf6b810" class="outline-2">
+<h2 id="orgbf6b810"><span class="section-number-2">4.</span> Log time</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>
