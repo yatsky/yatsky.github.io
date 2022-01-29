@@ -7,7 +7,7 @@ excerpt: My rather twisted setup
 <h2 id="orge822b58"><span class="section-number-2">1.</span> Blog with org mode</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-I followed the settings on this site to set up my blog with org mode and Jekyll: <a href="https://thackl.github.io/blogging-with-emacs-org-mode-and-jekyll">https://thackl.github.io/blogging-with-emacs-org-mode-and-jekyll</a>
+I followed the settings on this site to set up my blog with org mode and <a href="2022-01-19-214524-jekyll.html#ID-CA136AA2-F6F9-408A-A4FF-DCBCB362EA06">Jekyll</a>: <a href="https://thackl.github.io/blogging-with-emacs-org-mode-and-jekyll">https://thackl.github.io/blogging-with-emacs-org-mode-and-jekyll</a>
 </p>
 </div>
 <div id="outline-container-orgce68496" class="outline-3">
@@ -41,50 +41,50 @@ I followed the settings on this site to set up my blog with org mode and Jekyll:
 <a href="https://orgmode.org/worg/dev/org-element-api.html#parsing">https://orgmode.org/worg/dev/org-element-api.html#parsing</a>
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span class="org-keyword">setq</span> org-ast (<span class="org-keyword">with-temp-buffer</span>
-                (insert-file-contents <span class="org-string">"~/Dev/orgs/2022-01-04-203224-aws_solutions_architect_associate_exam.org"</span>)
-                (org-mode)
-                (org-element-parse-buffer)))
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> org-ast <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">with-temp-buffer</span>
+                <span class="org-rainbow-delimiters-depth-3">(</span>insert-file-contents <span class="org-string">"~/Dev/orgs/2022-01-04-203224-aws_solutions_architect_associate_exam.org"</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                <span class="org-rainbow-delimiters-depth-3">(</span>org-mode<span class="org-rainbow-delimiters-depth-3">)</span>
+                <span class="org-rainbow-delimiters-depth-3">(</span>org-element-parse-buffer<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
 
 
 
 
-(org-element-map org-ast 'keyword
-  (<span class="org-keyword">lambda</span> (keyword)
-    (<span class="org-keyword">let</span> ((key (org-element-property <span class="org-builtin">:key</span> keyword)))
-      (<span class="org-keyword">if</span> (string= key <span class="org-string">"FILETAGS"</span>)
-          (<span class="org-keyword">if</span> (string-match-p (regexp-quote <span class="org-string">"blog"</span>) (org-element-property <span class="org-builtin">:value</span> keyword))
-              (message (org-element-property <span class="org-builtin">:value</span> keyword)))
-        ))))
+<span class="org-rainbow-delimiters-depth-1">(</span>org-element-map org-ast 'keyword
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-3">(</span>keyword<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>key <span class="org-rainbow-delimiters-depth-6">(</span>org-element-property <span class="org-builtin">:key</span> keyword<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-5">(</span>string= key <span class="org-string">"FILETAGS"</span><span class="org-rainbow-delimiters-depth-5">)</span>
+          <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-6">(</span>string-match-p <span class="org-rainbow-delimiters-depth-7">(</span>regexp-quote <span class="org-string">"blog"</span><span class="org-rainbow-delimiters-depth-7">)</span> <span class="org-rainbow-delimiters-depth-7">(</span>org-element-property <span class="org-builtin">:value</span> keyword<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span>
+              <span class="org-rainbow-delimiters-depth-6">(</span>message <span class="org-rainbow-delimiters-depth-7">(</span>org-element-property <span class="org-builtin">:value</span> keyword<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+        <span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-(org-element-map (<span class="org-keyword">with-temp-buffer</span>
-                   (insert-file-contents <span class="org-string">"~/Dev/orgs/2022-01-04-203224-aws_solutions_architect_associate_exam.org"</span>)
-                   (org-mode)
-                   (org-element-parse-buffer))
+<span class="org-rainbow-delimiters-depth-1">(</span>org-element-map <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">with-temp-buffer</span>
+                   <span class="org-rainbow-delimiters-depth-3">(</span>insert-file-contents <span class="org-string">"~/Dev/orgs/2022-01-04-203224-aws_solutions_architect_associate_exam.org"</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                   <span class="org-rainbow-delimiters-depth-3">(</span>org-mode<span class="org-rainbow-delimiters-depth-3">)</span>
+                   <span class="org-rainbow-delimiters-depth-3">(</span>org-element-parse-buffer<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
     'keyword
-  (<span class="org-keyword">lambda</span> (keyword)
-    (<span class="org-keyword">let</span> ((key (org-element-property <span class="org-builtin">:key</span> keyword))
-          (val (org-element-property <span class="org-builtin">:value</span> keyword)))
-      (<span class="org-keyword">if</span> (string= key <span class="org-string">"FILETAGS"</span>)
-          (<span class="org-keyword">if</span> (not (string-match-p (regexp-quote <span class="org-string">"blog"</span>) val))
-              (message val))))))
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-3">(</span>keyword<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>key <span class="org-rainbow-delimiters-depth-6">(</span>org-element-property <span class="org-builtin">:key</span> keyword<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+          <span class="org-rainbow-delimiters-depth-5">(</span>val <span class="org-rainbow-delimiters-depth-6">(</span>org-element-property <span class="org-builtin">:value</span> keyword<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-5">(</span>string= key <span class="org-string">"FILETAGS"</span><span class="org-rainbow-delimiters-depth-5">)</span>
+          <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-6">(</span>not <span class="org-rainbow-delimiters-depth-7">(</span>string-match-p <span class="org-rainbow-delimiters-depth-8">(</span>regexp-quote <span class="org-string">"blog"</span><span class="org-rainbow-delimiters-depth-8">)</span> val<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span>
+              <span class="org-rainbow-delimiters-depth-6">(</span>message val<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
 
 
-(not (org-element-map (<span class="org-keyword">with-temp-buffer</span>
-                   (insert-file-contents <span class="org-string">"~/Dev/orgs/20220101155956-blog_with_org_mode.org"</span>)
+<span class="org-rainbow-delimiters-depth-1">(</span>not <span class="org-rainbow-delimiters-depth-2">(</span>org-element-map <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">with-temp-buffer</span>
+                   <span class="org-rainbow-delimiters-depth-4">(</span>insert-file-contents <span class="org-string">"~/Dev/orgs/20220101155956-blog_with_org_mode.org"</span><span class="org-rainbow-delimiters-depth-4">)</span>
                    <span class="org-comment-delimiter">;; </span><span class="org-comment">(insert-file-contents "~/Dev/orgs/2022-01-04-203224-aws_solutions_architect_associate_exam.org")</span>
-                   (org-mode)
-                   (org-element-parse-buffer))
+                   <span class="org-rainbow-delimiters-depth-4">(</span>org-mode<span class="org-rainbow-delimiters-depth-4">)</span>
+                   <span class="org-rainbow-delimiters-depth-4">(</span>org-element-parse-buffer<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
     'keyword
-  (<span class="org-keyword">lambda</span> (keyword)
-    (<span class="org-keyword">let</span> ((key (org-element-property <span class="org-builtin">:key</span> keyword))
-          (val (org-element-property <span class="org-builtin">:value</span> keyword)))
-      (<span class="org-keyword">if</span> (string= key <span class="org-string">"FILETAGS"</span>)
-          (string-match-p (regexp-quote <span class="org-string">"blog"</span>) val))))
+  <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-4">(</span>keyword<span class="org-rainbow-delimiters-depth-4">)</span>
+    <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-rainbow-delimiters-depth-6">(</span>key <span class="org-rainbow-delimiters-depth-7">(</span>org-element-property <span class="org-builtin">:key</span> keyword<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span>
+          <span class="org-rainbow-delimiters-depth-6">(</span>val <span class="org-rainbow-delimiters-depth-7">(</span>org-element-property <span class="org-builtin">:value</span> keyword<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+      <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-6">(</span>string= key <span class="org-string">"FILETAGS"</span><span class="org-rainbow-delimiters-depth-6">)</span>
+          <span class="org-rainbow-delimiters-depth-6">(</span>string-match-p <span class="org-rainbow-delimiters-depth-7">(</span>regexp-quote <span class="org-string">"blog"</span><span class="org-rainbow-delimiters-depth-7">)</span> val<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
   nil
-  t))
+  t<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div>
 </div>
@@ -99,16 +99,16 @@ reference: <a href="https://www.mfoot.com/blog/2015/11/17/using-org-mode-to-writ
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-follow</span> (path)
-  (org-open-file-with-emacs
-   (format <span class="org-string">"../images/%s"</span> path)))
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-follow</span> <span class="org-rainbow-delimiters-depth-2">(</span>path<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>org-open-file-with-emacs
+   <span class="org-rainbow-delimiters-depth-3">(</span>format <span class="org-string">"../images/%s"</span> path<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-(<span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-export</span> (path desc format)
-  (<span class="org-keyword">cond</span>
-   ((eq format 'html)
-    (format <span class="org-string">"&lt;img src=\"/assets/%s\" alt=\"%s\"/&gt;"</span> path desc))))
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-export</span> <span class="org-rainbow-delimiters-depth-2">(</span>path desc format<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">cond</span>
+   <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>eq format 'html<span class="org-rainbow-delimiters-depth-4">)</span>
+    <span class="org-rainbow-delimiters-depth-4">(</span>format <span class="org-string">"&lt;img src=\"/assets/%s\" alt=\"%s\"/&gt;"</span> path desc<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 
-(org-link-set-parameters <span class="org-string">"img"</span> 'org-custom-link-img-follow 'org-custom-link-img-export)
+<span class="org-rainbow-delimiters-depth-1">(</span>org-link-set-parameters <span class="org-string">"img"</span> 'org-custom-link-img-follow 'org-custom-link-img-export<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div>
 
@@ -117,20 +117,27 @@ This works as it sets the custom export function for file type
 It's sort of a hack because it treats file as image while it could be something else but I don't care at the moment.
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp">(<span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-export</span> (path desc format)
-  (<span class="org-keyword">cond</span>
-   ((eq format 'html)
-    (format <span class="org-string">"&lt;img src=\"/assets/%s\" alt=\"%s\"/&gt;"</span> path desc))))
-(org-link-set-parameters <span class="org-string">"file"</span> <span class="org-builtin">:export</span> 'org-custom-link-img-export)
+<pre class="src src-elisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-custom-link-img-export</span> <span class="org-rainbow-delimiters-depth-2">(</span>path desc format<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">cond</span>
+   <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>eq format 'html<span class="org-rainbow-delimiters-depth-4">)</span>
+    <span class="org-rainbow-delimiters-depth-4">(</span>format <span class="org-string">"&lt;img src=\"/assets/%s\" alt=\"%s\"/&gt;"</span> path desc<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>org-link-set-parameters <span class="org-string">"file"</span> <span class="org-builtin">:export</span> 'org-custom-link-img-export<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(org-link-get-parameter <span class="org-string">"file"</span> <span class="org-builtin">:complete</span>)
-(org-link-get-parameter <span class="org-string">"file"</span> <span class="org-builtin">:export</span>)
-(org-link-get-parameter <span class="org-string">"file"</span> <span class="org-builtin">:follow</span>)
+<pre class="src src-elisp"><span class="org-rainbow-delimiters-depth-1">(</span>org-link-get-parameter <span class="org-string">"file"</span> <span class="org-builtin">:complete</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>org-link-get-parameter <span class="org-string">"file"</span> <span class="org-builtin">:export</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>org-link-get-parameter <span class="org-string">"file"</span> <span class="org-builtin">:follow</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div>
 </div>
+</div>
+</div>
+
+
+<div id="outline-container-org15b36ac" class="outline-2">
+<h2 id="org15b36ac"><span class="section-number-2">2.</span> <span class="todo TODO">TODO</span> Improve code block experience</h2>
+<div class="outline-text-2" id="text-2">
 </div>
 </div>

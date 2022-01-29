@@ -12,17 +12,17 @@ Quick way to shuffle a string.
 <label class="org-src-name"><span class="listing-number">Listing 1: </span>shuffle string</label><pre class="src src-ein-python" id="org0c97c2a"><span class="org-keyword">from</span> random <span class="org-keyword">import</span> sample
 
 <span class="org-variable-name">w</span> = <span class="org-string">"abc"</span>
-<span class="org-variable-name">new_w</span> = <span class="org-string">""</span>.join(sample(w, <span class="org-builtin">len</span>(w)))
-<span class="org-keyword">print</span>(new_w)
+<span class="org-variable-name">new_w</span> = <span class="org-string">""</span>.join<span class="org-rainbow-delimiters-depth-1">(</span>sample<span class="org-rainbow-delimiters-depth-2">(</span>w, <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-3">(</span>w<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>new_w<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div>
 
 <div>
 <label>
-Result:
+Result
 </label>
-<pre>
-bac
+<pre class="org-src-result">
+cba
 
 </pre>
 <div>
@@ -32,19 +32,19 @@ bac
 <label class="org-src-name"><span class="listing-number">Listing 2: </span>can't use random.shuffle</label><pre class="src src-ein-python" id="org63e93f5"><span class="org-keyword">from</span> random <span class="org-keyword">import</span> shuffle
 
 <span class="org-variable-name">w</span> = <span class="org-string">"abc"</span>
-shuffle(w)
-<span class="org-keyword">print</span>(w)
+shuffle<span class="org-rainbow-delimiters-depth-1">(</span>w<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>w<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div>
 
 <div>
 <label>
-Result:
+Result
 </label>
-<pre>
+<pre class="org-src-result">
 
 TypeErrorTraceback (most recent call last)
-<ipython-input-7-8d4d3eb12d63> in <module>
+<ipython-input-9-8d4d3eb12d63> in <module>
       2 
       3 w = "abc"
 ----> 4 shuffle(w)
