@@ -1,0 +1,213 @@
+---
+layout: post
+title: "278 First Bad Version"
+excerpt: Tricky...
+---
+
+<div id="outline-container-orga13ca33" class="outline-2">
+<h2 id="orga13ca33"><span class="section-number-2">1.</span> Description</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+You are a product manager and currently leading a team to develop a new product.
+Unfortunately, the latest version of your product fails a quality check.
+Since each version is developed based on the previous version, all the versions after
+a bad version are also bad.
+</p>
+
+<p>
+Suppose you have <code>n</code> versions <code>[1, 2, ..., n]</code> and you want to find out the first bad one, which causes all the following
+ones to be bad.
+</p>
+
+<p>
+You are given an API <code>bool isBadVersion(version)</code> which returns whether <code>version</code> is bad.
+Implement a function to find the first bad version. You should minimize the number of calls to the API.
+</p>
+
+<p>
+Constraints:
+</p>
+<ol class="org-ol">
+<li>\(1 \leq bad \leq n \leq 2^{31} - 1\)</li>
+</ol>
+</div>
+<div id="outline-container-org6949f00" class="outline-3">
+<h3 id="org6949f00"><span class="section-number-3">1.1.</span> Examples:</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example" id="org53d5f93">
+Input: n = 5, bad = 4
+Output: 4
+Explanation:
+call isBadVersion(3) -&gt; false
+call isBadVersion(5) -&gt; true
+call isBadVersion(4) -&gt; true
+Then 4 is the first bad version.
+
+Input: n = 1, bad = 1
+Output: 1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3d4fc35" class="outline-2">
+<h2 id="org3d4fc35"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org1fd7904" class="outline-3">
+<h3 id="org1fd7904"><span class="section-number-3">2.1.</span> Understanding the problem</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+This is a typical <a href="../2022-01-28-223636-binary_search.html#ID-7D287370-82D0-4B7E-BF90-D8013A5B6732">Binary Search</a> problem but I don't understand why they put <code>bad=4</code> as <code>Input</code> in the example when the template is definitely not using it.
+I know it's the answer but why put it there?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc0d0ed3" class="outline-3">
+<h3 id="orgc0d0ed3"><span class="section-number-3">2.2.</span> Algorithm</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+The possible responses from the API can be arranged as the following list:
+<code>[f,f,f,f,t,t,t,...,t]</code>
+</p>
+
+<p>
+Basically for this problem, from definition, <code>right_idx</code> is always a bad version and we will continue the search until <code>left_idx == right_idx</code>, and we can return <code>right_idx</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org6ef2e1d" class="outline-3">
+<h3 id="org6ef2e1d"><span class="section-number-3">2.3.</span> Code</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>278 First Bad Version my solution</label><pre class="src src-python" id="org0e6ee51"><span class="org-keyword">def</span> <span class="org-function-name">firstBadVersion</span><span class="org-rainbow-delimiters-depth-1">(</span>n<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-doc">"""</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type n: int</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :rtype: int</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   """</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">left_idx</span> = 1
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">right_idx</span> = n
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">while</span> left_idx &lt; right_idx:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mid</span> = <span class="org-rainbow-delimiters-depth-1">(</span>left_idx + right_idx<span class="org-rainbow-delimiters-depth-1">)</span> // 2
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> isBadVersion<span class="org-rainbow-delimiters-depth-1">(</span>mid<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">right_idx should always be bad version</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">right_idx</span> = mid
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">left_idx</span> = mid + 1
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> right_idx
+
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">tests</span>
+<span class="org-keyword">def</span> <span class="org-function-name">isBadVersion</span><span class="org-rainbow-delimiters-depth-1">(</span>ver: <span class="org-builtin">int</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> ver &gt;= first_bad
+
+<span class="org-variable-name">first_bad</span> = 3
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>firstBadVersion<span class="org-rainbow-delimiters-depth-2">(</span>5<span class="org-rainbow-delimiters-depth-2">)</span> == first_bad<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">first_bad</span> = 4
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>firstBadVersion<span class="org-rainbow-delimiters-depth-2">(</span>5<span class="org-rainbow-delimiters-depth-2">)</span> == first_bad<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">first_bad</span> = 1
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>firstBadVersion<span class="org-rainbow-delimiters-depth-2">(</span>5<span class="org-rainbow-delimiters-depth-2">)</span> == first_bad<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>278 First Bad Version my solution-results</label><pre class="src src-python" id="org3949fcf"><span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-orgde36c4b" class="outline-4">
+<h4 id="orgde36c4b"><span class="section-number-4">2.3.1.</span> Complexity</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<div id="outline-container-org74ce4e5" class="outline-5">
+<h5 id="org74ce4e5"><span class="section-number-5">2.3.1.1.</span> Time complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+<code>Olog(n)</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgffefd9a" class="outline-5">
+<h5 id="orgffefd9a"><span class="section-number-5">2.3.1.2.</span> Space complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-2">
+<p>
+<code>O(1)</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org416160d" class="outline-3">
+<h3 id="org416160d"><span class="section-number-3">2.4.</span> Leetcode solution</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<code>nil</code>.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>278 First Bad Version leetcode solution</label><pre class="src src-python" id="org7a231dc">&lt;&lt;imports <span class="org-keyword">for</span> typing&gt;&gt;
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>278 First Bad Version leetcode solution-results</label><pre class="src src-none" id="org2bb2c9e">
+</pre>
+</div>
+</div>
+<div id="outline-container-org1483370" class="outline-4">
+<h4 id="org1483370"><span class="section-number-4">2.4.1.</span> Time complexity:</h4>
+</div>
+
+<div id="outline-container-org4ea4f87" class="outline-4">
+<h4 id="org4ea4f87"><span class="section-number-4">2.4.2.</span> Space complexity:</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb0d0d98" class="outline-2">
+<h2 id="orgb0d0d98"><span class="section-number-2">3.</span> More analysis</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org2b96f6a" class="outline-3">
+<h3 id="org2b96f6a"><span class="section-number-3">3.1.</span> General thoughts</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Two things that we need to be aware of in this example:
+</p>
+<ol class="org-ol">
+<li>using <code>(left_idx + right_idx) // 2</code> could cause an <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm#Implementation_issues">overflow issue</a> so it's better to use <code>left_idx + (right_idx - left_idx)//2</code></li>
+<li>The termination condition <code>left_idx &lt; right_idx</code>. We use it without the <code>=</code> sign because <code>right_idx = mid</code>, instead of <code>right_idx = mid + 1</code>.
+<ol class="org-ol">
+<li>Because we know <code>mid</code> is a bad version, but we don't know if <code>mid - 1</code> is also a bad version, hence we set <code>right_idx = mid</code>.</li>
+<li>Once <code>left_idx == right_idx</code>, we know that we've found our bad version, which is both <code>left_idx</code> and <code>right_idx</code>, so we don't need to go in to the loop again.</li>
+</ol></li>
+</ol>
+
+<p>
+I think this is also how <a href="https://git-scm.com/docs/git-bisect"><code>git bisect</code></a> works. There is also a python library <code>bisect</code> for this.
+</p>
+</div>
+</div>
+<div id="outline-container-org180e69f" class="outline-3">
+<h3 id="org180e69f"><span class="section-number-3">3.2.</span> Related problems</h3>
+<div class="outline-text-3" id="text-3-2">
+<ol class="org-ol">
+<li><a href="2022-01-29-135445-704_binary_search.html#ID-BDC2B4A7-A64C-4263-801D-74D5BD4BEDC6">704 Binary Search</a></li>
+<li>[BROKEN LINK: 6705fa69-9835-4076-b293-cd962e3c5828]</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfe60a4d" class="outline-2">
+<h2 id="orgfe60a4d"><span class="section-number-2">4.</span> Log time</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>

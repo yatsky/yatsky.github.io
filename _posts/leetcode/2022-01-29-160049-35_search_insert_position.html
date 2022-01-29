@@ -1,0 +1,282 @@
+---
+layout: post
+title: "35 Search Insert Position"
+excerpt: Binary search is just tricky
+---
+
+<div id="outline-container-org7a06fc8" class="outline-2">
+<h2 id="org7a06fc8"><span class="section-number-2">1.</span> Description</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Given a sorted array of distinct integers and a target value, return the index if the target is found.
+If not, return the index where it would be if it were inserted in order.
+</p>
+
+<p>
+You must write an algorithm with <code>O(log n)</code> runtime complexity.
+</p>
+
+<p>
+Constraints:
+</p>
+<ol class="org-ol">
+<li>\(1 \leq nums.length \leq 10^{4}\)</li>
+<li>\(-10^{4} \leq nums[i] \leq 10^{4}\)</li>
+<li><code>nums</code> contains <b>distinct</b> values sorted in <b>ascending</b> order</li>
+<li>\(-10^{4} \leq target \leq 10^{4}\)</li>
+</ol>
+</div>
+
+<div id="outline-container-org7de18e2" class="outline-3">
+<h3 id="org7de18e2"><span class="section-number-3">1.1.</span> Examples:</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example" id="org1b3a7cf">
+Input: nums = [1,3,5,6], target = 5
+Output: 2
+
+Input: nums = [1,3,5,6], target = 2
+Output: 1
+
+Input: nums = [1,3,5,6], target = 7
+Output: 4
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org093a2ee" class="outline-2">
+<h2 id="org093a2ee"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org883f399" class="outline-3">
+<h3 id="org883f399"><span class="section-number-3">2.1.</span> Understanding the problem</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+How do we know that this is a <a href="../2022-01-28-223636-binary_search.html#ID-7D287370-82D0-4B7E-BF90-D8013A5B6732">Binary Search</a> problem? Two points:
+</p>
+<ol class="org-ol">
+<li>it requires <code>O(log n)</code> time complexity, but this is not the deciding factor.</li>
+<li>The task asks us to find a certain <i>index/position</i> by comparing a <i>target element</i> with an ordered list of elements.
+<ol class="org-ol">
+<li>It could be asking inexplicitly but you need to be able to figure out what is really being asked.</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org04f31ae" class="outline-3">
+<h3 id="org04f31ae"><span class="section-number-3">2.2.</span> Algorithm</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<a href="../2022-01-28-223636-binary_search.html#ID-7D287370-82D0-4B7E-BF90-D8013A5B6732">Binary Search</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-org6f47685" class="outline-3">
+<h3 id="org6f47685"><span class="section-number-3">2.3.</span> Code</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>35 Search Insert Position my solution</label><pre class="src src-python" id="orgd7bc472"><span class="org-keyword">def</span> <span class="org-function-name">searchInsert</span><span class="org-rainbow-delimiters-depth-1">(</span>nums, target<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-doc">"""</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type nums: List[int]</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type target: int</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :rtype: int</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   """</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">left_idx</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">right_idx</span> = <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span> - 1
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">while</span> left_idx &lt;= right_idx:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">mid</span> = left_idx + <span class="org-rainbow-delimiters-depth-1">(</span>right_idx - left_idx<span class="org-rainbow-delimiters-depth-1">)</span> // 2
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">curr</span> = nums<span class="org-rainbow-delimiters-depth-1">[</span>mid<span class="org-rainbow-delimiters-depth-1">]</span>
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> curr == target:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> mid
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">elif</span> curr &gt; target:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">right_idx</span> = mid - 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">left_idx</span> = mid + 1
+
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">[1, target, curr]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">right_idx, left_idx, left_idx+1</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">[curr, target, 4]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">right_idx, left_idx, left_idx+1</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> left_idx
+
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">tests</span>
+<span class="org-variable-name">nums</span>, <span class="org-variable-name">target</span>, <span class="org-variable-name">result</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0<span class="org-rainbow-delimiters-depth-1">]</span>, 0, 0
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>searchInsert<span class="org-rainbow-delimiters-depth-2">(</span>nums, target<span class="org-rainbow-delimiters-depth-2">)</span> == result<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">nums</span>, <span class="org-variable-name">target</span>, <span class="org-variable-name">result</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0<span class="org-rainbow-delimiters-depth-1">]</span>, 1, 1
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>searchInsert<span class="org-rainbow-delimiters-depth-2">(</span>nums, target<span class="org-rainbow-delimiters-depth-2">)</span> == result<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">nums</span>, <span class="org-variable-name">target</span>, <span class="org-variable-name">result</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0<span class="org-rainbow-delimiters-depth-1">]</span>, -1, 0
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>searchInsert<span class="org-rainbow-delimiters-depth-2">(</span>nums, target<span class="org-rainbow-delimiters-depth-2">)</span> == result<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">nums</span>, <span class="org-variable-name">target</span>, <span class="org-variable-name">result</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0, 2<span class="org-rainbow-delimiters-depth-1">]</span>, 1, 1
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>searchInsert<span class="org-rainbow-delimiters-depth-2">(</span>nums, target<span class="org-rainbow-delimiters-depth-2">)</span> == result<span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+<span class="org-variable-name">nums</span>, <span class="org-variable-name">target</span>, <span class="org-variable-name">result</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0, 2, 3<span class="org-rainbow-delimiters-depth-1">]</span>, 0, 0
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>searchInsert<span class="org-rainbow-delimiters-depth-2">(</span>nums, target<span class="org-rainbow-delimiters-depth-2">)</span> == result<span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+<span class="org-variable-name">nums</span>, <span class="org-variable-name">target</span>, <span class="org-variable-name">result</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0, 2, 3<span class="org-rainbow-delimiters-depth-1">]</span>, 4, 3
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>searchInsert<span class="org-rainbow-delimiters-depth-2">(</span>nums, target<span class="org-rainbow-delimiters-depth-2">)</span> == result<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>35 Search Insert Position my solution-results</label><pre class="src src-python" id="orgff7768b"><span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-org7d54f1b" class="outline-4">
+<h4 id="org7d54f1b"><span class="section-number-4">2.3.1.</span> Complexity</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<div id="outline-container-org8081668" class="outline-5">
+<h5 id="org8081668"><span class="section-number-5">2.3.1.1.</span> Time complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+<code>O(log n)</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgd8ecf47" class="outline-5">
+<h5 id="orgd8ecf47"><span class="section-number-5">2.3.1.2.</span> Space complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-2">
+<p>
+<code>O(1)</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf9157b3" class="outline-3">
+<h3 id="orgf9157b3"><span class="section-number-3">2.4.</span> Leetcode solution</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<code>nil</code> but basically the same implementation.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>35 Search Insert Position leetcode solution</label><pre class="src src-python" id="org261c835">&lt;&lt;imports <span class="org-keyword">for</span> typing&gt;&gt;
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>35 Search Insert Position leetcode solution-results</label><pre class="src src-none" id="org965db30">
+</pre>
+</div>
+</div>
+<div id="outline-container-orgffec488" class="outline-4">
+<h4 id="orgffec488"><span class="section-number-4">2.4.1.</span> Time complexity:</h4>
+</div>
+
+<div id="outline-container-org9d27be1" class="outline-4">
+<h4 id="org9d27be1"><span class="section-number-4">2.4.2.</span> Space complexity:</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7f0c3ca" class="outline-2">
+<h2 id="org7f0c3ca"><span class="section-number-2">3.</span> More analysis</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org6642622" class="outline-3">
+<h3 id="org6642622"><span class="section-number-3">3.1.</span> General thoughts</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Again we know we need to use <a href="../2022-01-28-223636-binary_search.html#ID-7D287370-82D0-4B7E-BF90-D8013A5B6732">Binary Search</a>, but the implementation details suck. 
+</p>
+
+<p>
+Basically we need to under stand what it means to <i>insert</i> an element to the list at position <code>idx</code>.
+A trivial case is that we can find <code>target</code> in the list, then we return <code>mid</code>.
+</p>
+
+<p>
+We now consider when we can't find <code>target</code> in the list and what should we return in the end.
+First of all, we can easily tell that in this case, the terminating condition for the binary search would be <code>left_idx == right_idx + 1</code>.
+</p>
+
+<p>
+By actually inserting <code>target</code> into the list, we then will have something like below:
+</p>
+<table id="org69d58fc">
+<caption class="t-above"><span class="table-number">Table 1:</span> curr &lt; target</caption>
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">curr</td>
+<td class="org-left">target</td>
+<td class="org-left">n</td>
+</tr>
+
+<tr>
+<td class="org-left">right_idx</td>
+<td class="org-left">left_idx</td>
+<td class="org-left">left_idx + 1</td>
+</tr>
+</tbody>
+</table>
+
+<table id="orge1fcc89">
+<caption class="t-above"><span class="table-number">Table 2:</span> curr &gt; target</caption>
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">n</td>
+<td class="org-left">target</td>
+<td class="org-left">curr</td>
+</tr>
+
+<tr>
+<td class="org-left">right_idx</td>
+<td class="org-left">left_idx</td>
+<td class="org-left">left_idx + 1</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+We can see from the insertion tables that <code>target</code> is always inserted at the <code>left_idx</code> location.
+</p>
+</div>
+</div>
+<div id="outline-container-org15d6d1f" class="outline-3">
+<h3 id="org15d6d1f"><span class="section-number-3">3.2.</span> Related problems</h3>
+<div class="outline-text-3" id="text-3-2">
+<ol class="org-ol">
+<li><a href="2022-01-29-145937-278_first_bad_version.html#ID-905546B4-B48A-4EBF-9D2B-11D3F510EA04">278 First Bad Version</a></li>
+<li><a href="2022-01-29-135445-704_binary_search.html#ID-BDC2B4A7-A64C-4263-801D-74D5BD4BEDC6">704 Binary Search</a></li>
+<li>[BROKEN LINK: 6705fa69-9835-4076-b293-cd962e3c5828]</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org67fc55f" class="outline-2">
+<h2 id="org67fc55f"><span class="section-number-2">4.</span> Log time</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>
