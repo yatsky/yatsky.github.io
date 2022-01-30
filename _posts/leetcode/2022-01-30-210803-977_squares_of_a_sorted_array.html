@@ -1,0 +1,211 @@
+---
+layout: post
+title: "977 Squares of a Sorted Array"
+excerpt: Two pointers.
+---
+
+<div id="outline-container-org8205cb7" class="outline-2">
+<h2 id="org8205cb7"><span class="section-number-2">1.</span> Description</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Given an integer array <code>nums</code> sorted in <b>non-decreasing</b> order, return <i>an array of <b>the squares of each number</b> sorted in non-decreasing order</i>.
+</p>
+
+
+<p>
+Constraints:
+</p>
+<ol class="org-ol">
+<li>\(1 \leq nums.length \leq 10^{4}\)</li>
+<li>\(-10^{4} \leq nums[i] \leq 10^{4}\)</li>
+<li><code>nums</code> is sorted in <b>non-decreasing</b> order.</li>
+</ol>
+</div>
+
+<div id="outline-container-org74dde32" class="outline-3">
+<h3 id="org74dde32"><span class="section-number-3">1.1.</span> Examples:</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example" id="org3a4a53e">
+Input: nums = [-4,-1,0,3,10]
+Output: [0,1,9,16,100]
+Explanation: After squaring, the array becomes [16,1,0,9,100].
+After sorting, it becomes [0,1,9,16,100].
+
+Input: nums = [-7,-3,2,3,11]
+Output: [4,9,9,49,121]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf0e8469" class="outline-2">
+<h2 id="orgf0e8469"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org99b5b8a" class="outline-3">
+<h3 id="org99b5b8a"><span class="section-number-3">2.1.</span> Understanding the problem</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+If \(e \geq 0, \forall e \in nums\), then the problem is trivial as we only need to square each element and the resulting array is already sorted.
+</p>
+
+<p>
+We need to consider the case where negative integers are present.
+</p>
+
+<p>
+I think the basic idea is that we can start from both ends of the squared list, and move towards the center of the list.
+For example, we have the following list <code>[-2, -1, 0, 3, 10]</code>, and its squared list <code>num_sq = [4, 1, 0, 9, 100]</code>.
+In general, we don't know if <code>num_sq[0] &gt; num_sq[-1]</code> or the other way around, but we <b>do know</b> that <code>num_sq</code> is first <b>non-increasing</b> and then <b>non-decreasing</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org61bd39a" class="outline-3">
+<h3 id="org61bd39a"><span class="section-number-3">2.2.</span> Algorithm</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+The basic algorithm following previous section is the following:
+</p>
+<ol class="org-ol">
+<li>We start with <code>left_idx = 0</code> and <code>right_idx = len(num_sq)-1</code> and get <code>num_sq[left_idx]</code> and <code>num_sq[right_idx]</code> and compare them.
+<ol class="org-ol">
+<li>if <code>num_sq[left_idx] &lt;= num_sq[right_idx]</code>, then we put <code>num_sq[left_idx]</code> in the result list, and <code>left_idx += 1</code>.</li>
+<li>else we do the opposite.</li>
+</ol></li>
+<li>Then we repeat the process until <code>left_idx &gt; right_idx</code>.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgfdaa552" class="outline-3">
+<h3 id="orgfdaa552"><span class="section-number-3">2.3.</span> Code</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>977 Sauqres of a Sorted Array my solution</label><pre class="src src-python" id="orgc172acc"><span class="org-keyword">def</span> <span class="org-function-name">sortedSquares</span><span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-doc">"""</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type nums: List[int]</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :rtype: List[int]</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   """</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">ret</span> = <span class="org-rainbow-delimiters-depth-1">[]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">left_idx</span>, <span class="org-variable-name">right_idx</span> = 0, <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span> - 1
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">while</span> left_idx &lt;= right_idx:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">left_val</span> = nums<span class="org-rainbow-delimiters-depth-1">[</span>left_idx<span class="org-rainbow-delimiters-depth-1">]</span> ** 2
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">right_val</span> = nums<span class="org-rainbow-delimiters-depth-1">[</span>right_idx<span class="org-rainbow-delimiters-depth-1">]</span> ** 2
+
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> left_val &gt; right_val:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   ret.append<span class="org-rainbow-delimiters-depth-1">(</span>left_val<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">left_idx</span> += 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   ret.append<span class="org-rainbow-delimiters-depth-1">(</span>right_val<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">right_idx</span> -= 1
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">we use append so the order is reversed, i.e. order is non-increasing</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">therefore need to reverse the list</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> ret<span class="org-rainbow-delimiters-depth-1">[</span>::-1<span class="org-rainbow-delimiters-depth-1">]</span>
+
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">tests</span>
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-variable-name">result</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>sortedSquares<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">[</span>0<span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">)</span> == <span class="org-rainbow-delimiters-depth-2">[</span>0<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0, 1<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-variable-name">result</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0, 1<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>sortedSquares<span class="org-rainbow-delimiters-depth-2">(</span>nums<span class="org-rainbow-delimiters-depth-2">)</span> == result<span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>-1, 0, 1<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-variable-name">result</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0, 1, 1<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>sortedSquares<span class="org-rainbow-delimiters-depth-2">(</span>nums<span class="org-rainbow-delimiters-depth-2">)</span> == result<span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>-2, -1, 0, 1<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-variable-name">result</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0, 1, 1, 4<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>sortedSquares<span class="org-rainbow-delimiters-depth-2">(</span>nums<span class="org-rainbow-delimiters-depth-2">)</span> == result<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>977 Sauqres of a Sorted Array my solution-results</label><pre class="src src-python" id="org5feb61c"><span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-orga70d09b" class="outline-4">
+<h4 id="orga70d09b"><span class="section-number-4">2.3.1.</span> Complexity</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<div id="outline-container-orgcc18425" class="outline-5">
+<h5 id="orgcc18425"><span class="section-number-5">2.3.1.1.</span> Time complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+<code>O(n)</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb89142a" class="outline-5">
+<h5 id="orgb89142a"><span class="section-number-5">2.3.1.2.</span> Space complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-2">
+<p>
+<code>O(n)</code> for the resulting list.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd2f23bf" class="outline-3">
+<h3 id="orgd2f23bf"><span class="section-number-3">2.4.</span> Leetcode solution</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<code>nil</code>. Same algorithm.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>977 Sauqres of a Sorted Array leetcode solution</label><pre class="src src-python" id="orgf153590">&lt;&lt;imports <span class="org-keyword">for</span> typing&gt;&gt;
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>977 Sauqres of a Sorted Array leetcode solution-results</label><pre class="src src-none" id="orgee28486">
+</pre>
+</div>
+</div>
+<div id="outline-container-org2a7c8d0" class="outline-4">
+<h4 id="org2a7c8d0"><span class="section-number-4">2.4.1.</span> Time complexity:</h4>
+</div>
+
+<div id="outline-container-orgb0ae768" class="outline-4">
+<h4 id="orgb0ae768"><span class="section-number-4">2.4.2.</span> Space complexity:</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7fdc45c" class="outline-2">
+<h2 id="org7fdc45c"><span class="section-number-2">3.</span> More analysis</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgde7644b" class="outline-3">
+<h3 id="orgde7644b"><span class="section-number-3">3.1.</span> General thoughts</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+This is not too hard a question for someone who's never seen it before.
+I guess with Leetcode there's some clue as it's categorised as a <a href="../2022-01-30-214624-two_pointer.html#ID-31FC61E7-8140-44D6-BE4D-73543300D415">Two Pointer</a> question.
+So naturally one would think about starting from both ends of the list.
+</p>
+</div>
+</div>
+<div id="outline-container-org7575b9d" class="outline-3">
+<h3 id="org7575b9d"><span class="section-number-3">3.2.</span> Related problems</h3>
+</div>
+</div>
+
+<div id="outline-container-org3f46eab" class="outline-2">
+<h2 id="org3f46eab"><span class="section-number-2">4.</span> Log time</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>
