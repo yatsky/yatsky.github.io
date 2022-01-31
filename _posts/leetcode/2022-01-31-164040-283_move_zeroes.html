@@ -1,0 +1,176 @@
+---
+layout: post
+title: "283 Move Zeroes"
+excerpt: I didn't know it was spelled "Zeroes"
+---
+
+
+<div id="outline-container-org507427c" class="outline-2">
+<h2 id="org507427c"><span class="section-number-2">1.</span> Description</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Given an integer array <code>nums</code>, move all <code>0</code> to the end of the it while maintaining the relative order of the non-zero elements.
+</p>
+
+<p>
+Constraints:
+</p>
+<ol class="org-ol">
+<li>You must do this in-place without making a copy of the array.</li>
+<li>\(1\leq nums.length \leq 10^{4}\)</li>
+<li>\(-2^{31} \leq nums[i] \leq 2^{31}-1\)</li>
+</ol>
+</div>
+
+<div id="outline-container-org7b2ddcc" class="outline-3">
+<h3 id="org7b2ddcc"><span class="section-number-3">1.1.</span> Examples:</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example" id="org6673703">
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+
+Input: nums = [0]
+Output: [0]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org35d1e55" class="outline-2">
+<h2 id="org35d1e55"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org9448e14" class="outline-3">
+<h3 id="org9448e14"><span class="section-number-3">2.1.</span> Understanding the problem</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Again, let's first consider the trivial case where <code>len(nums) == 1</code>. We don't need to do anything in this case.
+</p>
+
+<p>
+In general, we will have to at least scan <code>nums</code> once.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf76d1c2" class="outline-3">
+<h3 id="orgf76d1c2"><span class="section-number-3">2.2.</span> Algorithm</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Scan the array and look for 0's and record their position.
+Iterate through their positions and remove zeroes, append zero in the end.
+</p>
+</div>
+</div>
+<div id="outline-container-orgeef4c86" class="outline-3">
+<h3 id="orgeef4c86"><span class="section-number-3">2.3.</span> Code</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>283 Move Zeroes my solution</label><pre class="src src-python" id="orgb650806"><span class="org-keyword">def</span> <span class="org-function-name">moveZeroes</span><span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-doc">"""</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type nums: List[int]</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :rtype: None Do not return anything, modify nums in-place instead.</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   """</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">poses</span> = <span class="org-rainbow-delimiters-depth-1">[]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> i, n <span class="org-keyword">in</span> <span class="org-builtin">enumerate</span><span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> n == 0:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   poses.append<span class="org-rainbow-delimiters-depth-1">(</span>i<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">for</span> i, pos <span class="org-keyword">in</span> <span class="org-builtin">enumerate</span><span class="org-rainbow-delimiters-depth-1">(</span>poses<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">we use pos-i because we moved i number of zeros to the end</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   nums.append<span class="org-rainbow-delimiters-depth-1">(</span>nums.pop<span class="org-rainbow-delimiters-depth-2">(</span>pos-i<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">tests</span>
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0<span class="org-rainbow-delimiters-depth-1">]</span>
+moveZeroes<span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>nums == <span class="org-rainbow-delimiters-depth-2">[</span>0<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0, 1<span class="org-rainbow-delimiters-depth-1">]</span>
+moveZeroes<span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>nums == <span class="org-rainbow-delimiters-depth-2">[</span>1, 0<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0, 1, 2, 0<span class="org-rainbow-delimiters-depth-1">]</span>
+moveZeroes<span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>nums == <span class="org-rainbow-delimiters-depth-2">[</span>1, 2, 0, 0<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>1, 2 <span class="org-rainbow-delimiters-depth-1">]</span>
+moveZeroes<span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>nums == <span class="org-rainbow-delimiters-depth-2">[</span>1, 2<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>283 Move Zeroes my solution-results</label><pre class="src src-python" id="orgac3b7f6"><span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-org64731e3" class="outline-4">
+<h4 id="org64731e3"><span class="section-number-4">2.3.1.</span> Complexity</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<div id="outline-container-org780c62b" class="outline-5">
+<h5 id="org780c62b"><span class="section-number-5">2.3.1.1.</span> Time complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+<code>O(n)</code>, one full scan.
+</p>
+</div>
+</div>
+<div id="outline-container-org768d511" class="outline-5">
+<h5 id="org768d511"><span class="section-number-5">2.3.1.2.</span> Space complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-2">
+<p>
+<code>O(n)</code>, potentially <code>nums</code> can be all zeroes so <code>len(poses) == len(nums)</code>.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org88ef112" class="outline-3">
+<h3 id="org88ef112"><span class="section-number-3">2.4.</span> Leetcode solution</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<code>nil</code>.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>283 Move Zeroes leetcode solution</label><pre class="src src-python" id="orgc0ce8ef">&lt;&lt;imports <span class="org-keyword">for</span> typing&gt;&gt;
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>283 Move Zeroes leetcode solution-results</label><pre class="src src-none" id="org7925225">
+</pre>
+</div>
+</div>
+<div id="outline-container-org5b222a9" class="outline-4">
+<h4 id="org5b222a9"><span class="section-number-4">2.4.1.</span> Time complexity:</h4>
+</div>
+
+<div id="outline-container-orgfa4d43e" class="outline-4">
+<h4 id="orgfa4d43e"><span class="section-number-4">2.4.2.</span> Space complexity:</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org083165f" class="outline-2">
+<h2 id="org083165f"><span class="section-number-2">3.</span> More analysis</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org597f8e2" class="outline-3">
+<h3 id="org597f8e2"><span class="section-number-3">3.1.</span> General thoughts</h3>
+</div>
+<div id="outline-container-orga5c491d" class="outline-3">
+<h3 id="orga5c491d"><span class="section-number-3">3.2.</span> Related problems</h3>
+</div>
+</div>
+
+<div id="outline-container-org1be8cfc" class="outline-2">
+<h2 id="org1be8cfc"><span class="section-number-2">4.</span> Log time</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>
