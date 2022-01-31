@@ -1,0 +1,261 @@
+---
+layout: post
+title: "189 Rotate Array"
+excerpt: Harder than meets the eye.
+---
+
+<div id="outline-container-org34cbe3a" class="outline-2">
+<h2 id="org34cbe3a"><span class="section-number-2">1.</span> Description</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Given an array, rotate the array to the right by <code>k</code> steps, where <code>k</code> is non-negative.
+</p>
+
+
+<p>
+Constraints:
+</p>
+<ol class="org-ol">
+<li>\(1 \leq nums.length \leq 10^{5}\)</li>
+<li>\(-2^{31} \leq nums[i] \leq 2^{31} - 1\)</li>
+<li>\(0 \leq k \leq 10^{5}\)</li>
+</ol>
+</div>
+<div id="outline-container-org1690f8c" class="outline-3">
+<h3 id="org1690f8c"><span class="section-number-3">1.1.</span> Examples:</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example" id="org6cb6598">
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]
+Explanation:
+rotate 1 steps to the right: [7,1,2,3,4,5,6]
+rotate 2 steps to the right: [6,7,1,2,3,4,5]
+rotate 3 steps to the right: [5,6,7,1,2,3,4]
+
+Input: nums = [-1,-100,3,99], k = 2
+Output: [3,99,-1,-100]
+Explanation: 
+rotate 1 steps to the right: [99,-1,-100,3]
+rotate 2 steps to the right: [3,99,-1,-100]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org483f6fb" class="outline-2">
+<h2 id="org483f6fb"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org84cc1c1" class="outline-3">
+<h3 id="org84cc1c1"><span class="section-number-3">2.1.</span> Understanding the problem</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+I think this question definitely needs to use <code>mod</code>.
+</p>
+
+<p>
+Suppose the result set is <code>ret</code>.
+One trivial case is where <code>len(nums) == 1</code>, then <code>ret == nums</code>.
+</p>
+
+<p>
+Another observation is if <code>len(nums) == k</code>, then <code>ret == nums</code>
+Therefore we are not concerned about rotating the list <code>k</code> times,
+we are concerned about rotating the list <code>r = k % len(nums)</code> times.
+</p>
+
+<p>
+If we make more effort we can see that <code>ret = nums[r:] + nums[:r]</code>.
+</p>
+
+<p>
+Because there's this comment from the existing code:
+</p>
+<blockquote>
+<p>
+:rtype: None Do not return anything, modify nums in-place instead.
+</p>
+</blockquote>
+<p>
+we need to modify <code>nums</code> instead of return <code>ret</code> as I was planning to do.
+</p>
+</div>
+</div>
+<div id="outline-container-org47a039d" class="outline-3">
+<h3 id="org47a039d"><span class="section-number-3">2.2.</span> Algorithm</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+See previous section.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdbda5f8" class="outline-3">
+<h3 id="orgdbda5f8"><span class="section-number-3">2.3.</span> Code</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>189 Rotate Array my solution</label><pre class="src src-python" id="orge46900f"><span class="org-keyword">from</span> typing <span class="org-keyword">import</span> List
+<span class="org-keyword">def</span> <span class="org-function-name">rotate</span><span class="org-rainbow-delimiters-depth-1">(</span>nums: List<span class="org-rainbow-delimiters-depth-2">[</span><span class="org-builtin">int</span><span class="org-rainbow-delimiters-depth-2">]</span>, k<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-doc">"""</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type nums: List[int]</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type k: int</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :rtype: None Do not return anything, modify nums in-place instead.</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   """</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">r</span> = k % <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">time limit exceeded</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">for i in range(r):</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter">#    </span><span class="org-comment">nums.insert(0, nums.pop())</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">this does not work because it didn't modify the original object bound to nums</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">nums = nums[-r::1] + nums[:-r]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">nums</span><span class="org-rainbow-delimiters-depth-1">[</span>:<span class="org-rainbow-delimiters-depth-1">]</span> = nums<span class="org-rainbow-delimiters-depth-1">[</span>-r::1<span class="org-rainbow-delimiters-depth-1">]</span> + nums<span class="org-rainbow-delimiters-depth-1">[</span>:-r<span class="org-rainbow-delimiters-depth-1">]</span>
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">tests</span>
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-variable-name">k</span> = 10
+rotate<span class="org-rainbow-delimiters-depth-1">(</span>nums, k<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>nums == <span class="org-rainbow-delimiters-depth-2">[</span>0<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>0, 1, 2<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-variable-name">k</span> = 3
+rotate<span class="org-rainbow-delimiters-depth-1">(</span>nums, k<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>nums == <span class="org-rainbow-delimiters-depth-2">[</span>0, 1, 2<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>-1,-100,3,99<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-variable-name">k</span> = 2
+rotate<span class="org-rainbow-delimiters-depth-1">(</span>nums, k<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>nums == <span class="org-rainbow-delimiters-depth-2">[</span>3, 99, -1, -100<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>1, 2, 3, 4, 5, 6, 7<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-variable-name">k</span> = 3
+rotate<span class="org-rainbow-delimiters-depth-1">(</span>nums, k<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>nums == <span class="org-rainbow-delimiters-depth-2">[</span>5, 6, 7, 1, 2, 3, 4<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>189 Rotate Array my solution-results</label><pre class="src src-python" id="orgd2da06f"><span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-orgbdaf088" class="outline-4">
+<h4 id="orgbdaf088"><span class="section-number-4">2.3.1.</span> Complexity</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<div id="outline-container-org05d2733" class="outline-5">
+<h5 id="org05d2733"><span class="section-number-5">2.3.1.1.</span> Time complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+<code>O(n)</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgc954868" class="outline-5">
+<h5 id="orgc954868"><span class="section-number-5">2.3.1.2.</span> Space complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-2">
+<p>
+<code>O(n)</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9eda061" class="outline-3">
+<h3 id="org9eda061"><span class="section-number-3">2.4.</span> Leetcode solution</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<a href="https://leetcode.com/problems/rotate-array/solution/">https://leetcode.com/problems/rotate-array/solution/</a>
+</p>
+
+<p>
+4 approaches.
+</p>
+<ol class="org-ol">
+<li>Brute force, which will probably time out.</li>
+<li>Using extra array, which is my solution.</li>
+<li>Using cyclic replacements</li>
+<li>Using reverse</li>
+</ol>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>189 Rotate Array leetcode solution</label><pre class="src src-python" id="org697ff46">&lt;&lt;imports <span class="org-keyword">for</span> typing&gt;&gt;
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>189 Rotate Array leetcode solution-results</label><pre class="src src-none" id="org824fef0">
+</pre>
+</div>
+</div>
+<div id="outline-container-orge184f41" class="outline-4">
+<h4 id="orge184f41"><span class="section-number-4">2.4.1.</span> Time complexity:</h4>
+</div>
+
+<div id="outline-container-orgb52239f" class="outline-4">
+<h4 id="orgb52239f"><span class="section-number-4">2.4.2.</span> Space complexity:</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaa954de" class="outline-2">
+<h2 id="orgaa954de"><span class="section-number-2">3.</span> More analysis</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org70242f5" class="outline-3">
+<h3 id="org70242f5"><span class="section-number-3">3.1.</span> General thoughts</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+I was able to come up with the solution idea but I wasn't aware of how to modify <code>nums</code> <b>in-place</b>.
+I initially used <code>nums = nums[-r::1] + nums[:-r]</code> which I knew was a bit off and wasn't passing the tests, but I didn't know how to fix it until I looked up other people's solutions.
+</p>
+
+<p>
+Also something of interest here.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">from</span> typing <span class="org-keyword">import</span> List
+<span class="org-keyword">def</span> <span class="org-function-name">rotate</span><span class="org-rainbow-delimiters-depth-1">(</span>nums: List<span class="org-rainbow-delimiters-depth-2">[</span><span class="org-builtin">int</span><span class="org-rainbow-delimiters-depth-2">]</span>, k<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-doc">"""</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type nums: List[int]</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type k: int</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :rtype: None Do not return anything, modify nums in-place instead.</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   """</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">r</span> = k % <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>nums<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">nums</span> = nums<span class="org-rainbow-delimiters-depth-1">[</span>-r::1<span class="org-rainbow-delimiters-depth-1">]</span> + nums<span class="org-rainbow-delimiters-depth-1">[</span>:-r<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-string">"Shadowed numns: "</span>, nums<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">tests</span>
+<span class="org-variable-name">nums</span> = <span class="org-rainbow-delimiters-depth-1">[</span>-1,-100,3,99<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-variable-name">k</span> = 2
+rotate<span class="org-rainbow-delimiters-depth-1">(</span>nums, k<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-string">"Original nums: "</span>, nums<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-builtin">str</span><span class="org-rainbow-delimiters-depth-2">(</span>nums<span class="org-rainbow-delimiters-depth-2">)</span> == <span class="org-builtin">str</span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">[</span>3, 99, -1, -100<span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">Shadowed numns:  <span class="org-rainbow-delimiters-depth-1">[</span>3, 99, -1, -100<span class="org-rainbow-delimiters-depth-1">]</span>
+Original nums:  <span class="org-rainbow-delimiters-depth-1">[</span>-1, -100, 3, 99<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-constant">False</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org57d0655" class="outline-3">
+<h3 id="org57d0655"><span class="section-number-3">3.2.</span> Related problems</h3>
+</div>
+</div>
+
+<div id="outline-container-orgded4f41" class="outline-2">
+<h2 id="orgded4f41"><span class="section-number-2">4.</span> Log time</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>
