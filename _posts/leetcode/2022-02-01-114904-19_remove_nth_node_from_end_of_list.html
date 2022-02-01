@@ -1,0 +1,143 @@
+---
+layout: post
+title: "19. Remove Nth Node From End of List"
+excerpt:
+---
+<div id="outline-container-org112f439" class="outline-2">
+<h2 id="org112f439"><span class="section-number-2">1.</span> Description</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Given the <code>head</code> of a linked list, remove the <code>nth</code> node from the end of the list and return its head.
+</p>
+
+<p>
+Constraints:
+</p>
+<ol class="org-ol">
+<li>The number of nodes in the list is <code>sz</code>.</li>
+<li>\(1 \leq sz \leq 30\).</li>
+<li>\(0 \leq Node.val \leq 100\).</li>
+<li>\(1 \leq n \leq sz\).</li>
+</ol>
+</div>
+<div id="outline-container-orgadcd3d4" class="outline-3">
+<h3 id="orgadcd3d4"><span class="section-number-3">1.1.</span> Examples:</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example" id="org51c074c">
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+
+Input: head = [1], n = 1
+Output: []
+
+Input: head = [1,2], n = 1
+Output: [1]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgced75d9" class="outline-2">
+<h2 id="orgced75d9"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+
+<div id="outline-container-orgab8ac4b" class="outline-3">
+<h3 id="orgab8ac4b"><span class="section-number-3">2.1.</span> Understanding the problem</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+From the provided code we can see it's a singly linked list.
+</p>
+
+<p>
+We can use <code>fast_node</code> and <code>fast_pos</code> that will reach the end of the list, and <code>slow_node</code> and <code>slow_pos</code> that will be <code>n+1</code> node(s) away from <code>slow_pos</code>. Slow node will be tracking the previous node of the node to be removed.
+</p>
+
+<p>
+Given that the trivial case <code>[1]</code> and <code>n=1</code> returns <code>[]</code>, we have <code>slow_node = None</code>, <code>slow_pos = -1</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org106b97f" class="outline-3">
+<h3 id="org106b97f"><span class="section-number-3">2.2.</span> Algorithm</h3>
+<div class="outline-text-3" id="text-2-2">
+<ol class="org-ol">
+<li>Initialise <code>fast_node = head</code>, <code>fast_pos = 0</code>, <code>slow_node = None</code>, <code>slow_pos = -1</code></li>
+<li>while <code>fast_node.next</code>
+<ol class="org-ol">
+<li><code>fast_node = fast_node.next</code>, <code>fast_pos += 1</code></li>
+<li>check</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga7ee197" class="outline-3">
+<h3 id="orga7ee197"><span class="section-number-3">2.3.</span> Code</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>19 Remove Nth Node from end of list my solution</label><pre class="src src-python" id="org9fa9e23">&lt;&lt;imports <span class="org-keyword">for</span> typing&gt;&gt;
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>19 Remove Nth Node from end of list my solution-results</label><pre class="src src-none" id="org431b242">
+</pre>
+</div>
+</div>
+<div id="outline-container-org59ffa4f" class="outline-4">
+<h4 id="org59ffa4f"><span class="section-number-4">2.3.1.</span> Complexity</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<div id="outline-container-org709d41e" class="outline-5">
+<h5 id="org709d41e"><span class="section-number-5">2.3.1.1.</span> Time complexity:</h5>
+</div>
+
+<div id="outline-container-orga66a599" class="outline-5">
+<h5 id="orga66a599"><span class="section-number-5">2.3.1.2.</span> Space complexity:</h5>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org33b99f9" class="outline-3">
+<h3 id="org33b99f9"><span class="section-number-3">2.4.</span> Leetcode solution</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>19 Remove Nth Node from end of list leetcode solution</label><pre class="src src-python" id="org22ffce6">&lt;&lt;imports <span class="org-keyword">for</span> typing&gt;&gt;
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>19 Remove Nth Node from end of list leetcode solution-results</label><pre class="src src-none" id="orgbee903f">
+</pre>
+</div>
+</div>
+<div id="outline-container-org414a777" class="outline-4">
+<h4 id="org414a777"><span class="section-number-4">2.4.1.</span> Time complexity:</h4>
+</div>
+
+<div id="outline-container-org1c8fb3d" class="outline-4">
+<h4 id="org1c8fb3d"><span class="section-number-4">2.4.2.</span> Space complexity:</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb638dc9" class="outline-2">
+<h2 id="orgb638dc9"><span class="section-number-2">3.</span> More analysis</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgeedd7ea" class="outline-3">
+<h3 id="orgeedd7ea"><span class="section-number-3">3.1.</span> General thoughts</h3>
+</div>
+<div id="outline-container-org4a4d841" class="outline-3">
+<h3 id="org4a4d841"><span class="section-number-3">3.2.</span> Related problems</h3>
+</div>
+</div>
+
+<div id="outline-container-orge5a5501" class="outline-2">
+<h2 id="orge5a5501"><span class="section-number-2">4.</span> Log time</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>
