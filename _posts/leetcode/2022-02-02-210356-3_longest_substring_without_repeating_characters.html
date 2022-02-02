@@ -1,0 +1,193 @@
+---
+layout: post
+title: "3. Longest Substring Without Repeating Characters"
+excerpt: Medium
+---
+
+<div id="outline-container-org9cfad1f" class="outline-2">
+<h2 id="org9cfad1f"><span class="section-number-2">1.</span> Description</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Given a string <code>s</code>, find the length of the <code>longest substring</code> without repeating characters.
+</p>
+
+<p>
+Constraints:
+</p>
+<ol class="org-ol">
+<li>\(0 \leq s.length \leq 5 \times 10^{4}\)</li>
+<li><code>s</code> consists of English letters, digits, symbols and spaces.</li>
+</ol>
+</div>
+<div id="outline-container-org4130f81" class="outline-3">
+<h3 id="org4130f81"><span class="section-number-3">1.1.</span> Examples:</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example" id="org979eeae">
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0280b1f" class="outline-2">
+<h2 id="org0280b1f"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+
+<div id="outline-container-org7f15ce6" class="outline-3">
+<h3 id="org7f15ce6"><span class="section-number-3">2.1.</span> Understanding the problem</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+I think this is similar to two pointers where we maintain a <code>fast_pos</code> and a <code>slow_pos</code>.
+</p>
+
+<p>
+The idea is that <code>fast_pos</code> moves.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfd156f2" class="outline-3">
+<h3 id="orgfd156f2"><span class="section-number-3">2.2.</span> Algorithm</h3>
+</div>
+
+<div id="outline-container-orgead5979" class="outline-3">
+<h3 id="orgead5979"><span class="section-number-3">2.3.</span> Code</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>3 Longest Substring Without Repeating Characters my solution</label><pre class="src src-python" id="org693ca77"><span class="org-keyword">def</span> <span class="org-function-name">lengthOfLongestSubstring</span><span class="org-rainbow-delimiters-depth-1">(</span>s<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-doc">"""</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type s: str</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :rtype: int</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   """</span>
+
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">slow_pos</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">fast_pos</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">max_length</span> = 0
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">while</span> fast_pos &lt; <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>s<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">we can still do one last comparison when fast_pos == len(s) - 1</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">substring</span> = s<span class="org-rainbow-delimiters-depth-1">[</span>slow_pos : fast_pos + 1<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>substring<span class="org-rainbow-delimiters-depth-1">)</span> == <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-builtin">set</span><span class="org-rainbow-delimiters-depth-2">(</span>substring<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">max_length</span> = max_length <span class="org-keyword">if</span> max_length &gt; <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>substring<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-keyword">else</span> <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>substring<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">else</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">note we can't just move slow_pos to fast_pos here</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">as that will break test case "dvdf"</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">slow_pos</span> += 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">fast_pos</span> += 1
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> max_length
+
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">tests</span>
+<span class="org-variable-name">s</span> = <span class="org-string">""</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>lengthOfLongestSubstring<span class="org-rainbow-delimiters-depth-2">(</span>s<span class="org-rainbow-delimiters-depth-2">)</span> == 0<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">s</span> = <span class="org-string">"b"</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>lengthOfLongestSubstring<span class="org-rainbow-delimiters-depth-2">(</span>s<span class="org-rainbow-delimiters-depth-2">)</span> == 1<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">s</span> = <span class="org-string">"bba"</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>lengthOfLongestSubstring<span class="org-rainbow-delimiters-depth-2">(</span>s<span class="org-rainbow-delimiters-depth-2">)</span> == 2<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">s</span> = <span class="org-string">"pwwkew"</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>lengthOfLongestSubstring<span class="org-rainbow-delimiters-depth-2">(</span>s<span class="org-rainbow-delimiters-depth-2">)</span> == 3<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">s</span> = <span class="org-string">"dvdf"</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>lengthOfLongestSubstring<span class="org-rainbow-delimiters-depth-2">(</span>s<span class="org-rainbow-delimiters-depth-2">)</span> == 3<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>3 Longest Substring Without Repeating Characters my solution-results</label><pre class="src src-python" id="org71e1a2f"><span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-orgb2dd8ee" class="outline-4">
+<h4 id="orgb2dd8ee"><span class="section-number-4">2.3.1.</span> Complexity</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<div id="outline-container-org791a9df" class="outline-5">
+<h5 id="org791a9df"><span class="section-number-5">2.3.1.1.</span> Time complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+<code>O(n)</code>
+</p>
+</div>
+</div>
+<div id="outline-container-org8f6d5b9" class="outline-5">
+<h5 id="org8f6d5b9"><span class="section-number-5">2.3.1.2.</span> Space complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-2">
+<p>
+<code>O(n)</code>, need the space for the substring.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8e5d07a" class="outline-3">
+<h3 id="org8e5d07a"><span class="section-number-3">2.4.</span> Leetcode solution</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<code>nil</code>.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>3 Longest Substring Without Repeating Characters leetcode solution</label><pre class="src src-python" id="orgc8ca496">&lt;&lt;imports <span class="org-keyword">for</span> typing&gt;&gt;
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>3 Longest Substring Without Repeating Characters leetcode solution-results</label><pre class="src src-none" id="org168e0ae">
+</pre>
+</div>
+</div>
+<div id="outline-container-org8f2e5f5" class="outline-4">
+<h4 id="org8f2e5f5"><span class="section-number-4">2.4.1.</span> Time complexity:</h4>
+</div>
+
+<div id="outline-container-org197b20e" class="outline-4">
+<h4 id="org197b20e"><span class="section-number-4">2.4.2.</span> Space complexity:</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf9193d4" class="outline-2">
+<h2 id="orgf9193d4"><span class="section-number-2">3.</span> More analysis</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org5f03a38" class="outline-3">
+<h3 id="org5f03a38"><span class="section-number-3">3.1.</span> General thoughts</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+I reckon this is almost a two pointers question.
+</p>
+
+<p>
+Also Leetcode provides an interesting <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/solution/">optimized solution</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-org68c7c0b" class="outline-3">
+<h3 id="org68c7c0b"><span class="section-number-3">3.2.</span> Related problems</h3>
+</div>
+</div>
+
+<div id="outline-container-orgdd63862" class="outline-2">
+<h2 id="orgdd63862"><span class="section-number-2">4.</span> Log time</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>

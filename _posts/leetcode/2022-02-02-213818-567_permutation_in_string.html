@@ -1,0 +1,195 @@
+---
+layout: post
+title: "567 Permutation in String"
+excerpt:
+---
+
+<div id="outline-container-org29c8fa6" class="outline-2">
+<h2 id="org29c8fa6"><span class="section-number-2">1.</span> Description</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Given two strings <code>s1</code> and <code>s2</code>, return <code>true</code> if <code>s2</code> contains a permutation of <code>s1</code>, or <code>false</code> otherwise.
+</p>
+
+<p>
+In other words, return <code>true</code> if one of <code>s1</code>'s permutations is the substring of <code>s2</code>.
+</p>
+
+<p>
+Constraints:
+</p>
+<ol class="org-ol">
+<li>\(1 \leq s1.length, s2.length \leq 10^{4}\)</li>
+<li><code>s1</code> and <code>s2</code> consist of lowercase English letters</li>
+</ol>
+</div>
+<div id="outline-container-org2550e23" class="outline-3">
+<h3 id="org2550e23"><span class="section-number-3">1.1.</span> Examples:</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example" id="org76c4c9f">
+Input: s1 = "ab", s2 = "eidbaooo"
+Output: true
+Explanation: s2 contains one permutation of s1 ("ba").
+
+Input: s1 = "ab", s2 = "eidboaoo"
+Output: false
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd6360b7" class="outline-2">
+<h2 id="orgd6360b7"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+
+<div id="outline-container-org41734d4" class="outline-3">
+<h3 id="org41734d4"><span class="section-number-3">2.1.</span> Understanding the problem</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Well a trivial case is if <code>len(s1) &gt; len(s2)</code>, then we return <code>false</code>.
+</p>
+
+<p>
+I think we can just use brute force and scan <code>s2</code> with a sliding window <code>s2[slow:fast]</code>, where <code>fast-slow == len(s1)</code>, and check if <code>s1</code> is a permutation of the window.
+</p>
+
+<p>
+How to check for permutation?
+I think we should first check if <code>set(s1) == set(s2[slow:fast])</code>, then check <code>sum([ord(c) for c in s1]) == sum([ord(c) for c in window])</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org8beb06b" class="outline-3">
+<h3 id="org8beb06b"><span class="section-number-3">2.2.</span> Algorithm</h3>
+</div>
+
+<div id="outline-container-orgbe0e8aa" class="outline-3">
+<h3 id="orgbe0e8aa"><span class="section-number-3">2.3.</span> Code</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>567 Permutation in String Problem question my solution</label><pre class="src src-python" id="orgb7f468b"><span class="org-keyword">def</span> <span class="org-function-name">checkInclusion</span><span class="org-rainbow-delimiters-depth-1">(</span>s1, s2<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-doc">"""</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type s1: str</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :type s2: str</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   :rtype: bool</span>
+<span class="org-doc"><span class="org-highlight-indentation"> </span></span><span class="org-doc">   """</span>
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>s1<span class="org-rainbow-delimiters-depth-1">)</span> &gt; <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>s2<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> <span class="org-constant">False</span>
+
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">fast</span> = 0
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">slow</span> = 0
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">while</span> fast - slow &lt; <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>s1<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">fast</span> += 1
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">while</span> fast &lt;= <span class="org-builtin">len</span><span class="org-rainbow-delimiters-depth-1">(</span>s2<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">window</span> = s2<span class="org-rainbow-delimiters-depth-1">[</span>slow:fast<span class="org-rainbow-delimiters-depth-1">]</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-builtin">set</span><span class="org-rainbow-delimiters-depth-2">(</span>s1<span class="org-rainbow-delimiters-depth-2">)</span> == <span class="org-builtin">set</span><span class="org-rainbow-delimiters-depth-2">(</span>window<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-keyword">and</span> <span class="org-rainbow-delimiters-depth-1">(</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-builtin">sum</span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">[</span><span class="org-builtin">ord</span><span class="org-rainbow-delimiters-depth-4">(</span>c<span class="org-rainbow-delimiters-depth-4">)</span> <span class="org-keyword">for</span> c <span class="org-keyword">in</span> s1<span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">)</span> == <span class="org-builtin">sum</span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">[</span><span class="org-builtin">ord</span><span class="org-rainbow-delimiters-depth-4">(</span>c<span class="org-rainbow-delimiters-depth-4">)</span> <span class="org-keyword">for</span> c <span class="org-keyword">in</span> window<span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">)</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> <span class="org-constant">True</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">fast</span> += 1
+<span class="org-highlight-indentation"> </span>   <span class="org-highlight-indentation"> </span>   <span class="org-variable-name">slow</span> += 1
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> <span class="org-constant">False</span>
+
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">tests</span>
+<span class="org-variable-name">s1</span> = <span class="org-string">"abc"</span>
+<span class="org-variable-name">s2</span> = <span class="org-string">"a"</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>checkInclusion<span class="org-rainbow-delimiters-depth-2">(</span>s1, s2<span class="org-rainbow-delimiters-depth-2">)</span> == <span class="org-constant">False</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+<span class="org-variable-name">s1</span> = <span class="org-string">"abc"</span>
+<span class="org-variable-name">s2</span> = <span class="org-string">"abc"</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>checkInclusion<span class="org-rainbow-delimiters-depth-2">(</span>s1, s2<span class="org-rainbow-delimiters-depth-2">)</span> == <span class="org-constant">True</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">s1</span> = <span class="org-string">"abc"</span>
+<span class="org-variable-name">s2</span> = <span class="org-string">"bca"</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>checkInclusion<span class="org-rainbow-delimiters-depth-2">(</span>s1, s2<span class="org-rainbow-delimiters-depth-2">)</span> == <span class="org-constant">True</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">s1</span> = <span class="org-string">"abc"</span>
+<span class="org-variable-name">s2</span> = <span class="org-string">"bcae"</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>checkInclusion<span class="org-rainbow-delimiters-depth-2">(</span>s1, s2<span class="org-rainbow-delimiters-depth-2">)</span> == <span class="org-constant">True</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">s1</span> = <span class="org-string">"abc"</span>
+<span class="org-variable-name">s2</span> = <span class="org-string">"bbcda"</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>checkInclusion<span class="org-rainbow-delimiters-depth-2">(</span>s1, s2<span class="org-rainbow-delimiters-depth-2">)</span> == <span class="org-constant">True</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>567 Permutation in String Problem question my solution-results</label><pre class="src src-python" id="org99fb60a"><span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">True</span>
+<span class="org-constant">False</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-org1510572" class="outline-4">
+<h4 id="org1510572"><span class="section-number-4">2.3.1.</span> Complexity</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<div id="outline-container-org1f5f660" class="outline-5">
+<h5 id="org1f5f660"><span class="section-number-5">2.3.1.1.</span> Time complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+I'm not too sure about this but I think this is \(O(N^{2})\) as worst case we need to do \(N \over 2\) <code>sum</code> during a full scan.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd6a5399" class="outline-5">
+<h5 id="orgd6a5399"><span class="section-number-5">2.3.1.2.</span> Space complexity:</h5>
+<div class="outline-text-5" id="text-2-3-1-2">
+<p>
+<code>O(N)</code>.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org37a7951" class="outline-3">
+<h3 id="org37a7951"><span class="section-number-3">2.4.</span> Leetcode solution</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<code>nil</code>.
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>567 Permutation in String Problem question leetcode solution</label><pre class="src src-python" id="org11300b2">&lt;&lt;imports <span class="org-keyword">for</span> typing&gt;&gt;
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>567 Permutation in String Problem question leetcode solution-results</label><pre class="src src-none" id="org1f52ef9">
+</pre>
+</div>
+</div>
+<div id="outline-container-org5ced22f" class="outline-4">
+<h4 id="org5ced22f"><span class="section-number-4">2.4.1.</span> Time complexity:</h4>
+</div>
+
+<div id="outline-container-org94d9ad2" class="outline-4">
+<h4 id="org94d9ad2"><span class="section-number-4">2.4.2.</span> Space complexity:</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org329e35e" class="outline-2">
+<h2 id="org329e35e"><span class="section-number-2">3.</span> More analysis</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org2e7610c" class="outline-3">
+<h3 id="org2e7610c"><span class="section-number-3">3.1.</span> General thoughts</h3>
+</div>
+<div id="outline-container-orge35e70d" class="outline-3">
+<h3 id="orge35e70d"><span class="section-number-3">3.2.</span> Related problems</h3>
+</div>
+</div>
+
+<div id="outline-container-orgc24c6e3" class="outline-2">
+<h2 id="orgc24c6e3"><span class="section-number-2">4.</span> Log time</h2>
+</div>
