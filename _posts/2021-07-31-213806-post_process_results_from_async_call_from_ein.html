@@ -1,0 +1,137 @@
+---
+layout: post
+title: "post process results from async call from EIN"
+excerpt: A quick hack.
+---
+<div id="outline-container-org234523a" class="outline-2">
+<h2 id="org234523a"><span class="section-number-2">1.</span> Problem</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="brain/Study/Programming/Emacs.html#ID-07eddf39-ec79-495e-ba47-b6263645db8e">EIN</a> uses async call to run the cod block in <a href="2021-04-09-093249-org_mode.html#ID-6460f771-fc41-4b14-b7b0-a06416e628eb">org mode</a>. This prevents <a href="brain/Study/Programming/Emacs.html#ID-091fad0a-b0c6-474b-a538-c10231a75eb5">Emacs</a> from being blocked but then it breaks the <code>:post</code> header to not work because it only processes the placeholder text. After the call finishes, the result will overwrite the previously processed placeholder result.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf21bfe9" class="outline-2">
+<h2 id="orgf21bfe9"><span class="section-number-2">2.</span> solution</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-python" id="orgaf85b4c"><span class="org-keyword">import</span> re
+
+<span class="org-keyword">def</span> <span class="org-function-name">gen_image_link</span><span class="org-rainbow-delimiters-depth-1">(</span>data<span class="org-rainbow-delimiters-depth-1">)</span>:
+<span class="org-highlight-indentation"> </span>   
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">html_tag</span> = r<span class="org-string">'&lt;figure&gt;&lt;image src="ein-images/\\1" alt="\\1"&gt;&lt;/figure&gt;'</span>
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">import</span> re
+
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">regex</span> = r<span class="org-string">"\[\[file:.*/(.*)\]\]"</span>
+
+<span class="org-highlight-indentation"> </span>   <span class="org-comment-delimiter"># </span><span class="org-comment">You can manually specify the number of replacements by changing the 4th argument</span>
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">result</span> = re.sub<span class="org-rainbow-delimiters-depth-1">(</span>regex, html_tag, data, 0, re.MULTILINE<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">return</span> result
+<span class="org-highlight-indentation"> </span>   
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-string">"&lt;pre&gt;"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>gen_image_link<span class="org-rainbow-delimiters-depth-2">(</span>data<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-string">"&lt;/pre&gt;"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">cutoffs</span> = <span class="org-rainbow-delimiters-depth-1">{}</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">print("test")</span>
+<span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-string">"ab"</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">cutoffs</span><span class="org-rainbow-delimiters-depth-1">[</span>i<span class="org-rainbow-delimiters-depth-1">]</span> = 100
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-string">"{} cutoff number at 99%: {}"</span>.<span class="org-builtin">format</span><span class="org-rainbow-delimiters-depth-2">(</span>i, cutoffs<span class="org-rainbow-delimiters-depth-3">[</span>i<span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<pre class="example">
+&lt;pre&gt;
+a cutoff number at 99%: 100
+b cutoff number at 99%: 100
+
+&lt;/pre&gt;
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-ein-python" id="orgc1faf0a"><span class="org-variable-name">cutoffs</span> = <span class="org-rainbow-delimiters-depth-1">{}</span>
+<span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-string">"ab"</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">cutoffs</span><span class="org-rainbow-delimiters-depth-1">[</span>i<span class="org-rainbow-delimiters-depth-1">]</span> = 100
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-string">"{} cutoff number at 99%: {}"</span>.<span class="org-builtin">format</span><span class="org-rainbow-delimiters-depth-2">(</span>i, <span class="org-builtin">str</span><span class="org-rainbow-delimiters-depth-3">(</span>cutoffs<span class="org-rainbow-delimiters-depth-4">[</span>i<span class="org-rainbow-delimiters-depth-4">]</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">for i in range(2):</span>
+<span class="org-comment-delimiter">#     </span><span class="org-comment">print("[[file:ein-images/ob-ein-084c59567740bbf1e65c473696b8c9f6.png]]")</span>
+</pre>
+</div>
+
+a cutoff number at 99%: 100
+b cutoff number at 99%: 100
+
+<div class="org-src-container">
+<pre class="src src-ein-python" id="orga33bd5a"><span class="org-variable-name">cutoffs</span> = <span class="org-rainbow-delimiters-depth-1">{}</span>
+<span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-string">"ab"</span>:
+<span class="org-highlight-indentation"> </span>   <span class="org-variable-name">cutoffs</span><span class="org-rainbow-delimiters-depth-1">[</span>i<span class="org-rainbow-delimiters-depth-1">]</span> = 100
+<span class="org-highlight-indentation"> </span>   <span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-string">"{} cutoff number at 99%: {}"</span>.<span class="org-builtin">format</span><span class="org-rainbow-delimiters-depth-2">(</span>i, cutoffs<span class="org-rainbow-delimiters-depth-3">[</span>i<span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">for i in range(2):</span>
+<span class="org-comment-delimiter">#     </span><span class="org-comment">print("[[file:ein-images/ob-ein-084c59567740bbf1e65c473696b8c9f6.png]]")</span>
+</pre>
+</div>
+
+<pre>
+a cutoff number at 99%: 100
+b cutoff number at 99%: 100
+
+</pre>
+
+
+
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="orgded0d49"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">ob-ein--execute-async-callback</span> <span class="org-rainbow-delimiters-depth-2">(</span>buffer params result-type result-params name<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-doc">"Return callback of 1-arity (the shared output cell) to update org buffer when</span>
+<span class="org-doc">`</span><span class="org-doc"><span class="org-constant">ein:shared-output-eval-string</span></span><span class="org-doc">' completes.</span>
+
+<span class="org-doc">The callback returns t if results containt RESULT-TYPE outputs, nil otherwise."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>apply-partially
+   <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-4">(</span>buffer* params* result-type* result-params* name* cell<span class="org-rainbow-delimiters-depth-4">)</span>
+     <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">when-let</span> <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-rainbow-delimiters-depth-6">(</span>raw <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">aif</span> <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-keyword">ein:oref-safe</span> cell 'traceback<span class="org-rainbow-delimiters-depth-8">)</span>
+                         <span class="org-rainbow-delimiters-depth-8">(</span>ansi-color-apply <span class="org-rainbow-delimiters-depth-9">(</span>ein:join-str <span class="org-string">"\n"</span> it<span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span>
+                       <span class="org-rainbow-delimiters-depth-8">(</span>ob-ein--process-outputs result-type* cell params*<span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+       <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">prog1</span> t
+         <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-rainbow-delimiters-depth-8">(</span>result
+                <span class="org-rainbow-delimiters-depth-9">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">(</span>tmp-file <span class="org-rainbow-delimiters-depth-3">(</span>org-babel-temp-file <span class="org-string">"ein-"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                  <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">with-temp-file</span> tmp-file <span class="org-rainbow-delimiters-depth-2">(</span>insert raw<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                  <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">org-babel-result-cond</span> result-params*
+                    raw <span class="org-rainbow-delimiters-depth-2">(</span>org-babel-import-elisp-from-file tmp-file '<span class="org-rainbow-delimiters-depth-3">(</span>16<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span>
+               <span class="org-rainbow-delimiters-depth-8">(</span>info <span class="org-rainbow-delimiters-depth-9">(</span>org-babel-get-src-block-info 'light<span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span>
+           <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">ein:log</span> 'debug <span class="org-string">"ob-ein--execute-async-callback %s \"%s\" %s"</span>
+                    name* result buffer*<span class="org-rainbow-delimiters-depth-7">)</span>
+           <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">save-excursion</span>
+             <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-keyword">save-restriction</span>
+               <span class="org-rainbow-delimiters-depth-9">(</span><span class="org-keyword">with-current-buffer</span> buffer*
+                 <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">unless</span> <span class="org-rainbow-delimiters-depth-2">(</span>stringp <span class="org-rainbow-delimiters-depth-3">(</span>org-babel-goto-named-src-block name*<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">stringp=error</span>
+                   <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">when</span> <span class="org-rainbow-delimiters-depth-3">(</span>version-list-&lt; <span class="org-rainbow-delimiters-depth-4">(</span>version-to-list <span class="org-rainbow-delimiters-depth-5">(</span>org-release<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span> '<span class="org-rainbow-delimiters-depth-4">(</span>9<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                     <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">when</span> info <span class="org-comment-delimiter">;; </span><span class="org-comment">kill #+RESULTS: (no-name)</span>
+                       <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">setf</span> <span class="org-rainbow-delimiters-depth-5">(</span>nth 4 info<span class="org-rainbow-delimiters-depth-5">)</span> nil<span class="org-rainbow-delimiters-depth-4">)</span>
+                       <span class="org-rainbow-delimiters-depth-4">(</span>org-babel-remove-result info<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                     <span class="org-rainbow-delimiters-depth-3">(</span>org-babel-remove-result<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">kill #+RESULTS: name</span>
+
+                   <span class="org-comment-delimiter">;; </span><span class="org-comment">Possibly perform async-post process provided its</span>
+                   <span class="org-comment-delimiter">;; </span><span class="org-comment">appropriate.  Dynamically bind "*this*" to the</span>
+                   <span class="org-comment-delimiter">;; </span><span class="org-comment">actual results of the block.</span>
+                   <span class="org-comment-delimiter">;; </span><span class="org-comment">Also need to handle the scenario when the code block from :async-post</span>
+                   <span class="org-comment-delimiter">;; </span><span class="org-comment">cannot be found.</span>
+                   <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>async-post <span class="org-rainbow-delimiters-depth-5">(</span>cdr <span class="org-rainbow-delimiters-depth-6">(</span>assq <span class="org-builtin">:async-post</span> params<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                     <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">when</span> async-post
+                       <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">setq</span> *this* result<span class="org-rainbow-delimiters-depth-4">)</span>
+                       <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">setq</span> result <span class="org-rainbow-delimiters-depth-5">(</span>org-babel-ref-resolve async-post<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+                   <span class="org-rainbow-delimiters-depth-2">(</span>org-babel-insert-result
+                    result
+                    <span class="org-rainbow-delimiters-depth-3">(</span>cdr <span class="org-rainbow-delimiters-depth-4">(</span>assoc <span class="org-builtin">:result-params</span>
+                                <span class="org-rainbow-delimiters-depth-5">(</span>cl-third <span class="org-rainbow-delimiters-depth-6">(</span>org-babel-get-src-block-info<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+                   <span class="org-rainbow-delimiters-depth-2">(</span>org-redisplay-inline-images<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+   buffer params result-type result-params name<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+</div>
+</div>
