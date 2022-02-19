@@ -1,0 +1,31 @@
+---
+layout: post
+title: "pandas convert booleans to integer (1 or 0)"
+excerpt:
+---
+
+<p>
+Here's how to convert a series of booleans to 1 or 0 (integer) in Pandas.
+</p>
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>example</label><pre class="src src-ein-python" id="orgbc2fc0a"><span class="org-keyword">import</span> pandas <span class="org-keyword">as</span> pd
+
+<span class="org-variable-name">df</span> = pd.DataFrame<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">{</span><span class="org-string">"val"</span>: <span class="org-rainbow-delimiters-depth-3">[</span><span class="org-constant">True</span>, <span class="org-constant">False</span><span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">}</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+df<span class="org-rainbow-delimiters-depth-1">[</span><span class="org-string">"val"</span><span class="org-rainbow-delimiters-depth-1">]</span>.astype<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-builtin">int</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div>
+<label>
+Result
+</label>
+<pre class="org-src-result">
+0    1
+1    0
+Name: val, dtype: int64
+
+</pre>
+<div>

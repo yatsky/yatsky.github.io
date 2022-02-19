@@ -1,0 +1,74 @@
+---
+layout: post
+title: "pandas apply function to column to create multiple new columns"
+excerpt: A trick to generate multiple columns from a function used in ~df.apply~.
+---
+
+<p>
+See: <a href="https://stackoverflow.com/questions/16236684/apply-pandas-function-to-column-to-create-multiple-new-columns">https://stackoverflow.com/questions/16236684/apply-pandas-function-to-column-to-create-multiple-new-columns</a>
+</p>
+
+<p>
+You have
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>original</label><pre class="src src-ein-python" id="org8d89d7f"><span class="org-keyword">import</span> pandas <span class="org-keyword">as</span> pd
+
+<span class="org-variable-name">df</span> = pd.DataFrame<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">{</span><span class="org-string">"val"</span>: <span class="org-rainbow-delimiters-depth-3">[</span><span class="org-string">"a,b,c"</span><span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">}</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>df<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div>
+<label>
+Result
+</label>
+<pre class="org-src-result">
+     val
+0  a,b,c
+
+</pre>
+<div>
+
+<p>
+You want
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>expected</label><pre class="src src-ein-python" id="org6d47dbe"><span class="org-variable-name">df</span> = pd.DataFrame<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">{</span><span class="org-string">"first"</span>: <span class="org-rainbow-delimiters-depth-3">[</span><span class="org-string">"a"</span><span class="org-rainbow-delimiters-depth-3">]</span>, <span class="org-string">"second"</span>: <span class="org-rainbow-delimiters-depth-3">[</span><span class="org-string">"b"</span><span class="org-rainbow-delimiters-depth-3">]</span>, <span class="org-string">"c"</span>: <span class="org-rainbow-delimiters-depth-3">[</span><span class="org-string">"c"</span><span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">}</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>df<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div>
+<label>
+Result
+</label>
+<pre class="org-src-result">
+  first second  c
+0     a      b  c
+
+</pre>
+<div>
+
+<p>
+Solution
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>solution</label><pre class="src src-ein-python" id="orgc12008a"><span class="org-variable-name">df</span> = pd.DataFrame<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">{</span><span class="org-string">"val"</span>: <span class="org-rainbow-delimiters-depth-3">[</span><span class="org-string">"a,b,c"</span><span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">}</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-variable-name">res</span> = df.<span class="org-builtin">apply</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">lambda</span> row: row<span class="org-rainbow-delimiters-depth-2">[</span><span class="org-string">"val"</span><span class="org-rainbow-delimiters-depth-2">]</span>.split<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-string">","</span><span class="org-rainbow-delimiters-depth-2">)</span>, axis=1, result_type=<span class="org-string">"expand"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>res<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div>
+<label>
+Result
+</label>
+<pre class="org-src-result">
+   0  1  2
+0  a  b  c
+
+</pre>
+<div>
