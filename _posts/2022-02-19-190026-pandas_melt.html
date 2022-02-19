@@ -1,0 +1,108 @@
+---
+layout: post
+title: "pandas melt"
+excerpt:
+---
+
+
+<div id="outline-container-org2e1d486" class="outline-2">
+<h2 id="org2e1d486"><span class="section-number-2">1.</span> "unpivot" a dataframe to a pseudo-series</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Today I had to convert something like below:
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>original</label><pre class="src src-ein-python" id="org2812acd"><span class="org-keyword">import</span> pandas <span class="org-keyword">as</span> pd
+
+<span class="org-variable-name">df</span> = pd.DataFrame<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">{</span><span class="org-string">"col1"</span>: <span class="org-rainbow-delimiters-depth-3">[</span>1, 2, 3, 4<span class="org-rainbow-delimiters-depth-3">]</span>, <span class="org-string">"col2"</span>: <span class="org-rainbow-delimiters-depth-3">[</span>10, 11, 12, 13<span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">}</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>df<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div>
+<label>
+Result
+</label>
+<pre class="org-src-result">
+   col1  col2
+0     1    10
+1     2    11
+2     3    12
+3     4    13
+
+</pre>
+<div>
+
+<p>
+into something like this
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>expected</label><pre class="src src-ein-python" id="orgb472175"><span class="org-variable-name">df</span> = pd.DataFrame<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">{</span><span class="org-string">"col"</span>: <span class="org-rainbow-delimiters-depth-3">[</span>1, 2, 3, 4, 10, 11, 12, 13<span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">}</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span>df<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div>
+<label>
+Result
+</label>
+<pre class="org-src-result">
+   col
+0    1
+1    2
+2    3
+3    4
+4   10
+5   11
+6   12
+7   13
+
+</pre>
+<div>
+
+<p>
+The easiest way is to use <code>pd.melt</code>. Here's how to achieve it.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>how-to</label><pre class="src src-ein-python" id="org302f898"><span class="org-keyword">import</span> pandas <span class="org-keyword">as</span> pd
+
+<span class="org-variable-name">df</span> = pd.DataFrame<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">{</span><span class="org-string">"col1"</span>: <span class="org-rainbow-delimiters-depth-3">[</span>1, 2, 3, 4<span class="org-rainbow-delimiters-depth-3">]</span>, <span class="org-string">"col2"</span>: <span class="org-rainbow-delimiters-depth-3">[</span>10, 11, 12, 13<span class="org-rainbow-delimiters-depth-3">]</span><span class="org-rainbow-delimiters-depth-2">}</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-string">"Before: \n"</span>, df<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-variable-name">df</span> = df.reset_index<span class="org-rainbow-delimiters-depth-1">()</span>
+<span class="org-variable-name">df</span> = pd.melt<span class="org-rainbow-delimiters-depth-1">(</span>df, id_vars=<span class="org-rainbow-delimiters-depth-2">[</span><span class="org-string">"index"</span><span class="org-rainbow-delimiters-depth-2">]</span>, value_vars=<span class="org-rainbow-delimiters-depth-2">[</span><span class="org-string">"col1"</span>, <span class="org-string">"col2"</span><span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-variable-name">df</span> = df.drop<span class="org-rainbow-delimiters-depth-1">(</span>columns=<span class="org-rainbow-delimiters-depth-2">[</span><span class="org-string">"index"</span>, <span class="org-string">"variable"</span><span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-keyword">print</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-string">"After: \n"</span>, df<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div>
+<label>
+Result
+</label>
+<pre class="org-src-result">
+Before: 
+    col1  col2
+0     1    10
+1     2    11
+2     3    12
+3     4    13
+After: 
+    value
+0      1
+1      2
+2      3
+3      4
+4     10
+5     11
+6     12
+7     13
+
+</pre>
+<div>
+</div>
+</div>
