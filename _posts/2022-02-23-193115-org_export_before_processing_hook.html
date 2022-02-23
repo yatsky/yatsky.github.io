@@ -1,0 +1,32 @@
+---
+layout: post
+title: "org-export-before-processing-hook"
+excerpt:
+---
+
+<p>
+So we can use this code to insert some front matter before exporting org file to HTML, specifically for <a href="2022-01-19-214524-jekyll.html#ID-CA136AA2-F6F9-408A-A4FF-DCBCB362EA06">Jekyll</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">get-org-buffer-title</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-doc">"Get the title of the current org buffer from #+title."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">with-current-buffer</span> <span class="org-rainbow-delimiters-depth-3">(</span>current-buffer<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>ast <span class="org-rainbow-delimiters-depth-6">(</span>org-element-parse-buffer 'greater-element<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+      <span class="org-rainbow-delimiters-depth-4">(</span>org-element-map ast '<span class="org-rainbow-delimiters-depth-5">(</span>keyword<span class="org-rainbow-delimiters-depth-5">)</span>
+        <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">lambda</span><span class="org-rainbow-delimiters-depth-6">(</span>kw<span class="org-rainbow-delimiters-depth-6">)</span> <span class="org-rainbow-delimiters-depth-6">(</span>plist-get <span class="org-rainbow-delimiters-depth-7">(</span>cadr kw<span class="org-rainbow-delimiters-depth-7">)</span> <span class="org-builtin">:value</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+        nil
+        t<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">add-post-frontmatter</span> <span class="org-rainbow-delimiters-depth-2">(</span>backend<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-doc">"BACKEND is the export back-end being used, as a symbol."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-3">(</span>org-export-derived-backend-p backend 'html<span class="org-rainbow-delimiters-depth-3">)</span>
+      <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">with-current-buffer</span> <span class="org-rainbow-delimiters-depth-4">(</span>current-buffer<span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-rainbow-delimiters-depth-4">(</span>goto-char <span class="org-rainbow-delimiters-depth-5">(</span>re-search-forward <span class="org-string">":END:"</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-rainbow-delimiters-depth-4">(</span>insert <span class="org-rainbow-delimiters-depth-5">(</span>concat <span class="org-string">"\n#+begin_export html\n---\nlayout: post\ntitle: \""</span>
+                        <span class="org-rainbow-delimiters-depth-6">(</span>get-org-buffer-title<span class="org-rainbow-delimiters-depth-6">)</span>
+                        <span class="org-string">"\"\nexcerpt:\n---\n#+end_export\n"</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span>add-hook 'org-export-before-parsing-hook #'add-post-frontmatter<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
