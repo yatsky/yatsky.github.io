@@ -13,3 +13,4 @@ permalink: /blogs/
 5.  <https://manateelazycat.github.io/>
 6.  <https://intuitiveexplanations.com/>
 7.  <https://www.dabeaz.com/> (such great books and tutorials from him!)
+8.  <http://www.zilongshanren.com/>
