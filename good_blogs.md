@@ -14,3 +14,4 @@ permalink: /blogs/
 6.  <https://intuitiveexplanations.com/>
 7.  <https://www.dabeaz.com/> (such great books and tutorials from him!)
 8.  <http://www.zilongshanren.com/>
+9.  <https://www.williamyaoh.com/> (Haskell stuff)
