@@ -2,6 +2,7 @@
 layout: post
 title: "Emacs reference manual read"
 excerpt:
+modified_date: 2022-04-10
 ---
 
 <p>
@@ -40,6 +41,7 @@ However I do try to copy and paste all functions mentioned in the manual so that
 <ul class="org-ul">
 <li>Each slot can “hold” any Lisp object.</li>
 <li>We also say that the CAR of this cons cell is whatever object its CAR slot currently holds, and likewise for the CDR.</li>
+<li>CDR is pronounced “could-er”.</li>
 </ul></li>
 <li>An “association list” or “alist” is a specially-constructed list whose elements are cons cells.</li>
 <li>An “array” is composed of an arbitrary number of slots for holding or referring to other Lisp objects, arranged in a contiguous block of memory. (approx. O(1) access time).
@@ -374,16 +376,16 @@ alist
 <pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> list nil<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">add-on</span> <span class="org-rainbow-delimiters-depth-2">(</span>x<span class="org-rainbow-delimiters-depth-2">)</span>
   <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">cond</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>symbolp x<span class="org-rainbow-delimiters-depth-4">)</span>
-     <span class="org-comment-delimiter">;; </span><span class="org-comment">If X is a symbol, put it on LIST.</span>
-     <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">setq</span> list <span class="org-rainbow-delimiters-depth-5">(</span>cons x list<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span> 
-    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>listp x<span class="org-rainbow-delimiters-depth-4">)</span>
-     <span class="org-comment-delimiter">;; </span><span class="org-comment">If X is a list, add its elements to LIST.</span>
-     <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">setq</span> list <span class="org-rainbow-delimiters-depth-5">(</span>append x list<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span> 
-    <span class="org-rainbow-delimiters-depth-3">(</span>t
-     <span class="org-comment-delimiter">;; </span><span class="org-comment">We handle only symbols and lists.</span>
-     <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-warning">error</span> 
-      <span class="org-string">"Invalid argument %s in add-on"</span>
-      x<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+         <span class="org-comment-delimiter">;; </span><span class="org-comment">If X is a symbol, put it on LIST.</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">setq</span> list <span class="org-rainbow-delimiters-depth-5">(</span>cons x list<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span> 
+        <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>listp x<span class="org-rainbow-delimiters-depth-4">)</span>
+         <span class="org-comment-delimiter">;; </span><span class="org-comment">If X is a list, add its elements to LIST.</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">setq</span> list <span class="org-rainbow-delimiters-depth-5">(</span>append x list<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span> 
+        <span class="org-rainbow-delimiters-depth-3">(</span>t
+         <span class="org-comment-delimiter">;; </span><span class="org-comment">We handle only symbols and lists.</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-warning">error</span> 
+          <span class="org-string">"Invalid argument %s in add-on"</span>
+          x<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-rainbow-delimiters-depth-1">(</span>add-on 'a<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div>
@@ -722,7 +724,7 @@ A mutable object stops being mutable if it is part of an expression that is eval
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">let*</span> <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">(</span>x <span class="org-rainbow-delimiters-depth-4">(</span>list 0.5<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
-       <span class="org-rainbow-delimiters-depth-3">(</span>y <span class="org-rainbow-delimiters-depth-4">(</span>eval <span class="org-rainbow-delimiters-depth-5">(</span>list 'quote x<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+           <span class="org-rainbow-delimiters-depth-3">(</span>y <span class="org-rainbow-delimiters-depth-4">(</span>eval <span class="org-rainbow-delimiters-depth-5">(</span>list 'quote x<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
   <span class="org-rainbow-delimiters-depth-2">(</span>setcar x 1.5<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">the program should not do this.</span>
   <span class="org-rainbow-delimiters-depth-2">(</span>car x<span class="org-rainbow-delimiters-depth-2">)</span>
   <span class="org-rainbow-delimiters-depth-1">)</span>
@@ -767,9 +769,9 @@ characters taken from ‘0’–‘9’, ‘A’–‘Z’.  Letter case is igno
 there is no initial sign or final period.  For example:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>message <span class="org-rainbow-delimiters-depth-2">(</span>format <span class="org-string">"%s"</span> #b101100<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>    &#8658; 44
-#o54        &#8658; 44
-#x2c        &#8658; 44
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>message <span class="org-rainbow-delimiters-depth-2">(</span>format <span class="org-string">"%s"</span> #b101100<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>        &#8658; 44
+#o54            &#8658; 44
+#x2c            &#8658; 44
 #24r1k  &#8658; 44
 </pre>
 </div>
@@ -780,28 +782,28 @@ Some useful variables.
 <blockquote>
 <p>
 &#x2013; Variable: most-positive-fixnum
-	The value of this variable is the greatest “small” integer that
-	Emacs Lisp can handle.  Typical values are 2**29 − 1 on 32-bit and
-	2**61 − 1 on 64-bit platforms.
+    The value of this variable is the greatest “small” integer that
+    Emacs Lisp can handle.  Typical values are 2**29 − 1 on 32-bit and
+    2**61 − 1 on 64-bit platforms.
 </p>
 
 <p>
 &#x2013; Variable: most-negative-fixnum
-	The value of this variable is the numerically least “small” integer
-	that Emacs Lisp can handle.  It is negative.  Typical values are
-	−2**29 on 32-bit and −2**61 on 64-bit platforms.
+    The value of this variable is the numerically least “small” integer
+    that Emacs Lisp can handle.  It is negative.  Typical values are
+    −2**29 on 32-bit and −2**61 on 64-bit platforms.
 </p>
 
 <p>
 &#x2013; Variable: integer-width
-	The value of this variable is a nonnegative integer that controls
-	whether Emacs signals a range error when a large integer would be
-	calculated.  Integers with absolute values less than 2**N, where N
-	is this variable’s value, do not signal a range error.  Attempts to
-	create larger integers typically signal a range error, although
-	there might be no signal if a larger integer can be created
-	cheaply.  Setting this variable to a large number can be costly if
-	a computation creates huge integers.
+    The value of this variable is a nonnegative integer that controls
+    whether Emacs signals a range error when a large integer would be
+    calculated.  Integers with absolute values less than 2**N, where N
+    is this variable’s value, do not signal a range error.  Attempts to
+    create larger integers typically signal a range error, although
+    there might be no signal if a larger integer can be created
+    cheaply.  Setting this variable to a large number can be costly if
+    a computation creates huge integers.
 </p>
 </blockquote>
 </div>
@@ -827,15 +829,15 @@ Useful functions
 <blockquote>
 <p>
 &#x2013; Function: isnan x
-	This predicate returns ‘t’ if its floating-point argument is a NaN,
-	‘nil’ otherwise.
+    This predicate returns ‘t’ if its floating-point argument is a NaN,
+    ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: frexp x
-	This function returns a cons cell ‘(S . E)’, where S and E are
-	respectively the significand and exponent of the floating-point
-	number X.
+    This function returns a cons cell ‘(S . E)’, where S and E are
+    respectively the significand and exponent of the floating-point
+    number X.
 </p>
 
 <p>
@@ -847,31 +849,31 @@ then S is also a NaN.  If X is zero, then E is 0.
 
 <p>
 &#x2013; Function: ldexp s e
-	Given a numeric significand S and an integer exponent E, this
-	function returns the floating point number S * 2**E.
+    Given a numeric significand S and an integer exponent E, this
+    function returns the floating point number S * 2**E.
 </p>
 
 <p>
 &#x2013; Function: copysign x1 x2
-	This function copies the sign of X2 to the value of X1, and returns
-	the result.  X1 and X2 must be floating point.
+    This function copies the sign of X2 to the value of X1, and returns
+    the result.  X1 and X2 must be floating point.
 </p>
 
 <p>
 &#x2013; Function: logb x
-	This function returns the binary exponent of X.  More precisely, if
-	X is finite and nonzero, the value is the logarithm base 2 of |x|,
-	rounded down to an integer.  If X is zero or infinite, the value is
-	infinity; if X is a NaN, the value is a NaN.
+    This function returns the binary exponent of X.  More precisely, if
+    X is finite and nonzero, the value is the logarithm base 2 of |x|,
+    rounded down to an integer.  If X is zero or infinite, the value is
+    infinity; if X is a NaN, the value is a NaN.
 </p>
 
 <p>
 (logb 10)
-	 ⇒ 3
+     ⇒ 3
 (logb 10.0e20)
-	 ⇒ 69
+     ⇒ 69
 (logb 0)
-	 ⇒ -1.0e+INF
+     ⇒ -1.0e+INF
 </p>
 </blockquote>
 </div>
@@ -882,41 +884,41 @@ then S is also a NaN.  If X is zero, then E is 0.
 <blockquote>
 <p>
 &#x2013; Function: bignump object
-	This predicate tests whether its argument is a large integer, and
-	returns ‘t’ if so, ‘nil’ otherwise.  Unlike small integers, large
-	integers can be ‘=’ or ‘eql’ even if they are not ‘eq’.
+    This predicate tests whether its argument is a large integer, and
+    returns ‘t’ if so, ‘nil’ otherwise.  Unlike small integers, large
+    integers can be ‘=’ or ‘eql’ even if they are not ‘eq’.
 </p>
 
 <p>
 &#x2013; Function: fixnump object
-	This predicate tests whether its argument is a small integer, and
-	returns ‘t’ if so, ‘nil’ otherwise.  Small integers can be compared
-	with ‘eq’.
+    This predicate tests whether its argument is a small integer, and
+    returns ‘t’ if so, ‘nil’ otherwise.  Small integers can be compared
+    with ‘eq’.
 </p>
 
 <p>
 &#x2013; Function: floatp object
-	This predicate tests whether its argument is floating point and
-	returns ‘t’ if so, ‘nil’ otherwise.
+    This predicate tests whether its argument is floating point and
+    returns ‘t’ if so, ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: integerp object
-	This predicate tests whether its argument is an integer, and
-	returns ‘t’ if so, ‘nil’ otherwise.
+    This predicate tests whether its argument is an integer, and
+    returns ‘t’ if so, ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: numberp object
-	This predicate tests whether its argument is a number (either
-	integer or floating point), and returns ‘t’ if so, ‘nil’ otherwise.
+    This predicate tests whether its argument is a number (either
+    integer or floating point), and returns ‘t’ if so, ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: natnump object
-	This predicate (whose name comes from the phrase “natural number”)
-	tests to see whether its argument is a nonnegative integer, and
-	returns ‘t’ if so, ‘nil’ otherwise.  0 is considered non-negative.
+    This predicate (whose name comes from the phrase “natural number”)
+    tests to see whether its argument is a nonnegative integer, and
+    returns ‘t’ if so, ‘nil’ otherwise.  0 is considered non-negative.
 </p>
 
 <p>
@@ -925,8 +927,8 @@ then S is also a NaN.  If X is zero, then E is 0.
 
 <p>
 &#x2013; Function: zerop number
-	This predicate tests whether its argument is zero, and returns ‘t’
-	if so, ‘nil’ otherwise.  The argument must be a number.
+    This predicate tests whether its argument is zero, and returns ‘t’
+    if so, ‘nil’ otherwise.  The argument must be a number.
 </p>
 
 <p>
@@ -949,9 +951,9 @@ a function to do this:
 <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defvar</span> <span class="org-variable-name">fuzz-factor</span> 1.0e-6<span class="org-rainbow-delimiters-depth-1">)</span>
 <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">approx-equal</span> <span class="org-rainbow-delimiters-depth-2">(</span>x y<span class="org-rainbow-delimiters-depth-2">)</span>
   <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">or</span> <span class="org-rainbow-delimiters-depth-3">(</span>= x y<span class="org-rainbow-delimiters-depth-3">)</span> 
-      <span class="org-rainbow-delimiters-depth-3">(</span>&lt; <span class="org-rainbow-delimiters-depth-4">(</span>/ <span class="org-rainbow-delimiters-depth-5">(</span>abs <span class="org-rainbow-delimiters-depth-6">(</span>- x y<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span> 
-            <span class="org-rainbow-delimiters-depth-5">(</span>max <span class="org-rainbow-delimiters-depth-6">(</span>abs x<span class="org-rainbow-delimiters-depth-6">)</span> 
-                 <span class="org-rainbow-delimiters-depth-6">(</span>abs y<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span> <span class="org-warning">fuzz-factor</span><span class="org-warning"><span class="org-rainbow-delimiters-depth-3">)</span></span><span class="org-warning"><span class="org-rainbow-delimiters-depth-2">)</span></span><span class="org-warning"><span class="org-rainbow-delimiters-depth-1">)</span></span>
+          <span class="org-rainbow-delimiters-depth-3">(</span>&lt; <span class="org-rainbow-delimiters-depth-4">(</span>/ <span class="org-rainbow-delimiters-depth-5">(</span>abs <span class="org-rainbow-delimiters-depth-6">(</span>- x y<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span> 
+                        <span class="org-rainbow-delimiters-depth-5">(</span>max <span class="org-rainbow-delimiters-depth-6">(</span>abs x<span class="org-rainbow-delimiters-depth-6">)</span> 
+                                 <span class="org-rainbow-delimiters-depth-6">(</span>abs y<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span> <span class="org-warning">fuzz-factor</span><span class="org-warning"><span class="org-rainbow-delimiters-depth-3">)</span></span><span class="org-warning"><span class="org-rainbow-delimiters-depth-2">)</span></span><span class="org-warning"><span class="org-rainbow-delimiters-depth-1">)</span></span>
 </pre>
 </div>
 
@@ -961,76 +963,76 @@ Useful functions.
 <blockquote>
 <p>
 &#x2013; Function: = number-or-marker &amp;rest number-or-markers
-	This function tests whether all its arguments are numerically
-	equal, and returns ‘t’ if so, ‘nil’ otherwise.
+    This function tests whether all its arguments are numerically
+    equal, and returns ‘t’ if so, ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: eql value1 value2
-	This function acts like ‘eq’ except when both arguments are
-	numbers.  It compares numbers by type and numeric value, so that
-	‘(eql 1.0 1)’ returns ‘nil’, but ‘(eql 1.0 1.0)’ and ‘(eql 1 1)’
-	both return ‘t’.  This can be used to compare large integers as
-	well as small ones.
+    This function acts like ‘eq’ except when both arguments are
+    numbers.  It compares numbers by type and numeric value, so that
+    ‘(eql 1.0 1)’ returns ‘nil’, but ‘(eql 1.0 1.0)’ and ‘(eql 1 1)’
+    both return ‘t’.  This can be used to compare large integers as
+    well as small ones.
 </p>
 
 <p>
 &#x2013; Function: /= number-or-marker1 number-or-marker2
-	This function tests whether its arguments are numerically equal,
-	and returns ‘t’ if they are not, and ‘nil’ if they are.
+    This function tests whether its arguments are numerically equal,
+    and returns ‘t’ if they are not, and ‘nil’ if they are.
 </p>
 
 <p>
 &#x2013; Function: &lt; number-or-marker &amp;rest number-or-markers
-	This function tests whether each argument is strictly less than the
-	following argument.  It returns ‘t’ if so, ‘nil’ otherwise.
+    This function tests whether each argument is strictly less than the
+    following argument.  It returns ‘t’ if so, ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: &lt;= number-or-marker &amp;rest number-or-markers
-	This function tests whether each argument is less than or equal to
-	the following argument.  It returns ‘t’ if so, ‘nil’ otherwise.
+    This function tests whether each argument is less than or equal to
+    the following argument.  It returns ‘t’ if so, ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: &gt; number-or-marker &amp;rest number-or-markers
-	This function tests whether each argument is strictly greater than
-	the following argument.  It returns ‘t’ if so, ‘nil’ otherwise.
+    This function tests whether each argument is strictly greater than
+    the following argument.  It returns ‘t’ if so, ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: &gt;= number-or-marker &amp;rest number-or-markers
-	This function tests whether each argument is greater than or equal
-	to the following argument.  It returns ‘t’ if so, ‘nil’ otherwise.
+    This function tests whether each argument is greater than or equal
+    to the following argument.  It returns ‘t’ if so, ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: max number-or-marker &amp;rest numbers-or-markers
-	This function returns the largest of its arguments.
+    This function returns the largest of its arguments.
 </p>
 
 <p>
 (max 20)
-	 ⇒ 20
+     ⇒ 20
 (max 1 2.5)
-	 ⇒ 2.5
+     ⇒ 2.5
 (max 1 3 2.5)
-	 ⇒ 3
+     ⇒ 3
 </p>
 
 <p>
 &#x2013; Function: min number-or-marker &amp;rest numbers-or-markers
-	This function returns the smallest of its arguments.
+    This function returns the smallest of its arguments.
 </p>
 
 <p>
 (min -4 1)
-	 ⇒ -4
+     ⇒ -4
 </p>
 
 <p>
 &#x2013; Function: abs number
-	This function returns the absolute value of NUMBER.
+    This function returns the absolute value of NUMBER.
 </p>
 </blockquote>
 </div>
@@ -1132,27 +1134,27 @@ in the direction towards zero; ‘fround’, the nearest integer.
 
 <p>
 &#x2013; Function: ffloor float
-	This function rounds FLOAT to the next lower integral value, and
-	returns that value as a floating-point number.
+    This function rounds FLOAT to the next lower integral value, and
+    returns that value as a floating-point number.
 </p>
 
 <p>
 &#x2013; Function: fceiling float
-	This function rounds FLOAT to the next higher integral value, and
-	returns that value as a floating-point number.
+    This function rounds FLOAT to the next higher integral value, and
+    returns that value as a floating-point number.
 </p>
 
 <p>
 &#x2013; Function: ftruncate float
-	This function rounds FLOAT towards zero to an integral value, and
-	returns that value as a floating-point number.
+    This function rounds FLOAT towards zero to an integral value, and
+    returns that value as a floating-point number.
 </p>
 
 <p>
 &#x2013; Function: fround float
-	This function rounds FLOAT to the nearest integral value, and
-	returns that value as a floating-point number.  Rounding a value
-	equidistant between two integers returns the even integer.
+    This function rounds FLOAT to the nearest integral value, and
+    returns that value as a floating-point number.  Rounding a value
+    equidistant between two integers returns the even integer.
 </p>
 </blockquote>
 </div>
@@ -1177,57 +1179,57 @@ Won't touch this here at the moment.
 &#x2013; Function: sin arg
 &#x2013; Function: cos arg
 &#x2013; Function: tan arg
-	These are the basic trigonometric functions, with argument ARG
-	measured in radians.
+    These are the basic trigonometric functions, with argument ARG
+    measured in radians.
 </p>
 
 <p>
 &#x2013; Function: asin arg
-	The value of ‘(asin ARG)’ is a number between −pi/2 and pi/2
-	(inclusive) whose sine is ARG.  If ARG is out of range (outside
-	[−1, 1]), ‘asin’ returns a NaN.
+    The value of ‘(asin ARG)’ is a number between −pi/2 and pi/2
+    (inclusive) whose sine is ARG.  If ARG is out of range (outside
+    [−1, 1]), ‘asin’ returns a NaN.
 </p>
 
 <p>
 &#x2013; Function: acos arg
-	The value of ‘(acos ARG)’ is a number between 0 and pi (inclusive)
-	whose cosine is ARG.  If ARG is out of range (outside [−1, 1]),
-	‘acos’ returns a NaN.
+    The value of ‘(acos ARG)’ is a number between 0 and pi (inclusive)
+    whose cosine is ARG.  If ARG is out of range (outside [−1, 1]),
+    ‘acos’ returns a NaN.
 </p>
 
 <p>
 &#x2013; Function: atan y &amp;optional x
-	The value of ‘(atan Y)’ is a number between −pi/2 and pi/2
-	(exclusive) whose tangent is Y.  If the optional second argument X
-	is given, the value of ‘(atan y x)’ is the angle in radians between
-	the vector ‘[X, Y]’ and the ‘X’ axis.
+    The value of ‘(atan Y)’ is a number between −pi/2 and pi/2
+    (exclusive) whose tangent is Y.  If the optional second argument X
+    is given, the value of ‘(atan y x)’ is the angle in radians between
+    the vector ‘[X, Y]’ and the ‘X’ axis.
 </p>
 
 <p>
 &#x2013; Function: exp arg
-	This is the exponential function; it returns e to the power ARG.
+    This is the exponential function; it returns e to the power ARG.
 </p>
 
 <p>
 &#x2013; Function: log arg &amp;optional base
-	This function returns the logarithm of ARG, with base BASE.  If you
-	don’t specify BASE, the natural base e is used.  If ARG or BASE is
-	negative, ‘log’ returns a NaN.
+    This function returns the logarithm of ARG, with base BASE.  If you
+    don’t specify BASE, the natural base e is used.  If ARG or BASE is
+    negative, ‘log’ returns a NaN.
 </p>
 
 <p>
 &#x2013; Function: expt x y
-	This function returns X raised to power Y.  If both arguments are
-	integers and Y is nonnegative, the result is an integer; in this
-	case, overflow signals an error, so watch out.  If X is a finite
-	negative number and Y is a finite non-integer, ‘expt’ returns a
-	NaN.
+    This function returns X raised to power Y.  If both arguments are
+    integers and Y is nonnegative, the result is an integer; in this
+    case, overflow signals an error, so watch out.  If X is a finite
+    negative number and Y is a finite non-integer, ‘expt’ returns a
+    NaN.
 </p>
 
 <p>
 &#x2013; Function: sqrt arg
-	This returns the square root of ARG.  If ARG is finite and less
-	than zero, ‘sqrt’ returns a NaN.
+    This returns the square root of ARG.  If ARG is finite and less
+    than zero, ‘sqrt’ returns a NaN.
 </p>
 
 <p>
@@ -1237,12 +1239,12 @@ constants:
 
 <p>
 &#x2013; Variable: float-e
-	The mathematical constant e (2.71828&#x2026;).
+    The mathematical constant e (2.71828&#x2026;).
 </p>
 
 <p>
 &#x2013; Variable: float-pi
-	The mathematical constant pi (3.14159&#x2026;).
+    The mathematical constant pi (3.14159&#x2026;).
 </p>
 </blockquote>
 </div>
@@ -1292,19 +1294,19 @@ In Emacs Lisp, characters are simply integers; whether an integer is a character
 <blockquote>
 <p>
 &#x2013; Function: stringp object
-	This function returns ‘t’ if OBJECT is a string, ‘nil’ otherwise.
+    This function returns ‘t’ if OBJECT is a string, ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: string-or-null-p object
-	This function returns ‘t’ if OBJECT is a string or ‘nil’.  It
-	returns ‘nil’ otherwise.
+    This function returns ‘t’ if OBJECT is a string or ‘nil’.  It
+    returns ‘nil’ otherwise.
 </p>
 
 <p>
 &#x2013; Function: char-or-string-p object
-	This function returns ‘t’ if OBJECT is a string or a character
-	(i.e., an integer), ‘nil’ otherwise.
+    This function returns ‘t’ if OBJECT is a string or a character
+    (i.e., an integer), ‘nil’ otherwise.
 </p>
 </blockquote>
 
@@ -1324,15 +1326,15 @@ List of useful functions.
 <blockquote>
 <p>
 &#x2013; Function: make-string count character &amp;optional multibyte
-	This function returns a string made up of COUNT repetitions of
-	CHARACTER.  If COUNT is negative, an error is signaled.
+    This function returns a string made up of COUNT repetitions of
+    CHARACTER.  If COUNT is negative, an error is signaled.
 </p>
 
 <p>
 (make-string 5 ?x)
-	 ⇒ "xxxxx"
+     ⇒ "xxxxx"
 (make-string 0 ?x)
-	 ⇒ ""
+     ⇒ ""
 </p>
 
 <p>
@@ -1351,26 +1353,26 @@ Other functions to compare with this one include ‘make-vector’
 
 <p>
 &#x2013; Function: string &amp;rest characters
-	This returns a string containing the characters CHARACTERS.
+    This returns a string containing the characters CHARACTERS.
 </p>
 
 <p>
 (string ?a ?b ?c)
-	 ⇒ "abc"
+     ⇒ "abc"
 </p>
 
 <p>
 &#x2013; Function: substring string &amp;optional start end
-	This function returns a new string which consists of those
-	characters from STRING in the range from (and including) the
-	character at the index START up to (but excluding) the character at
-	the index END.  The first character is at index zero.  With one
-	argument, this function just copies STRING.
+    This function returns a new string which consists of those
+    characters from STRING in the range from (and including) the
+    character at the index START up to (but excluding) the character at
+    the index END.  The first character is at index zero.  With one
+    argument, this function just copies STRING.
 </p>
 
 <p>
 (substring "abcdefg" 0 3)
-	 ⇒ "abc"
+     ⇒ "abc"
 </p>
 
 <p>
@@ -1389,7 +1391,7 @@ example:
 
 <p>
 (substring "abcdefg" -3 -1)
-	 ⇒ "ef"
+     ⇒ "ef"
 </p>
 
 <p>
@@ -1405,7 +1407,7 @@ Thus,
 
 <p>
 (substring "abcdefg" -3 nil)
-	 ⇒ "efg"
+     ⇒ "efg"
 </p>
 
 <p>
@@ -1416,7 +1418,7 @@ STRING.
 
 <p>
 (substring "abcdefg" 0)
-	 ⇒ "abcdefg"
+     ⇒ "abcdefg"
 </p>
 
 <p>
@@ -1437,7 +1439,7 @@ example:
 
 <p>
 (substring [a b (c) "d"] 1 3)
-	 ⇒ [b (c)]
+     ⇒ [b (c)]
 </p>
 
 <p>
@@ -1457,33 +1459,33 @@ text in the current buffer.  The beginning of a string is at index
 
 <p>
 &#x2013; Function: substring-no-properties string &amp;optional start end
-	This works like ‘substring’ but discards all text properties from
-	the value.  Also, START may be omitted or ‘nil’, which is
-	equivalent to 0.  Thus, ‘(substring-no-properties STRING)’ returns
-	a copy of STRING, with all text properties removed.
+    This works like ‘substring’ but discards all text properties from
+    the value.  Also, START may be omitted or ‘nil’, which is
+    equivalent to 0.  Thus, ‘(substring-no-properties STRING)’ returns
+    a copy of STRING, with all text properties removed.
 </p>
 
 <p>
 &#x2013; Function: concat &amp;rest sequences
-	This function returns a string consisting of the characters in the
-	arguments passed to it (along with their text properties, if any).
-	The arguments may be strings, lists of numbers, or vectors of
-	numbers; they are not themselves changed.  If ‘concat’ receives no
-	arguments, it returns an empty string.
+    This function returns a string consisting of the characters in the
+    arguments passed to it (along with their text properties, if any).
+    The arguments may be strings, lists of numbers, or vectors of
+    numbers; they are not themselves changed.  If ‘concat’ receives no
+    arguments, it returns an empty string.
 </p>
 
 <p>
 (concat "abc" "-def")
-	 ⇒ "abc-def"
+     ⇒ "abc-def"
 (concat "abc" (list 120 121) [122])
-	 ⇒ "abcxyz"
+     ⇒ "abcxyz"
 ;; ‘nil’ is an empty sequence.
 (concat "abc" nil "-def")
-	 ⇒ "abc-def"
+     ⇒ "abc-def"
 (concat "The " "quick brown " "fox.")
-	 ⇒ "The quick brown fox."
+     ⇒ "The quick brown fox."
 (concat)
-	 ⇒ ""
+     ⇒ ""
 </p>
 
 <p>
@@ -1510,10 +1512,10 @@ combine-and-quote-strings: Shell Arguments.
 
 <p>
 &#x2013; Function: split-string string &amp;optional separators omit-nulls trim
-	This function splits STRING into substrings based on the regular
-	expression SEPARATORS (*note Regular Expressions::).  Each match
-	for SEPARATORS defines a splitting point; the substrings between
-	splitting points are made into a list, which is returned.
+    This function splits STRING into substrings based on the regular
+    expression SEPARATORS (*note Regular Expressions::).  Each match
+    for SEPARATORS defines a splitting point; the substrings between
+    splitting points are made into a list, which is returned.
 </p>
 
 <p>
@@ -1549,7 +1551,7 @@ Examples:
 
 <p>
 (split-string "  two words ")
-	 ⇒ ("two" "words")
+     ⇒ ("two" "words")
 </p>
 
 <p>
@@ -1560,17 +1562,17 @@ SEPARATORS:
 
 <p>
 (split-string "  two words "
-			  split-string-default-separators)
-	 ⇒ ("" "two" "words" "")
+	      split-string-default-separators)
+     ⇒ ("" "two" "words" "")
 </p>
 
 <p>
 (split-string "Soup is good food" "o")
-	 ⇒ ("S" "up is g" "" "d f" "" "d")
+     ⇒ ("S" "up is g" "" "d f" "" "d")
 (split-string "Soup is good food" "o" t)
-	 ⇒ ("S" "up is g" "d f" "d")
+     ⇒ ("S" "up is g" "d f" "d")
 (split-string "Soup is good food" "o+")
-	 ⇒ ("S" "up is g" "d f" "d")
+     ⇒ ("S" "up is g" "d f" "d")
 </p>
 
 <p>
@@ -1581,11 +1583,11 @@ string using a non-empty match or when STRING is empty:
 
 <p>
 (split-string "aooob" "o*")
-	 ⇒ ("" "a" "" "b" "")
+     ⇒ ("" "a" "" "b" "")
 (split-string "ooaboo" "o*")
-	 ⇒ ("" "" "a" "b" "")
+     ⇒ ("" "" "a" "b" "")
 (split-string "" "")
-	 ⇒ ("")
+     ⇒ ("")
 </p>
 
 <p>
@@ -1596,11 +1598,11 @@ are rarely relevant:
 
 <p>
 (split-string "Soup is good food" "o*" t)
-	 ⇒ ("S" "u" "p" " " "i" "s" " " "g" "d" " " "f" "d")
+     ⇒ ("S" "u" "p" " " "i" "s" " " "g" "d" " " "f" "d")
 (split-string "Nice doggy!" "" t)
-	 ⇒ ("N" "i" "c" "e" " " "d" "o" "g" "g" "y" "!")
+     ⇒ ("N" "i" "c" "e" " " "d" "o" "g" "g" "y" "!")
 (split-string "" "" t)
-	 ⇒ nil
+     ⇒ nil
 </p>
 
 <p>
@@ -1612,15 +1614,15 @@ practice:
 
 <p>
 (split-string "ooo" "o*" t)
-	 ⇒ nil
+     ⇒ nil
 (split-string "ooo" "\\|o+" t)
-	 ⇒ ("o" "o" "o")
+     ⇒ ("o" "o" "o")
 </p>
 
 <p>
 &#x2013; Variable: split-string-default-separators
-	The default value of SEPARATORS for ‘split-string’.  Its usual
-	value is ‘"[ \f\t\n\r\v]+"’.
+    The default value of SEPARATORS for ‘split-string’.  Its usual
+    value is ‘"[ \f\t\n\r\v]+"’.
 </p>
 </blockquote>
 </div>
@@ -1726,13 +1728,13 @@ Other functions.
 
 <p>
 &#x2013; Function: string-collate-lessp string1 string2 &amp;optional locale
-		 ignore-case
-	This function returns ‘t’ if STRING1 is less than STRING2 in
-	collation order.  A collation order is not only determined by the
-	lexicographic order of the characters contained in STRING1 and
-	STRING2, but also further rules about relations between these
-	characters.  Usually, it is defined by the LOCALE environment Emacs
-	is running with.
+	 ignore-case
+    This function returns ‘t’ if STRING1 is less than STRING2 in
+    collation order.  A collation order is not only determined by the
+    lexicographic order of the characters contained in STRING1 and
+    STRING2, but also further rules about relations between these
+    characters.  Usually, it is defined by the LOCALE environment Emacs
+    is running with.
 </p>
 
 <p>
@@ -1742,7 +1744,7 @@ for sorting (*note Sequence Functions::):
 
 <p>
 (sort (list "11" "12" "1 1" "1 2" "1.1" "1.2") 'string-collate-lessp)
-	 ⇒ ("11" "1 1" "1.1" "12" "1 2" "1.2")
+     ⇒ ("11" "1 1" "1.1" "12" "1 2" "1.2")
 </p>
 
 <p>
@@ -1761,8 +1763,8 @@ behave like ‘string-lessp’:
 
 <p>
 (sort (list "11" "12" "1 1" "1 2" "1.1" "1.2")
-	  (lambda (s1 s2) (string-collate-lessp s1 s2 "POSIX")))
-	 ⇒ ("1 1" "1 2" "1.1" "1.2" "11" "12")
+      (lambda (s1 s2) (string-collate-lessp s1 s2 "POSIX")))
+     ⇒ ("1 1" "1 2" "1.1" "1.2" "11" "12")
 </p>
 
 <p>
@@ -1783,23 +1785,23 @@ behaves like ‘string-lessp’.
 
 <p>
 &#x2013; Function: string-version-lessp string1 string2
-	This function compares strings lexicographically, except it treats
-	sequences of numerical characters as if they comprised a base-ten
-	number, and then compares the numbers.  So ‘foo2.png’ is “smaller”
-	than ‘foo12.png’ according to this predicate, even if ‘12’ is
-	lexicographically “smaller” than ‘2’.
+    This function compares strings lexicographically, except it treats
+    sequences of numerical characters as if they comprised a base-ten
+    number, and then compares the numbers.  So ‘foo2.png’ is “smaller”
+    than ‘foo12.png’ according to this predicate, even if ‘12’ is
+    lexicographically “smaller” than ‘2’.
 </p>
 
 
 <p>
 &#x2013; Function: compare-strings string1 start1 end1 string2 start2 end2
-		 &amp;optional ignore-case
-	This function compares a specified part of STRING1 with a specified
-	part of STRING2.  The specified part of STRING1 runs from index
-	START1 (inclusive) up to index END1 (exclusive); ‘nil’ for START1
-	means the start of the string, while ‘nil’ for END1 means the
-	length of the string.  Likewise, the specified part of STRING2 runs
-	from index START2 up to index END2.
+	 &amp;optional ignore-case
+    This function compares a specified part of STRING1 with a specified
+    part of STRING2.  The specified part of STRING1 runs from index
+    START1 (inclusive) up to index END1 (exclusive); ‘nil’ for START1
+    means the start of the string, while ‘nil’ for END1 means the
+    length of the string.  Likewise, the specified part of STRING2 runs
+    from index START2 up to index END2.
 </p>
 
 <p>
@@ -1813,32 +1815,978 @@ conversion to multibyte are always regarded as equal.
 </p>
 
 <p>
-	If the specified portions of the two strings match, the value is
-	‘t’.  Otherwise, the value is an integer which indicates how many
-	leading characters agree, and which string is less.  Its absolute
-	value is one plus the number of characters that agree at the
-	beginning of the two strings.  The sign is negative if STRING1 (or
-	its specified portion) is less.
+    If the specified portions of the two strings match, the value is
+    ‘t’.  Otherwise, the value is an integer which indicates how many
+    leading characters agree, and which string is less.  Its absolute
+    value is one plus the number of characters that agree at the
+    beginning of the two strings.  The sign is negative if STRING1 (or
+    its specified portion) is less.
 &#x2013; Function: assoc-string key alist &amp;optional case-fold
-	This function works like ‘assoc’, except that KEY must be a string
-	or symbol, and comparison is done using ‘compare-strings’.  Symbols
-	are converted to strings before testing.  If CASE-FOLD is
-	non-‘nil’, KEY and the elements of ALIST are converted to
-	upper-case before comparison.  Unlike ‘assoc’, this function can
-	also match elements of the alist that are strings or symbols rather
-	than conses.  In particular, ALIST can be a list of strings or
-	symbols rather than an actual alist.  *Note Association Lists::.
+    This function works like ‘assoc’, except that KEY must be a string
+    or symbol, and comparison is done using ‘compare-strings’.  Symbols
+    are converted to strings before testing.  If CASE-FOLD is
+    non-‘nil’, KEY and the elements of ALIST are converted to
+    upper-case before comparison.  Unlike ‘assoc’, this function can
+    also match elements of the alist that are strings or symbols rather
+    than conses.  In particular, ALIST can be a list of strings or
+    symbols rather than an actual alist.  *Note Association Lists::.
 </p>
 </blockquote>
 </div>
 </div>
 <div id="outline-container-org90174a9" class="outline-3">
 <h3 id="org90174a9"><span class="section-number-3">8.5.</span> Conversion of Characters and Strings</h3>
+<div class="outline-text-3" id="text-8-5">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>prin1-to-string <span class="org-rainbow-delimiters-depth-2">(</span>list 'a 'b 'c<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>number-to-string 256<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">"256"</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>string-to-number <span class="org-string">"25"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">25</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>string-to-number <span class="org-string">"25f"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">25</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>string-to-number <span class="org-string">"25 is a number"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">25</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>string-to-number <span class="org-string">"f25"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">0</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function is semi-obsolete because the function</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">&#8216;</span><span class="org-comment"><span class="org-constant">string</span></span><span class="org-comment">&#8217; is more general.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>char-to-string ?a<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">"a"</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>string ?a<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">"a"</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns the first character in STRING.  This mostly</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">identical to &#8216;(aref string 0)&#8217;, except that it returns 0 if the</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">string is empty.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>string-to-char <span class="org-string">"abc"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">97</span>
+</pre>
+</div>
+
+<p>
+Other useful functions.
+</p>
+<blockquote>
+<p>
+‘concat’
+     This function converts a vector or a list into a string.  *Note
+     Creating Strings::.
+</p>
+
+<p>
+‘vconcat’
+     This function converts a string into a vector.  *Note Vector
+     Functions::.
+</p>
+
+<p>
+‘append’
+     This function converts a string into a list.  *Note Building
+     Lists::.
+</p>
+
+<p>
+‘byte-to-string’
+     This function converts a byte of character data into a unibyte
+     string.  *Note Converting Representations::.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org9457e19" class="outline-3">
+<h3 id="org9457e19"><span class="section-number-3">8.6.</span> Formatting Strings</h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+Keeping this part here more for reference.
+</p>
+<blockquote>
+<p>
+“Formatting” means constructing a string by substituting computed values
+at various places in a constant string.  This constant string controls
+how the other values are printed, as well as where they appear; it is
+called a “format string”.
+</p>
+
+<p>
+   Formatting is often useful for computing messages to be displayed.
+In fact, the functions ‘message’ and ‘error’ provide the same formatting
+feature described here; they differ from ‘format-message’ only in how
+they use the result of formatting.
+</p>
+
+<p>
+&#x2013; Function: format string &amp;rest objects
+    This function returns a string equal to STRING, replacing any
+    format specifications with encodings of the corresponding OBJECTS.
+    The arguments OBJECTS are the computed values to be formatted.
+</p>
+
+<p>
+The characters in STRING, other than the format specifications, are
+copied directly into the output, including their text properties,
+if any.  Any text properties of the format specifications are
+copied to the produced string representations of the argument
+OBJECTS.
+</p>
+
+<p>
+The output string need not be newly-allocated.  For example, if ‘x’
+is the string ‘"foo"’, the expressions ‘(eq x (format x))’ and ‘(eq
+x (format "%s" x))’ might both yield ‘t’.
+</p>
+
+<p>
+&#x2013; Function: format-message string &amp;rest objects
+    This function acts like ‘format’, except it also converts any grave
+    accents (`) and apostrophes (') in STRING as per the value of
+    ‘text-quoting-style’.
+</p>
+
+<p>
+Typically grave accent and apostrophe in the format translate to
+matching curved quotes, e.g., "Missing `%s'" might result in
+"Missing ‘foo’".  *Note Text Quoting Style::, for how to influence
+or inhibit this translation.
+</p>
+
+<p>
+   A format specification is a sequence of characters beginning with a
+‘%’.  Thus, if there is a ‘%d’ in STRING, the ‘format’ function replaces
+it with the printed representation of one of the values to be formatted
+(one of the arguments OBJECTS).  For example:
+</p>
+
+<p>
+(format "The value of fill-column is %d." fill-column)
+     ⇒ "The value of fill-column is 72."
+</p>
+
+<p>
+   Since ‘format’ interprets ‘%’ characters as format specifications,
+you should <span class="underline">never</span> pass an arbitrary string as the first argument.  This
+is particularly true when the string is generated by some Lisp code.
+Unless the string is <span class="underline">known</span> to never include any ‘%’ characters, pass
+‘"%s"’, described below, as the first argument, and the string as the
+second, like this:
+</p>
+
+<p>
+(format "%s" ARBITRARY-STRING)
+</p>
+
+<p>
+   Certain format specifications require values of particular types.  If
+you supply a value that doesn’t fit the requirements, an error is
+signaled.
+</p>
+
+<p>
+Here is a table of valid format specifications:
+</p>
+
+<p>
+‘%s’
+     Replace the specification with the printed representation of the
+     object, made without quoting (that is, using ‘princ’, not
+     ‘prin1’—*note Output Functions::).  Thus, strings are represented
+     by their contents alone, with no ‘"’ characters, and symbols appear
+     without ‘\’ characters.
+</p>
+
+<p>
+If the object is a string, its text properties are copied into the
+output.  The text properties of the ‘%s’ itself are also copied,
+but those of the object take priority.
+</p>
+
+<p>
+‘%S’
+     Replace the specification with the printed representation of the
+     object, made with quoting (that is, using ‘prin1’—*note Output
+     Functions::).  Thus, strings are enclosed in ‘"’ characters, and
+     ‘\’ characters appear where necessary before special characters.
+</p>
+
+<p>
+‘%o’
+     Replace the specification with the base-eight representation of an
+     integer.  Negative integers are formatted in a platform-dependent
+     way.  The object can also be a floating-point number that is
+     formatted as an integer, dropping any fraction.
+</p>
+
+<p>
+‘%d’
+     Replace the specification with the base-ten representation of a
+     signed integer.  The object can also be a floating-point number
+     that is formatted as an integer, dropping any fraction.
+</p>
+
+<p>
+‘%x’
+‘%X’
+     Replace the specification with the base-sixteen representation of
+     an integer.  Negative integers are formatted in a
+     platform-dependent way.  ‘%x’ uses lower case and ‘%X’ uses upper
+     case.  The object can also be a floating-point number that is
+     formatted as an integer, dropping any fraction.
+</p>
+
+<p>
+‘%c’
+     Replace the specification with the character which is the value
+     given.
+</p>
+
+<p>
+‘%e’
+     Replace the specification with the exponential notation for a
+     floating-point number.
+</p>
+
+<p>
+‘%f’
+     Replace the specification with the decimal-point notation for a
+     floating-point number.
+</p>
+
+<p>
+‘%g’
+     Replace the specification with notation for a floating-point
+     number, using either exponential notation or decimal-point
+     notation.  The exponential notation is used if the exponent would
+     be less than −4 or greater than or equal to the precision (default:
+     6).  By default, trailing zeros are removed from the fractional
+     portion of the result and a decimal-point character appears only if
+     it is followed by a digit.
+</p>
+
+<p>
+‘%%’
+     Replace the specification with a single ‘%’.  This format
+     specification is unusual in that its only form is plain ‘%%’ and
+     that it does not use a value.  For example, ‘(format "%% %d" 30)’
+     returns ‘"% 30"’.
+</p>
+
+<p>
+   Any other format character results in an ‘Invalid format operation’
+error.
+</p>
+
+<p>
+   Here are several examples, which assume the typical
+‘text-quoting-style’ settings:
+</p>
+
+<p>
+(format "The octal value of %d is %o,
+	 and the hex value is %x." 18 18 18)
+     ⇒ "The octal value of 18 is 22,
+	 and the hex value is 12."
+</p>
+
+<p>
+(format-message
+ "The name of this buffer is ‘%s’." (buffer-name))
+     ⇒ "The name of this buffer is ‘strings.texi’."
+</p>
+
+<p>
+(format-message
+ "The buffer object prints as `%s'." (current-buffer))
+     ⇒ "The buffer object prints as ‘strings.texi’."
+</p>
+
+<p>
+   By default, format specifications correspond to successive values
+from OBJECTS.  Thus, the first format specification in STRING uses the
+first such value, the second format specification uses the second such
+value, and so on.  Any extra format specifications (those for which
+there are no corresponding values) cause an error.  Any extra values to
+be formatted are ignored.
+</p>
+
+<p>
+   A format specification can have a “field number”, which is a decimal
+number immediately after the initial ‘%’, followed by a literal dollar
+sign ‘$’.  It causes the format specification to convert the argument
+with the given number instead of the next argument.  Field numbers start
+at 1.  A format can contain either numbered or unnumbered format
+specifications but not both, except that ‘%%’ can be mixed with numbered
+specifications.
+</p>
+
+<p>
+(format "%2$s, %3$s, %%, %1$s" "x" "y" "z")
+     ⇒ "y, z, %, x"
+</p>
+
+<p>
+   After the ‘%’ and any field number, you can put certain “flag
+characters”.
+</p>
+
+<p>
+   The flag ‘+’ inserts a plus sign before a nonnegative number, so that
+it always has a sign.  A space character as flag inserts a space before
+a nonnegative number.  (Otherwise, nonnegative numbers start with the
+first digit.)  These flags are useful for ensuring that nonnegative and
+negative numbers use the same number of columns.  They are ignored
+except for ‘%d’, ‘%e’, ‘%f’, ‘%g’, and if both flags are used, ‘+’ takes
+precedence.
+</p>
+
+<p>
+   The flag ‘#’ specifies an alternate form which depends on the format
+in use.  For ‘%o’, it ensures that the result begins with a ‘0’.  For
+‘%x’ and ‘%X’, it prefixes nonzero results with ‘0x’ or ‘0X’.  For ‘%e’
+and ‘%f’, the ‘#’ flag means include a decimal point even if the
+precision is zero.  For ‘%g’, it always includes a decimal point, and
+also forces any trailing zeros after the decimal point to be left in
+place where they would otherwise be removed.
+</p>
+
+<p>
+   The flag ‘0’ ensures that the padding consists of ‘0’ characters
+instead of spaces.  This flag is ignored for non-numerical specification
+characters like ‘%s’, ‘%S’ and ‘%c’.  These specification characters
+accept the ‘0’ flag, but still pad with <span class="underline">spaces</span>.
+</p>
+
+<p>
+   The flag ‘-’ causes any padding inserted by the width, if specified,
+to be inserted on the right rather than the left.  If both ‘-’ and ‘0’
+are present, the ‘0’ flag is ignored.
+</p>
+
+<p>
+(format "%06d is padded on the left with zeros" 123)
+     ⇒ "000123 is padded on the left with zeros"
+</p>
+
+<p>
+(format "'%-6d' is padded on the right" 123)
+     ⇒ "'123   ' is padded on the right"
+</p>
+
+<p>
+(format "The word '%-7s' actually has %d letters in it."
+	"foo" (length "foo"))
+     ⇒ "The word 'foo    ' actually has 3 letters in it."
+</p>
+
+<p>
+   A specification can have a “width”, which is a decimal number that
+appears after any field number and flags.  If the printed representation
+of the object contains fewer characters than this width, ‘format’
+extends it with padding.  Any padding introduced by the width normally
+consists of spaces inserted on the left:
+</p>
+
+<p>
+(format "%5d is padded on the left with spaces" 123)
+     ⇒ "  123 is padded on the left with spaces"
+</p>
+
+<p>
+If the width is too small, ‘format’ does not truncate the object’s
+printed representation.  Thus, you can use a width to specify a minimum
+spacing between columns with no risk of losing information.  In the
+following two examples, ‘%7s’ specifies a minimum width of 7.  In the
+first case, the string inserted in place of ‘%7s’ has only 3 letters,
+and needs 4 blank spaces as padding.  In the second case, the string
+‘"specification"’ is 13 letters wide but is not truncated.
+</p>
+
+<p>
+(format "The word '%7s' has %d letters in it."
+	"foo" (length "foo"))
+     ⇒ "The word '    foo' has 3 letters in it."
+(format "The word '%7s' has %d letters in it."
+	"specification" (length "specification"))
+     ⇒ "The word 'specification' has 13 letters in it."
+</p>
+
+<p>
+   All the specification characters allow an optional “precision” after
+the field number, flags and width, if present.  The precision is a
+decimal-point ‘.’ followed by a digit-string.  For the floating-point
+specifications (‘%e’ and ‘%f’), the precision specifies how many digits
+following the decimal point to show; if zero, the decimal-point itself
+is also omitted.  For ‘%g’, the precision specifies how many significant
+digits to show (significant digits are the first digit before the
+decimal point and all the digits after it).  If the precision of %g is
+zero or unspecified, it is treated as 1.  For ‘%s’ and ‘%S’, the
+precision truncates the string to the given width, so ‘%.3s’ shows only
+the first three characters of the representation for OBJECT.  For other
+specification characters, the effect of precision is what the local
+library functions of the ‘printf’ family produce.
+</p>
+
+<p>
+   If you plan to use ‘read’ later on the formatted string to retrieve a
+copy of the formatted value, use a specification that lets ‘read’
+reconstruct the value.  To format numbers in this reversible way you can
+use ‘%s’ and ‘%S’, to format just integers you can also use ‘%d’, and to
+format just nonnegative integers you can also use ‘#x%x’ and ‘#o%o’.
+Other formats may be problematic; for example, ‘%d’ and ‘%g’ can
+mishandle NaNs and can lose precision and type, and ‘#x%x’ and ‘#o%o’
+can mishandle negative integers.  *Note Input Functions::.
+</p>
+
+<p>
+   The functions described in this section accept a fixed set of
+specification characters.  The next section describes a function
+‘format-spec’ which can accept custom specification characters, such as
+‘%a’ or ‘%z’.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org0c1915d" class="outline-3">
+<h3 id="org0c1915d"><span class="section-number-3">8.7.</span> Custom Format Strings</h3>
+<div class="outline-text-3" id="text-8-7">
+<p>
+This introduced <code>format-spec</code> that <i>performs a similar function to ‘format’, except it operates on format control strings that use arbitrary specification characters.</i>
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> my-site-info <span class="org-rainbow-delimiters-depth-2">(</span>list <span class="org-rainbow-delimiters-depth-3">(</span>cons ?s system-name<span class="org-rainbow-delimiters-depth-3">)</span> 
+                                                 <span class="org-rainbow-delimiters-depth-3">(</span>cons ?t <span class="org-rainbow-delimiters-depth-4">(</span>symbol-name system-type<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span> 
+                                                 <span class="org-rainbow-delimiters-depth-3">(</span>cons ?c system-configuration<span class="org-rainbow-delimiters-depth-3">)</span> 
+                                                 <span class="org-rainbow-delimiters-depth-3">(</span>cons ?v emacs-version<span class="org-rainbow-delimiters-depth-3">)</span> 
+                                                 <span class="org-rainbow-delimiters-depth-3">(</span>cons ?e invocation-name<span class="org-rainbow-delimiters-depth-3">)</span> 
+                                                 <span class="org-rainbow-delimiters-depth-3">(</span>cons ?p <span class="org-rainbow-delimiters-depth-4">(</span>number-to-string <span class="org-rainbow-delimiters-depth-5">(</span>emacs-pid<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span> 
+                                                 <span class="org-rainbow-delimiters-depth-3">(</span>cons ?a user-mail-address<span class="org-rainbow-delimiters-depth-3">)</span> 
+                                                 <span class="org-rainbow-delimiters-depth-3">(</span>cons ?n user-full-name<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>format-spec <span class="org-string">"%e %v (%c)"</span> my-site-info<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">"Emacs 27.2 (x86_64-apple-darwin19.6.0)"</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>format-spec <span class="org-string">"%n &lt;%a&gt;"</span> my-site-info<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">"Yi Wang <a href={{ "mailto:yi.wang%40G-0613.local" | absolute_url }}>&lt;yi.wang@G-0613.local&gt;</a>"</span>
+</pre>
+</div>
+
+<blockquote>
+<p>
+   A format specification can include any number of the following flag
+characters immediately after the ‘%’ to modify aspects of the
+substitution.
+</p>
+
+<p>
+‘0’
+     This flag causes any padding specified by the width to consist of
+     ‘0’ characters instead of spaces.
+</p>
+
+<p>
+‘-’
+     This flag causes any padding specified by the width to be inserted
+     on the right rather than the left.
+</p>
+
+<p>
+‘&lt;’
+     This flag causes the substitution to be truncated on the left to
+     the given width, if specified.
+</p>
+
+<p>
+‘&gt;’
+     This flag causes the substitution to be truncated on the right to
+     the given width, if specified.
+</p>
+
+<p>
+‘^’
+     This flag converts the substituted text to upper case (*note Case
+     Conversion::).
+</p>
+
+<p>
+‘_’
+     This flag converts the substituted text to lower case (*note Case
+     Conversion::).
+</p>
+
+<p>
+   The result of using contradictory flags (for instance, both upper and
+lower case) is undefined.
+</p>
+
+<p>
+   As is the case with ‘format’, a format specification can include a
+width, which is a decimal number that appears after any flags.  If a
+substitution contains fewer characters than its specified width, it is
+padded on the left:
+</p>
+
+<p>
+(format-spec "%8a is padded on the left with spaces"
+	     '((?a . "alpha")))
+     ⇒ "   alpha is padded on the left with spaces"
+</p>
+</blockquote>
+<p>
+Here is a more complicated example that combines several aforementioned features:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> my-battery-info <span class="org-rainbow-delimiters-depth-2">(</span>list <span class="org-rainbow-delimiters-depth-3">(</span>cons ?p <span class="org-string">"73"</span><span class="org-rainbow-delimiters-depth-3">)</span>      <span class="org-comment-delimiter">; </span><span class="org-comment">Percentage</span>
+                                                        <span class="org-rainbow-delimiters-depth-3">(</span>cons ?L <span class="org-string">"Battery"</span><span class="org-rainbow-delimiters-depth-3">)</span> <span class="org-comment-delimiter">; </span><span class="org-comment">Status</span>
+                                                        <span class="org-rainbow-delimiters-depth-3">(</span>cons ?t <span class="org-string">"2:23"</span><span class="org-rainbow-delimiters-depth-3">)</span>    <span class="org-comment-delimiter">; </span><span class="org-comment">Remaining time</span>
+                                                        <span class="org-rainbow-delimiters-depth-3">(</span>cons ?c <span class="org-string">"24330"</span><span class="org-rainbow-delimiters-depth-3">)</span>   <span class="org-comment-delimiter">; </span><span class="org-comment">Capacity</span>
+                                                        <span class="org-rainbow-delimiters-depth-3">(</span>cons ?r <span class="org-string">"10.6"</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>  <span class="org-comment-delimiter">; </span><span class="org-comment">Rate of discharge</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span>format-spec <span class="org-string">"%&gt;^-3L : %3p%% (%05t left)"</span> my-battery-info<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span>format-spec <span class="org-string">"%&gt;^-3L : %3p%% (%05t left)"</span>
+            <span class="org-rainbow-delimiters-depth-2">(</span>cons <span class="org-rainbow-delimiters-depth-3">(</span>cons ?L <span class="org-string">"AC"</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                my-battery-info<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1c92e7f" class="outline-3">
+<h3 id="org1c92e7f"><span class="section-number-3">8.8.</span> Case Conversion in Lisp</h3>
+<div class="outline-text-3" id="text-8-8">
+<p>
+The character case functions change the case of single characters or of
+the contents of strings.  The functions normally convert only alphabetic
+characters (the letters ‘A’ through ‘Z’ and ‘a’ through ‘z’, as well as
+non-ASCII letters); other characters are not altered.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>downcase ?X<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">120</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>upcase ?x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">88</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>capitalize <span class="org-string">"test the function"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">Test The Function</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>capitalize <span class="org-string">"TEST THE FUNCTION"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">Test The Function</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>upcase-initials <span class="org-string">"test THE function"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">Test THE Function</span>
+</pre>
+</div>
+
+<blockquote>
+<p>
+Note that case conversion is not a one-to-one mapping of codepoints
+and length of the result may differ from length of the argument.
+Furthermore, because passing a character forces return type to be a
+character, functions are unable to perform proper substitution and
+result may differ compared to treating a one-character string.  For
+example:
+</p>
+
+<p>
+(upcase "ﬁ")  ; note: single character, ligature "fi"
+     ⇒ "FI"
+(upcase ?ﬁ)
+     ⇒ 64257  ; i.e. ?ﬁ
+</p>
+
+<p>
+   To avoid this, a character must first be converted into a string,
+using ‘string’ function, before being passed to one of the casing
+functions.  Of course, no assumptions on the length of the result may be
+made.
+</p>
+
+<p>
+   Mapping for such special cases are taken from ‘special-uppercase’,
+‘special-lowercase’ and ‘special-titlecase’ *Note Character
+Properties::.
+</p>
+
+<p>
+   *Note Text Comparison::, for functions that compare strings; some of
+them ignore case differences, or can optionally ignore case differences.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org7fda18e" class="outline-3">
+<h3 id="org7fda18e"><span class="section-number-3">8.9.</span> The Case Table</h3>
+<div class="outline-text-3" id="text-8-9">
+<p>
+This is not very related because I only use English and Chinese at the moment.
+I'll only check this when the need arises.
+</p>
+<blockquote>
+<p>
+You can customize case conversion by installing a special “case table”.
+A case table specifies the mapping between upper case and lower case
+letters.  It affects both the case conversion functions for Lisp objects
+(see the previous section) and those that apply to text in the buffer
+(*note Case Changes::).  Each buffer has a case table; there is also a
+standard case table which is used to initialize the case table of new
+buffers.
+</p>
+
+<p>
+   A case table is a char-table (*note Char-Tables::) whose subtype is
+‘case-table’.  This char-table maps each character into the
+corresponding lower case character.  It has three extra slots, which
+hold related tables:
+</p>
+
+<p>
+UPCASE
+     The upcase table maps each character into the corresponding upper
+     case character.
+CANONICALIZE
+     The canonicalize table maps all of a set of case-related characters
+     into a particular member of that set.
+EQUIVALENCES
+     The equivalences table maps each one of a set of case-related
+     characters into the next character in that set.
+</p>
+
+<p>
+   In simple cases, all you need to specify is the mapping to
+lower-case; the three related tables will be calculated automatically
+from that one.
+</p>
+
+<p>
+   For some languages, upper and lower case letters are not in
+one-to-one correspondence.  There may be two different lower case
+letters with the same upper case equivalent.  In these cases, you need
+to specify the maps for both lower case and upper case.
+</p>
+
+<p>
+   The extra table CANONICALIZE maps each character to a canonical
+equivalent; any two characters that are related by case-conversion have
+the same canonical equivalent character.  For example, since ‘a’ and ‘A’
+are related by case-conversion, they should have the same canonical
+equivalent character (which should be either ‘a’ for both of them, or
+‘A’ for both of them).
+</p>
+
+<p>
+   The extra table EQUIVALENCES is a map that cyclically permutes each
+equivalence class (of characters with the same canonical equivalent).
+(For ordinary ASCII, this would map ‘a’ into ‘A’ and ‘A’ into ‘a’, and
+likewise for each set of equivalent characters.)
+</p>
+
+<p>
+   When constructing a case table, you can provide ‘nil’ for
+CANONICALIZE; then Emacs fills in this slot from the lower case and
+upper case mappings.  You can also provide ‘nil’ for EQUIVALENCES; then
+Emacs fills in this slot from CANONICALIZE.  In a case table that is
+actually in use, those components are non-‘nil’.  Do not try to specify
+EQUIVALENCES without also specifying CANONICALIZE.
+</p>
+
+<p>
+Here are the functions for working with case tables:
+</p>
+
+<p>
+&#x2013; Function: case-table-p object
+    This predicate returns non-‘nil’ if OBJECT is a valid case table.
+</p>
+
+<p>
+&#x2013; Function: set-standard-case-table table
+    This function makes TABLE the standard case table, so that it will
+    be used in any buffers created subsequently.
+</p>
+
+<p>
+&#x2013; Function: standard-case-table
+    This returns the standard case table.
+</p>
+
+<p>
+&#x2013; Function: current-case-table
+    This function returns the current buffer’s case table.
+</p>
+
+<p>
+&#x2013; Function: set-case-table table
+    This sets the current buffer’s case table to TABLE.
+</p>
+
+<p>
+&#x2013; Macro: with-case-table table body&#x2026;
+    The ‘with-case-table’ macro saves the current case table, makes
+    TABLE the current case table, evaluates the BODY forms, and finally
+    restores the case table.  The return value is the value of the last
+    form in BODY.  The case table is restored even in case of an
+    abnormal exit via ‘throw’ or error (*note Nonlocal Exits::).
+</p>
+
+<p>
+   Some language environments modify the case conversions of ASCII
+characters; for example, in the Turkish language environment, the ASCII
+capital I is downcased into a Turkish dotless i (‘ı’).  This can
+interfere with code that requires ordinary ASCII case conversion, such
+as implementations of ASCII-based network protocols.  In that case, use
+the ‘with-case-table’ macro with the variable ASCII-CASE-TABLE, which
+stores the unmodified case table for the ASCII character set.
+</p>
+
+<p>
+&#x2013; Variable: ascii-case-table
+    The case table for the ASCII character set.  This should not be
+    modified by any language environment settings.
+</p>
+
+<p>
+   The following three functions are convenient subroutines for packages
+that define non-ASCII character sets.  They modify the specified case
+table CASE-TABLE; they also modify the standard syntax table.  *Note
+Syntax Tables::.  Normally you would use these functions to change the
+standard case table.
+</p>
+
+<p>
+&#x2013; Function: set-case-syntax-pair uc lc case-table
+    This function specifies a pair of corresponding letters, one upper
+    case and one lower case.
+</p>
+
+<p>
+&#x2013; Function: set-case-syntax-delims l r case-table
+    This function makes characters L and R a matching pair of
+    case-invariant delimiters.
+</p>
+
+<p>
+&#x2013; Function: set-case-syntax char syntax case-table
+    This function makes CHAR case-invariant, with syntax SYNTAX.
+</p>
+
+<p>
+&#x2013; Command: describe-buffer-case-table
+    This command displays a description of the contents of the current
+    buffer’s case table.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="outline-container-org0d839c4" class="outline-2">
+<h2 id="org0d839c4"><span class="section-number-2">9.</span> Lists</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org8e1c331" class="outline-3">
+<h3 id="org8e1c331"><span class="section-number-3">9.1.</span> Lists and Cons Cells</h3>
+<div class="outline-text-3" id="text-9-1">
+<blockquote>
+<p>
+A list is a series of cons cells chained together, so that each cell
+refers to the next one.  There is one cons cell for each element of the
+list.  By convention, the CARs of the cons cells hold the elements of
+the list, and the CDRs are used to chain the list (this asymmetry
+between CAR and CDR is entirely a matter of convention; at the level of
+cons cells, the CAR and CDR slots have similar properties).  Hence, the
+CDR slot of each cons cell in a list refers to the following cons cell.
+</p>
+</blockquote>
+
+
+<p>
+Also by convention, the CDR of the last cons cell in a list is ‘nil’.
+We call such a ‘nil’-terminated structure a “<a href={{ "2022/04/10/204105-proper_list.html#ID-15B3F993-8517-4307-A23C-2BE0C03F072B" | absolute_url }}>proper list</a>”.  In Emacs
+Lisp, the symbol ‘nil’ is both a symbol and a list with no elements.
+For convenience, the symbol ‘nil’ is considered to have ‘nil’ as its CDR
+(and also as its CAR).
+The CDR of a proper list is always a proper list. The CDR of a nonempty proper list is a proper list containing all the elements except the first.
+</p>
+<div class="org-src-container">
+<pre class="src src-ditaa">
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9775c79" class="outline-3">
+<h3 id="org9775c79"><span class="section-number-3">9.2.</span> Predicates on Lists</h3>
+<div class="outline-text-3" id="text-9-2">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns &#8216;t&#8217; if OBJECT is a cons cell, &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217; otherwise. </span>
+<span class="org-rainbow-delimiters-depth-1">(</span>consp '<span class="org-rainbow-delimiters-depth-2">(</span>'test . 'random<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">&#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217; is not a cons cell, although it _is_ a list.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>consp nil<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns &#8216;t&#8217; if OBJECT is an atom, &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217; otherwise.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>atom <span class="org-string">"t"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>atom 1<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">All objects except cons cells are atoms.  The symbol &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217; is an</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">atom and is also a list; it is the only Lisp object that is both.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>atom nil<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>listp nil<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(atom OBJECT) &#8801; (not (consp OBJECT))</span>
+
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns &#8216;t&#8217; if OBJECT is a cons cell or &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217;.</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">Otherwise, it returns &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217;.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>listp nil<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>listp '<span class="org-rainbow-delimiters-depth-2">(</span>1<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>listp '<span class="org-rainbow-delimiters-depth-2">()</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function is the opposite of &#8216;</span><span class="org-comment"><span class="org-constant">listp</span></span><span class="org-comment">&#8217;: it returns &#8216;t&#8217; if OBJECT</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">is not a list.  Otherwise, it returns &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217;.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>nlistp '<span class="org-rainbow-delimiters-depth-2">(</span>1<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>nlistp nil<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(listp OBJECT) &#8801; (not (nlistp OBJECT))</span>
+
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns &#8216;t&#8217; if OBJECT is &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217;, and returns &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217; otherwise</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function is identical to &#8216;</span><span class="org-comment"><span class="org-constant">not</span></span><span class="org-comment">&#8217;, but as a matter of</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">clarity we use &#8216;</span><span class="org-comment"><span class="org-constant">null</span></span><span class="org-comment">&#8217; when OBJECT is considered a list and &#8216;</span><span class="org-comment"><span class="org-constant">not</span></span><span class="org-comment">&#8217;</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">when it is considered a truth value</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>null nil<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns the length of OBJECT if it is a proper list,</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">'nil' otherwise</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>proper-list-p '<span class="org-rainbow-delimiters-depth-2">(</span>a b c<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">3</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>proper-list-p '<span class="org-rainbow-delimiters-depth-2">(</span>a b . c<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org266b335" class="outline-3">
+<h3 id="org266b335"><span class="section-number-3">9.3.</span> Accessing Elements of Lists</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+Basic operations.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>car '<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">(</span>a . b<span class="org-rainbow-delimiters-depth-3">)</span>  c<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(a . b)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>car nil<span class="org-rainbow-delimiters-depth-1">)</span>           <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>car '<span class="org-rainbow-delimiters-depth-2">()</span><span class="org-rainbow-delimiters-depth-1">)</span>           <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span>cdr '<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">(</span>a . b<span class="org-rainbow-delimiters-depth-3">)</span>  c<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(c)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>cdr nil<span class="org-rainbow-delimiters-depth-1">)</span>           <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>cdr '<span class="org-rainbow-delimiters-depth-2">()</span><span class="org-rainbow-delimiters-depth-1">)</span>           <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span>car-safe 1<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>car-safe '<span class="org-rainbow-delimiters-depth-2">(</span>a b<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">a</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>listp <span class="org-rainbow-delimiters-depth-2">(</span>car-safe '<span class="org-rainbow-delimiters-depth-3">(</span>a b<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(car-safe OBJECT)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">&#8801;</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(let ((x OBJECT))</span>
+<span class="org-comment-delimiter">;;   </span><span class="org-comment">(if (consp x) </span>
+<span class="org-comment-delimiter">;;       </span><span class="org-comment">(car x) nil))</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span>cdr-safe 1<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>cdr-safe '<span class="org-rainbow-delimiters-depth-2">(</span>a b<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(b)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>listp <span class="org-rainbow-delimiters-depth-2">(</span>cdr-safe '<span class="org-rainbow-delimiters-depth-3">(</span>a b<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(cdr-safe OBJECT)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">&#8801;</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(let ((x OBJECT))</span>
+<span class="org-comment-delimiter">;;   </span><span class="org-comment">(if (consp x) </span>
+<span class="org-comment-delimiter">;;       </span><span class="org-comment">(cdr x) nil))</span>
+</pre>
+</div>
+
+<p>
+<b>Note the following about <code>car</code> and <code>cdr</code>.</b>
+This is because for the object <code>'(a b)</code>, its CAR is an atom <code>a</code>, while its CDR is always list whose CAR is <code>b</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>listp <span class="org-rainbow-delimiters-depth-2">(</span>car '<span class="org-rainbow-delimiters-depth-3">(</span>a b<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span>listp <span class="org-rainbow-delimiters-depth-2">(</span>cdr '<span class="org-rainbow-delimiters-depth-3">(</span>a b<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span>listp <span class="org-rainbow-delimiters-depth-2">(</span>car <span class="org-rainbow-delimiters-depth-3">(</span>cdr '<span class="org-rainbow-delimiters-depth-4">(</span>a b<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span>listp <span class="org-rainbow-delimiters-depth-2">(</span>cdr '<span class="org-rainbow-delimiters-depth-3">(</span>a . b<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+</pre>
+</div>
+
+<p>
+Continuation of basic operations.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> x <span class="org-rainbow-delimiters-depth-2">(</span>list 1 <span class="org-string">"test"</span> ?a<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This is a macro</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This macro provides a convenient way to examine the CAR of a list,</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">and take it off the list, all at once.  It operates on the list</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">stored in LISTNAME.  It removes the first element from the list,</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">saves the CDR into LISTNAME, then returns the removed element.</span>
+<span class="org-comment-delimiter">;; </span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">In the simplest case, LISTNAME is an unquoted symbol naming a list;</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">in that case, this macro is equivalent to</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">&#8216;(prog1 (car listname) (setq listname (cdr listname)))&#8217;.</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">pop</span> x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">1</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">progn</span> x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">("test" 97)</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> x <span class="org-rainbow-delimiters-depth-2">(</span>list 1 <span class="org-string">"test"</span> ?a<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns the Nth element of LIST.  Elements are</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">numbered starting with zero, so the CAR of LIST is element number</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">zero.  If the length of LIST is N or less, the value is &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217;.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>nth 0 x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">1</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>nth 1000 x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(nth n x) &#8801; (car (nthcdr n x))</span>
+
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns the Nth CDR of LIST.  In other words, it</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">skips past the first N links of LIST and returns what follows.</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">If N is zero, &#8216;</span><span class="org-comment"><span class="org-constant">nthcdr</span></span><span class="org-comment">&#8217; returns all of LIST.  If the length of LIST</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">is N or less, &#8216;</span><span class="org-comment"><span class="org-constant">nthcdr</span></span><span class="org-comment">&#8217; returns &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217;.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>nthcdr 1 x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">("test" 97)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>nthcdr 0 x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 "test" 97)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>nthcdr 10000 x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns the last link of LIST.  The &#8216;</span><span class="org-comment"><span class="org-constant">car</span></span><span class="org-comment">&#8217; of this</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">link is the list&#8217;s last element.  If LIST is null, &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217; is</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">returned.  If N is non-&#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217;, the Nth-to-last link is returned</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">instead, or the whole of LIST if N is bigger than LIST&#8217;s length.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>last x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(97)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>last x 0<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>last x 1<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(97)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>last x 10<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 "test" 97)</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns the length of LIST, with no risk of either an</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">error or an infinite loop.  It generally returns the number of</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">distinct cons cells in the list.  However, for circular lists, the</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">value is just an upper bound; it is often too large.</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">If LIST is not &#8216;</span><span class="org-comment"><span class="org-constant">nil</span></span><span class="org-comment">&#8217; or a cons cell, &#8216;</span><span class="org-comment"><span class="org-constant">safe-length</span></span><span class="org-comment">&#8217; returns 0.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>safe-length x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">3</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">only one cons cell</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>safe-length '<span class="org-rainbow-delimiters-depth-2">(</span>a . b<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">1</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>safe-length 1<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">0</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> deep-x `<span class="org-rainbow-delimiters-depth-2">(</span>,x <span class="org-rainbow-delimiters-depth-3">(</span>,x ,x<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This is the same as &#8216;(car (car CONS-CELL))&#8217;.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>caar deep-x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">1</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This is the same as &#8216;(car (cdr CONS-CELL))&#8217; or &#8216;(nth 1 CONS-CELL)&#8217;.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>cadr deep-x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">((1 "test" 97) (1 "test" 97))</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">In addition to the above, 24 additional compositions of &#8216;</span><span class="org-comment"><span class="org-constant">car</span></span><span class="org-comment">&#8217; and</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">&#8216;</span><span class="org-comment"><span class="org-constant">cdr</span></span><span class="org-comment">&#8217; are defined as &#8216;</span><span class="org-comment"><span class="org-constant">cXXXr</span></span><span class="org-comment">&#8217; and &#8216;</span><span class="org-comment"><span class="org-constant">cXXXXr</span></span><span class="org-comment">&#8217;, where each &#8216;X&#8217; is either &#8216;a&#8217;</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">or &#8216;d&#8217;.  &#8216;</span><span class="org-comment"><span class="org-constant">cadr</span></span><span class="org-comment">&#8217;, &#8216;</span><span class="org-comment"><span class="org-constant">caddr</span></span><span class="org-comment">&#8217;, and &#8216;</span><span class="org-comment"><span class="org-constant">cadddr</span></span><span class="org-comment">&#8217; pick out the second, third or</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">fourth elements of a list, respectively.  &#8216;</span><span class="org-comment"><span class="org-constant">cl-lib</span></span><span class="org-comment">&#8217; provides the same</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This function returns the list X with the last element, or the last</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">N elements, removed.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>butlast x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 "test")</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>butlast x 2<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>butlast x 10<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This is a version of &#8216;</span><span class="org-comment"><span class="org-constant">butlast</span></span><span class="org-comment">&#8217; that works by destructively</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">modifying the &#8216;</span><span class="org-comment"><span class="org-constant">cdr</span></span><span class="org-comment">&#8217; of the appropriate element, rather than making</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">a copy of the list.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>nbutlast x<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 "test")</span>
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div id="outline-container-orgc02fa5d" class="outline-2">
-<h2 id="orgc02fa5d"><span class="section-number-2">9.</span> log time</h2>
-<div class="outline-text-2" id="text-9">
+<h2 id="orgc02fa5d"><span class="section-number-2">10.</span> log time</h2>
+<div class="outline-text-2" id="text-10">
 <table>
 <caption class="t-above"><span class="table-number">Table 1:</span> Clock summary at <span class="timestamp-wrapper"><span class="timestamp">[2022-04-09 Sat 09:39]</span></span></caption>
 
