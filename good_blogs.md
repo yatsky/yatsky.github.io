@@ -15,3 +15,4 @@ permalink: /blogs/
 8.  <http://www.zilongshanren.com/>
 9.  <https://www.williamyaoh.com/> (Haskell stuff)
 10. <https://protesilaos.com/> (Emacs, free software, philosophy)
+11. <https://emacstil.com/>
