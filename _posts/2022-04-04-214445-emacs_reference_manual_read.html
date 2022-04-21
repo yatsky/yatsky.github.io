@@ -2,7 +2,7 @@
 layout: post
 title: "Emacs reference manual read"
 excerpt:
-modified_date: 2022/04/13/22:27
+modified_date: 2022/04/21/20:56
 ---
 
 <p>
@@ -2836,9 +2836,516 @@ the result is a dotted list since its final CDR is not ‘nil’ as
 required in a proper list (*note Cons Cells::).
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> trees '<span class="org-rainbow-delimiters-depth-2">(</span>pine oak<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> trees '<span class="org-rainbow-delimiters-depth-2">(</span>pine oak<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(pine oak)</span>
 
-<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> more-trees <span class="org-rainbow-delimiters-depth-2">(</span>append '<span class="org-rainbow-delimiters-depth-3">(</span>maple birch<span class="org-rainbow-delimiters-depth-3">)</span> trees<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> more-trees <span class="org-rainbow-delimiters-depth-2">(</span>append '<span class="org-rainbow-delimiters-depth-3">(</span>maple birch<span class="org-rainbow-delimiters-depth-3">)</span> trees<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(maple birch pine oak)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>eq trees <span class="org-rainbow-delimiters-depth-2">(</span>cddr more-trees<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+</pre>
+</div>
+
+
+<p>
+You can see how ‘append’ works by looking at a box diagram.  The
+variable ‘trees’ is set to the list ‘(pine oak)’ and then the variable
+‘more-trees’ is set to the list ‘(maple birch pine oak)’.  However, the
+variable ‘trees’ continues to refer to the original list:
+</p>
+<div class="org-src-container">
+<pre class="src src-ditaa">     more-trees                trees
+     |                           |
+     |     --- ---      --- ---   -&gt; --- ---      --- ---
+      --&gt; |   |   |--&gt; |   |   |--&gt; |   |   |--&gt; |   |   |--&gt; nil
+           --- ---      --- ---      --- ---      --- ---
+            |            |            |            |
+            |            |            |            |
+             --&gt; maple    --&gt;birch     --&gt; pine     --&gt; oak
+</pre>
+</div>
+
+
+<p>
+An empty sequence contributes nothing to the value returned by
+‘append’.  As a consequence of this, a final ‘nil’ argument forces a
+copy of the previous argument:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> trees '<span class="org-rainbow-delimiters-depth-2">(</span>pine oak<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(pine oak)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> wood <span class="org-rainbow-delimiters-depth-2">(</span>append trees nil<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(pine oak)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>eq wood trees<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>eq <span class="org-rainbow-delimiters-depth-2">(</span>cdr wood<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-rainbow-delimiters-depth-2">(</span>cdr trees<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+</pre>
+</div>
+
+<p>
+Work with Vectors.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>append <span class="org-rainbow-delimiters-depth-2">[</span>a b<span class="org-rainbow-delimiters-depth-2">]</span> <span class="org-string">"cd"</span> nil<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(a b 99 100), append returns a list</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>string-to-char <span class="org-string">"c"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">99</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>string-to-char <span class="org-string">"d"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">100</span>
+</pre>
+</div>
+
+<p>
+Combined with <code>apply</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>apply 'append '<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">(</span>a b c<span class="org-rainbow-delimiters-depth-3">)</span> nil <span class="org-rainbow-delimiters-depth-3">(</span>x y z<span class="org-rainbow-delimiters-depth-3">)</span> nil<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(a b c x y z)</span>
+</pre>
+</div>
+<p>
+No arguments.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>append<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+</pre>
+</div>
+
+<p>
+Final argument is not a list.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>append '<span class="org-rainbow-delimiters-depth-2">(</span>x y<span class="org-rainbow-delimiters-depth-2">)</span> 'z<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(x y . z)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This example shows that when the final argument is a sequence but</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">not a list, the sequence&#8217;s elements do not become elements of the</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">resulting list.  Instead, the sequence becomes the final CDR, like any</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">other non-list final argument.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>append '<span class="org-rainbow-delimiters-depth-2">(</span>x y<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-rainbow-delimiters-depth-2">[</span>z<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(x y . [z])</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7d715b9" class="outline-4">
+<h4 id="org7d715b9"><span class="section-number-4">9.4.2.</span> Function: copy-tree tree &amp;optional vecp</h4>
+<div class="outline-text-4" id="text-9-4-2">
+<p>
+This function returns a copy of the tree TREE.  If TREE is a cons
+cell, this makes a new cons cell with the same CAR and CDR, then
+recursively copies the CAR and CDR in the same way.
+</p>
+
+<p>
+Normally, when TREE is anything other than a cons cell, ‘copy-tree’
+simply returns TREE.  However, if VECP is non-‘nil’, it copies
+vectors too (and operates recursively on their elements).
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>copy-tree '<span class="org-rainbow-delimiters-depth-2">(</span>x y<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(x y)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>copy-tree '<span class="org-rainbow-delimiters-depth-2">(</span>x . y<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(x . y)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>copy-tree '<span class="org-rainbow-delimiters-depth-2">(</span>x '<span class="org-rainbow-delimiters-depth-3">(</span>xx yy<span class="org-rainbow-delimiters-depth-3">)</span> y<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(x '(xx yy) y)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">TREE is not a cons cell</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> tree <span class="org-string">"test"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> new-tree <span class="org-rainbow-delimiters-depth-2">(</span>copy-tree tree<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>eq tree <span class="org-string">"test"</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>eq tree new-tree<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">turn on vecp</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> tree <span class="org-rainbow-delimiters-depth-2">[</span>1 2 3<span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">simply return TREE</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> new-tree <span class="org-rainbow-delimiters-depth-2">(</span>copy-tree tree<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">[1 2 3]</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>eq tree new-tree<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">t</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">copy TREE and return</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> new-tree <span class="org-rainbow-delimiters-depth-2">(</span>copy-tree new-tree t<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">[1 2 3]</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>eq tree new-tree<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">nil</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6f23faa" class="outline-4">
+<h4 id="org6f23faa"><span class="section-number-4">9.4.3.</span> Function: flatten-tree tree</h4>
+<div class="outline-text-4" id="text-9-4-3">
+<p>
+This function returns a “flattened” copy of TREE, that is, a list
+containing all the non-‘nil’ terminal nodes, or leaves, of the tree
+of cons cells rooted at TREE.  Leaves in the returned list are in
+the same order as in TREE.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>flatten-tree '<span class="org-rainbow-delimiters-depth-2">(</span>1 <span class="org-rainbow-delimiters-depth-3">(</span>2 . 3<span class="org-rainbow-delimiters-depth-3">)</span> nil <span class="org-rainbow-delimiters-depth-3">(</span>4 5 <span class="org-rainbow-delimiters-depth-4">(</span>6<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span> 7<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 2 3 4 5 6 7)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3fb9680" class="outline-4">
+<h4 id="org3fb9680"><span class="section-number-4">9.4.4.</span> Function: number-sequence from &amp;optional to separation</h4>
+<div class="outline-text-4" id="text-9-4-4">
+<p>
+This function returns a list of numbers starting with FROM and
+incrementing by SEPARATION, and ending at or just before TO.
+SEPARATION can be positive or negative and defaults to 1.  If TO is
+‘nil’ or numerically equal to FROM, the value is the one-element
+list ‘(FROM)’.  If TO is less than FROM with a positive SEPARATION,
+or greater than FROM with a negative SEPARATION, the value is ‘nil’
+because those arguments specify an empty sequence.
+</p>
+
+<p>
+If SEPARATION is 0 and TO is neither ‘nil’ nor numerically equal to
+FROM, ‘number-sequence’ signals an error, since those arguments
+specify an infinite sequence.
+</p>
+
+<p>
+All arguments are numbers.  Floating-point arguments can be tricky,
+because floating-point arithmetic is inexact.  For instance,
+depending on the machine, it may quite well happen that
+‘(number-sequence 0.4 0.6 0.2)’ returns the one element list
+‘(0.4)’, whereas ‘(number-sequence 0.4 0.8 0.2)’ returns a list
+with three elements.  The Nth element of the list is computed by
+the exact formula ‘(+ FROM (* N SEPARATION))’.  Thus, if one wants
+to make sure that TO is included in the list, one can pass an
+expression of this exact type for TO.  Alternatively, one can
+replace TO with a slightly larger value (or a slightly more
+negative value if SEPARATION is negative).
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>number-sequence 4 9<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(4 5 6 7 8 9)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org360141a" class="outline-3">
+<h3 id="org360141a"><span class="section-number-3">9.5.</span> Modifying List Variables</h3>
+<div class="outline-text-3" id="text-9-5">
+</div>
+<div id="outline-container-orgd1277ca" class="outline-4">
+<h4 id="orgd1277ca"><span class="section-number-4">9.5.1.</span> Macro: push element listname</h4>
+<div class="outline-text-4" id="text-9-5-1">
+<p>
+This macro creates a new list whose CAR is ELEMENT and whose CDR is
+the list specified by LISTNAME, and saves that list in LISTNAME.
+In the simplest case, LISTNAME is an unquoted symbol naming a list,
+and this macro is equivalent to
+‘(setq LISTNAME (cons ELEMENT LISTNAME))’.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> l '<span class="org-rainbow-delimiters-depth-2">(</span>a b<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(a b)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">inserts to the beginning of the list</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">push</span> 'c l<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(c a b)</span>
+l <span class="org-comment-delimiter">;; </span><span class="org-comment">(c a b)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc0f7435" class="outline-4">
+<h4 id="orgc0f7435"><span class="section-number-4">9.5.2.</span> add-to-list symbol element &amp;optional append compare-fn</h4>
+<div class="outline-text-4" id="text-9-5-2">
+<p>
+<i>This documentation seems to be written by a completely different guy as the tone is priceless.</i>
+</p>
+
+<p>
+This function sets the variable SYMBOL by consing ELEMENT onto the
+old value, if ELEMENT is not already a member of that value.  It
+returns the resulting list, whether updated or not.  The value of
+SYMBOL had better be a list already before the call.  ‘add-to-list’
+uses COMPARE-FN to compare ELEMENT against existing list members;
+if COMPARE-FN is ‘nil’, it uses ‘equal’.
+</p>
+
+<p>
+Normally, if ELEMENT is added, it is added to the front of SYMBOL,
+but if the optional argument APPEND is non-‘nil’, it is added at
+the end.
+</p>
+
+<p>
+The argument SYMBOL is not implicitly quoted; ‘add-to-list’ is an
+ordinary function, like ‘set’ and unlike ‘setq’.  Quote the
+argument yourself if that is what you want.
+</p>
+
+<p>
+Do not use this function when SYMBOL refers to a <a href={{ "2022/04/21/155343-lexical_variable.html#ID-DA046A73-5BDE-41D4-B672-99A433973F7A" | absolute_url }}>lexical variable</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> foo '<span class="org-rainbow-delimiters-depth-2">(</span>a b<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(a b)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>add-to-list 'foo 'c<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(c a b)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>add-to-list 'foo 'b<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(c a b)</span>
+foo <span class="org-comment-delimiter">;; </span><span class="org-comment">(c a b)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org549bf9f" class="outline-4">
+<h4 id="org549bf9f"><span class="section-number-4">9.5.3.</span> add-to-ordered-list symbol element &amp;optional order</h4>
+<div class="outline-text-4" id="text-9-5-3">
+<p>
+This function sets the variable SYMBOL by inserting ELEMENT into
+the old value, which must be a list, at the position specified by
+ORDER.  If ELEMENT is already a member of the list, its position in
+the list is adjusted according to ORDER.  Membership is tested
+using ‘eq’.  This function returns the resulting list, whether
+updated or not.
+</p>
+
+<p>
+The ORDER is typically a number (integer or float), and the
+elements of the list are sorted in non-decreasing numerical order.
+</p>
+
+<p>
+ORDER may also be omitted or ‘nil’.  Then the numeric order of
+ELEMENT stays unchanged if it already has one; otherwise, ELEMENT
+has no numeric order.  Elements without a numeric list order are
+placed at the end of the list, in no particular order.
+</p>
+
+<p>
+Any other value for ORDER removes the numeric order of ELEMENT if
+it already has one; otherwise, it is equivalent to ‘nil’.
+</p>
+
+
+<p>
+The argument SYMBOL is not implicitly quoted; ‘add-to-ordered-list’
+is an ordinary function, like ‘set’ and unlike ‘setq’.  Quote the
+argument yourself if necessary.
+</p>
+
+
+<p>
+The ordering information is stored in a hash table on SYMBOL’s
+‘list-order’ property.  SYMBOL cannot refer to a <a href={{ "2022/04/21/155343-lexical_variable.html#ID-DA046A73-5BDE-41D4-B672-99A433973F7A" | absolute_url }}>lexical variable</a>.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> foo '<span class="org-rainbow-delimiters-depth-2">()</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>add-to-ordered-list 'foo 'a 1<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(a)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>add-to-ordered-list 'foo 'c 1<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(c a)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>add-to-ordered-list 'foo 'b 2<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(c a b)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>add-to-ordered-list 'foo 'b 1<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(b c a)</span>
+foo <span class="org-comment-delimiter">;; </span><span class="org-comment">(b c a)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc5ed5fc" class="outline-3">
+<h3 id="orgc5ed5fc"><span class="section-number-3">9.6.</span> Altering List Elements with ‘setcar’</h3>
+<div class="outline-text-3" id="text-9-6">
+<p>
+Changing the CAR of a cons cell is done with ‘setcar’.  When used on a
+list, ‘setcar’ replaces one element of a list with a different element.
+</p>
+</div>
+<div id="outline-container-org902f28b" class="outline-4">
+<h4 id="org902f28b"><span class="section-number-4">9.6.1.</span> Function: setcar cons object</h4>
+<div class="outline-text-4" id="text-9-6-1">
+<p>
+This function stores OBJECT as the new CAR of CONS, replacing its
+previous CAR.  In other words, it changes the CAR slot of CONS to
+refer to OBJECT.  It returns the value OBJECT.  For example:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> x <span class="org-rainbow-delimiters-depth-2">(</span>list 1 2<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 2)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>setcar x 4<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">4</span>
+x <span class="org-comment-delimiter">;; </span><span class="org-comment">(4 2)</span>
+</pre>
+</div>
+
+<p>
+When a cons cell is part of the shared structure of several lists,
+storing a new CAR into the cons changes one element of each of these
+lists.  Here is an example:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Create two lists that are partly shared.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> x1 <span class="org-rainbow-delimiters-depth-2">(</span>list 'a 'b 'c<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(a b c)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> x2 <span class="org-rainbow-delimiters-depth-2">(</span>cons 'z <span class="org-rainbow-delimiters-depth-3">(</span>cdr x1<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(z b c)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>setcar <span class="org-rainbow-delimiters-depth-2">(</span>cdr x1<span class="org-rainbow-delimiters-depth-2">)</span> 'foo<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">foo</span>
+x1 <span class="org-comment-delimiter">;; </span><span class="org-comment">(a foo c)</span>
+x2 <span class="org-comment-delimiter">;; </span><span class="org-comment">(z foo c)</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">Replace the CAR of a link that is not shared.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>setcar x1 'baz<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">baz</span>
+x1 <span class="org-comment-delimiter">;; </span><span class="org-comment">(baz foo c)</span>
+x2 <span class="org-comment-delimiter">;; </span><span class="org-comment">(z foo c)</span>
+</pre>
+</div>
+
+<p>
+Graphical depiction of the code above.
+</p>
+<div class="org-src-container">
+<pre class="src src-ditaa">
+     x1:
+      --------------       --------------       --------------
+     | car   | cdr  |     | car   | cdr  |     | car   | cdr  |
+     |   a   |   o-------&gt;|   b   |   o-------&gt;|   c   |  nil |
+     |       |      |  --&gt;|       |      |     |       |      |
+      --------------  |    --------------       --------------
+                      |
+     x2:              |
+      --------------  |
+     | car   | cdr  | |
+     |   z   |   o----
+     |       |      |
+      --------------
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org340ffda" class="outline-3">
+<h3 id="org340ffda"><span class="section-number-3">9.7.</span> Altering the CDR of a List</h3>
+<div class="outline-text-3" id="text-9-7">
+<p>
+The lowest-level primitive for modifying a CDR is ‘setcdr’:
+</p>
+</div>
+<div id="outline-container-orgabdc136" class="outline-4">
+<h4 id="orgabdc136"><span class="section-number-4">9.7.1.</span> Function: setcdr cons object</h4>
+<div class="outline-text-4" id="text-9-7-1">
+<p>
+This function stores OBJECT as the new CDR of CONS, replacing its
+previous CDR.  In other words, it changes the CDR slot of CONS to
+refer to OBJECT.  It returns the value OBJECT.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> x <span class="org-rainbow-delimiters-depth-2">(</span>list 1 2 3<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 2 3)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>setcdr x '<span class="org-rainbow-delimiters-depth-2">(</span>4<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(4)</span>
+x <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 4)</span>
+
+<span class="org-rainbow-delimiters-depth-1">(</span>setcdr x 4<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">4</span>
+x <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 . 4)</span>
+</pre>
+</div>
+
+<p>
+You can delete elements from the middle of a list by altering the
+CDRs of the cons cells in the list.  For example, here we delete the
+second element, ‘b’, from the list ‘(a b c)’, by changing the CDR of the
+first cons cell:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> x1 <span class="org-rainbow-delimiters-depth-2">(</span>list 'a 'b 'c<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(a b c)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>setcdr x1 <span class="org-rainbow-delimiters-depth-2">(</span>cdr <span class="org-rainbow-delimiters-depth-3">(</span>cdr x1<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(c)</span>
+x1 <span class="org-comment-delimiter">;; </span><span class="org-comment">(a c)</span>
+</pre>
+</div>
+<p>
+Graphical representation of the above:
+</p>
+<div class="org-src-container">
+<pre class="src src-ditaa">                        --------------------
+                       |                    |
+      --------------   |   --------------   |    --------------
+     | car   | cdr  |  |  | car   | cdr  |   --&gt;| car   | cdr  |
+     |   a   |   o-----   |   b   |   o--------&gt;|   c   |  nil |
+     |       |      |     |       |      |      |       |      |
+      --------------       --------------        --------------
+</pre>
+</div>
+
+<p>
+You can also use this to insert a new element.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> x1 <span class="org-rainbow-delimiters-depth-2">(</span>list 'a 'b 'c<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(a b c)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>setcdr x1 `<span class="org-rainbow-delimiters-depth-2">(</span>d ,@<span class="org-rainbow-delimiters-depth-3">(</span>cdr x1<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(d b c)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">equivalent to the following</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(setcdr x1 (cons 'd (cdr x1)))</span>
+x1 <span class="org-comment-delimiter">;; </span><span class="org-comment">(a d b c)</span>
+</pre>
+</div>
+
+<p>
+Graphical representation of the above.
+</p>
+<div class="org-src-container">
+<pre class="src src-ditaa">      --------------        -------------       -------------
+     | car  | cdr   |      | car  | cdr  |     | car  | cdr  |
+     |   a  |   o   |   --&gt;|   b  |   o-------&gt;|   c  |  nil |
+     |      |   |   |  |   |      |      |     |      |      |
+      --------- | --   |    -------------       -------------
+                |      |
+          -----         --------
+         |                      |
+         |    ---------------   |
+         |   | car   | cdr   |  |
+          --&gt;|   d   |   o------
+             |       |       |
+              ---------------
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge58fbd4" class="outline-3">
+<h3 id="orge58fbd4"><span class="section-number-3">9.8.</span> Functions that Rearrange Lists</h3>
+<div class="outline-text-3" id="text-9-8">
+<p>
+Here are some functions that rearrange lists destructively by modifying
+the CDRs of their component cons cells.  These functions are destructive
+because they chew up the original lists passed to them as arguments,
+relinking their cons cells to form a new list that is the returned
+value.
+</p>
+</div>
+
+<div id="outline-container-org5f2e982" class="outline-4">
+<h4 id="org5f2e982"><span class="section-number-4">9.8.1.</span> Function: nconc &amp;rest lists</h4>
+<div class="outline-text-4" id="text-9-8-1">
+<p>
+This function returns a list containing all the elements of LISTS.
+Unlike ‘append’ (*note <a href={{ "#org1a8cffd" | absolute_url }}>9.4.1</a>), the LISTS are <span class="underline">not</span>
+copied.  Instead, the last CDR of each of the LISTS is changed to
+refer to the following list.  The last of the LISTS is not altered.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> x <span class="org-rainbow-delimiters-depth-2">(</span>list 1 2 3<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 2 3)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>nconc x '<span class="org-rainbow-delimiters-depth-2">(</span>4 5<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 2 3 4 5)</span>
+x <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 2 3 4 5)</span>
+</pre>
+</div>
+
+<p>
+Since the last argument of ‘nconc’ is not itself modified, it is
+reasonable to use a constant list, such as ‘'(4 5)’, as in the
+above example.  For the same reason, the last argument need not be
+a list:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> x <span class="org-rainbow-delimiters-depth-2">(</span>list 1 2 3<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 2 3)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>nconc x 'z<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 2 3 . z)</span>
+x <span class="org-comment-delimiter">;; </span><span class="org-comment">(1 2 3 . z)</span>
+</pre>
+</div>
+
+<p>
+However, the other arguments (all but the last) should be mutable
+lists.
+</p>
+
+
+<p>
+A common pitfall is to use a constant list as a non-last argument
+to ‘nconc’.  If you do this, the resulting behavior is undefined.
+It is possible that your program will change each time you run it!
+Here is what might happen (though this is not guaranteed to
+happen):
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">add-foo</span> <span class="org-rainbow-delimiters-depth-2">(</span>x<span class="org-rainbow-delimiters-depth-2">)</span>            <span class="org-comment-delimiter">; </span><span class="org-comment">We want this function to add</span>
+    <span class="org-rainbow-delimiters-depth-2">(</span>nconc '<span class="org-rainbow-delimiters-depth-3">(</span>foo<span class="org-rainbow-delimiters-depth-3">)</span> x<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>           <span class="org-comment-delimiter">;   </span><span class="org-comment">&#8216;</span><span class="org-comment"><span class="org-constant">foo</span></span><span class="org-comment">&#8217; to the front of its arg.</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>symbol-function 'add-foo<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(lambda (x) (nconc '(foo) x))</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> xx <span class="org-rainbow-delimiters-depth-2">(</span>add-foo '<span class="org-rainbow-delimiters-depth-3">(</span>1 2<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(foo 1 2)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">intention is that there will be more 'foo' at the beginning of the list</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">but that is not the case</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> xx <span class="org-rainbow-delimiters-depth-2">(</span>add-foo '<span class="org-rainbow-delimiters-depth-3">(</span>3 4<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(foo 1 2 3 4)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> xx <span class="org-rainbow-delimiters-depth-2">(</span>add-foo '<span class="org-rainbow-delimiters-depth-3">(</span>3 4<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">(foo 1 2 3 4 3 4)</span>
 </pre>
 </div>
 </div>
