@@ -1,0 +1,53 @@
+---
+layout: post
+title: "Intelligently select a node in Emacs with tree-sitter"
+excerpt:
+modified_date: 2022/04/27/21:55
+---
+
+<p>
+Sometimes it's annoying having to manually select a variable name and copy it, especially when you deal with multiple languages.
+</p>
+
+<p>
+Apart from manually selecting the text you want, you try to use <code>mark-sexp</code>, which works fine but fails in the following python example when the cursor is at the character "p".
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">report_prefix</span> = <span class="org-string">"report name"</span>
+</pre>
+</div>
+<p>
+In the above example, only <code>prefix</code> will be selected with <code>mark-sexp</code>.
+</p>
+
+<p>
+There are many ways to solve this problem (e.g. use <code>ivy-thing-at-point</code>).
+However I found using <a href={{ "https://github.com/tree-sitter/tree-sitter" | absolute_url }}>tree-sitter</a> and <a href={{ "https://emacs-tree-sitter.github.io/getting-started/" | absolute_url }}>emacs-tree-sitter</a> to be the fastest and most accurate solution.
+</p>
+
+<p>
+Here's the function that implements this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">require</span> '<span class="org-constant">tree-sitter</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">mark-node</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-doc">"Mark the current node under cursor using tree-sitter."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let*</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>node <span class="org-rainbow-delimiters-depth-5">(</span>tree-sitter-node-at-pos<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+         <span class="org-rainbow-delimiters-depth-4">(</span>start-pos <span class="org-rainbow-delimiters-depth-5">(</span>tsc-node-start-position node<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-rainbow-delimiters-depth-4">(</span>end-pos <span class="org-rainbow-delimiters-depth-5">(</span>tsc-node-end-position node<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>goto-char start-pos<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>push-mark end-pos<span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">setq</span> mark-active t<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<p>
+Now if you run <code>mark-node</code> when your cursor is under the character "p", it'll still select <code>report_prefix</code> as expected.
+What's better is you can even use this to select <code>"report name"</code> wherever your cursor is at, as long as it's within the quotes. All because tree-sitter recognises that it is a string in python.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-variable-name">report_prefix</span> = <span class="org-string">"report name"</span>
+</pre>
+</div>
