@@ -1,0 +1,74 @@
+<p>
+Collection of ways to manipulate lines based off regex.
+All of these functions/tips were compiled from the links in [BROKEN LINK: Source.]
+</p>
+
+<div id="outline-container-org016a515" class="outline-2">
+<h2 id="org016a515"><span class="section-number-2">1.</span> Copy matching lines</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">copy-lines-matching-re</span> <span class="org-rainbow-delimiters-depth-2">(</span>re<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-doc">"find all lines matching the regexp RE in the current buffer</span>
+<span class="org-doc">putting the matching lines in a buffer named *matching*"</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span> <span class="org-string">"sRegexp to match: "</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>result-buffer <span class="org-rainbow-delimiters-depth-5">(</span>get-buffer-create <span class="org-string">"*matching*"</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">with-current-buffer</span> result-buffer 
+      <span class="org-rainbow-delimiters-depth-4">(</span>erase-buffer<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">save-match-data</span> 
+      <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">save-excursion</span>
+        <span class="org-rainbow-delimiters-depth-5">(</span>goto-char <span class="org-rainbow-delimiters-depth-6">(</span>point-min<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+        <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">while</span> <span class="org-rainbow-delimiters-depth-6">(</span>re-search-forward re nil t<span class="org-rainbow-delimiters-depth-6">)</span>
+          <span class="org-rainbow-delimiters-depth-6">(</span>princ <span class="org-rainbow-delimiters-depth-7">(</span>buffer-substring-no-properties <span class="org-rainbow-delimiters-depth-8">(</span>line-beginning-position<span class="org-rainbow-delimiters-depth-8">)</span> 
+                                                 <span class="org-rainbow-delimiters-depth-8">(</span>line-beginning-position 2<span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span>
+                 result-buffer<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span>pop-to-buffer result-buffer<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgebb0788" class="outline-2">
+<h2 id="orgebb0788"><span class="section-number-2">2.</span> Count matching lines</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>count-matches regexp<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga49dca9" class="outline-2">
+<h2 id="orga49dca9"><span class="section-number-2">3.</span> Delete matching lines</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>delete-matching-lines regexp<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>delete-non-matching-lines regexp<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-comment-delimiter">;; </span><span class="org-comment">same as (keep-lines regexp)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>keep-lines regexp<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>delete-duplicate-lines regexp<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org13796f8" class="outline-2">
+<h2 id="org13796f8"><span class="section-number-2">4.</span> Sort lines</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>sort-lines<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>reverse-region<span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">separaters are spaces or tabs</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>sort-numeric-fields<span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>sort-fields<span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org99ee880" class="outline-2">
+<h2 id="org99ee880"><span class="section-number-2">5.</span> Source</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a href={{ "https://stackoverflow.com/questions/2289883/emacs-copy-matching-lines" | absolute_url }}>https://stackoverflow.com/questions/2289883/emacs-copy-matching-lines</a>
+<a href={{ "http://xahlee.info/emacs/emacs/elisp_list_matching_lines.html" | absolute_url }}>http://xahlee.info/emacs/emacs/elisp_list_matching_lines.html</a>
+</p>
+</div>
+</div>
