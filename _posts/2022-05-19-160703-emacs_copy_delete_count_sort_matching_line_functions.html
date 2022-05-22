@@ -1,17 +1,18 @@
 ---
 layout: post
 title: "Emacs copy/delete/count/sort (matching) line functions"
-excerpt:
-modified_date: 2022/05/21/13:19
+excerpt: "Collection of ways to manipulate lines based off regex.
+All of these functions/tips were compiled from the links in [[*Source][Source]].
+"
+modified_date: 2022/05/21/21:35
 ---
 
 <p>
 Collection of ways to manipulate lines based off regex.
-All of these functions/tips were compiled from the links in <a href="#org99ee880">Source</a>.
+All of these functions/tips were compiled from the links in <a href="#orga6b8bc6">Source</a>.
 </p>
-
-<div id="outline-container-org016a515" class="outline-2">
-<h2 id="org016a515"><span class="section-number-2">1.</span> Copy matching lines</h2>
+<div id="outline-container-org00a7eaa" class="outline-2">
+<h2 id="org00a7eaa"><span class="section-number-2">1.</span> Copy matching lines</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">copy-lines-matching-re</span> <span class="org-rainbow-delimiters-depth-2">(</span>re<span class="org-rainbow-delimiters-depth-2">)</span>
@@ -33,8 +34,8 @@ All of these functions/tips were compiled from the links in <a href="#org99ee880
 </div>
 </div>
 </div>
-<div id="outline-container-orgebb0788" class="outline-2">
-<h2 id="orgebb0788"><span class="section-number-2">2.</span> Count matching lines</h2>
+<div id="outline-container-org85681d2" class="outline-2">
+<h2 id="org85681d2"><span class="section-number-2">2.</span> Count matching lines</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>count-matches regexp<span class="org-rainbow-delimiters-depth-1">)</span>
@@ -43,8 +44,8 @@ All of these functions/tips were compiled from the links in <a href="#org99ee880
 </div>
 </div>
 
-<div id="outline-container-orga49dca9" class="outline-2">
-<h2 id="orga49dca9"><span class="section-number-2">3.</span> Delete matching lines</h2>
+<div id="outline-container-org6492bb8" class="outline-2">
+<h2 id="org6492bb8"><span class="section-number-2">3.</span> Delete matching lines</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>delete-matching-lines regexp<span class="org-rainbow-delimiters-depth-1">)</span>
@@ -56,8 +57,8 @@ All of these functions/tips were compiled from the links in <a href="#org99ee880
 </div>
 </div>
 
-<div id="outline-container-org13796f8" class="outline-2">
-<h2 id="org13796f8"><span class="section-number-2">4.</span> Sort lines</h2>
+<div id="outline-container-orge70fed6" class="outline-2">
+<h2 id="orge70fed6"><span class="section-number-2">4.</span> Sort lines</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>sort-lines<span class="org-rainbow-delimiters-depth-1">)</span>
@@ -70,8 +71,8 @@ All of these functions/tips were compiled from the links in <a href="#org99ee880
 </div>
 </div>
 </div>
-<div id="outline-container-org99ee880" class="outline-2">
-<h2 id="org99ee880"><span class="section-number-2">5.</span> Source</h2>
+<div id="outline-container-orga6b8bc6" class="outline-2">
+<h2 id="orga6b8bc6"><span class="section-number-2">5.</span> Source</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 <a href={{ "https://stackoverflow.com/questions/2289883/emacs-copy-matching-lines" | absolute_url }}>https://stackoverflow.com/questions/2289883/emacs-copy-matching-lines</a>
