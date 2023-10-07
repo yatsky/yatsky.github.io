@@ -9,7 +9,7 @@ I'm a software engineer/data engineer currently living in ~~[Brisabne, Australia
 
 Reach me at:
 
-- hi<at>yaoni.me
+- hi(at)yaoni.me
 - [yatsky](https://github.com/yatsky)
 - Connect me on [LinkedIn](https://linkedin.com/in/username010)
 
