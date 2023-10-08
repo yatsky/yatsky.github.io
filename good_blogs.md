@@ -19,3 +19,10 @@ permalink: /blogs/
 11. <https://emacstil.com/>
 12. <http://steve-yegge.blogspot.com/2006/06/shiny-and-new-emacs-22.html> (why and how to use `query-replace-regexp`).
 13. <https://legalwyy.com/> (法学随想)
+14. <https://whatacold.io/zh-cn/blog/2022-07-17-emacs-elisp-debug/> (Emacs debugging)
+15. <https://antfu.me/>
+16. <https://waitbutwhy.com/>
+17. <https://world.hey.com/dhh> (creator of Ruby on Rails)
+18. <http://www.paulgraham.com/> (co-founder of [y-combinator](https://www.ycombinator.com/))
+19. <https://p3terx.com/> (主要分享站长在泛 IT 技术类知识中的学习与研究成果)
+

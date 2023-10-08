@@ -1,0 +1,456 @@
+---
+layout: post
+title: "在 Emacs org mode 中进行文学编程 (Literate Programming with org mode in Emacs)"
+excerpt: "笔者自使用 Emacs 以来，最离不开的功能就是在 org mode 中进行文学编程，来做快速的数据分析以及文档撰写。
+
+"
+modified_date: 2023/10/07/15:36
+---
+
+<p>
+笔者自使用 Emacs 以来，最离不开的功能就是在 org mode 中进行文学编程，来做快速的数据分析以及文档撰写。
+</p>
+
+<p>
+在这篇文章里，我会简单介绍什么是文学编程，以及如何在 org mode 里进行文学编程。
+</p>
+
+<p>
+简而言之，设置起来非常简单，用起来也很方便。
+</p>
+<div id="outline-container-org2041685" class="outline-2">
+<h2 id="org2041685"><span class="section-number-2">1.</span> 什么是文学编程（literate programming）</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+根据 Donald Knuth 的 <a href={{ "https://www-cs-faculty.stanford.edu/~knuth/lp.html#:~:text=Literate%20programming%20is%20a%20methodology,in%20a%20high%2Dlevel%20language." | absolute_url }}>定义</a>，文学编程是一种把文档语言和编程语言组合在一起的方法（methodology）。
+它能让编程鲁棒性更强，增强跨平台性，更易维护，以及更加有趣。 文学编程面向的对象是人类，而不是机器。
+</p>
+
+<p>
+在我看来，正是因为文学编程面向人类的特点，使得它非常适合拿来写技术文档。
+</p>
+</div>
+</div>
+<div id="outline-container-orgfb1de84" class="outline-2">
+<h2 id="orgfb1de84"><span class="section-number-2">2.</span> 使用 org mode 来进行文学编程</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+根据<a href={{ "https://orgmode.org/worg/org-contrib/babel/" | absolute_url }}>官方文档</a>，org mode 原来是通过 <code>org-babel</code> 这一插件来实现文学编程的。自 7.0 版本以来， org mode 就已经内嵌了 Babel，
+Emacs 27 内置的 org mode 已经是 8.0 以上了，所以对于这篇文档的读者（Emacs 新手）来说，相信你们的 org mode 都是 7.0 以上了。
+这里我们不讨论 7.0 以下的情况。
+</p>
+
+<p>
+在 org mode 中运行代码非常简单，你只需要有类似下面的代码块（source block），想要运行代码块时，将光标移动到代码块中，同时按下 <code>C-c C-c</code> 即可。
+</p>
+<pre class="example" id="orgbcbfefc">
+#+name: a block of code
+#+caption: a block of code
+#+begin_src python
+print("python")
+#+end_src
+</pre>
+
+<p>
+在本文中，我主要使用 python 代码，当然 org mode 支持的编程语言种类非常多，读者可以通过查看<a href={{ "https://orgmode.org/worg/org-contrib/babel/languages/index.html" | absolute_url }}>文档</a>来看你的语言是否在支持列表上。
+有一定水平的读者也可以自己添加语言支持，但这不在本文讨论范围之内。
+</p>
+
+<p>
+虽然 org mode 支持的编程语言种类非常多，但是在默认设置下，我们需要的语言不一定被加载了。
+因此，读者可以通过运行类似下面这段代码来加载你所需要的语言，或者你可以将这段代码放在 <code>init.el</code> 之中，这样它可以自动加载。
+在这里，我使用 <code>C-c C-c</code> 来运行下面这段代码。
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">setq</span> org-babel-load-languages
+      '<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">(</span>js . t<span class="org-rainbow-delimiters-depth-3">)</span>
+        <span class="org-rainbow-delimiters-depth-3">(</span>java . t<span class="org-rainbow-delimiters-depth-3">)</span>
+        <span class="org-rainbow-delimiters-depth-3">(</span>python . t<span class="org-rainbow-delimiters-depth-3">)</span>
+        <span class="org-rainbow-delimiters-depth-3">(</span>sqlite . t<span class="org-rainbow-delimiters-depth-3">)</span>
+        <span class="org-rainbow-delimiters-depth-3">(</span>emacs-lisp . t<span class="org-rainbow-delimiters-depth-3">)</span>
+        <span class="org-rainbow-delimiters-depth-3">(</span>shell . t<span class="org-rainbow-delimiters-depth-3">)</span>
+        <span class="org-rainbow-delimiters-depth-3">(</span>ditaa . t<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<pre class="example">
+((js . t) (java . t) (python . t) (sqlite . t) (emacs-lisp . t) (shell . t) (ditaa . t))
+</pre>
+
+
+<p>
+我们可以注意到上面出现了 <code>((js . t) (java . t) (python . t) (sqlite . t) (emacs-lisp . t) (shell . t) (ditaa . t))</code> 这一串字符，
+有一定 elisp 经验的读者可以知道，这正是前面 <code>(setq org-babel-load-languages ...)</code> 这段代码的返回值。
+</p>
+
+<p>
+在实际使用中，运行上面的代码所得到的结果会出现在如下的 RESULTS block 中，我们可以通过设置代码块的 header 来控制结果的输出样式。
+</p>
+
+<pre class="example" id="org58921d7">
+#+RESULTS:
+((js . t) (java . t) (python . t) (sqlite . t) (emacs-lisp . t) (shell . t) (ditaa . t))
+</pre>
+
+<p>
+<b>这里我们一定要注意</b>
+在默认情况下，RESULTS 显示的是代码块的返回值，而非打印值，这一点如果不注意的话会浪费很多时间。
+在实战例子中我们还会提到这个重点。
+</p>
+
+<p>
+下面我们用五个例子来介绍 org mode 文学编程中最基本的操作。
+</p>
+</div>
+<div id="outline-container-org2a4f379" class="outline-3">
+<h3 id="org2a4f379"><span class="section-number-3">2.1.</span> 实战一</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+计算 1+1 并显示结果。
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>1+1</label><pre class="src src-python" id="org17ef866"><span class="org-tree-sitter-hl-faceXkeyword">return</span> <span class="org-tree-sitter-hl-faceXnumber">1</span><span class="org-tree-sitter-hl-faceXoperator">+</span><span class="org-tree-sitter-hl-faceXnumber">1</span>
+</pre>
+</div>
+
+<pre class="example">
+2
+</pre>
+
+
+<p>
+<b>注意，如果你在阅读这篇教程的 HTML 版本，上面的代码块和结果在 org mode 中是这样的。</b>
+</p>
+
+<pre class="example" id="orgc9d4679">
+#+caption: 1+1
+#+name: 1+1
+#+begin_src python
+return 1+1
+#+end_src
+
+#+RESULTS: 1+1
+: 2
+
+</pre>
+
+<p>
+我们可以看到在 RESULTS 中显示了 <code>1+1</code>
+的结果为 <code>2,</code>
+并且注意到这里使用了 <code>return</code>
+,
+而非 <code>print</code>
+。
+</p>
+</div>
+</div>
+<div id="outline-container-org1c6393a" class="outline-3">
+<h3 id="org1c6393a"><span class="section-number-3">2.2.</span> 实战二</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+显示打印值，而非返回值。
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>print value</label><pre class="src src-python" id="org0eee56a"><span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXnumber">1</span><span class="org-tree-sitter-hl-faceXoperator">+</span><span class="org-tree-sitter-hl-faceXnumber">1</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<pre class="example">
+2
+</pre>
+
+
+<p>
+<b>注意，如果你在阅读这篇教程的 HTML 版本，上面的代码块和结果在 org mode 中是这样的。</b>
+</p>
+
+<pre class="example" id="orgd48cd6d">
+#+caption: print value
+#+name: print value
+#+begin_src python :results output
+print(1+1)
+#+end_src
+
+#+RESULTS: print value
+: 2
+</pre>
+
+<p>
+要显示打印值，我们只需要在代码块的 header 中加上 <code>:results output</code> 选项即可。
+</p>
+
+<p>
+header 的选项非常多，我也只使用过其中一些，具体的细节请参考文档。
+</p>
+</div>
+</div>
+<div id="outline-container-orgf35ff72" class="outline-3">
+<h3 id="orgf35ff72"><span class="section-number-3">2.3.</span> 实战三</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+给代码块取名。
+</p>
+
+<p>
+从 <a href="#org2a4f379">实战一</a>
+和 <a href="#org1c6393a">实战二</a>
+中，我已经给两个代码块都命名了。
+</p>
+
+<p>
+命名的好处是，代码块的结果会出现在与之有相同名称的 RESULTS 里。
+</p>
+
+<p>
+如果我们不给代码块命名或是两个代码块名称重复的话，那们所有的结果都会出现在一个 RESULTS 里，
+一般情况下这是我们想要避免的。
+</p>
+
+<p>
+此外，代码块的名字还会在导出到其他格式时被保留。
+最后，命名了的代码块还可以和 noweb 一起使用（见<a href="#orgcdc0e26">实战四</a>）。
+</p>
+
+<p>
+我曾经的一个痛点是，我想要给每个代码块都命名，这样它们的结果不会相互覆盖，
+但是有时想要试验一些想法时，某个代码块叫什么名字并不是最重要的，
+于是我写了下面这段 yasnippet 。
+</p>
+
+<pre class="example" id="orge166b29">
+# -*- mode: snippet -*-
+# name: python src
+# key: py
+# --
+
+#+caption: ${1:`(insert-random-uuid)`}
+#+name: $1
+#+begin_src python :results output
+$0
+#+end_src
+
+#+RESULTS: $1
+</pre>
+
+<p>
+这段代码能帮我生成一个代码块和它对应的结果，然后用一个随机的 uuid 来命名这两个块。
+如果我需要的话，可以直接重命名这个代码块，不需要的话就接受默认值即可。
+</p>
+<pre class="example" id="org4c5b84d">
+#+caption: C3395424-A7F4-4228-A373-25F349858A73
+#+name: C3395424-A7F4-4228-A373-25F349858A73
+#+begin_src python :results output
+
+#+end_src
+
+#+RESULTS: C3395424-A7F4-4228-A373-25F349858A73
+</pre>
+
+<p>
+读者可以在<a href="#orgdbb10ca">附录</a>中找到随机函数
+<code>insert-random-uuid</code> 的定义。
+</p>
+</div>
+</div>
+<div id="outline-container-orgcdc0e26" class="outline-3">
+<h3 id="orgcdc0e26"><span class="section-number-3">2.4.</span> 实战四</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+利用 noweb 导入已命名的代码块。
+</p>
+
+<p>
+假设我有一个函数 <code>add</code> 。
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>add function</label><pre class="src src-python" id="org1c95cc8"><span class="org-tree-sitter-hl-faceXkeyword">def</span> <span class="org-tree-sitter-hl-faceXfunction">add</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXvariableXparameter">x</span>, <span class="org-tree-sitter-hl-faceXvariableXparameter">y</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+    <span class="org-tree-sitter-hl-faceXkeyword">return</span> x<span class="org-tree-sitter-hl-faceXoperator">+</span>y
+</pre>
+</div>
+
+<p>
+下面我有两个独立的代码块都想要使用上面的 <code>add</code>
+函数。
+</p>
+
+<p>
+我可以通过在代码块的 header 设置 <code>:noweb yes</code> 来导入它。
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>first block to use add function</label><pre class="src src-python" id="orgb135aca"><span class="org-tree-sitter-hl-faceXoperator">&lt;&lt;</span>add function<span class="org-tree-sitter-hl-faceXoperator">&gt;&gt;</span>
+<span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXfunctionXcall">add</span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-tree-sitter-hl-faceXnumber">1</span>, <span class="org-tree-sitter-hl-faceXnumber">1</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<pre class="example">
+2
+</pre>
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 5: </span>second block to use add function</label><pre class="src src-python" id="orgcf2be35"><span class="org-tree-sitter-hl-faceXoperator">&lt;&lt;</span>add function<span class="org-tree-sitter-hl-faceXoperator">&gt;&gt;</span>
+<span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXfunctionXcall">add</span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-tree-sitter-hl-faceXnumber">2</span>, <span class="org-tree-sitter-hl-faceXnumber">2</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<pre class="example">
+4
+</pre>
+
+
+<p>
+<b>注意，如果你在阅读这篇教程的 HTML 版本，上面的第二个代码块和结果在 org mode 中是这样的。</b>
+</p>
+
+<pre class="example" id="org1484310">
+#+caption: second block to use add function
+#+name: second block to use add function
+#+begin_src python :results output :noweb yes
+&lt;&lt;add function&gt;&gt;
+print(add(2, 2))
+#+end_src
+
+#+RESULTS: second block to use add function
+: 4
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgd72f644" class="outline-3">
+<h3 id="orgd72f644"><span class="section-number-3">2.5.</span> 实战五</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+使用其他代码块的输出作为一个代码块的输入。
+(我很少使用这个功能，所以可能会有错漏)
+</p>
+
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 6: </span>my-name</label><pre class="src src-python" id="org8527e3d"><span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"yaoni"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<pre class="example">
+yaoni
+</pre>
+
+
+<p>
+我们可以使用 <code>:var</code> 来给当前的代码块提供一个变量。
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 7: </span>say hello to me</label><pre class="src src-python" id="orgdb21b1c"><span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">f"Hello </span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">name</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+
+<pre class="example">
+Hello yaoni
+
+</pre>
+
+
+<p>
+<b>注意，如果你在阅读这篇教程的 HTML 版本，上面的代码块和结果在 org mode 中是这样的。</b>
+</p>
+<pre class="example" id="org64f2dad">
+#+caption: my-name
+#+name: my-name
+#+begin_src python :results output
+print("yaoni")
+#+end_src
+
+#+RESULTS: my-name
+: yaoni
+
+#+caption: say hello to me
+#+name: say hello to me
+#+begin_src python :results output :var name=my-name
+print(f"Hello {name}")
+#+end_src
+
+#+RESULTS: say hello to me
+: Hello yaoni
+: 
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf004cd3" class="outline-2">
+<h2 id="orgf004cd3"><span class="section-number-2">3.</span> 实战总结</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+上面的五个实战例子应该能够帮助你快速开始尝试 org mode 和文学编程了。
+org mode
+的知识浩如烟海，入门之后大家可以自己在文档中查找需要的内容 :)。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdbb10ca" class="outline-2">
+<h2 id="orgdbb10ca"><span class="section-number-2">4.</span> 附录</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org9d1a23b" class="outline-3">
+<h3 id="org9d1a23b"><span class="section-number-3">4.1.</span> <code>insert-random-uuid</code> 定义。</h3>
+<div class="outline-text-3" id="text-4-1">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 8: </span>insert-random-uuid</label><pre class="src src-emacs-lisp" id="orge167fe7"><span class="org-comment-delimiter">;; </span><span class="org-comment">see: https://emacs.stackexchange.com/questions/24470/warning-yasnippet-modified-buffer-in-a-backquote-expression</span>
+<span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">insert-random-uuid</span> <span class="org-rainbow-delimiters-depth-2">()</span>
+  <span class="org-doc">"Insert a UUID.</span>
+<span class="org-doc">This commands calls &#8220;uuidgen&#8221; on MacOS, Linux, and calls PowelShell on Microsoft Windows.</span>
+<span class="org-doc">URL `</span><span class="org-doc"><span class="org-constant">http://ergoemacs.org/emacs/elisp_generate_uuid.html</span></span><span class="org-doc">'</span>
+<span class="org-doc">Version 2020-06-04"</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">interactive</span><span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span>insert
+   <span class="org-rainbow-delimiters-depth-3">(</span>replace-regexp-in-string <span class="org-string">"\n"</span> <span class="org-string">""</span>
+                             <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">cond</span> <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-rainbow-delimiters-depth-6">(</span>string-equal system-type <span class="org-string">"windows-nt"</span><span class="org-rainbow-delimiters-depth-6">)</span>
+                                    <span class="org-rainbow-delimiters-depth-6">(</span>shell-command-to-string <span class="org-string">"pwsh.exe -Command [guid]::NewGuid().toString()"</span> t<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+                                   <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-rainbow-delimiters-depth-6">(</span>string-equal system-type <span class="org-string">"darwin"</span><span class="org-rainbow-delimiters-depth-6">)</span> <span class="org-comment-delimiter">; </span><span class="org-comment">Mac</span>
+                                    <span class="org-rainbow-delimiters-depth-6">(</span>shell-command-to-string <span class="org-string">"uuidgen"</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+                                   <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-rainbow-delimiters-depth-6">(</span>string-equal system-type <span class="org-string">"gnu/linux"</span><span class="org-rainbow-delimiters-depth-6">)</span>
+                                    <span class="org-rainbow-delimiters-depth-6">(</span>shell-command-to-string <span class="org-string">"uuidgen"</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+                                   <span class="org-rainbow-delimiters-depth-5">(</span>t
+                                    <span class="org-comment-delimiter">;; </span><span class="org-comment">code here by Christopher Wellons, 2011-11-18.</span>
+                                    <span class="org-comment-delimiter">;; </span><span class="org-comment">and editted Hideki Saito further to generate all valid variants for "N" in xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx format.</span>
+                                    <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-rainbow-delimiters-depth-8">(</span>myStr <span class="org-rainbow-delimiters-depth-9">(</span>md5
+                                                  <span class="org-rainbow-delimiters-depth-1">(</span>format <span class="org-string">"%s%s%s%s%s%s%s%s%s%s"</span>
+                                                          <span class="org-rainbow-delimiters-depth-2">(</span>user-uid<span class="org-rainbow-delimiters-depth-2">)</span>
+                                                          <span class="org-rainbow-delimiters-depth-2">(</span>emacs-pid<span class="org-rainbow-delimiters-depth-2">)</span>
+                                                          <span class="org-rainbow-delimiters-depth-2">(</span>system-name<span class="org-rainbow-delimiters-depth-2">)</span>
+                                                          <span class="org-rainbow-delimiters-depth-2">(</span>user-full-name<span class="org-rainbow-delimiters-depth-2">)</span>
+                                                          <span class="org-rainbow-delimiters-depth-2">(</span>current-time<span class="org-rainbow-delimiters-depth-2">)</span>
+                                                          <span class="org-rainbow-delimiters-depth-2">(</span>emacs-uptime<span class="org-rainbow-delimiters-depth-2">)</span>
+                                                          <span class="org-rainbow-delimiters-depth-2">(</span>garbage-collect<span class="org-rainbow-delimiters-depth-2">)</span>
+                                                          <span class="org-rainbow-delimiters-depth-2">(</span>buffer-string<span class="org-rainbow-delimiters-depth-2">)</span>
+                                                          <span class="org-rainbow-delimiters-depth-2">(</span>random<span class="org-rainbow-delimiters-depth-2">)</span>
+                                                          <span class="org-rainbow-delimiters-depth-2">(</span>recent-keys<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span>
+                                      <span class="org-rainbow-delimiters-depth-7">(</span>format <span class="org-string">"%s-%s-4%s-%s%s-%s"</span>
+                                              <span class="org-rainbow-delimiters-depth-8">(</span>substring myStr 0 8<span class="org-rainbow-delimiters-depth-8">)</span>
+                                              <span class="org-rainbow-delimiters-depth-8">(</span>substring myStr 8 12<span class="org-rainbow-delimiters-depth-8">)</span>
+                                              <span class="org-rainbow-delimiters-depth-8">(</span>substring myStr 13 16<span class="org-rainbow-delimiters-depth-8">)</span>
+                                              <span class="org-rainbow-delimiters-depth-8">(</span>format <span class="org-string">"%x"</span> <span class="org-rainbow-delimiters-depth-9">(</span>+ 8 <span class="org-rainbow-delimiters-depth-1">(</span>random 4<span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span>
+                                              <span class="org-rainbow-delimiters-depth-8">(</span>substring myStr 17 20<span class="org-rainbow-delimiters-depth-8">)</span>
+                                              <span class="org-rainbow-delimiters-depth-8">(</span>substring myStr 20 32<span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0d15ec5" class="outline-3">
+<h3 id="org0d15ec5"><span class="section-number-3">4.2.</span> 其他参考链接</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li><a href={{ "https://orgmode.org/manual/Working-with-Source-Code.html" | absolute_url }}>https://orgmode.org/manual/Working-with-Source-Code.html</a></li>
+<li><a href={{ "https://orgmode.org/worg/org-contrib/babel/how-to-use-Org-Babel-for-R.html" | absolute_url }}>https://orgmode.org/worg/org-contrib/babel/how-to-use-Org-Babel-for-R.html</a></li>
+<li><a href={{ "http://cachestocaches.com/2018/6/org-literate-programming/" | absolute_url }}>http://cachestocaches.com/2018/6/org-literate-programming/</a></li>
+<li><a href={{ "https://blog.lazkani.io/posts/literate-programing-emacs-configuration/" | absolute_url }}>https://blog.lazkani.io/posts/literate-programing-emacs-configuration/</a></li>
+<li><a href={{ "https://fluca1978.github.io/2021/01/18/PostgreSQLLiterateProgramming.html" | absolute_url }}>https://fluca1978.github.io/2021/01/18/PostgreSQLLiterateProgramming.html</a></li>
+<li><a href={{ "https://joseph8th.github.io/posts/wow-writing-literate-api-documentation-in-emacs-org-mode/" | absolute_url }}>https://joseph8th.github.io/posts/wow-writing-literate-api-documentation-in-emacs-org-mode/</a></li>
+</ul>
+</div>
+</div>
+</div>

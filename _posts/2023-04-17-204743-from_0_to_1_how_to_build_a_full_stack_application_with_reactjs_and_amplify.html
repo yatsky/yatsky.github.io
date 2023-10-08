@@ -1,0 +1,158 @@
+---
+layout: post
+title: "From 0 to 1: How to build a full-stack application with ReactJS and amplify"
+excerpt: "Building an application is hard, and it's even harder when you try to build it to serve actual users who knows nothing about the app, instead of yourself who understands the app inside out.
+
+"
+modified_date: 2023/04/24/20:16
+---
+
+<div id="outline-container-org660989c" class="outline-2">
+<h2 id="org660989c"><span class="section-number-2">1.</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Building an application is hard, and it's even harder when you try to build it to serve actual users who knows nothing about the app, instead of yourself who understands the app inside out.
+</p>
+
+<p>
+In this post I'll share my experience building a small full stack app that has about 100 users.
+I'm a data engineer who did not understand full stack application. Before this app, the best I was able to do with React was building a Todo app following the tutorial. So this is <b>really</b> an absolute beginner's notes of what's involved in building a full stack application.
+</p>
+
+<p>
+Now, when I say this is an <i>abslute beginner's</i> notes, it does not mean that this is suitable for those who have no prior programming experience.
+You need to know what's aws, be comfortable with commandline and most importantly, know how to program, to understand this article.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7035547" class="outline-2">
+<h2 id="org7035547"><span class="section-number-2">2.</span> The pain points</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The most important part of building an application, besides actually building it, is the idea that drives the need for it.
+</p>
+
+<p>
+Without a valid idea, there is no use to know how to code in any language. And to me, a valid idea equals actual pain points that can be radically improved with the creation of the application.
+</p>
+</div>
+</div>
+<div id="outline-container-org4ca470b" class="outline-2">
+<h2 id="org4ca470b"><span class="section-number-2">3.</span> The stack</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+I did not spend too much time on choosing which tools to use.
+The reason is simple - I did not know enough to make an informed choice. So I did the next best thing - use whatever is the most popular and familiar for me.
+</p>
+
+<p>
+This means React, JavaScript, python, AWS (many services) and Google Maps. Of course, there's always ChatGPT and its API siblings.
+</p>
+
+<p>
+Specifically, I use React and JavaScript to build the entire frontend. I made a conscious choice NOT to use TypeScript to start with because I knew it was too much for me to get the app started. It'll heavily affect my development speed although it brings a lot of benefits.
+</p>
+
+<p>
+An example of my inability to handle TS properly is that I'm actually in the process of migrating the codebase to TS, but because the newest TS version is 5.0.4, it's too new for many packages and there's an option that I had to specify in order to install some packages, <code>--legacy-peer-deps</code>. I did not waste too much time on this single issue thanks to ChatGPT and Google, however little things add up and eventually I wouldn't have made the same progress as I have now if I started out with TS.
+</p>
+
+<p>
+The backend is serverless and the reason is simple - I can handle one or two EC2's and manage some basic docker stuff but I'm no real devops to manage EC2 instances or set up K8S if the app were to grow more. Going serverless is simply the most affordable and scalable option for me.
+</p>
+
+<p>
+The entire backend is built on AWS Amplify. If you don't know it, it's basically a service that helps you build full stack apps. It solves a lot of common problems for you in developing a full stack app. For instance, it manages user signup/login for you, helps manage the entire AWS resource stack required for the app, and does CI/CD for you.
+</p>
+
+<p>
+Python is used to write some basic lambda function that will be triggered when files are uploaded and to handle some async processes.
+I found setting up a lambda layer to be actually hard to achieve as it's really easy to mess things up even if you're following the documentation.
+</p>
+
+<p>
+Then there's other services in AWS besides Amplify. S3, Dynamodb, API Gateway, just to name a few. I wanted to add a SQS queue but it turned out Amplify cannot handle that. So I used a workaround by simply using a lambda function to do the same thing.
+</p>
+
+<p>
+Google Maps, this is specific to my project. I need to use some of its functionalities at a bare minimum level.
+</p>
+</div>
+</div>
+<div id="outline-container-org15dd427" class="outline-2">
+<h2 id="org15dd427"><span class="section-number-2">4.</span> The hard parts</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Building an application is hard.
+Even if it was a small application, it's hard.
+Even if you knew all the tech stack, it's still hard.
+</p>
+
+<p>
+There are a couple of reasons from my experience.
+</p>
+
+<p>
+First of all, you do NOT know all the tech involved. This is true for almost everyone, although especially true for those of us who do not work in app development day in and day out. This was certainly my biggest issue when trying to develop an app. However, thanks to the advent of ChatGPT, this issue is now almost non-existent.
+</p>
+
+<p>
+ChatGPT, when used properly with great prompt and detailed context, can almost always answer basic questions for you.
+For example, I always had issues dealing with Promises in JavaScript, and ChatGPT was always able to save me and give me the working code I needed.
+Now, initially I did not really understand the code, but magically when I did this learning a couple of times, I started to understand the code and why it was written that way, all thanks to ChatGPT. Without it, I wouldn't have made it this far.
+</p>
+
+<p>
+The second reason is that there are too many things to consider and humans are easily distracted.
+Even with my simple app, there's tons of stuff to consider. The implication is that you cannot drown yourself in the details.
+You have to strategically allocate your cognitive resources to the most important parts of the project. And you need to train yourself to be able to look at things at a grand picture level as well as the nitty-gritty level.
+</p>
+
+<p>
+I had to design the system at the highest level where one only thinks about the parts that make up the frontend and backend of the app. Then I had to go down to a specific interaction and drew a state machine to see the state changes resulting from each action.
+This constant zooming in and out is really hard. Now I start to understand why system design is hard and also a hot topic.
+</p>
+
+<p>
+Lastly, it's hard simply because it is.
+The human brain is not used to thinking about complex things. If you have never done anything that's really complex, then you have to know that building an application is <b>extremely</b>
+complex. This is not to say that it can never be done by us. Rather, it is to admit the fact that the task is beyond our current abilities and we need to really learn something new and do something new to achieve it. We also need to adjust our expectations when building an application. So don't beat yourself up if you can't make it in one go, or two goes, or if you can't make it at all! It's OK to fail. As long as you learned something, then it's a worthwhile experience.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf6f2957" class="outline-2">
+<h2 id="orgf6f2957"><span class="section-number-2">5.</span> The good parts</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+There are a lot of good, rewarding aspects of building an app from the ground up.
+I can only list a few of them in this section.
+</p>
+
+<p>
+The first point is that one really gets to experience the evolution of an application from its birth.
+I say this because many of us working in a company do not get a chance to build something from the ground up. It's always some legacy project that we need to somehow maintain or refactor. If you build something from the ground up, it feels like you are creating an art piece and it's great. 
+</p>
+
+<p>
+The evolution experience also brings about a new you. You'll become a better developer because you are now an actual full stack developer who has done not only the leg work but also the high level design work.
+</p>
+
+<p>
+The next good thing about it is that you are helping people. When you scratch your own back, you're scratching other people's back as well. You get to know a lot of people and you feel happy when you realise that you've made a positive impact on their lives.
+</p>
+</div>
+</div>
+<div id="outline-container-orgde37ebf" class="outline-2">
+<h2 id="orgde37ebf"><span class="section-number-2">6.</span> End</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+The above was only the most important parts of the experience that lingered in my mind long enough to be put down there.
+I'm certain there are way more that I learned from the experience but I probably forgot about them already, which is fine.
+</p>
+
+<p>
+I'll continue working on the project and see where it'll take me.
+</p>
+</div>
+</div>

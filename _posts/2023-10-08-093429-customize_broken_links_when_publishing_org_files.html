@@ -1,0 +1,223 @@
+---
+layout: post
+title: "customize broken links when publishing org files"
+excerpt: "I use org-roam to connect my notes/documents and it uses id to link them.
+
+"
+modified_date: 2023/10/08/13:33
+---
+
+<div id="outline-container-org7483462" class="outline-2">
+<h2 id="org7483462"><span class="section-number-2">1.</span> The issue</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I use org-roam to connect my notes/documents and it uses id to link them.
+</p>
+
+<p>
+When I decide I want to publish a file to my blog, I use org's default publishing commands. I have some custom setup for it in my <a href={{ "https://github.com/yatsky/emacs-init" | absolute_url }}>emacs dot files</a>. However because some of the internal links link to files that are not published, for example \[[xxfj-el....][org mode]\], I always get \[BROKEN LINK xxxxxx\] in my exported posts like
+<a href={{ "2023/10/07/223221-org_mode_plot_data_and_save_to_file.html#ID-39C182CE-9FDB-4B56-9100-2B3412D4B840" | absolute_url }}>org mode plot data and save to file</a> below given that I have set <code>org-export-with-broken-links</code> to '<code>mark</code>.
+</p>
+
+
+<figure id="orgd738412">
+<img src={{ "assets/images/20231008-131732_screenshot.jpeg" || absolute_url }} alt="20231008-131732_screenshot.jpeg">
+
+</figure>
+
+<p>
+This is not very nice to say the least. And this is actually the best you can get with the three options for <code>org-export-with-broken-links</code>, which are <i>nil</i>, <i>non-nil</i> and <i>mark</i>.
+</p>
+
+<p>
+With <i>nil</i>, a broken link fails the export. <i>non-nil</i> simply ignores the link. And <i>mark</i> produces the above screenshot.
+</p>
+
+<p>
+However, I really want this to be able to ignore the org id and just show the text I put in after the id, which in the above should be <b>org mode</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb37d7c4" class="outline-2">
+<h2 id="orgb37d7c4"><span class="section-number-2">2.</span> The solution</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I did a bit digging and came up with this solution. It works pretty well.
+All it does is adding a new option to <code>org-export-with-broken-links</code> called <code>label</code> and provide its content in <code>org-export-resolve-id-link</code>.
+</p>
+
+<p>
+See the <a href={{ "https://github.com/yatsky/org/commit/eab9df3b9234e38dbf3583a783b781034cdfe6e1" | absolute_url }}>commit</a> for a diff view of the changes I did in the following functions.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-export-resolve-id-link</span> <span class="org-rainbow-delimiters-depth-2">(</span>link info<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-doc">"Return headline referenced as LINK destination.</span>
+
+<span class="org-doc">INFO is a plist used as a communication channel.</span>
+
+<span class="org-doc">Return value can be the headline element matched in current parse</span>
+<span class="org-doc">tree or a file name.  Assume LINK type is either \"id\" or</span>
+<span class="org-doc">\"custom-id\".  Throw an error if no match is found."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>id <span class="org-rainbow-delimiters-depth-5">(</span>org-element-property <span class="org-builtin">:path</span> link<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-rainbow-delimiters-depth-4">(</span>contents <span class="org-rainbow-delimiters-depth-5">(</span>car <span class="org-rainbow-delimiters-depth-6">(</span>last link<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-comment-delimiter">;; </span><span class="org-comment">First check if id is within the current parse tree.</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">or</span> <span class="org-rainbow-delimiters-depth-4">(</span>org-element-map <span class="org-rainbow-delimiters-depth-5">(</span>plist-get info <span class="org-builtin">:parse-tree</span><span class="org-rainbow-delimiters-depth-5">)</span> 'headline
+          <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-6">(</span>headline<span class="org-rainbow-delimiters-depth-6">)</span>
+            <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">when</span> <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">or</span> <span class="org-rainbow-delimiters-depth-8">(</span>equal <span class="org-rainbow-delimiters-depth-9">(</span>org-element-property <span class="org-builtin">:ID</span> headline<span class="org-rainbow-delimiters-depth-9">)</span> id<span class="org-rainbow-delimiters-depth-8">)</span>
+                      <span class="org-rainbow-delimiters-depth-8">(</span>equal <span class="org-rainbow-delimiters-depth-9">(</span>org-element-property <span class="org-builtin">:CUSTOM_ID</span> headline<span class="org-rainbow-delimiters-depth-9">)</span> id<span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span>
+              headline<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+          info 'first-match<span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-comment-delimiter">;; </span><span class="org-comment">Otherwise, look for external files.</span>
+        <span class="org-rainbow-delimiters-depth-4">(</span>cdr <span class="org-rainbow-delimiters-depth-5">(</span>assoc id <span class="org-rainbow-delimiters-depth-6">(</span>plist-get info <span class="org-builtin">:id-alist</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-warning">signal</span> 'org-link-broken <span class="org-rainbow-delimiters-depth-5">(</span>list contents<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-export-resolve-id-link</span> <span class="org-rainbow-delimiters-depth-2">(</span>link info<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-doc">"Return headline referenced as LINK destination.</span>
+
+<span class="org-doc">INFO is a plist used as a communication channel.</span>
+
+<span class="org-doc">Return value can be the headline element matched in current parse</span>
+<span class="org-doc">tree or a file name.  Assume LINK type is either \"id\" or</span>
+<span class="org-doc">\"custom-id\".  Throw an error if no match is found."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>id <span class="org-rainbow-delimiters-depth-5">(</span>org-element-property <span class="org-builtin">:path</span> link<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-rainbow-delimiters-depth-4">(</span>contents <span class="org-rainbow-delimiters-depth-5">(</span>car <span class="org-rainbow-delimiters-depth-6">(</span>last
+                        link
+                        <span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-rainbow-delimiters-depth-3">)</span>
+    <span class="org-comment-delimiter">;; </span><span class="org-comment">First check if id is within the current parse tree.</span>
+    <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">or</span> <span class="org-rainbow-delimiters-depth-4">(</span>org-element-map <span class="org-rainbow-delimiters-depth-5">(</span>plist-get info <span class="org-builtin">:parse-tree</span><span class="org-rainbow-delimiters-depth-5">)</span> 'headline
+          <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-6">(</span>headline<span class="org-rainbow-delimiters-depth-6">)</span>
+            <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">when</span> <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">or</span> <span class="org-rainbow-delimiters-depth-8">(</span>equal <span class="org-rainbow-delimiters-depth-9">(</span>org-element-property <span class="org-builtin">:ID</span> headline<span class="org-rainbow-delimiters-depth-9">)</span> id<span class="org-rainbow-delimiters-depth-8">)</span>
+                      <span class="org-rainbow-delimiters-depth-8">(</span>equal <span class="org-rainbow-delimiters-depth-9">(</span>org-element-property <span class="org-builtin">:CUSTOM_ID</span> headline<span class="org-rainbow-delimiters-depth-9">)</span> id<span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span>
+              headline<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+          info 'first-match<span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-comment-delimiter">;; </span><span class="org-comment">Otherwise, look for external files.</span>
+        <span class="org-rainbow-delimiters-depth-4">(</span>cdr <span class="org-rainbow-delimiters-depth-5">(</span>assoc id <span class="org-rainbow-delimiters-depth-6">(</span>plist-get info <span class="org-builtin">:id-alist</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-warning">signal</span> 'org-link-broken <span class="org-rainbow-delimiters-depth-5">(</span>list contents<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">defun</span> <span class="org-function-name">org-export-data</span> <span class="org-rainbow-delimiters-depth-2">(</span>data info<span class="org-rainbow-delimiters-depth-2">)</span>
+  <span class="org-doc">"Convert DATA into current back-end format.</span>
+
+<span class="org-doc">DATA is a parse tree, an element or an object or a secondary</span>
+<span class="org-doc">string.  INFO is a plist holding export options.</span>
+
+<span class="org-doc">Return a string."</span>
+  <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">or</span> <span class="org-rainbow-delimiters-depth-3">(</span>gethash data <span class="org-rainbow-delimiters-depth-4">(</span>plist-get info <span class="org-builtin">:exported-data</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+      <span class="org-comment-delimiter">;; </span><span class="org-comment">Handle broken links according to</span>
+      <span class="org-comment-delimiter">;; </span><span class="org-comment">`</span><span class="org-comment"><span class="org-constant">org-export-with-broken-links</span></span><span class="org-comment">'.</span>
+      <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">cl-macrolet</span>
+          <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-rainbow-delimiters-depth-5">(</span>broken-link-handler
+             <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-type">&amp;rest</span> body<span class="org-rainbow-delimiters-depth-6">)</span>
+             `<span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">condition-case</span> err
+                  <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">progn</span> ,@body<span class="org-rainbow-delimiters-depth-7">)</span>
+                <span class="org-rainbow-delimiters-depth-7">(</span>org-link-broken
+                 <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-keyword">pcase</span> <span class="org-rainbow-delimiters-depth-9">(</span>plist-get info <span class="org-builtin">:with-broken-links</span><span class="org-rainbow-delimiters-depth-9">)</span>
+                   <span class="org-rainbow-delimiters-depth-9">(</span>`nil <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-warning">user-error</span> <span class="org-string">"Unable to resolve link: %S"</span> <span class="org-rainbow-delimiters-depth-2">(</span>nth 1 err<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span>
+                   <span class="org-rainbow-delimiters-depth-9">(</span>`mark <span class="org-rainbow-delimiters-depth-1">(</span>org-export-data
+                           <span class="org-rainbow-delimiters-depth-2">(</span>format <span class="org-string">"[BROKEN LINK: %s]"</span> <span class="org-rainbow-delimiters-depth-3">(</span>nth 1 err<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span> info<span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span>
+                   <span class="org-rainbow-delimiters-depth-9">(</span>`label <span class="org-rainbow-delimiters-depth-1">(</span>org-export-data
+                            <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">progn</span>
+                              <span class="org-rainbow-delimiters-depth-3">(</span>format <span class="org-string">"%s"</span> <span class="org-rainbow-delimiters-depth-4">(</span>nth 1 err<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-warning">info</span><span class="org-warning"><span class="org-rainbow-delimiters-depth-1">)</span></span><span class="org-warning"><span class="org-rainbow-delimiters-depth-9">)</span></span>
+                   <span class="org-rainbow-delimiters-depth-9">(</span>_ nil<span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+        <span class="org-rainbow-delimiters-depth-4">(</span><span class="org-keyword">let*</span> <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-rainbow-delimiters-depth-6">(</span>type <span class="org-rainbow-delimiters-depth-7">(</span>org-element-type data<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span>
+               <span class="org-rainbow-delimiters-depth-6">(</span>parent <span class="org-rainbow-delimiters-depth-7">(</span>org-export-get-parent data<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span>
+               <span class="org-rainbow-delimiters-depth-6">(</span>results
+                <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">cond</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">Ignored element/object.</span>
+                 <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-rainbow-delimiters-depth-9">(</span>memq data <span class="org-rainbow-delimiters-depth-1">(</span>plist-get info <span class="org-builtin">:ignore-list</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span> nil<span class="org-rainbow-delimiters-depth-8">)</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">Raw code.</span>
+                 <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-rainbow-delimiters-depth-9">(</span>eq type 'raw<span class="org-rainbow-delimiters-depth-9">)</span> <span class="org-rainbow-delimiters-depth-9">(</span>car <span class="org-rainbow-delimiters-depth-1">(</span>org-element-contents data<span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">Plain text.</span>
+                 <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-rainbow-delimiters-depth-9">(</span>eq type 'plain-text<span class="org-rainbow-delimiters-depth-9">)</span>
+                  <span class="org-rainbow-delimiters-depth-9">(</span>org-export-filter-apply-functions
+                   <span class="org-rainbow-delimiters-depth-1">(</span>plist-get info <span class="org-builtin">:filter-plain-text</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                   <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">(</span>transcoder <span class="org-rainbow-delimiters-depth-4">(</span>org-export-transcoder data info<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+                     <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">if</span> transcoder <span class="org-rainbow-delimiters-depth-3">(</span>funcall transcoder data info<span class="org-rainbow-delimiters-depth-3">)</span> data<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                   info<span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">Secondary string.</span>
+                 <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-rainbow-delimiters-depth-9">(</span>not type<span class="org-rainbow-delimiters-depth-9">)</span>
+                  <span class="org-rainbow-delimiters-depth-9">(</span>mapconcat <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-2">(</span>obj<span class="org-rainbow-delimiters-depth-2">)</span> <span class="org-rainbow-delimiters-depth-2">(</span>org-export-data obj info<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span> data <span class="org-string">""</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">Element/Object without contents or, as a special</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">case, headline with archive tag and archived trees</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">restricted to title only.</span>
+                 <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-rainbow-delimiters-depth-9">(</span><span class="org-keyword">or</span> <span class="org-rainbow-delimiters-depth-1">(</span>not <span class="org-rainbow-delimiters-depth-2">(</span>org-element-contents data<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                      <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">and</span> <span class="org-rainbow-delimiters-depth-2">(</span>eq type 'headline<span class="org-rainbow-delimiters-depth-2">)</span>
+                           <span class="org-rainbow-delimiters-depth-2">(</span>eq <span class="org-rainbow-delimiters-depth-3">(</span>plist-get info <span class="org-builtin">:with-archived-trees</span><span class="org-rainbow-delimiters-depth-3">)</span> 'headline<span class="org-rainbow-delimiters-depth-2">)</span>
+                           <span class="org-rainbow-delimiters-depth-2">(</span>org-element-property <span class="org-builtin">:archivedp</span> data<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span>
+                  <span class="org-rainbow-delimiters-depth-9">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">(</span>transcoder <span class="org-rainbow-delimiters-depth-3">(</span>org-export-transcoder data info<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                    <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">or</span> <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">and</span> <span class="org-rainbow-delimiters-depth-3">(</span>functionp transcoder<span class="org-rainbow-delimiters-depth-3">)</span>
+                             <span class="org-rainbow-delimiters-depth-3">(</span>broken-link-handler
+                              <span class="org-rainbow-delimiters-depth-4">(</span>funcall transcoder data nil info<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+                        <span class="org-comment-delimiter">;; </span><span class="org-comment">Export snippets never return a nil value so</span>
+                        <span class="org-comment-delimiter">;; </span><span class="org-comment">that white spaces following them are never</span>
+                        <span class="org-comment-delimiter">;; </span><span class="org-comment">ignored.</span>
+                        <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">and</span> <span class="org-rainbow-delimiters-depth-3">(</span>eq type 'export-snippet<span class="org-rainbow-delimiters-depth-3">)</span> <span class="org-string">""</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">Element/Object with contents.</span>
+                 <span class="org-rainbow-delimiters-depth-8">(</span>t
+                  <span class="org-rainbow-delimiters-depth-9">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">(</span>transcoder <span class="org-rainbow-delimiters-depth-3">(</span>org-export-transcoder data info<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                    <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">when</span> transcoder
+                      <span class="org-rainbow-delimiters-depth-2">(</span><span class="org-keyword">let*</span> <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-rainbow-delimiters-depth-4">(</span>greaterp <span class="org-rainbow-delimiters-depth-5">(</span>memq type org-element-greater-elements<span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+                             <span class="org-rainbow-delimiters-depth-4">(</span>objectp
+                              <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">and</span> <span class="org-rainbow-delimiters-depth-6">(</span>not greaterp<span class="org-rainbow-delimiters-depth-6">)</span>
+                                   <span class="org-rainbow-delimiters-depth-6">(</span>memq type org-element-recursive-objects<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span>
+                             <span class="org-rainbow-delimiters-depth-4">(</span>contents
+                              <span class="org-rainbow-delimiters-depth-5">(</span>mapconcat
+                               <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">lambda</span> <span class="org-rainbow-delimiters-depth-7">(</span>element<span class="org-rainbow-delimiters-depth-7">)</span> <span class="org-rainbow-delimiters-depth-7">(</span>org-export-data element info<span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span>
+                               <span class="org-rainbow-delimiters-depth-6">(</span>org-element-contents
+                                <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-8">(</span><span class="org-keyword">or</span> greaterp objectp<span class="org-rainbow-delimiters-depth-8">)</span> data
+                                  <span class="org-comment-delimiter">;; </span><span class="org-comment">Elements directly containing</span>
+                                  <span class="org-comment-delimiter">;; </span><span class="org-comment">objects must have their indentation</span>
+                                  <span class="org-comment-delimiter">;; </span><span class="org-comment">normalized first.</span>
+                                  <span class="org-rainbow-delimiters-depth-8">(</span>org-element-normalize-contents
+                                   data
+                                   <span class="org-comment-delimiter">;; </span><span class="org-comment">When normalizing first paragraph</span>
+                                   <span class="org-comment-delimiter">;; </span><span class="org-comment">of an item or</span>
+                                   <span class="org-comment-delimiter">;; </span><span class="org-comment">a footnote-definition, ignore</span>
+                                   <span class="org-comment-delimiter">;; </span><span class="org-comment">first line's indentation.</span>
+                                   <span class="org-rainbow-delimiters-depth-9">(</span><span class="org-keyword">and</span>
+                                    <span class="org-rainbow-delimiters-depth-1">(</span>eq type 'paragraph<span class="org-rainbow-delimiters-depth-1">)</span>
+                                    <span class="org-rainbow-delimiters-depth-1">(</span>memq <span class="org-rainbow-delimiters-depth-2">(</span>org-element-type parent<span class="org-rainbow-delimiters-depth-2">)</span>
+                                          '<span class="org-rainbow-delimiters-depth-2">(</span>footnote-definition item<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                                    <span class="org-rainbow-delimiters-depth-1">(</span>eq <span class="org-rainbow-delimiters-depth-2">(</span>car <span class="org-rainbow-delimiters-depth-3">(</span>org-element-contents parent<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+                                        data<span class="org-rainbow-delimiters-depth-1">)</span>
+                                    <span class="org-rainbow-delimiters-depth-1">(</span>eq <span class="org-rainbow-delimiters-depth-2">(</span>org-element-property <span class="org-builtin">:pre-blank</span> parent<span class="org-rainbow-delimiters-depth-2">)</span>
+                                        0<span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span>
+                               <span class="org-string">""</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span>
+                        <span class="org-rainbow-delimiters-depth-3">(</span>broken-link-handler
+                         <span class="org-rainbow-delimiters-depth-4">(</span>funcall transcoder data
+                                  <span class="org-rainbow-delimiters-depth-5">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-6">(</span>not greaterp<span class="org-rainbow-delimiters-depth-6">)</span> contents
+                                    <span class="org-rainbow-delimiters-depth-6">(</span>org-element-normalize-string contents<span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+                                  info<span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span>
+          <span class="org-comment-delimiter">;; </span><span class="org-comment">Final result will be memoized before being returned.</span>
+          <span class="org-rainbow-delimiters-depth-5">(</span>puthash
+           data
+           <span class="org-rainbow-delimiters-depth-6">(</span><span class="org-keyword">cond</span>
+            <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-rainbow-delimiters-depth-8">(</span>not results<span class="org-rainbow-delimiters-depth-8">)</span> <span class="org-string">""</span><span class="org-rainbow-delimiters-depth-7">)</span>
+            <span class="org-rainbow-delimiters-depth-7">(</span><span class="org-rainbow-delimiters-depth-8">(</span>memq type '<span class="org-rainbow-delimiters-depth-9">(</span>nil org-data plain-text raw<span class="org-rainbow-delimiters-depth-9">)</span><span class="org-rainbow-delimiters-depth-8">)</span> results<span class="org-rainbow-delimiters-depth-7">)</span>
+            <span class="org-comment-delimiter">;; </span><span class="org-comment">Append the same white space between elements or objects</span>
+            <span class="org-comment-delimiter">;; </span><span class="org-comment">as in the original buffer, and call appropriate filters.</span>
+            <span class="org-rainbow-delimiters-depth-7">(</span>t
+             <span class="org-rainbow-delimiters-depth-8">(</span>org-export-filter-apply-functions
+              <span class="org-rainbow-delimiters-depth-9">(</span>plist-get info <span class="org-rainbow-delimiters-depth-1">(</span>intern <span class="org-rainbow-delimiters-depth-2">(</span>format <span class="org-string">":filter-%s"</span> type<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span>
+              <span class="org-rainbow-delimiters-depth-9">(</span><span class="org-keyword">let</span> <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">(</span>blank <span class="org-rainbow-delimiters-depth-3">(</span><span class="org-keyword">or</span> <span class="org-rainbow-delimiters-depth-4">(</span>org-element-property <span class="org-builtin">:post-blank</span> data<span class="org-rainbow-delimiters-depth-4">)</span> 0<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                <span class="org-rainbow-delimiters-depth-1">(</span><span class="org-keyword">if</span> <span class="org-rainbow-delimiters-depth-2">(</span>eq <span class="org-rainbow-delimiters-depth-3">(</span>org-element-class data parent<span class="org-rainbow-delimiters-depth-3">)</span> 'object<span class="org-rainbow-delimiters-depth-2">)</span>
+                    <span class="org-rainbow-delimiters-depth-2">(</span>concat results <span class="org-rainbow-delimiters-depth-3">(</span>make-string blank ?\s<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span>
+                  <span class="org-rainbow-delimiters-depth-2">(</span>concat <span class="org-rainbow-delimiters-depth-3">(</span>org-element-normalize-string results<span class="org-rainbow-delimiters-depth-3">)</span>
+                          <span class="org-rainbow-delimiters-depth-3">(</span>make-string blank ?\n<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span><span class="org-rainbow-delimiters-depth-9">)</span>
+              info<span class="org-rainbow-delimiters-depth-8">)</span><span class="org-rainbow-delimiters-depth-7">)</span><span class="org-rainbow-delimiters-depth-6">)</span>
+           <span class="org-rainbow-delimiters-depth-6">(</span>plist-get info <span class="org-builtin">:exported-data</span><span class="org-rainbow-delimiters-depth-6">)</span><span class="org-rainbow-delimiters-depth-5">)</span><span class="org-rainbow-delimiters-depth-4">)</span><span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+</pre>
+</div>
+</div>
+</div>
