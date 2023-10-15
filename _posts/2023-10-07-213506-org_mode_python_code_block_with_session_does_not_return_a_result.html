@@ -1,0 +1,89 @@
+---
+layout: post
+title: "Org mode python code block with session does not return a failed result"
+excerpt: "The following fails in [[id:6460f771-fc41-4b14-b7b0-a06416e628eb][org mode]] but never tells you that it failed!
+
+"
+modified_date: 2023/10/07/22:30
+---
+
+<div id="outline-container-org47d10b9" class="outline-2">
+<h2 id="org47d10b9"><span class="section-number-2">1.</span> Symptom</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The following fails in [BROKEN LINK: 6460f771-fc41-4b14-b7b0-a06416e628eb] but never tells you that it failed!
+</p>
+
+<p>
+Basically this is caused by having <code>:session</code> argument in the source block somehow.
+</p>
+
+<p>
+I spent quite some time on Googling this but didn't find anything useful.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>failed but no prompt</label><pre class="src src-python" id="org2a8c95e"><span class="org-tree-sitter-hl-faceXfunctionXcall">prin</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"fail me!"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge7c6efa" class="outline-2">
+<h2 id="orge7c6efa"><span class="section-number-2">2.</span> Solution</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I found this <a href={{ "https://emacs-china.org/t/python-code-block/395" | absolute_url }}>post</a> on Emacs China that hinted there's a corresponding buffer for the session. 
+</p>
+
+<p>
+I didn't know this! There's a temp buffer created by using the session name defined in the code block :facepalm:. The temp buffer handles the running python session.
+</p>
+
+<p>
+Just search for the buffer and you'll see the error. For example, if your session name is <i>my</i>, then the buffer name is <i><b>my</b></i>.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>7E3F6DAD-66BB-4210-B2E0-171CFFAC1770</label><pre class="src src-python" id="orge4fe908"><span class="org-tree-sitter-hl-faceXkeyword">class</span> <span class="org-tree-sitter-hl-faceXconstructor">Test</span>:
+    <span class="org-tree-sitter-hl-faceXkeyword">def</span> <span class="org-tree-sitter-hl-faceXfunction"><span class="org-tree-sitter-hl-faceXmethod">m1</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXvariableXparameter"><span class="org-tree-sitter-hl-faceXkeyword">self</span></span><span class="org-rainbow-delimiters-depth-1">)</span>:
+        <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"m1"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+    <span class="org-tree-sitter-hl-faceXkeyword">def</span> <span class="org-tree-sitter-hl-faceXfunction"><span class="org-tree-sitter-hl-faceXmethod">m2</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXvariableXparameter"><span class="org-tree-sitter-hl-faceXkeyword">self</span></span><span class="org-rainbow-delimiters-depth-1">)</span>:
+        <span class="org-tree-sitter-hl-faceXkeyword">pass</span>
+<span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXconstructor">Test</span></span><span class="org-rainbow-delimiters-depth-1">()</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">m1</span></span><span class="org-rainbow-delimiters-depth-1">()</span>
+</pre>
+</div>
+
+<pre class="example">
+m1
+</pre>
+
+
+<p>
+Now I know where to look for the error but it'd still be great if the error can be printed into the results block. But that's the investigation for another day I guess
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc42de23" class="outline-2">
+<h2 id="orgc42de23"><span class="section-number-2">3.</span> Sources</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The hint post:
+<a href={{ "https://emacs-china.org/t/python-code-block/395" | absolute_url }}>https://emacs-china.org/t/python-code-block/395</a>
+</p>
+
+<p>
+This might be useful for future investigation:
+<a href={{ "https://emacs.stackexchange.com/questions/59875/org-src-block-does-not-return-any-output" | absolute_url }}>https://emacs.stackexchange.com/questions/59875/org-src-block-does-not-return-any-output</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgac3ed09" class="outline-2">
+<h2 id="orgac3ed09"><span class="section-number-2">4.</span> Log time</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>

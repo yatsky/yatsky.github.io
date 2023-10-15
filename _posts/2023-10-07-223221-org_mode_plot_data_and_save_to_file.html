@@ -1,0 +1,44 @@
+---
+layout: post
+title: "org mode plot data and save to file"
+excerpt: "Properly plot data in [[id:6460f771-fc41-4b14-b7b0-a06416e628eb][org mode]] with version <= 9.6. I was doing it manually by plotting it and screenshot the plot.
+
+"
+modified_date: 2023/10/08/09:33
+---
+
+<p>
+Properly plot data in org mode with version &lt;= 9.6. I was doing it manually by plotting it and screenshot the plot.
+</p>
+
+<p>
+This saves a lot of time and streamlines my workflow.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-tree-sitter-hl-faceXkeyword">import</span> matplotlib.pyplot <span class="org-tree-sitter-hl-faceXkeyword">as</span> plt
+
+<span class="org-tree-sitter-hl-faceXvariable">fig</span><span class="org-tree-sitter-hl-faceXoperator">=</span>plt.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">figure</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXlabel">figsize</span><span class="org-tree-sitter-hl-faceXoperator">=</span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-tree-sitter-hl-faceXnumber">3</span>,<span class="org-tree-sitter-hl-faceXnumber">2</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+plt.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">plot</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-rainbow-delimiters-depth-2">[</span><span class="org-tree-sitter-hl-faceXnumber">1</span>,<span class="org-tree-sitter-hl-faceXnumber">3</span>,<span class="org-tree-sitter-hl-faceXnumber">2</span><span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+fig.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">tight_layout</span></span><span class="org-rainbow-delimiters-depth-1">()</span>
+
+<span class="org-tree-sitter-hl-faceXvariable">fname</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">'images/myfig.jpg'</span>
+plt.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">savefig</span></span><span class="org-rainbow-delimiters-depth-1">(</span>fname<span class="org-rainbow-delimiters-depth-1">)</span>
+fname <span class="org-tree-sitter-hl-faceXcomment"># return this to org-mode</span>
+</pre>
+</div>
+
+
+<figure id="orgf5f9532">
+<img src={{ "assets/images/myfig.jpg" || absolute_url }} alt="myfig.jpg">
+
+</figure>
+
+<div id="outline-container-org98c6df2" class="outline-2">
+<h2 id="org98c6df2"><span class="section-number-2">1.</span> Source</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href={{ "https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html" | absolute_url }}>https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html</a>
+</p>
+</div>
+</div>
