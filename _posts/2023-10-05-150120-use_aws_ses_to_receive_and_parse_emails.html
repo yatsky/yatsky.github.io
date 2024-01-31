@@ -1,0 +1,303 @@
+---
+layout: post
+title: "Use AWS SES to receive and parse emails"
+excerpt: "Use [[id:076ee161-8194-4860-895e-e2346436cf7f][AWS SES]] to receive emails and save attachments to an [[id:de2a176e-3c76-475f-852f-325b3fdb4201][AWS S3]] bucket.
+"
+modified_date: 2024/01/31/21:38
+---
+
+
+<div id="outline-container-org7aba332" class="outline-2">
+<h2 id="org7aba332"><span class="section-number-2">1.</span> Goal</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Use <a href={{ "2021/07/16/163135-aws_ses.html#ID-076ee161-8194-4860-895e-e2346436cf7f" | absolute_url }}>AWS SES</a> to receive emails and save attachments to an <a href={{ "2021/07/16/160046-aws_s3.html#ID-de2a176e-3c76-475f-852f-325b3fdb4201" | absolute_url }}>AWS S3</a> bucket.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org35e1116" class="outline-2">
+<h2 id="org35e1116"><span class="section-number-2">2.</span> Steps</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org8d8911f" class="outline-3">
+<h3 id="org8d8911f"><span class="section-number-3">2.1.</span> create an identity for a domain or subdomain</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+<b>You cannot use an existing email address because that would imply it's already managed by some other email service.</b>
+</p>
+
+<p>
+This domain/subdomain identity will be able to act as domain for a new email address to be managed by AWS SES.
+</p>
+
+
+<figure id="orgb616003">
+<img src={{ "assets/images/20231005-150701_screenshot.jpeg" || absolute_url }} alt="20231005-150701_screenshot.jpeg">
+
+</figure>
+
+<p>
+Because my domain is managed by <a href={{ "2021/04/07/135342-route53.html#ID-fb95564f-da66-42ea-bbd5-1956143d686b" | absolute_url }}>Route53</a>, I only need to fill in the domain I want to use and continue.
+Wait for a couple of minutes and it will automatically verify the [BROKEN LINK: CD627649-6E9F-46EB-AE68-5FB8F43B994E] settings.           
+</p>
+
+
+<figure id="orgc14c02d">
+<img src={{ "assets/images/20231005-150806_screenshot.jpeg" || absolute_url }} alt="20231005-150806_screenshot.jpeg">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org151027f" class="outline-3">
+<h3 id="org151027f"><span class="section-number-3">2.2.</span> Publishing an MX record for Amazon SES email receiving</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Get the SES endpoint for receiving the email. In my case it's: <code>inbound-smtp.ap-southeast-2.amazonaws.com</code>
+.
+</p>
+
+<p>
+Create an [BROKEN LINK: CB40B160-9D7A-4BEC-BD85-F409B72E6F68] record. Record name should be your domain/subdomain.
+</p>
+
+
+<figure id="orga78cc8b">
+<img src={{ "assets/images/20231005-151333_screenshot.jpeg" || absolute_url }} alt="20231005-151333_screenshot.jpeg">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org4a93079" class="outline-3">
+<h3 id="org4a93079"><span class="section-number-3">2.3.</span> Giving permissions to Amazon SES for email receiving</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Attach the following policy to the <a href={{ "2021/07/16/160046-aws_s3.html#ID-de2a176e-3c76-475f-852f-325b3fdb4201" | absolute_url }}>AWS S3</a> bucket you want to put the emails in.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-1">{</span></span>
+  <span class="org-tree-sitter-hl-faceXstring">"Version"</span>:<span class="org-tree-sitter-hl-faceXstring">"2012-10-17"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span>
+  <span class="org-tree-sitter-hl-faceXstring">"Statement"</span>:<span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-2">[</span></span>
+    <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-3">{</span></span>
+      <span class="org-tree-sitter-hl-faceXstring">"Sid"</span>:<span class="org-tree-sitter-hl-faceXstring">"AllowSESPuts"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span>
+      <span class="org-tree-sitter-hl-faceXstring">"Effect"</span>:<span class="org-tree-sitter-hl-faceXstring">"Allow"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span>
+      <span class="org-tree-sitter-hl-faceXstring">"Principal"</span>:<span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">{</span></span>
+        <span class="org-tree-sitter-hl-faceXstring">"Service"</span>:<span class="org-tree-sitter-hl-faceXstring">"ses.amazonaws.com"</span>
+      <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">}</span></span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span>
+      <span class="org-tree-sitter-hl-faceXstring">"Action"</span>:<span class="org-tree-sitter-hl-faceXstring">"s3:PutObject"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span>
+      <span class="org-tree-sitter-hl-faceXstring">"Resource"</span>:<span class="org-tree-sitter-hl-faceXstring">"arn:aws:s3:::bucket-name/*"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span>
+      <span class="org-tree-sitter-hl-faceXstring">"Condition"</span>:<span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">{</span></span>
+        <span class="org-tree-sitter-hl-faceXstring">"StringEquals"</span>:<span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-5">{</span></span>
+          <span class="org-tree-sitter-hl-faceXstring">"AWS:SourceAccount"</span>:<span class="org-tree-sitter-hl-faceXstring">"account-number"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span>
+          <span class="org-tree-sitter-hl-faceXstring">"AWS:SourceArn"</span>: <span class="org-tree-sitter-hl-faceXstring">"arn:aws:ses:ap-southeast-2:account-number:receipt-rule-set/tax-invoices:receipt-rule/forward-attachment"</span>
+        <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-5">}</span></span>
+      <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">}</span></span>
+    <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-3">}</span></span>
+  <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-2">]</span></span>
+<span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-1">}</span></span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org556d691" class="outline-3">
+<h3 id="org556d691"><span class="section-number-3">2.4.</span> Add lambda function to process the attachment</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+sample event
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-1">{</span></span><span class="org-tree-sitter-hl-faceXstring">"Records"</span>: <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-2">[</span></span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-3">{</span></span><span class="org-tree-sitter-hl-faceXstring">"eventVersion"</span>: <span class="org-tree-sitter-hl-faceXstring">"2.1"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"eventSource"</span>: <span class="org-tree-sitter-hl-faceXstring">"aws:s3"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"awsRegion"</span>: <span class="org-tree-sitter-hl-faceXstring">"ap-southeast-2"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"eventTime"</span>: <span class="org-tree-sitter-hl-faceXstring">"2023-10-05T04:57:40.171Z"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"eventName"</span>: <span class="org-tree-sitter-hl-faceXstring">"ObjectCreated:Put"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"userIdentity"</span>: <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">{</span></span><span class="org-tree-sitter-hl-faceXstring">"principalId"</span>: <span class="org-tree-sitter-hl-faceXstring">"AWS:ZXC2IU3VLCK5RY5:a41bc866759cc95c7330a"</span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">}</span></span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"requestParameters"</span>: <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">{</span></span><span class="org-tree-sitter-hl-faceXstring">"sourceIPAddress"</span>: <span class="org-tree-sitter-hl-faceXstring">"101.0.4.6"</span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">}</span></span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"responseElements"</span>: <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">{</span></span><span class="org-tree-sitter-hl-faceXstring">"x-amz-request-id"</span>: <span class="org-tree-sitter-hl-faceXstring">"6TS8WGRDNT4T3P5T"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"x-amz-id-2"</span>: <span class="org-tree-sitter-hl-faceXstring">"4RuZDptjBdMxsC3"</span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">}</span></span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"s3"</span>: <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">{</span></span><span class="org-tree-sitter-hl-faceXstring">"s3SchemaVersion"</span>: <span class="org-tree-sitter-hl-faceXstring">"1.0"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"configurationId"</span>: <span class="org-tree-sitter-hl-faceXstring">"7b22853"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"bucket"</span>: <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-5">{</span></span><span class="org-tree-sitter-hl-faceXstring">"name"</span>: <span class="org-tree-sitter-hl-faceXstring">"bucket-name"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"ownerIdentity"</span>: <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-6">{</span></span><span class="org-tree-sitter-hl-faceXstring">"principalId"</span>: <span class="org-tree-sitter-hl-faceXstring">"8Z"</span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-6">}</span></span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"arn"</span>: <span class="org-tree-sitter-hl-faceXstring">"arn:aws:s3:::bucket-name"</span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-5">}</span></span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"object"</span>: <span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-5">{</span></span><span class="org-tree-sitter-hl-faceXstring">"key"</span>: <span class="org-tree-sitter-hl-faceXstring">"email/tax/82ghepkvblmfnh81"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"size"</span>: <span class="org-tree-sitter-hl-faceXstring">"285170"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"eTag"</span>: <span class="org-tree-sitter-hl-faceXstring">"cb607b6f486ae754444e"</span><span class="org-tree-sitter-hl-faceXpunctuationXdelimiter">,</span> <span class="org-tree-sitter-hl-faceXstring">"sequencer"</span>: <span class="org-tree-sitter-hl-faceXstring">"41F793986"</span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-5">}</span></span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-4">}</span></span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-3">}</span></span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-2">]</span></span><span class="org-tree-sitter-hl-faceXpunctuationXbracket"><span class="org-rainbow-delimiters-depth-1">}</span></span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-tree-sitter-hl-faceXkeyword">from</span> email.message <span class="org-tree-sitter-hl-faceXkeyword">import</span> <span class="org-tree-sitter-hl-faceXconstructor">MIMEPart</span>
+<span class="org-tree-sitter-hl-faceXkeyword">import</span> email
+<span class="org-tree-sitter-hl-faceXkeyword">import</span> zipfile
+<span class="org-tree-sitter-hl-faceXkeyword">import</span> os
+<span class="org-tree-sitter-hl-faceXkeyword">import</span> gzip
+<span class="org-tree-sitter-hl-faceXkeyword">import</span> string
+<span class="org-tree-sitter-hl-faceXkeyword">import</span> boto3
+<span class="org-tree-sitter-hl-faceXkeyword">import</span> urllib
+<span class="org-tree-sitter-hl-faceXkeyword">import</span> email.utils
+
+<span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">'Loading function'</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+<span class="org-tree-sitter-hl-faceXvariable">s3</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> boto3.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">client</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">'s3'</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-tree-sitter-hl-faceXvariable">s3r</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> boto3.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">resource</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">'s3'</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-tree-sitter-hl-faceXvariable">tmp_dir</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">"/tmp/output/"</span>
+
+<span class="org-tree-sitter-hl-faceXvariable">output_bucket</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">"bucket-name"</span>
+
+<span class="org-tree-sitter-hl-faceXconstructor"><span class="org-tree-sitter-hl-faceXconstant"><span class="org-tree-sitter-hl-faceXvariable">TAX_INVOICE_MAILBOX</span></span></span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">'tax-stuff@domain'</span>
+<span class="org-tree-sitter-hl-faceXconstructor"><span class="org-tree-sitter-hl-faceXconstant"><span class="org-tree-sitter-hl-faceXvariable">PRIVATE_INVOICE_MAILBOX</span></span></span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">'private-stuff@domain'</span>
+
+
+<span class="org-tree-sitter-hl-faceXkeyword">def</span> <span class="org-tree-sitter-hl-faceXfunction">get_mailbox</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXvariableXparameter">msg</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+    <span class="org-tree-sitter-hl-faceXvariable">mailbox</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> email.<span class="org-tree-sitter-hl-faceXproperty">utils</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">parseaddr</span></span><span class="org-rainbow-delimiters-depth-1">(</span>msg.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get</span></span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-tree-sitter-hl-faceXstring">"To"</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)[</span><span class="org-tree-sitter-hl-faceXnumber">1</span><span class="org-rainbow-delimiters-depth-1">]</span>
+    <span class="org-tree-sitter-hl-faceXkeyword">return</span> mailbox
+
+
+<span class="org-tree-sitter-hl-faceXkeyword">def</span> <span class="org-tree-sitter-hl-faceXfunction">extract_attachment</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXvariableXparameter">attachment</span>, <span class="org-tree-sitter-hl-faceXvariableXparameter">attachment_name</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+    <span class="org-tree-sitter-hl-faceXvariable">file_path</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> tmp_dir <span class="org-tree-sitter-hl-faceXoperator">+</span> attachment_name
+    <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">open</span></span><span class="org-rainbow-delimiters-depth-1">(</span>file_path, <span class="org-tree-sitter-hl-faceXstring">'wb'</span><span class="org-rainbow-delimiters-depth-1">)</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">write</span></span><span class="org-rainbow-delimiters-depth-1">(</span>attachment.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get_payload</span></span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-tree-sitter-hl-faceXlabel">decode</span><span class="org-tree-sitter-hl-faceXoperator">=</span><span class="org-tree-sitter-hl-faceXconstantXbuiltin">True</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+    <span class="org-tree-sitter-hl-faceXkeyword">return</span> file_path
+
+
+<span class="org-tree-sitter-hl-faceXkeyword">def</span> <span class="org-tree-sitter-hl-faceXfunction">upload_resulting_files_to_s3</span><span class="org-rainbow-delimiters-depth-1">(</span>
+    <span class="org-tree-sitter-hl-faceXvariableXparameter">mailbox</span>, <span class="org-tree-sitter-hl-faceXvariableXparameter">file_path</span>, <span class="org-tree-sitter-hl-faceXvariableXparameter">msg_date</span>, <span class="org-tree-sitter-hl-faceXvariableXparameter">file_name_custom_prefix</span><span class="org-tree-sitter-hl-faceXoperator">=</span><span class="org-tree-sitter-hl-faceXstring">""</span>
+<span class="org-rainbow-delimiters-depth-1">)</span>:
+    <span class="org-tree-sitter-hl-faceXcomment"># Put all XML back into S3 (Covers non-compliant cases if a ZIP contains multiple results)</span>
+    <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"Uploading: "</span> <span class="org-tree-sitter-hl-faceXoperator">+</span> file_path<span class="org-rainbow-delimiters-depth-1">)</span>  <span class="org-tree-sitter-hl-faceXcomment"># File name to upload</span>
+    <span class="org-tree-sitter-hl-faceXvariable">file_name</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> file_path.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">split</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">'/'</span><span class="org-rainbow-delimiters-depth-1">)[</span><span class="org-tree-sitter-hl-faceXoperator">-</span><span class="org-tree-sitter-hl-faceXnumber">1</span><span class="org-rainbow-delimiters-depth-1">]</span>
+    <span class="org-tree-sitter-hl-faceXkeyword">if</span> <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">len</span></span><span class="org-rainbow-delimiters-depth-1">(</span>file_name_custom_prefix<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-tree-sitter-hl-faceXoperator">&gt;</span> <span class="org-tree-sitter-hl-faceXnumber">0</span>:
+        <span class="org-tree-sitter-hl-faceXvariable">file_name</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">f"</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">file_name_custom_prefix</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">-</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">file_name</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">"</span>
+
+    <span class="org-tree-sitter-hl-faceXvariable">output_prefix</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">f"invoice"</span>
+    <span class="org-tree-sitter-hl-faceXkeyword">if</span> mailbox <span class="org-tree-sitter-hl-faceXoperator">==</span> <span class="org-tree-sitter-hl-faceXconstructor"><span class="org-tree-sitter-hl-faceXconstant">TAX_INVOICE_MAILBOX</span></span>:
+        <span class="org-tree-sitter-hl-faceXvariable">output_prefix</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">f'</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">output_prefix</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">/tax'</span>
+    <span class="org-tree-sitter-hl-faceXkeyword">else</span>:
+        <span class="org-tree-sitter-hl-faceXvariable">output_prefix</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">f'</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">output_prefix</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">/private'</span>
+    <span class="org-tree-sitter-hl-faceXvariable">output_prefix</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">f"</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">output_prefix</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">/</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded"><span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">str</span></span></span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">(msg_date.</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded"><span class="org-tree-sitter-hl-faceXproperty">year</span></span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">)</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">/</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded"><span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">str</span></span></span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">(msg_date.</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded"><span class="org-tree-sitter-hl-faceXproperty">month</span></span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">)</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">"</span>
+    s3r.<span class="org-tree-sitter-hl-faceXproperty">meta</span>.<span class="org-tree-sitter-hl-faceXproperty">client</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">upload_file</span></span><span class="org-rainbow-delimiters-depth-1">(</span>
+        file_path, output_bucket, <span class="org-tree-sitter-hl-faceXstring">f"</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">output_prefix</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">/</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">file_name</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">"</span>
+    <span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+<span class="org-tree-sitter-hl-faceXkeyword">def</span> <span class="org-tree-sitter-hl-faceXfunction">get_attachment_name</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXvariableXparameter">msg</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+    <span class="org-tree-sitter-hl-faceXvariable">attachment_name</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">"default_name"</span>
+    <span class="org-tree-sitter-hl-faceXkeyword">if</span> msg.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">is_multipart</span></span><span class="org-rainbow-delimiters-depth-1">()</span>:
+        <span class="org-tree-sitter-hl-faceXkeyword">for</span> <span class="org-tree-sitter-hl-faceXvariable">part</span> <span class="org-tree-sitter-hl-faceXoperator">in</span> msg.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">walk</span></span><span class="org-rainbow-delimiters-depth-1">()</span>:
+            <span class="org-tree-sitter-hl-faceXvariable">content_disposition</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> part.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"Content-Disposition"</span>, <span class="org-tree-sitter-hl-faceXstring">""</span><span class="org-rainbow-delimiters-depth-1">)</span>
+            <span class="org-tree-sitter-hl-faceXkeyword">if</span> content_disposition.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">startswith</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"attachment"</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+                <span class="org-tree-sitter-hl-faceXvariable">attachment_name</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> part.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get_filename</span></span><span class="org-rainbow-delimiters-depth-1">()</span>
+            <span class="org-tree-sitter-hl-faceXkeyword">elif</span> content_disposition.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">startswith</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"inline"</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+                <span class="org-tree-sitter-hl-faceXvariable">attachment_name</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> part.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get_filename</span></span><span class="org-rainbow-delimiters-depth-1">()</span>
+                <span class="org-tree-sitter-hl-faceXcomment"># additional handling for inline attachments if needed</span>
+            <span class="org-tree-sitter-hl-faceXkeyword">else</span>:
+                <span class="org-tree-sitter-hl-faceXcomment"># handle other content types if needed</span>
+                <span class="org-tree-sitter-hl-faceXkeyword">pass</span>
+    <span class="org-tree-sitter-hl-faceXkeyword">else</span>:
+        <span class="org-tree-sitter-hl-faceXcomment"># handle single part email if needed</span>
+        <span class="org-tree-sitter-hl-faceXkeyword">pass</span>
+    <span class="org-tree-sitter-hl-faceXkeyword">return</span> attachment_name
+
+
+<span class="org-tree-sitter-hl-faceXcomment"># Delete the file in the current bucket</span>
+<span class="org-tree-sitter-hl-faceXkeyword">def</span> <span class="org-tree-sitter-hl-faceXfunction">delete_file</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXvariableXparameter">key</span>, <span class="org-tree-sitter-hl-faceXvariableXparameter">bucket</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+    s3.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">delete_object</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXconstructor"><span class="org-tree-sitter-hl-faceXlabel">Bucket</span></span><span class="org-tree-sitter-hl-faceXoperator">=</span>bucket, <span class="org-tree-sitter-hl-faceXconstructor"><span class="org-tree-sitter-hl-faceXlabel">Key</span></span><span class="org-tree-sitter-hl-faceXoperator">=</span>key<span class="org-rainbow-delimiters-depth-1">)</span>
+    <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"%s deleted fom %s "</span><span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-tree-sitter-hl-faceXoperator">%</span> <span class="org-rainbow-delimiters-depth-1">(</span>key, bucket<span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+<span class="org-tree-sitter-hl-faceXkeyword">def</span> <span class="org-tree-sitter-hl-faceXfunction">lambda_handler</span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXvariableXparameter">event</span>, <span class="org-tree-sitter-hl-faceXvariableXparameter">context</span><span class="org-rainbow-delimiters-depth-1">)</span>:
+    <span class="org-tree-sitter-hl-faceXvariable">bucket</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> event<span class="org-rainbow-delimiters-depth-1">[</span><span class="org-tree-sitter-hl-faceXstring">'Records'</span><span class="org-rainbow-delimiters-depth-1">][</span><span class="org-tree-sitter-hl-faceXnumber">0</span><span class="org-rainbow-delimiters-depth-1">][</span><span class="org-tree-sitter-hl-faceXstring">'s3'</span><span class="org-rainbow-delimiters-depth-1">][</span><span class="org-tree-sitter-hl-faceXstring">'bucket'</span><span class="org-rainbow-delimiters-depth-1">][</span><span class="org-tree-sitter-hl-faceXstring">'name'</span><span class="org-rainbow-delimiters-depth-1">]</span>
+    <span class="org-tree-sitter-hl-faceXvariable">key</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> urllib.<span class="org-tree-sitter-hl-faceXproperty">parse</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">unquote_plus</span></span><span class="org-rainbow-delimiters-depth-1">(</span>event<span class="org-rainbow-delimiters-depth-2">[</span><span class="org-tree-sitter-hl-faceXstring">'Records'</span><span class="org-rainbow-delimiters-depth-2">][</span><span class="org-tree-sitter-hl-faceXnumber">0</span><span class="org-rainbow-delimiters-depth-2">][</span><span class="org-tree-sitter-hl-faceXstring">'s3'</span><span class="org-rainbow-delimiters-depth-2">][</span><span class="org-tree-sitter-hl-faceXstring">'object'</span><span class="org-rainbow-delimiters-depth-2">][</span><span class="org-tree-sitter-hl-faceXstring">'key'</span><span class="org-rainbow-delimiters-depth-2">]</span><span class="org-rainbow-delimiters-depth-1">)</span>
+    <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">f"bucket: </span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">bucket</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+    <span class="org-tree-sitter-hl-faceXkeyword">try</span>:
+        <span class="org-tree-sitter-hl-faceXvariable">response</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> s3r.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall"><span class="org-tree-sitter-hl-faceXconstructor">Bucket</span></span></span><span class="org-rainbow-delimiters-depth-1">(</span>bucket<span class="org-rainbow-delimiters-depth-1">)</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall"><span class="org-tree-sitter-hl-faceXconstructor">Object</span></span></span><span class="org-rainbow-delimiters-depth-1">(</span>key<span class="org-rainbow-delimiters-depth-1">)</span>
+
+        <span class="org-tree-sitter-hl-faceXcomment"># Read the raw text file into a Email Object</span>
+        <span class="org-tree-sitter-hl-faceXvariable">raw_msg</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> response.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get</span></span><span class="org-rainbow-delimiters-depth-1">()[</span><span class="org-tree-sitter-hl-faceXstring">"Body"</span><span class="org-rainbow-delimiters-depth-1">]</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">read</span></span><span class="org-rainbow-delimiters-depth-1">()</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">decode</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"utf-8"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+        <span class="org-tree-sitter-hl-faceXvariable">mime_msg</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> email.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">message_from_string</span></span><span class="org-rainbow-delimiters-depth-1">(</span>raw_msg, <span class="org-tree-sitter-hl-faceXlabel">_class</span><span class="org-tree-sitter-hl-faceXoperator">=</span><span class="org-tree-sitter-hl-faceXconstructor">MIMEPart</span><span class="org-rainbow-delimiters-depth-1">)</span>
+        <span class="org-tree-sitter-hl-faceXvariable">plain_msg</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> email.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">message_from_string</span></span><span class="org-rainbow-delimiters-depth-1">(</span>raw_msg<span class="org-rainbow-delimiters-depth-1">)</span>
+
+        <span class="org-tree-sitter-hl-faceXvariable">file_name_custom_prefix</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXstring">""</span>
+        <span class="org-tree-sitter-hl-faceXkeyword">for</span> <span class="org-tree-sitter-hl-faceXvariable">p</span> <span class="org-tree-sitter-hl-faceXoperator">in</span> plain_msg.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">walk</span></span><span class="org-rainbow-delimiters-depth-1">()</span>:
+            <span class="org-tree-sitter-hl-faceXkeyword">if</span> p.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get_content_type</span></span><span class="org-rainbow-delimiters-depth-1">()</span> <span class="org-tree-sitter-hl-faceXoperator">==</span> <span class="org-tree-sitter-hl-faceXstring">"text/plain"</span>:
+                <span class="org-tree-sitter-hl-faceXkeyword">if</span> <span class="org-tree-sitter-hl-faceXstring">"!!!"</span> <span class="org-tree-sitter-hl-faceXoperator">in</span> p.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get_payload</span></span><span class="org-rainbow-delimiters-depth-1">()</span>:
+                    <span class="org-tree-sitter-hl-faceXvariable">file_name_custom_prefix</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-rainbow-delimiters-depth-1">(</span>
+                        p.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get_payload</span></span><span class="org-rainbow-delimiters-depth-2">()</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">split</span></span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-tree-sitter-hl-faceXstring">"</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXescape">\\</span></span><span class="org-tree-sitter-hl-faceXstring">n"</span><span class="org-rainbow-delimiters-depth-2">)[</span><span class="org-tree-sitter-hl-faceXnumber">0</span><span class="org-rainbow-delimiters-depth-2">]</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">split</span></span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-tree-sitter-hl-faceXstring">"</span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXescape">\n</span></span><span class="org-tree-sitter-hl-faceXstring">"</span><span class="org-rainbow-delimiters-depth-2">)[</span><span class="org-tree-sitter-hl-faceXnumber">0</span><span class="org-rainbow-delimiters-depth-2">]</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">strip</span></span><span class="org-rainbow-delimiters-depth-2">()</span>
+                    <span class="org-rainbow-delimiters-depth-1">)</span>
+                    <span class="org-tree-sitter-hl-faceXvariable">file_name_custom_prefix</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> file_name_custom_prefix.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">replace</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"!"</span>, <span class="org-tree-sitter-hl-faceXstring">""</span><span class="org-rainbow-delimiters-depth-1">)</span>
+                <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">f"prefix: </span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">{</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXembedded">file_name_custom_prefix</span></span><span class="org-tree-sitter-hl-faceXstring"><span class="org-tree-sitter-hl-faceXpunctuationXspecial">}</span></span><span class="org-tree-sitter-hl-faceXstring">"</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+        <span class="org-tree-sitter-hl-faceXvariable">msg_date</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> email.<span class="org-tree-sitter-hl-faceXproperty">utils</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">parsedate_to_datetime</span></span><span class="org-rainbow-delimiters-depth-1">(</span>mime_msg.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get</span></span><span class="org-rainbow-delimiters-depth-2">(</span><span class="org-tree-sitter-hl-faceXstring">"Date"</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+        <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span><span class="org-tree-sitter-hl-faceXstring">"Message Date:"</span>, msg_date<span class="org-rainbow-delimiters-depth-1">)</span>
+
+        <span class="org-tree-sitter-hl-faceXcomment"># Create directory for XML files (makes debugging easier)</span>
+        <span class="org-tree-sitter-hl-faceXkeyword">if</span> os.<span class="org-tree-sitter-hl-faceXproperty">path</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">isdir</span></span><span class="org-rainbow-delimiters-depth-1">(</span>tmp_dir<span class="org-rainbow-delimiters-depth-1">)</span> <span class="org-tree-sitter-hl-faceXoperator">==</span> <span class="org-tree-sitter-hl-faceXconstantXbuiltin">False</span>:
+            os.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">mkdir</span></span><span class="org-rainbow-delimiters-depth-1">(</span>tmp_dir<span class="org-rainbow-delimiters-depth-1">)</span>
+
+        <span class="org-tree-sitter-hl-faceXkeyword">for</span> <span class="org-tree-sitter-hl-faceXvariable">attachment</span> <span class="org-tree-sitter-hl-faceXoperator">in</span> mime_msg.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">iter_attachments</span></span><span class="org-rainbow-delimiters-depth-1">()</span>:
+            <span class="org-tree-sitter-hl-faceXcomment"># The first attachment</span>
+            <span class="org-tree-sitter-hl-faceXcomment"># attachment = msg.get_payload()[0]</span>
+            <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span>attachment.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">get_content_type</span></span><span class="org-rainbow-delimiters-depth-2">()</span><span class="org-rainbow-delimiters-depth-1">)</span>
+            <span class="org-tree-sitter-hl-faceXcomment"># Extract the attachment into /tmp/output</span>
+            <span class="org-tree-sitter-hl-faceXvariable">file_path</span> <span class="org-tree-sitter-hl-faceXoperator">=</span> <span class="org-tree-sitter-hl-faceXfunctionXcall">extract_attachment</span><span class="org-rainbow-delimiters-depth-1">(</span>attachment, <span class="org-tree-sitter-hl-faceXfunctionXcall">get_attachment_name</span><span class="org-rainbow-delimiters-depth-2">(</span>mime_msg<span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+
+            <span class="org-tree-sitter-hl-faceXcomment"># Upload the XML files to S3</span>
+            <span class="org-tree-sitter-hl-faceXfunctionXcall">upload_resulting_files_to_s3</span><span class="org-rainbow-delimiters-depth-1">(</span>
+                <span class="org-tree-sitter-hl-faceXfunctionXcall">get_mailbox</span><span class="org-rainbow-delimiters-depth-2">(</span>mime_msg<span class="org-rainbow-delimiters-depth-2">)</span>,
+                file_path,
+                msg_date,
+                file_name_custom_prefix,
+            <span class="org-rainbow-delimiters-depth-1">)</span>
+
+        <span class="org-tree-sitter-hl-faceXkeyword">return</span> <span class="org-tree-sitter-hl-faceXnumber">0</span>
+    <span class="org-tree-sitter-hl-faceXkeyword">except</span> <span class="org-tree-sitter-hl-faceXconstructor">Exception</span> <span class="org-tree-sitter-hl-faceXkeyword">as</span> e:
+        <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span>e<span class="org-rainbow-delimiters-depth-1">)</span>
+        <span class="org-tree-sitter-hl-faceXfunctionXcall"><span class="org-tree-sitter-hl-faceXfunctionXbuiltin">print</span></span><span class="org-rainbow-delimiters-depth-1">(</span>
+            <span class="org-tree-sitter-hl-faceXstring">'Error getting object {} from bucket {}. Make sure they exist '</span>
+            <span class="org-tree-sitter-hl-faceXstring">'and your bucket is in the same region as this '</span>
+            <span class="org-tree-sitter-hl-faceXstring">'function.'</span>.<span class="org-tree-sitter-hl-faceXproperty"><span class="org-tree-sitter-hl-faceXmethodXcall">format</span></span><span class="org-rainbow-delimiters-depth-2">(</span>key, bucket<span class="org-rainbow-delimiters-depth-2">)</span>
+        <span class="org-rainbow-delimiters-depth-1">)</span>
+        <span class="org-tree-sitter-hl-faceXkeyword">raise</span> e
+
+
+<span class="org-tree-sitter-hl-faceXcomment">#    delete_file(key, bucket)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf107b23" class="outline-3">
+<h3 id="orgf107b23"><span class="section-number-3">2.5.</span> Remember to verify DKIM</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+As of Jan 2024 the above steps didn't work for one of my email receiving domains because I moved my domain's Name Servers to Cloudflare.
+</p>
+
+<p>
+I was receiving this error:
+</p>
+<pre class="example" id="orgc2cf013">
+550 5.1.1 Requested action not taken: mailbox unavailable
+</pre>
+
+<p>
+Basically it means the server couldn't be found.
+</p>
+
+<p>
+Eventually I figured out that SES email receiving domain needed DKIM signing/verification. 
+</p>
+
+<p>
+Grabbed the required records from SES console and added them in [BROKEN LINK: FC780D1D-2F80-4CDC-B4F8-038A2161E7E8] and it's all good.
+</p>
+
+
+
+<figure id="org6750066">
+<img src={{ "assets/images/20240130-214256_screenshot.jpeg" || absolute_url }} alt="20240130-214256_screenshot.jpeg">
+
+</figure>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9981369" class="outline-2">
+<h2 id="org9981369"><span class="section-number-2">3.</span> Source</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<a href={{ "https://docs.aws.amazon.com/ses/latest/dg/receiving-email-setting-up.html" | absolute_url }}>https://docs.aws.amazon.com/ses/latest/dg/receiving-email-setting-up.html</a>
+</p>
+</div>
+</div>
